@@ -1,0 +1,73 @@
+# Project Timeline
+
+metadata:
+  generated: 2026-02-03T23:20:25Z
+  totalSprints: 4
+  totalDuration: 31 days
+
+sprints:
+  - number: 4
+    startDate: 2026-02-03
+    endDate: 2026-02-10
+    duration: 7 days
+    features:
+      - id: donkey-website-feat-breed-content
+        name: Donkey Breeds Content and Gallery
+        type: feature
+      - id: donkey-website-feat-testing-suite
+        name: Testing and Quality Assurance
+        type: enabler
+      - id: donkey-website-feat-deployment
+        name: Production Deployment Setup
+        type: enabler
+  - number: 1
+    startDate: 2026-02-11
+    endDate: 2026-02-18
+    duration: 7 days
+    features:
+      - id: donkey-website-feat-repository-setup
+        name: Repository and Build System Setup
+        type: enabler
+      - id: donkey-website-feat-css-foundation
+        name: CSS Foundation and Styling
+        type: enabler
+      - id: donkey-website-feat-html-templates
+        name: HTML Templates
+        type: enabler
+  - number: 2
+    startDate: 2026-02-19
+    endDate: 2026-02-26
+    duration: 7 days
+    features:
+      - id: donkey-website-feat-navigation
+        name: Responsive Navigation Component
+        type: feature
+      - id: donkey-website-feat-image-lazy-loading
+        name: Image Lazy Loading
+        type: feature
+      - id: donkey-website-feat-lightbox
+        name: Image Lightbox Viewer
+        type: feature
+  - number: 3
+    startDate: 2026-02-27
+    endDate: 2026-03-06
+    duration: 7 days
+    features:
+      - id: donkey-website-feat-homepage
+        name: Homepage with Hero Section
+        type: feature
+      - id: donkey-website-feat-care-guides
+        name: Donkey Care Guides
+        type: feature
+      - id: donkey-website-feat-facts-page
+        name: Donkey Facts and About Page
+        type: feature
+
+criticalPath:
+  - donkey-website-feat-repository-setup
+  - donkey-website-feat-css-foundation
+  - donkey-website-feat-html-templates
+  - donkey-website-feat-navigation
+  - donkey-website-feat-breed-content
+  - donkey-website-feat-testing-suite
+  - donkey-website-feat-deployment

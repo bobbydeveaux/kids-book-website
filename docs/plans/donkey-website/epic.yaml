@@ -1,0 +1,209 @@
+Epic: donkey-website
+Features:
+- Sprint: 1
+  dependencies: []
+  description: Initialize Node.js project, install dependencies, create directory
+    structure, and implement build scripts for Markdown compilation, image optimization,
+    and CSS bundling
+  estimatedComplexity: medium
+  files:
+  - package.json
+  - .gitignore
+  - .nvmrc
+  - build/build.js
+  - build/compile-markdown.js
+  - build/optimize-images.js
+  - build/bundle-css.js
+  - build/generate-critical-css.js
+  id: donkey-website-feat-repository-setup
+  name: Repository and Build System Setup
+  project: donkey-website
+  type: enabler
+- Sprint: 1
+  dependencies:
+  - donkey-website-feat-repository-setup
+  description: Create mobile-first CSS with custom properties, reset, typography,
+    layout styles, component styles, and responsive utilities
+  estimatedComplexity: medium
+  files:
+  - src/styles/base/reset.css
+  - src/styles/base/variables.css
+  - src/styles/base/typography.css
+  - src/styles/layout/header.css
+  - src/styles/layout/footer.css
+  - src/styles/layout/grid.css
+  - src/styles/layout/container.css
+  - src/styles/components/navigation.css
+  - src/styles/components/button.css
+  - src/styles/components/card.css
+  - src/styles/components/hero.css
+  - src/styles/components/gallery.css
+  - src/styles/components/lightbox.css
+  - src/styles/utilities/accessibility.css
+  - src/styles/utilities/responsive.css
+  id: donkey-website-feat-css-foundation
+  name: CSS Foundation and Styling
+  project: donkey-website
+  type: enabler
+- Sprint: 1
+  dependencies:
+  - donkey-website-feat-css-foundation
+  description: Create semantic HTML5 templates for homepage, breed pages, care guides,
+    facts page, and 404 error page with proper accessibility structure
+  estimatedComplexity: medium
+  files:
+  - src/templates/base.html
+  - src/templates/home.html
+  - src/templates/breed-list.html
+  - src/templates/breed-detail.html
+  - src/templates/care-guide.html
+  - src/templates/facts.html
+  - dist/404.html
+  id: donkey-website-feat-html-templates
+  name: HTML Templates
+  project: donkey-website
+  type: enabler
+- Sprint: 2
+  dependencies:
+  - donkey-website-feat-html-templates
+  description: Implement responsive navigation menu with mobile hamburger toggle,
+    keyboard accessibility, ARIA attributes, and focus management
+  estimatedComplexity: medium
+  files:
+  - src/scripts/navigation.js
+  - src/styles/components/navigation.css
+  id: donkey-website-feat-navigation
+  name: Responsive Navigation Component
+  project: donkey-website
+  type: feature
+- Sprint: 2
+  dependencies:
+  - donkey-website-feat-html-templates
+  description: Implement lazy loading for images using Intersection Observer API to
+    improve initial page load performance
+  estimatedComplexity: low
+  files:
+  - src/scripts/lazyload.js
+  id: donkey-website-feat-image-lazy-loading
+  name: Image Lazy Loading
+  project: donkey-website
+  type: feature
+- Sprint: 2
+  dependencies:
+  - donkey-website-feat-html-templates
+  description: Create accessible lightbox component for viewing full-size images with
+    keyboard navigation and focus management
+  estimatedComplexity: medium
+  files:
+  - src/scripts/lightbox.js
+  - src/styles/components/lightbox.css
+  id: donkey-website-feat-lightbox
+  name: Image Lightbox Viewer
+  project: donkey-website
+  type: feature
+- Sprint: 3
+  dependencies:
+  - donkey-website-feat-navigation
+  - donkey-website-feat-image-lazy-loading
+  description: Create homepage with hero section, welcoming content, and overview
+    cards linking to main site sections
+  estimatedComplexity: low
+  files:
+  - dist/index.html
+  - src/images/hero/donkey-hero.jpg
+  id: donkey-website-feat-homepage
+  name: Homepage with Hero Section
+  project: donkey-website
+  type: feature
+- Sprint: 3
+  dependencies:
+  - donkey-website-feat-navigation
+  - donkey-website-feat-image-lazy-loading
+  description: Create comprehensive care guide pages covering feeding, grooming, housing,
+    and health with table of contents and detailed information
+  estimatedComplexity: high
+  files:
+  - src/content/care/feeding.md
+  - src/content/care/grooming.md
+  - src/content/care/housing.md
+  - src/content/care/health.md
+  - dist/care/index.html
+  - dist/care/feeding.html
+  - dist/care/grooming.html
+  - dist/care/housing.html
+  - dist/care/health.html
+  - src/images/care/
+  id: donkey-website-feat-care-guides
+  name: Donkey Care Guides
+  project: donkey-website
+  type: feature
+- Sprint: 3
+  dependencies:
+  - donkey-website-feat-navigation
+  - donkey-website-feat-image-lazy-loading
+  description: Create educational content page about donkey history, behavior, and
+    characteristics
+  estimatedComplexity: low
+  files:
+  - src/content/facts/about-donkeys.md
+  - dist/facts.html
+  id: donkey-website-feat-facts-page
+  name: Donkey Facts and About Page
+  project: donkey-website
+  type: feature
+- Sprint: 4
+  dependencies:
+  - donkey-website-feat-navigation
+  - donkey-website-feat-image-lazy-loading
+  - donkey-website-feat-lightbox
+  description: Create breed listing page and detail pages for 4+ donkey breeds with
+    descriptions, characteristics, images, and care information
+  estimatedComplexity: high
+  files:
+  - src/content/breeds/miniature-mediterranean.md
+  - src/content/breeds/standard-donkey.md
+  - src/content/breeds/mammoth-donkey.md
+  - src/content/breeds/poitou-donkey.md
+  - dist/breeds/index.html
+  - dist/breeds/miniature-mediterranean.html
+  - dist/breeds/standard-donkey.html
+  - dist/breeds/mammoth-donkey.html
+  - dist/breeds/poitou-donkey.html
+  - src/images/breeds/
+  id: donkey-website-feat-breed-content
+  name: Donkey Breeds Content and Gallery
+  project: donkey-website
+  type: feature
+- Sprint: 4
+  dependencies:
+  - donkey-website-feat-breed-content
+  - donkey-website-feat-care-guides
+  - donkey-website-feat-facts-page
+  description: Implement unit tests, integration tests, Lighthouse CI tests, and accessibility
+    tests to ensure quality standards
+  estimatedComplexity: high
+  files:
+  - tests/build/compile-markdown.test.js
+  - tests/build/optimize-images.test.js
+  - tests/scripts/navigation.test.js
+  - tests/integration/build-pipeline.test.js
+  - tests/integration/link-validator.test.js
+  - tests/e2e/lighthouse.test.js
+  - tests/e2e/accessibility.test.js
+  id: donkey-website-feat-testing-suite
+  name: Testing and Quality Assurance
+  project: donkey-website
+  type: enabler
+- Sprint: 4
+  dependencies:
+  - donkey-website-feat-testing-suite
+  description: Configure Netlify deployment with automatic builds, SSL, custom domain,
+    security headers, caching strategy, and monitoring
+  estimatedComplexity: medium
+  files:
+  - netlify.toml
+  id: donkey-website-feat-deployment
+  name: Production Deployment Setup
+  project: donkey-website
+  type: enabler
+Version: v1alpha1
