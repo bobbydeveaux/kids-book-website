@@ -1,0 +1,1906 @@
+GeneratedAt: "2026-02-03T23:27:39Z"
+Plan: donkey-website-plan
+Sprints:
+- Features:
+  - FeatureID: donkey-website-feat-homepage
+    FeatureTitle: Homepage with Hero Section
+    Tasks:
+    - AcceptanceCriteria:
+      - Valid HTML5 document with proper DOCTYPE and meta tags
+      - Header component with logo and navigation markup complete
+      - Mobile menu toggle button with ARIA attributes present
+      - Navigation links to all main sections configured
+      - Accessibility landmarks and labels properly defined
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Implement the basic HTML5 document structure with semantic markup,
+        meta tags for SEO, and the site header with navigation component. Include
+        mobile menu toggle structure and accessibility attributes. Set up the container
+        layout and header styling hooks.
+      EstimatedEffort: S
+      Files:
+      - dist/index.html
+      ID: task-donkey-website-feat-homepage-1
+      Title: Create HTML structure and header navigation
+    - AcceptanceCriteria:
+      - Hero section with semantic HTML and ARIA labels complete
+      - Picture element with WebP and JPG sources configured
+      - Responsive srcset with 400w, 800w, and 1200w variants defined
+      - Hero heading and subtitle text properly marked up
+      - Image loading set to eager for critical content
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-homepage-1
+      Description: Create the hero section markup with picture element for responsive
+        image loading. Configure srcset attributes for multiple image sizes and formats
+        (WebP, JPG). Include hero content with heading and subtitle text. Set up proper
+        image dimensions and loading attributes for above-the-fold content.
+      EstimatedEffort: M
+      Files:
+      - dist/index.html
+      - src/images/hero/donkey-hero.jpg
+      ID: task-donkey-website-feat-homepage-2
+      Title: Implement hero section with responsive images
+    - AcceptanceCriteria:
+      - Three overview cards with consistent markup structure created
+      - Each card contains icon, heading, description, and CTA link
+      - Links properly reference /breeds/, /care/, and /facts.html
+      - Cards use semantic HTML with appropriate heading levels
+      - Grid container structure supports responsive layout
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-homepage-2
+      Description: Implement the overview cards grid with three feature cards linking
+        to Breeds, Care Guide, and Facts sections. Include card icons, headings, descriptions,
+        and call-to-action links. Structure cards with semantic HTML and proper link
+        relationships for navigation.
+      EstimatedEffort: M
+      Files:
+      - dist/index.html
+      ID: task-donkey-website-feat-homepage-3
+      Title: Build overview cards section
+    - AcceptanceCriteria:
+      - Footer element with copyright and navigation complete
+      - SVG sprite with all required icon symbols defined
+      - Icons referenced via use href in navigation and cards
+      - ARIA hidden attributes applied to decorative icons
+      - Footer includes proper semantic markup and links
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-homepage-3
+      Description: Create the site footer with copyright information and secondary
+        navigation links. Implement inline SVG sprite system for icons (menu, close,
+        arrows, etc.) used throughout the homepage. Include proper ARIA hidden attributes
+        for decorative icons and define reusable symbol definitions.
+      EstimatedEffort: S
+      Files:
+      - dist/index.html
+      ID: task-donkey-website-feat-homepage-4
+      Title: Add footer and SVG sprite system
+    - AcceptanceCriteria:
+      - Critical CSS inlined in style tag within head
+      - Preload link for full stylesheet configured
+      - Media attribute swap technique for async CSS loading implemented
+      - Above-the-fold content renders without FOUC
+      - Noscript fallback for stylesheet loading present
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-homepage-4
+      Description: Extract and inline critical above-the-fold CSS in the head section
+        for immediate rendering. Set up async loading for full stylesheet using preload
+        and media attribute swap technique. Include basic layout styles, hero styles,
+        and navigation styles needed for initial paint.
+      EstimatedEffort: M
+      Files:
+      - dist/index.html
+      ID: task-donkey-website-feat-homepage-5
+      Title: Implement critical CSS inlining
+    - AcceptanceCriteria:
+      - Favicon link with SVG format configured
+      - Resource hints for external domains added to head
+      - Width and height attributes set on all images
+      - Sizes attribute calculated for responsive images
+      - Theme-color and other mobile optimization meta tags present
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-homepage-2
+      Description: Add performance optimization attributes throughout the page including
+        resource hints (preconnect, dns-prefetch), proper image sizing attributes,
+        and lazy loading configuration for below-fold images. Configure favicon with
+        appropriate format and add theme-color meta tag.
+      EstimatedEffort: S
+      Files:
+      - dist/index.html
+      ID: task-donkey-website-feat-homepage-6
+      Title: Configure performance optimization attributes
+    - AcceptanceCriteria:
+      - HTML passes W3C validation with no errors
+      - All ARIA attributes correctly implemented and functional
+      - Heading hierarchy follows proper h1-h6 structure
+      - Keyboard navigation works for all interactive elements
+      - Screen reader testing confirms proper content announcements
+      AgentType: qa-engineer
+      Dependencies:
+      - task-donkey-website-feat-homepage-5
+      - task-donkey-website-feat-homepage-6
+      Description: Perform comprehensive validation of HTML markup for accessibility
+        compliance and semantic correctness. Verify all ARIA attributes, heading hierarchy,
+        landmark regions, and skip links. Test keyboard navigation and screen reader
+        compatibility. Validate HTML against W3C standards.
+      EstimatedEffort: M
+      Files:
+      - dist/index.html
+      ID: task-donkey-website-feat-homepage-7
+      Title: Validate HTML accessibility and semantics
+  - FeatureID: donkey-website-feat-care-guides
+    FeatureTitle: Donkey Care Guides
+    Tasks:
+    - AcceptanceCriteria:
+      - Overview page renders with responsive care-grid layout
+      - All four care cards display with icons, titles, descriptions, and topic lists
+      - Navigation links to detail pages function correctly
+      - Page passes accessibility validation with proper ARIA labels
+      - Mobile responsive layout works on small screens
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Build the main care guide landing page (dist/care/index.html) with
+        the care-grid layout showcasing all four care categories. Implement the page
+        header, care card components for feeding, grooming, housing, and health with
+        icons, descriptions, and topic lists. Include proper semantic HTML and ARIA
+        labels for accessibility.
+      EstimatedEffort: M
+      Files:
+      - dist/care/index.html
+      - src/images/icons/feeding.svg
+      - src/images/icons/grooming.svg
+      - src/images/icons/housing.svg
+      - src/images/icons/health.svg
+      ID: task-donkey-website-feat-care-guides-1
+      Title: Create care guide overview page structure
+    - AcceptanceCriteria:
+      - Feeding page renders with breadcrumb navigation
+      - Sticky TOC sidebar functions on desktop, collapses on mobile
+      - All content sections populated with feeding information
+      - TOC links scroll smoothly to corresponding sections
+      - Page structure matches LLD specification
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-care-guides-1
+      Description: Create the feeding care guide page (dist/care/feeding.html) with
+        complete content structure including breadcrumb navigation, sticky table of
+        contents sidebar, and detailed sections covering hay/forage, grain/supplements,
+        water intake, and treats/forbidden foods. Implement smooth scroll-to-section
+        functionality for TOC links.
+      EstimatedEffort: M
+      Files:
+      - dist/care/feeding.html
+      - src/content/care/feeding.md
+      - src/images/care/feeding/
+      ID: task-donkey-website-feat-care-guides-2
+      Title: Implement feeding guide detail page
+    - AcceptanceCriteria:
+      - Grooming page renders with consistent structure to feeding page
+      - All grooming sections populated with detailed information
+      - Supporting images display correctly with lazy loading
+      - TOC navigation functions properly
+      - Breadcrumb links navigate correctly
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-care-guides-2
+      Description: Create the grooming care guide page (dist/care/grooming.html) with
+        comprehensive content covering daily brushing, hoof trimming, bathing, and
+        dental care. Include the same breadcrumb, TOC, and content layout pattern
+        as the feeding page. Add supporting images for grooming techniques.
+      EstimatedEffort: M
+      Files:
+      - dist/care/grooming.html
+      - src/content/care/grooming.md
+      - src/images/care/grooming/
+      ID: task-donkey-website-feat-care-guides-3
+      Title: Implement grooming guide detail page
+    - AcceptanceCriteria:
+      - Housing page renders with consistent structure
+      - All housing sections include detailed requirements and recommendations
+      - Diagrams and photos display with proper captions
+      - Page is fully responsive across device sizes
+      - TOC and breadcrumb navigation work correctly
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-care-guides-2
+      Description: Create the housing care guide page (dist/care/housing.html) covering
+        shelter requirements, fencing, pasture management, and environmental considerations.
+        Follow the established detail page pattern with breadcrumb, TOC, and content
+        sections. Include diagrams and photos of proper housing setups.
+      EstimatedEffort: M
+      Files:
+      - dist/care/housing.html
+      - src/content/care/housing.md
+      - src/images/care/housing/
+      ID: task-donkey-website-feat-care-guides-4
+      Title: Implement housing guide detail page
+    - AcceptanceCriteria:
+      - Health page renders with consistent structure
+      - Emergency and warning callouts styled appropriately
+      - All health topics covered with actionable information
+      - Vaccination schedule table displays correctly
+      - Navigation and TOC function properly
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-care-guides-2
+      Description: Create the health care guide page (dist/care/health.html) covering
+        preventive care, common health issues, vaccination schedules, and when to
+        call a vet. Include warning callouts for serious conditions and emergency
+        care information. Follow the established detail page pattern.
+      EstimatedEffort: M
+      Files:
+      - dist/care/health.html
+      - src/content/care/health.md
+      - src/images/care/health/
+      ID: task-donkey-website-feat-care-guides-5
+      Title: Implement health guide detail page
+    - AcceptanceCriteria:
+      - Care-grid displays in responsive columns (1 mobile, 2 tablet, 4 desktop)
+      - Sticky TOC sidebar works on desktop, stacks on mobile
+      - Care cards have hover states and consistent spacing
+      - Callout boxes styled with appropriate colors for warnings/tips
+      - All typography and spacing matches site design system
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-care-guides-1
+      Description: Create comprehensive CSS for all care guide pages including the
+        care-grid layout, care-card components, sticky TOC sidebar, content layout,
+        breadcrumb navigation, and callout styles. Ensure responsive behavior across
+        breakpoints and smooth transitions. Integrate with existing site styles.
+      EstimatedEffort: M
+      Files:
+      - src/styles/care.css
+      - src/styles/components/care-card.css
+      - src/styles/components/toc.css
+      ID: task-donkey-website-feat-care-guides-6
+      Title: Implement care guide CSS styling
+    - AcceptanceCriteria:
+      - Care guide link appears in main navigation
+      - Dropdown or mega-menu shows all four care categories
+      - Active page state highlights correctly on care pages
+      - Mobile hamburger menu includes care guide navigation
+      - Navigation dependency on donkey-website-feat-navigation satisfied
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-care-guides-1
+      - task-donkey-website-feat-care-guides-6
+      Description: Add care guide links to the main site navigation menu. Create dropdown
+        menu for care subcategories if using mega-menu pattern. Update navigation
+        highlighting to show active page state when on care guide pages. Ensure mobile
+        navigation includes care guide links.
+      EstimatedEffort: S
+      Files:
+      - dist/index.html
+      - src/components/navigation.html
+      - src/styles/navigation.css
+      ID: task-donkey-website-feat-care-guides-7
+      Title: Integrate care guides with site navigation
+    - AcceptanceCriteria:
+      - All care guide images use loading='lazy' attribute
+      - Intersection observer implemented with fallback
+      - Loading placeholders display before images load
+      - Srcset attributes provide responsive image variants
+      - Image lazy loading dependency satisfied
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-care-guides-2
+      - task-donkey-website-feat-care-guides-3
+      - task-donkey-website-feat-care-guides-4
+      - task-donkey-website-feat-care-guides-5
+      Description: Apply lazy loading attributes to all images across care guide pages.
+        Implement intersection observer polyfill for older browsers. Add loading placeholders
+        and ensure images display properly when scrolled into view. Optimize image
+        delivery and add srcset for responsive images.
+      EstimatedEffort: S
+      Files:
+      - dist/care/feeding.html
+      - dist/care/grooming.html
+      - dist/care/housing.html
+      - dist/care/health.html
+      - src/scripts/lazy-loading.js
+      ID: task-donkey-website-feat-care-guides-8
+      Title: Implement image lazy loading for care guides
+    - AcceptanceCriteria:
+      - All four markdown files contain complete, accurate care information
+      - Each guide includes 800-1500 words of detailed content
+      - Minimum 4-6 high-quality images per guide
+      - All images include descriptive alt text
+      - Content is organized logically with proper heading hierarchy
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Write comprehensive markdown content for all four care guides with
+        accurate donkey care information. Source or create images for each guide showing
+        feeding equipment, grooming tools, housing setups, and health indicators.
+        Ensure all content is accurate, helpful, and appropriately detailed.
+      EstimatedEffort: L
+      Files:
+      - src/content/care/feeding.md
+      - src/content/care/grooming.md
+      - src/content/care/housing.md
+      - src/content/care/health.md
+      - src/images/care/
+      ID: task-donkey-website-feat-care-guides-9
+      Title: Add care guide content and images
+    - AcceptanceCriteria:
+      - All pages pass WCAG 2.1 AA accessibility validation
+      - Responsive layouts verified on mobile, tablet, and desktop
+      - All internal and external links functional
+      - TOC navigation scrolls correctly to all sections
+      - Pages load and function correctly in Chrome, Firefox, Safari, and Edge
+      AgentType: qa-engineer
+      Dependencies:
+      - task-donkey-website-feat-care-guides-7
+      - task-donkey-website-feat-care-guides-8
+      - task-donkey-website-feat-care-guides-9
+      Description: Perform comprehensive testing of all care guide pages including
+        accessibility validation, responsive design testing across devices, link checking,
+        image loading verification, and TOC navigation functionality. Validate against
+        WCAG 2.1 AA standards and ensure cross-browser compatibility.
+      EstimatedEffort: M
+      Files:
+      - dist/care/index.html
+      - dist/care/feeding.html
+      - dist/care/grooming.html
+      - dist/care/housing.html
+      - dist/care/health.html
+      ID: task-donkey-website-feat-care-guides-10
+      Title: Test and validate care guide pages
+  - FeatureID: donkey-website-feat-facts-page
+    FeatureTitle: Donkey Facts and About Page
+    Tasks:
+    - AcceptanceCriteria:
+      - File src/content/facts/about-donkeys.md exists with valid frontmatter
+      - Content includes sections for history, behavior, characteristics, and facts
+      - Markdown is properly formatted with headings, lists, and paragraphs
+      - Content is educational and factually accurate
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create the about-donkeys.md content file with comprehensive information
+        about donkey history, behavior, and characteristics. Structure the content
+        with proper headings, sections for history, behavior, physical characteristics,
+        and interesting facts. Include frontmatter metadata for title, description,
+        and any taxonomies.
+      EstimatedEffort: M
+      Files:
+      - src/content/facts/about-donkeys.md
+      ID: task-donkey-website-feat-facts-page-1
+      Title: Create facts content markdown file
+    - AcceptanceCriteria:
+      - Template file exists and renders facts content
+      - Page includes proper HTML5 semantic structure (header, main, article, sections)
+      - Navigation component is integrated per dependency requirements
+      - SEO meta tags are present (title, description, keywords)
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-facts-page-1
+      Description: Create or update the template that renders the facts page at /facts.html.
+        Implement the layout with proper semantic HTML structure, include navigation
+        integration, and ensure the template processes the markdown content correctly.
+        Add appropriate meta tags for SEO.
+      EstimatedEffort: M
+      Files:
+      - src/templates/facts.html
+      - dist/facts.html
+      ID: task-donkey-website-feat-facts-page-2
+      Title: Implement facts page HTML template
+    - AcceptanceCriteria:
+      - Facts page is fully responsive across all breakpoints
+      - Typography is readable with appropriate font sizes and line heights
+      - Content sections have proper spacing and visual hierarchy
+      - Styles are consistent with site design system
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-facts-page-2
+      Description: Create CSS styles for the facts page ensuring readability and visual
+        appeal. Implement responsive design for mobile, tablet, and desktop viewports.
+        Style content sections, headings, lists, and any callout boxes or info panels.
+        Ensure consistency with existing site styles.
+      EstimatedEffort: M
+      Files:
+      - src/styles/facts.css
+      - src/styles/main.css
+      ID: task-donkey-website-feat-facts-page-3
+      Title: Style facts page layout and typography
+    - AcceptanceCriteria:
+      - At least 3-5 images are added to facts page with lazy-loading
+      - All images have descriptive alt text for accessibility
+      - Images are optimized and stored in appropriate directory
+      - Lazy loading works correctly on page scroll
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-facts-page-2
+      Description: Add relevant images to the facts page using the lazy-loading implementation
+        from dependencies. Select and optimize images of donkeys for each major section.
+        Implement proper alt text, captions, and figure elements. Ensure images are
+        responsive and lazy-loaded correctly.
+      EstimatedEffort: S
+      Files:
+      - src/content/facts/about-donkeys.md
+      - src/images/facts/
+      ID: task-donkey-website-feat-facts-page-4
+      Title: Integrate lazy-loaded images in facts page
+    - AcceptanceCriteria:
+      - Facts page link appears in main navigation
+      - Link routes correctly to /facts.html
+      - Active state styling works when on facts page
+      - Navigation tests pass including new link
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-facts-page-2
+      Description: Add the facts page link to the main navigation component. Ensure
+        the link is properly styled, has correct routing, and includes active state
+        handling. Update navigation tests to include the new link. Verify navigation
+        accessibility.
+      EstimatedEffort: S
+      Files:
+      - src/components/navigation.html
+      - tests/unit/navigation.test.js
+      ID: task-donkey-website-feat-facts-page-5
+      Title: Update navigation to include facts page link
+    - AcceptanceCriteria:
+      - Unit tests cover template rendering with at least 80% coverage
+      - Tests verify markdown content is processed correctly
+      - Tests check for required HTML elements and structure
+      - All tests pass successfully
+      AgentType: qa-engineer
+      Dependencies:
+      - task-donkey-website-feat-facts-page-3
+      - task-donkey-website-feat-facts-page-4
+      Description: Create unit tests for the facts page template rendering, content
+        processing, and component integration. Test that markdown content is correctly
+        parsed, navigation is present, and lazy-loading is properly initialized. Verify
+        SEO metadata is correctly rendered.
+      EstimatedEffort: M
+      Files:
+      - tests/unit/facts-page.test.js
+      ID: task-donkey-website-feat-facts-page-6
+      Title: Implement facts page unit tests
+    - AcceptanceCriteria:
+      - Build process generates dist/facts.html successfully
+      - Facts page is included in build pipeline output
+      - Integration tests verify facts.html exists after build
+      - Build completes without errors
+      AgentType: devops-engineer
+      Dependencies:
+      - task-donkey-website-feat-facts-page-2
+      Description: Update build configuration to include the facts page in the static
+        site generation process. Ensure the page is compiled, optimized, and output
+        to dist/facts.html. Update build pipeline integration tests to verify facts
+        page generation.
+      EstimatedEffort: S
+      Files:
+      - build.js
+      - tests/integration/build-pipeline.test.js
+      ID: task-donkey-website-feat-facts-page-7
+      Title: Add facts page to build pipeline
+    - AcceptanceCriteria:
+      - Accessibility tests pass WCAG 2.1 AA standards
+      - Lighthouse accessibility score is 90 or above
+      - Lighthouse performance score is 85 or above
+      - All interactive elements are keyboard accessible
+      AgentType: qa-engineer
+      Dependencies:
+      - task-donkey-website-feat-facts-page-6
+      - task-donkey-website-feat-facts-page-7
+      Description: Create automated tests to verify the facts page meets WCAG 2.1
+        AA accessibility standards and performance benchmarks. Test keyboard navigation,
+        screen reader compatibility, color contrast, and page load performance. Include
+        Lighthouse CI checks.
+      EstimatedEffort: M
+      Files:
+      - tests/integration/accessibility.test.js
+      - tests/integration/performance.test.js
+      ID: task-donkey-website-feat-facts-page-8
+      Title: Implement accessibility and performance tests
+  Sprint: 3
+- Features:
+  - FeatureID: donkey-website-feat-breed-content
+    FeatureTitle: Donkey Breeds Content and Gallery
+    Tasks:
+    - AcceptanceCriteria:
+      - All 4 markdown files created in src/content/breeds/ directory
+      - Each file contains frontmatter with title, description, and metadata
+      - Content structured with consistent headings across all breeds
+      - Facts are accurate and sourced from reputable donkey breed resources
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create four markdown files for donkey breeds (Miniature Mediterranean,
+        Standard, Mammoth, Poitou) with frontmatter metadata and structured content
+        sections. Include breed overview, physical characteristics, temperament, care
+        requirements, and historical background. Ensure content is accurate, consistent
+        in format, and approximately 500-800 words per breed.
+      EstimatedEffort: M
+      Files:
+      - src/content/breeds/miniature-mediterranean.md
+      - src/content/breeds/standard-donkey.md
+      - src/content/breeds/mammoth-donkey.md
+      - src/content/breeds/poitou-donkey.md
+      ID: task-donkey-website-feat-breed-content-1
+      Title: Create breed content markdown files
+    - AcceptanceCriteria:
+      - At least 3 images per breed collected and placed in src/images/breeds/
+      - Each image has 400w and 800w variants in both JPG and WebP formats
+      - 'File naming follows pattern: {breed-name}-{number}-{width}w.{ext}'
+      - All images optimized with total size under 2MB per breed
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Collect high-quality images for each of the 4 donkey breeds. Create
+        multiple resolutions (400w for cards, 800w for detail pages) in both JPG and
+        WebP formats. Organize images in the breeds directory with consistent naming
+        convention. Ensure images are properly licensed and optimized for web use.
+      EstimatedEffort: M
+      Files:
+      - src/images/breeds/
+      ID: task-donkey-website-feat-breed-content-2
+      Title: Source and prepare breed images
+    - AcceptanceCriteria:
+      - dist/breeds/index.html created with complete breed grid layout
+      - All 4 breed cards render with correct images and text
+      - Picture elements use srcset with WebP and JPG fallbacks
+      - Page header section includes H1 and lead paragraph
+      - Links navigate to correct detail pages
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-breed-content-1
+      - task-donkey-website-feat-breed-content-2
+      Description: Create the breeds index page with responsive grid layout displaying
+        all 4 breed cards. Each card includes lazy-loaded images with picture elements,
+        breed name, summary description, and call-to-action link. Implement semantic
+        HTML with proper heading hierarchy and ARIA labels.
+      EstimatedEffort: M
+      Files:
+      - dist/breeds/index.html
+      ID: task-donkey-website-feat-breed-content-3
+      Title: Implement breed gallery listing page
+    - AcceptanceCriteria:
+      - All 4 detail HTML files created in dist/breeds/ directory
+      - Each page includes breadcrumb navigation with proper ARIA labels
+      - Image galleries display with correct srcset and lightbox attributes
+      - Quick facts sidebar and care information table render correctly
+      - Content sections match markdown source structure
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-breed-content-1
+      - task-donkey-website-feat-breed-content-2
+      Description: Create individual detail pages for all 4 breeds with breadcrumb
+        navigation, image galleries, and comprehensive content sections. Include quick
+        facts sidebar, care information table, and image gallery with lightbox data
+        attributes. Ensure content flows from markdown source files.
+      EstimatedEffort: L
+      Files:
+      - dist/breeds/miniature-mediterranean.html
+      - dist/breeds/standard-donkey.html
+      - dist/breeds/mammoth-donkey.html
+      - dist/breeds/poitou-donkey.html
+      ID: task-donkey-website-feat-breed-content-4
+      Title: Implement breed detail pages
+    - AcceptanceCriteria:
+      - src/styles/components/card.css created with breed-card styles
+      - Grid layout responds to viewport sizes (1, 2, or 4 columns)
+      - Hover and focus states provide clear visual feedback
+      - Images maintain consistent aspect ratio across all cards
+      - Cards meet WCAG 2.1 AA contrast requirements
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-breed-content-3
+      Description: Create CSS for breed card components used on the listing page.
+        Implement responsive grid layout, hover effects, card shadows, and image aspect
+        ratio preservation. Ensure cards are accessible with focus states and work
+        across mobile, tablet, and desktop viewports.
+      EstimatedEffort: M
+      Files:
+      - src/styles/components/card.css
+      ID: task-donkey-website-feat-breed-content-5
+      Title: Style breed card components
+    - AcceptanceCriteria:
+      - src/styles/components/gallery.css created with gallery styles
+      - Gallery images display in responsive grid with proper spacing
+      - Detail page two-column layout works on desktop, stacks on mobile
+      - Quick facts sidebar and tables styled consistently
+      - Typography hierarchy clear with proper line-height and spacing
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-breed-content-4
+      Description: Create CSS for image galleries on detail pages including responsive
+        layouts, image spacing, and lightbox trigger styling. Implement breed detail
+        layout with sidebar and main content areas. Style quick facts, care tables,
+        and content sections for optimal readability.
+      EstimatedEffort: M
+      Files:
+      - src/styles/components/gallery.css
+      ID: task-donkey-website-feat-breed-content-6
+      Title: Style breed gallery and detail pages
+    - AcceptanceCriteria:
+      - All images on listing and detail pages use lazyload class
+      - Gallery images include data-lightbox attributes for modal viewing
+      - Images load only when scrolled into viewport
+      - Lightbox opens correctly when gallery images clicked
+      - No console errors related to lazy loading or lightbox
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-breed-content-3
+      - task-donkey-website-feat-breed-content-4
+      Description: Connect breed pages to lazy loading and lightbox features from
+        dependencies. Add lazyload classes to all images, configure data-lightbox
+        attributes for gallery images, and ensure picture elements work with lazy
+        loading library. Test image loading performance and lightbox functionality.
+      EstimatedEffort: S
+      Files:
+      - dist/breeds/index.html
+      - dist/breeds/miniature-mediterranean.html
+      - dist/breeds/standard-donkey.html
+      - dist/breeds/mammoth-donkey.html
+      - dist/breeds/poitou-donkey.html
+      ID: task-donkey-website-feat-breed-content-7
+      Title: Integrate lazy loading and lightbox
+    - AcceptanceCriteria:
+      - All pages pass WAVE and axe accessibility validators with no errors
+      - Keyboard navigation works for all interactive elements
+      - Pages render correctly on viewport widths from 320px to 1920px
+      - Screen reader announces breed cards and content sections correctly
+      - Color contrast meets WCAG 2.1 AA standards throughout
+      AgentType: qa-engineer
+      Dependencies:
+      - task-donkey-website-feat-breed-content-5
+      - task-donkey-website-feat-breed-content-6
+      - task-donkey-website-feat-breed-content-7
+      Description: Perform comprehensive accessibility testing on all breed pages
+        using automated tools and manual keyboard navigation. Test responsive layouts
+        across mobile, tablet, and desktop viewports. Validate semantic HTML, ARIA
+        labels, focus management, and screen reader compatibility.
+      EstimatedEffort: M
+      Files:
+      - dist/breeds/index.html
+      - dist/breeds/miniature-mediterranean.html
+      - dist/breeds/standard-donkey.html
+      - dist/breeds/mammoth-donkey.html
+      - dist/breeds/poitou-donkey.html
+      ID: task-donkey-website-feat-breed-content-8
+      Title: Test accessibility and responsiveness
+  - FeatureID: donkey-website-feat-testing-suite
+    FeatureTitle: Testing and Quality Assurance
+    Tasks:
+    - AcceptanceCriteria:
+      - All parseMarkdownFile tests pass for valid, invalid, and edge cases
+      - validateContent tests verify required fields and image references
+      - renderTemplate tests confirm template injection and error handling
+      - Test coverage exceeds 80% for compile-markdown.js
+      - Test fixtures created in tests/fixtures/ directory
+      AgentType: qa-engineer
+      Dependencies: []
+      Description: Create comprehensive unit tests for the markdown compilation pipeline.
+        Test parseMarkdownFile, validateContent, and renderTemplate functions with
+        valid and invalid inputs. Create test fixtures for various markdown file scenarios
+        including valid breed content, invalid frontmatter, and missing frontmatter.
+      EstimatedEffort: M
+      Files:
+      - tests/build/compile-markdown.test.js
+      - tests/fixtures/valid-breed.md
+      - tests/fixtures/invalid-frontmatter.md
+      - tests/fixtures/no-frontmatter.md
+      ID: task-donkey-website-feat-testing-suite-1
+      Title: Implement build script unit tests
+    - AcceptanceCriteria:
+      - Tests verify correct image compression ratios
+      - Format conversion tests confirm WebP and AVIF output
+      - Responsive image generation creates correct sizes
+      - Error handling tests validate corrupt image detection
+      - Test coverage exceeds 80% for optimize-images.js
+      AgentType: qa-engineer
+      Dependencies: []
+      Description: Create unit tests for the image optimization build script. Test
+        image compression, format conversion (WebP/AVIF), responsive image generation,
+        and metadata preservation. Verify error handling for corrupt images and unsupported
+        formats.
+      EstimatedEffort: M
+      Files:
+      - tests/build/optimize-images.test.js
+      - tests/fixtures/test-image.jpg
+      - tests/fixtures/corrupt-image.jpg
+      ID: task-donkey-website-feat-testing-suite-2
+      Title: Implement image optimization unit tests
+    - AcceptanceCriteria:
+      - Mobile menu toggle tests verify show/hide functionality
+      - Smooth scrolling tests confirm scroll behavior
+      - Active link highlighting updates on scroll events
+      - Keyboard navigation tests verify accessibility
+      - Test coverage exceeds 80% for navigation.js
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create unit tests for client-side navigation JavaScript. Test mobile
+        menu toggle, smooth scrolling, active link highlighting, and keyboard navigation.
+        Mock DOM interactions and verify event listeners are properly attached and
+        cleaned up.
+      EstimatedEffort: M
+      Files:
+      - tests/scripts/navigation.test.js
+      ID: task-donkey-website-feat-testing-suite-3
+      Title: Implement frontend script unit tests
+    - AcceptanceCriteria:
+      - End-to-end build process completes successfully
+      - Generated HTML files contain compiled markdown content
+      - Optimized images exist in output directory
+      - Navigation structure is correctly generated
+      - Build artifacts match expected output structure
+      AgentType: qa-engineer
+      Dependencies:
+      - task-donkey-website-feat-testing-suite-1
+      - task-donkey-website-feat-testing-suite-2
+      Description: Create integration tests that verify the entire build pipeline
+        works end-to-end. Test markdown compilation, image optimization, and HTML
+        generation as a complete workflow. Verify output files are created correctly
+        and contain expected content.
+      EstimatedEffort: M
+      Files:
+      - tests/integration/build-pipeline.test.js
+      ID: task-donkey-website-feat-testing-suite-4
+      Title: Implement build pipeline integration tests
+    - AcceptanceCriteria:
+      - Broken internal link detection works correctly
+      - Anchor link validation verifies target elements exist
+      - External link checking handles timeouts gracefully
+      - Validation report contains all broken links
+      - Exit codes properly indicate pass/fail status
+      AgentType: qa-engineer
+      Dependencies:
+      - task-donkey-website-feat-testing-suite-4
+      Description: Create integration tests for internal and external link validation.
+        Test detection of broken links, anchor links, relative paths, and external
+        URL availability. Verify the validator generates correct reports and exits
+        with appropriate status codes.
+      EstimatedEffort: M
+      Files:
+      - tests/integration/link-validator.test.js
+      ID: task-donkey-website-feat-testing-suite-5
+      Title: Implement link validator integration tests
+    - AcceptanceCriteria:
+      - Lighthouse tests run on homepage, breed pages, and care guides
+      - Performance score threshold enforced (minimum 90)
+      - Accessibility score threshold enforced (minimum 95)
+      - SEO score threshold enforced (minimum 90)
+      - Test fails if any page falls below thresholds
+      AgentType: devops-engineer
+      Dependencies:
+      - task-donkey-website-feat-testing-suite-4
+      Description: Create end-to-end tests using Lighthouse CI to verify performance,
+        accessibility, best practices, and SEO scores. Configure Lighthouse to test
+        all major pages and enforce minimum score thresholds. Set up CI integration
+        to run Lighthouse on every pull request.
+      EstimatedEffort: L
+      Files:
+      - tests/e2e/lighthouse.test.js
+      - .github/workflows/lighthouse-ci.yml
+      ID: task-donkey-website-feat-testing-suite-6
+      Title: Implement Lighthouse CI tests
+    - AcceptanceCriteria:
+      - All pages pass WCAG 2.1 AA compliance checks
+      - Keyboard navigation tests verify focus management
+      - Color contrast ratios meet minimum standards
+      - ARIA attributes are properly implemented
+      - Accessibility report generated with violations detailed
+      AgentType: qa-engineer
+      Dependencies:
+      - task-donkey-website-feat-testing-suite-4
+      Description: Create automated accessibility tests using axe-core or similar
+        tools. Test WCAG 2.1 AA compliance, keyboard navigation, screen reader compatibility,
+        color contrast, and ARIA attributes. Generate detailed accessibility reports
+        with remediation guidance.
+      EstimatedEffort: L
+      Files:
+      - tests/e2e/accessibility.test.js
+      ID: task-donkey-website-feat-testing-suite-7
+      Title: Implement accessibility tests
+    - AcceptanceCriteria:
+      - Jest configured with proper module resolution
+      - Code coverage reports generated with Istanbul/NYC
+      - CI pipeline runs all test suites on pull requests
+      - Coverage thresholds enforced (80% minimum)
+      - npm scripts created for test, test:unit, test:integration, test:e2e
+      AgentType: devops-engineer
+      Dependencies: []
+      Description: Configure Jest test runner, set up code coverage reporting, and
+        integrate all tests into CI/CD pipeline. Create npm scripts for running different
+        test suites. Configure coverage thresholds and badge generation for test status
+        visibility.
+      EstimatedEffort: M
+      Files:
+      - jest.config.js
+      - package.json
+      - .github/workflows/test.yml
+      ID: task-donkey-website-feat-testing-suite-8
+      Title: Setup test infrastructure and CI configuration
+  - FeatureID: donkey-website-feat-deployment
+    FeatureTitle: Production Deployment Setup
+    Tasks:
+    - AcceptanceCriteria:
+      - netlify.toml exists with build.command and build.publish configured
+      - Redirect rules defined for clean URLs (remove .html extensions)
+      - Node version specified matching .nvmrc (v18)
+      - Environment-specific settings configured for production and preview
+      AgentType: devops-engineer
+      Dependencies: []
+      Description: Create netlify.toml with build settings, redirects, and environment
+        configuration. Define build command, publish directory, and Node version.
+        Set up redirect rules for clean URLs and SPA routing. Configure environment
+        variables for production and preview deployments.
+      EstimatedEffort: S
+      Files:
+      - netlify.toml
+      ID: task-donkey-website-feat-deployment-1
+      Title: Create Netlify configuration file
+    - AcceptanceCriteria:
+      - CSP header configured with appropriate directives for site functionality
+      - X-Frame-Options set to DENY or SAMEORIGIN
+      - X-Content-Type-Options set to nosniff
+      - HSTS configured with max-age and includeSubDomains
+      - Security headers apply to all routes via [[headers]] blocks
+      AgentType: devops-engineer
+      Dependencies:
+      - task-donkey-website-feat-deployment-1
+      Description: Add security headers configuration to netlify.toml including Content
+        Security Policy, X-Frame-Options, X-Content-Type-Options, and Referrer-Policy.
+        Ensure headers support static assets and inline styles/scripts used in the
+        site. Configure HTTPS redirect and HSTS headers for secure connections.
+      EstimatedEffort: M
+      Files:
+      - netlify.toml
+      ID: task-donkey-website-feat-deployment-2
+      Title: Configure security headers
+    - AcceptanceCriteria:
+      - Static assets (images, fonts) have cache-control max-age of 31536000 (1 year)
+      - CSS/JS files have appropriate cache-control settings
+      - HTML files have cache-control with short duration or no-cache
+      - Different [[headers]] blocks configured for different file types
+      AgentType: devops-engineer
+      Dependencies:
+      - task-donkey-website-feat-deployment-2
+      Description: Configure cache-control headers for different asset types in netlify.toml.
+        Set long-term caching for hashed/immutable assets (images, fonts). Configure
+        shorter cache durations for HTML and CSS. Add cache-busting strategy using
+        query parameters or file hashing in build process.
+      EstimatedEffort: S
+      Files:
+      - netlify.toml
+      ID: task-donkey-website-feat-deployment-3
+      Title: Implement caching strategy
+    - AcceptanceCriteria:
+      - Domain configuration documented in README.md with step-by-step instructions
+      - SSL/TLS settings configured in netlify.toml if applicable
+      - DNS configuration requirements clearly specified
+      - Domain alias configuration included for www and root domain
+      AgentType: devops-engineer
+      Dependencies:
+      - task-donkey-website-feat-deployment-1
+      Description: Document custom domain setup process in netlify.toml and README.md.
+        Configure domain aliases and SSL certificate settings. Add instructions for
+        DNS configuration (CNAME or A records). Document automatic SSL certificate
+        provisioning and renewal process.
+      EstimatedEffort: S
+      Files:
+      - netlify.toml
+      - README.md
+      ID: task-donkey-website-feat-deployment-4
+      Title: Setup custom domain and SSL configuration
+    - AcceptanceCriteria:
+      - Build plugins configured for asset optimization
+      - Post-processing enabled for CSS and JS minification
+      - Image optimization settings configured
+      - Production environment variables defined in netlify.toml
+      AgentType: devops-engineer
+      Dependencies:
+      - task-donkey-website-feat-deployment-1
+      Description: Add build optimization settings to netlify.toml including asset
+        optimization, minification, and bundle configuration. Enable automatic image
+        optimization through Netlify's build plugins. Configure post-processing for
+        CSS and JS minification. Set up build environment variables for production
+        builds.
+      EstimatedEffort: M
+      Files:
+      - netlify.toml
+      - package.json
+      ID: task-donkey-website-feat-deployment-5
+      Title: Configure build optimization settings
+    - AcceptanceCriteria:
+      - Deploy notifications configured for success/failure
+      - Deploy preview settings configured in netlify.toml
+      - Branch deploy configuration documented
+      - Build log access and monitoring documented in README.md
+      AgentType: devops-engineer
+      Dependencies:
+      - task-donkey-website-feat-deployment-1
+      Description: Configure Netlify deploy notifications and status badges. Add deployment
+        status monitoring configuration to netlify.toml. Document how to access build
+        logs and deployment metrics. Set up deploy preview configuration for pull
+        requests and branch deploys.
+      EstimatedEffort: S
+      Files:
+      - netlify.toml
+      - README.md
+      ID: task-donkey-website-feat-deployment-6
+      Title: Setup deployment monitoring and notifications
+    - AcceptanceCriteria:
+      - README.md contains complete deployment setup instructions
+      - Environment variable configuration documented
+      - Build and deployment workflow clearly explained
+      - Troubleshooting section includes common deployment issues
+      - Rollback and verification procedures documented
+      AgentType: devops-engineer
+      Dependencies:
+      - task-donkey-website-feat-deployment-4
+      - task-donkey-website-feat-deployment-6
+      Description: Update README.md with comprehensive deployment documentation including
+        build process, environment setup, deployment workflow, and troubleshooting
+        guide. Document continuous deployment setup from Git repository. Include rollback
+        procedures and deployment verification steps.
+      EstimatedEffort: M
+      Files:
+      - README.md
+      ID: task-donkey-website-feat-deployment-7
+      Title: Create deployment documentation
+    - AcceptanceCriteria:
+      - Netlify CLI successfully validates netlify.toml syntax
+      - Build process completes without errors using production settings
+      - Security headers validated using security scanning tools
+      - Redirect rules tested and working correctly
+      - Cache headers verified using browser dev tools or curl
+      AgentType: qa-engineer
+      Dependencies:
+      - task-donkey-website-feat-deployment-2
+      - task-donkey-website-feat-deployment-3
+      - task-donkey-website-feat-deployment-5
+      Description: Test netlify.toml configuration locally using Netlify CLI. Verify
+        all redirects, headers, and caching rules work as expected. Test build process
+        with production settings. Validate security headers using online security
+        checkers. Ensure deployment succeeds with all optimizations enabled.
+      EstimatedEffort: M
+      Files:
+      - netlify.toml
+      ID: task-donkey-website-feat-deployment-8
+      Title: Validate deployment configuration
+  Sprint: 4
+- Features:
+  - FeatureID: donkey-website-feat-repository-setup
+    FeatureTitle: Repository and Build System Setup
+    Tasks:
+    - AcceptanceCriteria:
+      - package.json exists with all dependencies listed in LLD
+      - .nvmrc specifies Node.js v18
+      - .gitignore excludes node_modules, dist, and .env files
+      - npm install completes without errors
+      - All build script stubs defined in package.json
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create package.json with all required build dependencies (sharp,
+        clean-css, markdown-it, etc.), .nvmrc for Node v18, and .gitignore for standard
+        Node.js exclusions. Configure npm scripts for build, dev, and clean operations.
+        Set up package-lock.json through initial npm install.
+      EstimatedEffort: S
+      Files:
+      - package.json
+      - .nvmrc
+      - .gitignore
+      ID: task-donkey-website-feat-repository-setup-1
+      Title: Initialize Node.js project and dependency configuration
+    - AcceptanceCriteria:
+      - src/content/ contains breeds/, care/, and facts/ subdirectories
+      - src/images/ contains hero/, breeds/, care/, and icons/ subdirectories
+      - src/styles/ contains base/, layout/, components/, pages/, and utilities/ subdirectories
+      - src/templates/ directory exists
+      - All directories are committed to git
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-repository-setup-1
+      Description: Set up the complete src/ directory hierarchy including content/,
+        images/, styles/, and templates/ folders. Create all subdirectories for breeds,
+        care, facts content organization. Establish the organizational structure for
+        CSS modules (base, layout, components, pages, utilities).
+      EstimatedEffort: S
+      Files:
+      - src/content/breeds/
+      - src/content/care/
+      - src/content/facts/
+      - src/images/hero/
+      - src/images/breeds/
+      - src/images/care/
+      - src/images/icons/
+      - src/styles/base/
+      - src/styles/layout/
+      - src/styles/components/
+      - src/styles/pages/
+      - src/styles/utilities/
+      - src/templates/
+      ID: task-donkey-website-feat-repository-setup-2
+      Title: Create source directory structure
+    - AcceptanceCriteria:
+      - Script reads all markdown files from src/content/ recursively
+      - Frontmatter parsed and extracted as JSON metadata
+      - Markdown converted to HTML with GFM support
+      - Output HTML fragments written to dist/content/ preserving directory structure
+      - Error messages logged for invalid markdown or missing frontmatter
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-repository-setup-2
+      Description: Create build/compile-markdown.js that processes all .md files from
+        src/content/ using markdown-it with GitHub Flavored Markdown. Parse frontmatter
+        for metadata extraction. Generate HTML fragments with proper structure and
+        inject metadata. Implement error handling for malformed markdown and missing
+        frontmatter.
+      EstimatedEffort: M
+      Files:
+      - build/compile-markdown.js
+      ID: task-donkey-website-feat-repository-setup-3
+      Title: Implement Markdown compilation script
+    - AcceptanceCriteria:
+      - All JPG/PNG images converted to WebP format
+      - Four responsive sizes generated per source image
+      - Original directory structure preserved in dist/images/
+      - SVG files copied without modification
+      - Build logs show processing progress and file size savings
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-repository-setup-2
+      Description: Create build/optimize-images.js using Sharp library to process
+        images from src/images/. Generate multiple responsive sizes (320w, 640w, 1024w,
+        1920w) in WebP format with 85% quality. Maintain original directory structure
+        in dist/images/. Include progress logging and error handling for unsupported
+        formats.
+      EstimatedEffort: M
+      Files:
+      - build/optimize-images.js
+      ID: task-donkey-website-feat-repository-setup-4
+      Title: Implement image optimization script
+    - AcceptanceCriteria:
+      - All CSS files concatenated in correct dependency order
+      - Output minified with clean-css level 2 optimizations
+      - Source map generated as styles.min.css.map
+      - dist/styles/styles.min.css created successfully
+      - File size reduction logged to console
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-repository-setup-2
+      Description: Create build/bundle-css.js that concatenates all CSS files in correct
+        import order (base → layout → components → pages → utilities). Use clean-css
+        for minification with level 2 optimizations. Generate source maps for debugging.
+        Output single styles.min.css bundle to dist/styles/.
+      EstimatedEffort: M
+      Files:
+      - build/bundle-css.js
+      ID: task-donkey-website-feat-repository-setup-5
+      Title: Implement CSS bundling script
+    - AcceptanceCriteria:
+      - Critical CSS extracted for homepage and key landing pages
+      - Both desktop and mobile viewports analyzed
+      - Output files written to dist/styles/critical/
+      - Critical CSS size under 14KB for inline usage
+      - Graceful fallback to full stylesheet on extraction errors
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-repository-setup-5
+      Description: Create build/generate-critical-css.js using critical or penthouse
+        library to extract above-the-fold CSS. Target viewport sizes of 1300x900 (desktop)
+        and 375x667 (mobile). Generate inline-able critical.css files for each HTML
+        page. Implement fallback to full stylesheet if critical extraction fails.
+      EstimatedEffort: M
+      Files:
+      - build/generate-critical-css.js
+      ID: task-donkey-website-feat-repository-setup-6
+      Title: Implement critical CSS generation script
+    - AcceptanceCriteria:
+      - dist/ directory cleaned before each build
+      - Markdown and image tasks run in parallel
+      - CSS tasks run sequentially after content tasks
+      - Build fails with non-zero exit code on any task failure
+      - Total build time and summary statistics logged
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-repository-setup-3
+      - task-donkey-website-feat-repository-setup-4
+      - task-donkey-website-feat-repository-setup-5
+      - task-donkey-website-feat-repository-setup-6
+      Description: Create build/build.js as the main entry point that orchestrates
+        all build steps in correct order. Clean dist/ directory first, then run markdown
+        compilation and image optimization in parallel, followed by CSS bundling and
+        critical CSS generation. Implement error aggregation and exit codes for CI/CD
+        integration.
+      EstimatedEffort: S
+      Files:
+      - build/build.js
+      ID: task-donkey-website-feat-repository-setup-7
+      Title: Create main build orchestration script
+    - AcceptanceCriteria:
+      - netlify.toml specifies Node.js 18 and npm run build command
+      - Publish directory set to dist/
+      - Clean URL redirects configured (/about → /about.html)
+      - Cache-Control headers set for static assets
+      - Custom 404 page redirect configured
+      AgentType: devops-engineer
+      Dependencies:
+      - task-donkey-website-feat-repository-setup-7
+      Description: Create netlify.toml with build configuration, publish directory
+        set to dist/, Node.js version specified. Configure redirects for clean URLs
+        (remove .html extension). Set up cache headers for static assets (images 1
+        year, CSS 1 month). Add custom 404 page redirect.
+      EstimatedEffort: S
+      Files:
+      - netlify.toml
+      ID: task-donkey-website-feat-repository-setup-8
+      Title: Configure Netlify deployment
+  - FeatureID: donkey-website-feat-css-foundation
+    FeatureTitle: CSS Foundation and Styling
+    Tasks:
+    - AcceptanceCriteria:
+      - reset.css contains box-sizing reset, margin/padding normalization, and sensible
+        defaults
+      - variables.css defines all custom properties for colors, spacing, typography,
+        and transitions
+      - Custom properties follow naming convention (--color-*, --spacing-*, --font-*,
+        etc.)
+      - Variables support both light mode design tokens
+      - All color values, font sizes, and spacing values are defined centrally
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Implement a modern CSS reset to normalize browser styles and establish
+        custom CSS properties for colors, spacing, typography, and other design tokens.
+        This foundation enables consistent styling across the application. Use mobile-first
+        approach with semantic color names and a cohesive spacing scale.
+      EstimatedEffort: S
+      Files:
+      - src/styles/base/reset.css
+      - src/styles/base/variables.css
+      ID: task-donkey-website-feat-css-foundation-1
+      Title: Create CSS reset and custom properties
+    - AcceptanceCriteria:
+      - typography.css defines styles for h1-h6, p, a, and text utilities
+      - Font sizes use clamp() for fluid responsive scaling
+      - Line heights and letter spacing optimized for readability
+      - Text color utilities reference custom properties from variables.css
+      - Typography scales appropriately from mobile to desktop breakpoints
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-css-foundation-1
+      Description: Create typography styles for headings, body text, and special text
+        elements using custom properties. Define responsive font sizes using clamp()
+        for fluid typography. Establish line heights, font weights, and text color
+        utilities that work across mobile and desktop viewports.
+      EstimatedEffort: S
+      Files:
+      - src/styles/base/typography.css
+      ID: task-donkey-website-feat-css-foundation-2
+      Title: Implement typography styles
+    - AcceptanceCriteria:
+      - container.css provides centered container with responsive padding and max-width
+      - grid.css implements flexible grid system with gap utilities
+      - Layout utilities support common patterns (flex, grid, spacing)
+      - Breakpoints align with design system (mobile-first, 768px, 1024px)
+      - Container and grid work together for consistent page layouts
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-css-foundation-1
+      Description: Implement a responsive container system with max-width and padding,
+        plus a flexible CSS grid system for content layouts. Create utility classes
+        for common layout patterns. Ensure mobile-first approach with breakpoints
+        at 768px and 1024px as defined in the design system.
+      EstimatedEffort: M
+      Files:
+      - src/styles/layout/container.css
+      - src/styles/layout/grid.css
+      ID: task-donkey-website-feat-css-foundation-3
+      Title: Build layout system with grid and container
+    - AcceptanceCriteria:
+      - header.css implements sticky positioning with proper z-index and shadow
+      - Header uses flexbox for logo and navigation alignment
+      - footer.css provides structured footer layout with proper spacing
+      - Both header and footer are responsive from mobile to desktop
+      - Styles reference custom properties for colors, spacing, and shadows
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-css-foundation-3
+      Description: Implement sticky header layout with logo area and navigation space,
+        following the mobile-first design. Create footer layout with proper spacing
+        and content organization. Both should use the container system and respond
+        to breakpoints appropriately.
+      EstimatedEffort: M
+      Files:
+      - src/styles/layout/header.css
+      - src/styles/layout/footer.css
+      ID: task-donkey-website-feat-css-foundation-4
+      Title: Create header and footer layout styles
+    - AcceptanceCriteria:
+      - navigation.css implements mobile menu with slide-down animation
+      - Mobile menu toggle button styles with proper touch target size (44px)
+      - Desktop navigation displays horizontally at 768px breakpoint
+      - Active page and hover states styled with custom properties
+      - Transitions are smooth and accessible (respects prefers-reduced-motion)
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-css-foundation-4
+      Description: Create mobile-first navigation styles with hamburger menu for mobile
+        and horizontal menu for desktop. Implement smooth transitions for menu open/close
+        states, active link indicators, and hover states. Follow the detailed CSS
+        design from the LLD with mobile toggle button and responsive breakpoints.
+      EstimatedEffort: M
+      Files:
+      - src/styles/components/navigation.css
+      ID: task-donkey-website-feat-css-foundation-5
+      Title: Implement navigation component styles
+    - AcceptanceCriteria:
+      - button.css defines .btn class with size variants (small, medium, large)
+      - Button variants (primary, secondary, tertiary) use custom properties
+      - Focus states include visible outline for keyboard navigation
+      - Disabled state reduces opacity and removes pointer events
+      - Buttons are touch-friendly with minimum 44px height on mobile
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-css-foundation-2
+      Description: Create button component styles with primary, secondary, and tertiary
+        variants. Implement hover, focus, active, and disabled states with smooth
+        transitions. Ensure buttons meet accessibility standards with proper contrast
+        ratios and focus indicators.
+      EstimatedEffort: S
+      Files:
+      - src/styles/components/button.css
+      ID: task-donkey-website-feat-css-foundation-6
+      Title: Build reusable button component styles
+    - AcceptanceCriteria:
+      - card.css provides card component with image, title, and content areas
+      - hero.css implements full-width hero with background image support
+      - gallery.css creates responsive grid layout for images
+      - lightbox.css styles modal overlay with centered image display
+      - All components respond appropriately to mobile and desktop breakpoints
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-css-foundation-3
+      Description: Implement component styles for card layouts, hero sections, image
+        galleries, and lightbox overlays. Each component should be responsive, use
+        custom properties, and follow the mobile-first design pattern. Focus on visual
+        hierarchy and spacing consistency.
+      EstimatedEffort: M
+      Files:
+      - src/styles/components/card.css
+      - src/styles/components/hero.css
+      - src/styles/components/gallery.css
+      - src/styles/components/lightbox.css
+      ID: task-donkey-website-feat-css-foundation-7
+      Title: Create card, hero, gallery, and lightbox component styles
+    - AcceptanceCriteria:
+      - accessibility.css includes .sr-only, .skip-link, and focus utilities
+      - Focus indicators are visible and meet WCAG contrast requirements
+      - responsive.css provides show/hide utilities for mobile/tablet/desktop
+      - Responsive spacing utilities allow margin/padding adjustments per breakpoint
+      - All utilities use custom properties and follow naming conventions
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-css-foundation-1
+      Description: Create utility classes for accessibility features (screen reader
+        only text, skip links, focus management) and responsive helpers (show/hide
+        at breakpoints, responsive spacing). These utilities enable better accessibility
+        and layout control throughout the application.
+      EstimatedEffort: S
+      Files:
+      - src/styles/utilities/accessibility.css
+      - src/styles/utilities/responsive.css
+      ID: task-donkey-website-feat-css-foundation-8
+      Title: Implement accessibility and responsive utilities
+  - FeatureID: donkey-website-feat-html-templates
+    FeatureTitle: HTML Templates
+    Tasks:
+    - AcceptanceCriteria:
+      - base.html contains valid HTML5 doctype and semantic structure
+      - All accessibility landmarks (header, main, footer, nav) are present with ARIA
+        labels
+      - Skip-to-content link is present and functional
+      - Meta tags for charset, viewport, and basic SEO are included
+      - Template validates against W3C HTML5 validator
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create the base.html template that serves as the foundation for
+        all pages. Implement semantic HTML5 structure with proper accessibility landmarks
+        (header, main, footer, nav). Include meta tags for charset, viewport, and
+        SEO. Add skip-to-content link for keyboard navigation. Include stylesheet
+        and script references with proper defer/async attributes.
+      EstimatedEffort: M
+      Files:
+      - src/templates/base.html
+      ID: task-donkey-website-feat-html-templates-1
+      Title: Create base HTML template with semantic structure
+    - AcceptanceCriteria:
+      - home.html extends base.html properly
+      - Hero section uses semantic HTML with h1 heading
+      - Featured breeds section uses appropriate list markup (ul/ol)
+      - Call-to-action sections use semantic article or section elements
+      - Navigation links to all main sections are present and use relative paths
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-html-templates-1
+      Description: Create home.html template extending base.html with hero section,
+        featured breeds carousel, and call-to-action sections. Implement semantic
+        HTML for hero content with appropriate heading hierarchy (h1, h2). Add structured
+        data markup for website schema. Include navigation links to main sections
+        (breeds, care, facts).
+      EstimatedEffort: M
+      Files:
+      - src/templates/home.html
+      ID: task-donkey-website-feat-html-templates-2
+      Title: Implement homepage template
+    - AcceptanceCriteria:
+      - breed-list.html displays breed cards using semantic article elements
+      - breed-detail.html includes all required sections (characteristics, history,
+        care, gallery)
+      - Breadcrumb navigation is present on both templates with ARIA labels
+      - Heading hierarchy follows proper structure (h1 for page title, h2 for sections)
+      - Templates support the 4 breed types specified in routes (miniature-mediterranean,
+        standard-donkey, mammoth-donkey, poitou-donkey)
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-html-templates-1
+      Description: Implement breed-list.html for the breeds index page with a grid/list
+        of breed cards. Create breed-detail.html template with sections for breed
+        characteristics, history, care requirements, and image gallery. Use semantic
+        HTML (article, section) and proper heading hierarchy. Include breadcrumb navigation
+        with structured data markup.
+      EstimatedEffort: L
+      Files:
+      - src/templates/breed-list.html
+      - src/templates/breed-detail.html
+      ID: task-donkey-website-feat-html-templates-3
+      Title: Create breed listing and detail templates
+    - AcceptanceCriteria:
+      - care-guide.html uses semantic section elements for content organization
+      - Definition lists (dl, dt, dd) are used for care item descriptions
+      - Important warnings use aside elements with appropriate ARIA roles
+      - Table of contents navigation uses nav element with proper ARIA label
+      - Prev/next navigation links are present and use rel attributes
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-html-templates-1
+      Description: Create care-guide.html template for care documentation pages (feeding,
+        grooming, housing, health). Structure content with semantic sections, definition
+        lists for care items, and callout boxes for important warnings. Include table
+        of contents for longer guides. Add prev/next navigation between care guide
+        pages.
+      EstimatedEffort: M
+      Files:
+      - src/templates/care-guide.html
+      ID: task-donkey-website-feat-html-templates-4
+      Title: Implement care guide template
+    - AcceptanceCriteria:
+      - facts.html contains expandable sections using semantic HTML (details/summary
+        or button + aria-expanded)
+      - All interactive elements are keyboard accessible (tab, enter, space)
+      - About section uses appropriate semantic elements (section, article)
+      - Fact categories are organized with proper heading structure
+      - ARIA attributes properly indicate expanded/collapsed states
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-html-templates-1
+      Description: Implement facts.html template with accordion-style expandable sections
+        for different fact categories. Use semantic HTML with details/summary elements
+        or button-controlled sections. Include about section with mission statement.
+        Ensure keyboard accessibility for all interactive elements.
+      EstimatedEffort: M
+      Files:
+      - src/templates/facts.html
+      ID: task-donkey-website-feat-html-templates-5
+      Title: Create facts page template
+    - AcceptanceCriteria:
+      - dist/404.html contains semantic error-page structure
+      - Page includes h1 heading 'Page Not Found' and helpful error message
+      - Navigation links to homepage (/), breeds (/breeds/), and care (/care/) are
+        present
+      - Links use absolute paths starting with /
+      - Page meta tags include proper title and charset
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-html-templates-1
+      Description: Create the 404.html error page in the dist directory with helpful
+        navigation links and friendly messaging. Include links to homepage, breeds
+        listing, and care guides. Use semantic HTML and maintain consistent styling
+        hooks for CSS. Ensure proper meta tags and page title.
+      EstimatedEffort: S
+      Files:
+      - dist/404.html
+      ID: task-donkey-website-feat-html-templates-6
+      Title: Implement custom 404 error page
+    - AcceptanceCriteria:
+      - All navigation elements have aria-label or aria-labelledby attributes
+      - Main landmark has id='main-content' for skip link functionality
+      - All buttons and links have descriptive accessible names
+      - Form inputs (if any) have associated label elements
+      - Image elements include alt attribute placeholders with descriptive comments
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-html-templates-2
+      - task-donkey-website-feat-html-templates-3
+      - task-donkey-website-feat-html-templates-4
+      - task-donkey-website-feat-html-templates-5
+      - task-donkey-website-feat-html-templates-6
+      Description: Review all templates and add comprehensive ARIA labels, roles,
+        and landmarks. Ensure all interactive elements have accessible names. Add
+        lang attributes, alt text placeholders for images, and form labels where applicable.
+        Document accessibility features in code comments.
+      EstimatedEffort: M
+      Files:
+      - src/templates/base.html
+      - src/templates/home.html
+      - src/templates/breed-list.html
+      - src/templates/breed-detail.html
+      - src/templates/care-guide.html
+      - src/templates/facts.html
+      - dist/404.html
+      ID: task-donkey-website-feat-html-templates-7
+      Title: Add accessibility attributes and ARIA labels
+    - AcceptanceCriteria:
+      - Integration test file created at tests/integration/build-pipeline.test.js
+      - Tests verify all templates render without errors
+      - Tests check for required semantic elements (header, main, footer, nav)
+      - Tests validate HTML5 syntax using validator
+      - Tests verify accessibility landmarks and ARIA labels are present
+      AgentType: qa-engineer
+      Dependencies:
+      - task-donkey-website-feat-html-templates-7
+      Description: Create integration tests for HTML template validation as specified
+        in LLD. Test that all templates generate valid HTML5, contain required semantic
+        elements, and pass accessibility checks. Implement tests/integration/build-pipeline.test.js
+        to verify template rendering and structure.
+      EstimatedEffort: M
+      Files:
+      - tests/integration/build-pipeline.test.js
+      ID: task-donkey-website-feat-html-templates-8
+      Title: Validate HTML templates and create integration tests
+  Sprint: 1
+- Features:
+  - FeatureID: donkey-website-feat-navigation
+    FeatureTitle: Responsive Navigation Component
+    Tasks:
+    - AcceptanceCriteria:
+      - navigation.css file created with all CSS custom properties referenced
+      - Site header has sticky positioning with proper z-index and box-shadow
+      - Logo component displays with flexbox layout and hover states
+      - Header content uses flexbox for space-between alignment
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Implement the navigation.css file with mobile-first base styles
+        including header layout, logo styling, and color variables. Set up the foundation
+        for responsive navigation without media queries yet. Include sticky positioning
+        and z-index layering for the header.
+      EstimatedEffort: S
+      Files:
+      - src/styles/components/navigation.css
+      ID: task-donkey-website-feat-navigation-1
+      Title: Create navigation CSS structure and base styles
+    - AcceptanceCriteria:
+      - Mobile menu toggle button has minimum 44x44px touch target
+      - Button has visible hover and focus states with color transitions
+      - SVG icons sized correctly at 24x24px
+      - Button is unstyled (no default button appearance) with proper cursor
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-navigation-1
+      Description: Add CSS for the mobile hamburger menu toggle button with proper
+        touch target size (44x44px), icon sizing, and interactive states. Ensure button
+        meets accessibility standards with clear focus and hover indicators.
+      EstimatedEffort: S
+      Files:
+      - src/styles/components/navigation.css
+      ID: task-donkey-website-feat-navigation-2
+      Title: Implement mobile menu toggle button styles
+    - AcceptanceCriteria:
+      - Nav menu positioned fixed below header with transform animation
+      - is-open class toggles menu visibility with smooth 0.3s transition
+      - Navigation links have proper padding and hover/focus states
+      - Active page indicated with aria-current styling using primary colors
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-navigation-2
+      Description: Implement mobile navigation menu with fixed positioning, slide-down
+        animation using transforms, and list item styling. Add the is-open class state
+        for toggle functionality and aria-current styling for active page indication.
+      EstimatedEffort: M
+      Files:
+      - src/styles/components/navigation.css
+      ID: task-donkey-website-feat-navigation-3
+      Title: Create mobile navigation menu styles with animations
+    - AcceptanceCriteria:
+      - Mobile toggle button hidden at 768px breakpoint and above
+      - Navigation menu displays as horizontal flexbox with 0.5rem gap
+      - Menu positioning changed from fixed to static without transforms
+      - Navigation links have reduced padding and 4px border-radius
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-navigation-3
+      Description: Implement desktop media query (768px+) to transform mobile menu
+        into horizontal navigation bar. Hide mobile toggle button and convert fixed
+        menu to static flexbox layout with proper spacing and border radius on links.
+      EstimatedEffort: S
+      Files:
+      - src/styles/components/navigation.css
+      ID: task-donkey-website-feat-navigation-4
+      Title: Add desktop responsive navigation styles
+    - AcceptanceCriteria:
+      - Navigation class exported as ES6 module
+      - Constructor queries all required DOM elements correctly
+      - Init method only runs if menuToggle and navMenu exist
+      - Class properties store references to toggle button, menu, and icons
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Implement the Navigation JavaScript class with constructor that
+        queries DOM elements (menu toggle, nav menu, icons) and initializes the component.
+        Add null checks to ensure elements exist before binding events.
+      EstimatedEffort: S
+      Files:
+      - src/scripts/navigation.js
+      ID: task-donkey-website-feat-navigation-5
+      Title: Create Navigation class with constructor and initialization
+    - AcceptanceCriteria:
+      - Click on toggle button adds/removes is-open class on nav menu
+      - aria-expanded attribute updates correctly (true/false)
+      - Icon visibility toggles between menu and close icons
+      - Method handles state changes cleanly without race conditions
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-navigation-5
+      Description: Add toggleMenu method that toggles is-open class on nav menu, updates
+        aria-expanded attribute, and swaps between hamburger and close icons. Handle
+        click event listener binding in the init method.
+      EstimatedEffort: M
+      Files:
+      - src/scripts/navigation.js
+      ID: task-donkey-website-feat-navigation-6
+      Title: Implement menu toggle functionality with icon swapping
+    - AcceptanceCriteria:
+      - Menu closes when clicking anywhere outside nav and toggle button
+      - Menu closes automatically when any navigation link is clicked
+      - Event listeners check if menu is open before attempting to close
+      - Click events properly distinguish between inside/outside navigation
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-navigation-6
+      Description: Implement event listeners to close mobile menu when clicking outside
+        the navigation area or when clicking any navigation link. Ensure proper event
+        delegation and prevent unnecessary event propagation.
+      EstimatedEffort: M
+      Files:
+      - src/scripts/navigation.js
+      ID: task-donkey-website-feat-navigation-7
+      Title: Add click-outside and navigation link close handlers
+    - AcceptanceCriteria:
+      - Escape key closes open mobile menu from any focused element
+      - Focus trapped within navigation menu when open
+      - Focus returns to toggle button when menu is closed
+      - Tab and Shift+Tab navigation works correctly within menu
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-navigation-7
+      Description: Add keyboard event handlers for Escape key to close menu, focus
+        trap within open menu, and proper focus management when menu opens/closes.
+        Ensure tab navigation works correctly and focus returns to toggle button on
+        close.
+      EstimatedEffort: M
+      Files:
+      - src/scripts/navigation.js
+      ID: task-donkey-website-feat-navigation-8
+      Title: Implement keyboard accessibility and focus management
+    - AcceptanceCriteria:
+      - Toggle button has aria-label describing menu state
+      - aria-controls attribute links toggle button to navigation menu
+      - aria-current='page' attribute set on active navigation link
+      - All interactive elements have proper accessible names
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-navigation-8
+      Description: Enhance navigation with complete ARIA attributes including aria-label
+        on toggle button, aria-controls linking toggle to menu, aria-current on active
+        page links, and proper role attributes. Ensure screen reader announcements
+        work correctly.
+      EstimatedEffort: M
+      Files:
+      - src/scripts/navigation.js
+      ID: task-donkey-website-feat-navigation-9
+      Title: Add ARIA attributes and screen reader support
+    - AcceptanceCriteria:
+      - Menu automatically closes when resizing from mobile to desktop view
+      - Window resize listener debounced or throttled for performance
+      - Menu state cleaned up properly on viewport size changes
+      - No visual glitches when transitioning between breakpoints
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-navigation-9
+      Description: Implement window resize event listener to automatically close mobile
+        menu when viewport exceeds mobile breakpoint (768px). Clean up menu state
+        and remove is-open class to prevent issues when switching between mobile and
+        desktop views.
+      EstimatedEffort: S
+      Files:
+      - src/scripts/navigation.js
+      ID: task-donkey-website-feat-navigation-10
+      Title: Add window resize handler and responsive cleanup
+  - FeatureID: donkey-website-feat-image-lazy-loading
+    FeatureTitle: Image Lazy Loading
+    Tasks:
+    - AcceptanceCriteria:
+      - LazyLoader class exported from src/scripts/lazyload.js
+      - Constructor accepts options object with rootMargin and threshold
+      - Default options set to rootMargin='50px' and threshold=0.01
+      - Class properties initialized for images, observer, and options
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create the lazyload.js file and implement the LazyLoader class
+        constructor with configuration options. Set up the basic class structure with
+        properties for options, images collection, and observer instance. Include
+        parameter validation and default option values for rootMargin and threshold.
+      EstimatedEffort: S
+      Files:
+      - src/scripts/lazyload.js
+      ID: task-donkey-website-feat-image-lazy-loading-1
+      Title: Create LazyLoader class structure
+    - AcceptanceCriteria:
+      - querySelectorAll correctly targets img[loading='lazy'] and img.lazyload
+      - Images stored in this.images property
+      - init() called only when images.length > 0
+      - No errors when no lazy load images exist on page
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-image-lazy-loading-1
+      Description: Add logic to query and collect all images that should be lazy loaded.
+        Target images with loading='lazy' attribute and/or 'lazyload' class. Store
+        the collected images in the class instance and conditionally call init() only
+        when images are found.
+      EstimatedEffort: S
+      Files:
+      - src/scripts/lazyload.js
+      ID: task-donkey-website-feat-image-lazy-loading-2
+      Title: Implement image selection logic
+    - AcceptanceCriteria:
+      - IntersectionObserver support detection works correctly
+      - Observer created with rootMargin and threshold from options
+      - All images registered with observer.observe()
+      - Fallback calls loadImage() for all images when observer unsupported
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-image-lazy-loading-2
+      Description: Create the init() method that checks for IntersectionObserver browser
+        support. Initialize the observer with configured options and register all
+        collected images for observation. Implement fallback behavior to load all
+        images immediately when IntersectionObserver is not supported.
+      EstimatedEffort: M
+      Files:
+      - src/scripts/lazyload.js
+      ID: task-donkey-website-feat-image-lazy-loading-3
+      Title: Implement Intersection Observer initialization
+    - AcceptanceCriteria:
+      - handleIntersection processes all intersection entries
+      - Image loading triggered only when entry.isIntersecting is true
+      - observer.unobserve() called after image loads
+      - No memory leaks from retained observer references
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-image-lazy-loading-3
+      Description: Create handleIntersection() method to process IntersectionObserver
+        callbacks. Iterate through entries, detect when images intersect the viewport,
+        trigger image loading, and unobserve loaded images to prevent duplicate processing.
+        Ensure proper cleanup of observer references.
+      EstimatedEffort: M
+      Files:
+      - src/scripts/lazyload.js
+      ID: task-donkey-website-feat-image-lazy-loading-4
+      Title: Implement intersection event handler
+    - AcceptanceCriteria:
+      - Image src set from data-src attribute when present
+      - Image srcset set from data-srcset attribute when present
+      - Class 'lazyloaded' added after loading
+      - Class 'lazyload' removed after loading
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-image-lazy-loading-4
+      Description: Create loadImage() method that handles both native lazy loading
+        and manual data-src attribute swapping. Check for data-src and data-srcset
+        attributes and copy them to src and srcset. Add 'lazyloaded' class and remove
+        'lazyload' class for styling hooks.
+      EstimatedEffort: S
+      Files:
+      - src/scripts/lazyload.js
+      ID: task-donkey-website-feat-image-lazy-loading-5
+      Title: Implement image loading logic
+    - AcceptanceCriteria:
+      - Hero images use eager loading without lazy attributes
+      - Below-fold images include loading='lazy' attribute
+      - Example images with data-src and data-srcset included
+      - No layout shift introduced by lazy loading implementation
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-image-lazy-loading-5
+      Description: Update HTML templates to include proper lazy loading attributes
+        and classes. Add examples of images using loading='lazy', data-src patterns,
+        and lazyload class. Ensure images below the fold use lazy loading while hero/LCP
+        images load eagerly to maintain performance metrics.
+      EstimatedEffort: S
+      Files:
+      - src/index.html
+      ID: task-donkey-website-feat-image-lazy-loading-6
+      Title: Add HTML image markup examples
+    - AcceptanceCriteria:
+      - LazyLoader imported in main script file
+      - Instance created on DOMContentLoaded event
+      - Configuration options passed to constructor
+      - Initialization verified in browser console without errors
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-image-lazy-loading-6
+      Description: Import LazyLoader into the main application script and initialize
+        it on DOM content loaded. Configure appropriate options for rootMargin and
+        threshold based on design requirements. Ensure initialization happens after
+        DOM is ready but before images scroll into view.
+      EstimatedEffort: S
+      Files:
+      - src/scripts/main.js
+      ID: task-donkey-website-feat-image-lazy-loading-7
+      Title: Initialize LazyLoader in main script
+    - AcceptanceCriteria:
+      - Images do not load until scrolled into viewport with rootMargin
+      - All images load correctly in browsers without IntersectionObserver
+      - No duplicate image loads or observer leaks detected
+      - Performance improvement measurable in network waterfall
+      AgentType: qa-engineer
+      Dependencies:
+      - task-donkey-website-feat-image-lazy-loading-7
+      Description: Create manual and automated tests for lazy loading behavior. Verify
+        images load when scrolled into view, observer cleanup works correctly, and
+        fallback behavior functions in unsupported browsers. Test with various viewport
+        sizes and scroll speeds to ensure reliability.
+      EstimatedEffort: M
+      Files:
+      - tests/lazyload.test.js
+      ID: task-donkey-website-feat-image-lazy-loading-8
+      Title: Test lazy loading functionality
+  - FeatureID: donkey-website-feat-lightbox
+    FeatureTitle: Image Lightbox Viewer
+    Tasks:
+    - AcceptanceCriteria:
+      - Lightbox class exports successfully from lightbox.js
+      - createLightbox method generates complete DOM structure with all required elements
+      - ARIA attributes properly set (role=dialog, aria-modal=true, aria-label)
+      - Close button includes accessible SVG icon
+      - All element references stored in class properties
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Implement the Lightbox class constructor and createLightbox method
+        to build the DOM structure. Create the lightbox container with proper ARIA
+        attributes, backdrop, close button with SVG icon, image element, and caption
+        container. Append the structure to document.body on initialization.
+      EstimatedEffort: S
+      Files:
+      - src/scripts/lightbox.js
+      ID: task-donkey-website-feat-lightbox-1
+      Title: Create lightbox HTML structure and DOM initialization
+    - AcceptanceCriteria:
+      - Click listener detects images with data-lightbox attribute
+      - Close button click closes lightbox
+      - Backdrop click closes lightbox
+      - Escape key closes lightbox when open
+      - Event delegation works for dynamically added images
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-lightbox-1
+      Description: Create the bindEvents method to attach event listeners for opening
+        the lightbox. Implement click delegation to detect clicks on images with data-lightbox
+        attribute. Add event listeners for close button, backdrop clicks, and escape
+        key press to close the lightbox.
+      EstimatedEffort: M
+      Files:
+      - src/scripts/lightbox.js
+      ID: task-donkey-website-feat-lightbox-2
+      Title: Implement event binding and trigger detection
+    - AcceptanceCriteria:
+      - open method displays correct image from data-lightbox-src or src
+      - Caption displays from data-caption or alt text
+      - is-open class added/removed correctly
+      - Body overflow prevented when lightbox open
+      - Focus moves to close button on open for keyboard accessibility
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-lightbox-2
+      Description: Create open method to display full-size image with caption and
+        manage focus. Implement close method to hide lightbox and restore page state.
+        Handle data-lightbox-src attribute for alternate image sources, manage body
+        overflow, and implement proper focus management for accessibility.
+      EstimatedEffort: M
+      Files:
+      - src/scripts/lightbox.js
+      ID: task-donkey-website-feat-lightbox-3
+      Title: Implement open and close methods with state management
+    - AcceptanceCriteria:
+      - Lightbox hidden by default until is-open class added
+      - Backdrop covers full viewport with semi-transparent overlay
+      - Content centered vertically and horizontally
+      - Proper z-index ensures lightbox appears above other content
+      - Fixed positioning prevents scroll issues
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Implement CSS for lightbox container, backdrop overlay, and content
+        positioning. Style the lightbox to cover full viewport with fixed positioning,
+        create semi-transparent backdrop, and center the content area. Ensure proper
+        z-index layering and hidden state by default.
+      EstimatedEffort: S
+      Files:
+      - src/styles/components/lightbox.css
+      ID: task-donkey-website-feat-lightbox-4
+      Title: Create lightbox base styles and layout
+    - AcceptanceCriteria:
+      - Close button positioned in top-right with clear visual affordance
+      - Close button has visible focus indicator for keyboard users
+      - Image scales to fit viewport with max-width and max-height constraints
+      - Image maintains aspect ratio and centers properly
+      - Smooth fade-in transition when lightbox opens
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-lightbox-4
+      Description: Create styles for the close button with hover and focus states.
+        Implement responsive image sizing to fit within viewport while maintaining
+        aspect ratio. Add smooth transitions for lightbox appearance and ensure proper
+        spacing for caption area.
+      EstimatedEffort: M
+      Files:
+      - src/styles/components/lightbox.css
+      ID: task-donkey-website-feat-lightbox-5
+      Title: Style close button and image display
+    - AcceptanceCriteria:
+      - Focus trapped within lightbox when open
+      - Tab navigation cycles between close button and other interactive elements
+      - Focus returns to trigger element when lightbox closes
+      - Keyboard navigation foundation ready for gallery expansion
+      - All interactive elements keyboard accessible
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-lightbox-3
+      Description: Enhance keyboard accessibility by implementing focus trap within
+        lightbox when open. Add keyboard navigation with arrow keys for future gallery
+        support. Ensure tab navigation cycles through interactive elements within
+        lightbox and doesn't escape to page content.
+      EstimatedEffort: M
+      Files:
+      - src/scripts/lightbox.js
+      ID: task-donkey-website-feat-lightbox-6
+      Title: Add keyboard navigation and focus trap
+    - AcceptanceCriteria:
+      - Close button enlarged for touch targets on mobile (min 44x44px)
+      - Image scaling optimized for mobile viewports
+      - Caption readable and properly positioned on small screens
+      - Lightbox usable on viewports from 320px to desktop sizes
+      - Touch gestures work correctly on mobile devices
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-lightbox-5
+      Description: Add responsive CSS for mobile devices including touch-friendly
+        close button sizing, proper image scaling on small screens, and caption positioning.
+        Ensure lightbox works well on all viewport sizes with appropriate padding
+        and spacing.
+      EstimatedEffort: S
+      Files:
+      - src/styles/components/lightbox.css
+      ID: task-donkey-website-feat-lightbox-7
+      Title: Implement responsive design and mobile optimization
+    - AcceptanceCriteria:
+      - Loading indicator displays while image loading
+      - Error message shown if image fails to load
+      - Graceful fallback prevents broken lightbox experience
+      - Loading state removes when image loaded or errors
+      - User can close lightbox during loading or error state
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-donkey-website-feat-lightbox-3
+      - task-donkey-website-feat-lightbox-5
+      Description: Implement loading indicator while full-size image loads. Add error
+        handling for failed image loads with fallback messaging. Prevent opening lightbox
+        if image source is invalid. Display loading spinner or placeholder during
+        image fetch.
+      EstimatedEffort: M
+      Files:
+      - src/scripts/lightbox.js
+      - src/styles/components/lightbox.css
+      ID: task-donkey-website-feat-lightbox-8
+      Title: Add loading states and error handling
+  Sprint: 2
