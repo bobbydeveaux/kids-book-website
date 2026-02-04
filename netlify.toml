@@ -1,0 +1,78 @@
+# Netlify deployment configuration for Donkey Website
+# Issue #8: Configure Netlify deployment
+
+[build]
+  # Build command to run (npm run build will execute build scripts)
+  command = "npm run build"
+  # Directory to serve after build completes
+  publish = "dist"
+
+[build.environment]
+  # Use Node.js 18 LTS as specified in requirements
+  NODE_VERSION = "18"
+
+# Clean URL redirects - remove .html extensions
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/care/*"
+  to = "/care/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/breeds/*"
+  to = "/breeds/:splat.html"
+  status = 200
+
+# Custom 404 page redirect
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Security headers for all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Prevent clickjacking attacks
+    X-Frame-Options = "DENY"
+    # Prevent MIME type sniffing
+    X-Content-Type-Options = "nosniff"
+    # Referrer policy for privacy
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Content Security Policy (basic)
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'"
+    # HSTS for HTTPS enforcement (1 year)
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+# Cache headers for HTML pages - always check for updates
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Long-term caching for images (1 year)
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Medium-term caching for CSS and JavaScript (1 month)
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# Short-term caching for other static assets (1 week)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
