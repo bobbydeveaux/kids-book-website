@@ -6,8 +6,7 @@
     "src/styles/components/card.css",
     "src/styles/components/hero.css",
     "src/styles/components/gallery.css",
-    "src/styles/components/lightbox.css",
-    "test.html"
+    "src/styles/components/lightbox.css"
   ],
   "completedTasks": [1]
 }
