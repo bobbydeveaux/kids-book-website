@@ -1,0 +1,10 @@
+{
+  "prTitle": "feat: implement reusable button component styles with variants and accessibility",
+  "prBody": "## Summary\n\nImplemented comprehensive button component styles for the donkey website project with full variant support and accessibility features.\n\n### Features Implemented\n\n- **Button Component** (`src/styles/components/button.css`):\n  - Base `.btn` class with three size variants: small, medium, large\n  - Three style variants: primary (default), secondary, tertiary/ghost\n  - Complete interactive states: hover, focus, active, disabled\n  - Accessibility features: keyboard focus indicators, high contrast support, reduced motion\n  - Touch-friendly design with minimum 44px height on mobile\n  - Icon button support and full-width variants\n  - Button group utilities\n\n- **CSS Foundation** (`src/styles/base/variables.css`):\n  - Comprehensive CSS custom properties system\n  - Color system with semantic naming\n  - Spacing scale and typography tokens\n  - Transition and shadow definitions\n  - Mobile-first responsive approach\n\n### Technical Details\n\n- All button variants use CSS custom properties for consistent theming\n- Focus states include visible outline for keyboard navigation accessibility\n  - Disabled state properly reduces opacity and removes pointer events\n- Buttons meet WCAG minimum touch target requirements (44px on mobile)\n- Smooth transitions for all interactive states\n- Support for reduced motion and high contrast preferences\n- Print-friendly styles included\n\n### Testing\n\n- Created comprehensive test page (`test-buttons.html`) demonstrating all variants\n- Verified accessibility with keyboard navigation\n- Tested responsive behavior and touch targets\n- Validated all acceptance criteria\n\nCloses #14",
+  "testsPass": true,
+  "filesChanged": [
+    "src/styles/base/variables.css",
+    "src/styles/components/button.css",
+    "test-buttons.html"
+  ]
+}
