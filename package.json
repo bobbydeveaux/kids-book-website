@@ -1,0 +1,22 @@
+{
+  "name": "donkey-website",
+  "version": "1.0.0",
+  "description": "Educational website about donkeys - breeds, care guides, and fascinating facts",
+  "main": "index.js",
+  "scripts": {
+    "build": "mkdir -p dist && ([ -d src ] && cp -r src/* dist/ || echo 'Creating placeholder dist directory for Netlify deployment')",
+    "dev": "python3 -m http.server 8000 --directory dist || python -m http.server 8000 --directory dist",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "donkeys",
+    "animals",
+    "education",
+    "static-site"
+  ],
+  "author": "Donkey Website Team",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
