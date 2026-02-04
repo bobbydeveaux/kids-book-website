@@ -1,0 +1,249 @@
+/*
+ * Accessibility Utilities
+ * Provides utility classes for better accessibility compliance
+ * Follows WCAG 2.1 Level AA guidelines
+ */
+
+/* CSS Custom Properties for accessibility */
+:root {
+  /* Focus colors for WCAG compliance */
+  --focus-color: #0066cc;
+  --focus-outline-width: 2px;
+  --focus-outline-style: solid;
+  --focus-outline-offset: 2px;
+
+  /* High contrast colors */
+  --high-contrast-bg: #000000;
+  --high-contrast-text: #ffffff;
+
+  /* Skip link styling */
+  --skip-link-bg: var(--focus-color);
+  --skip-link-text: #ffffff;
+  --skip-link-padding: 0.5rem 1rem;
+}
+
+/*
+ * Screen Reader Only Content
+ * Visually hides content while keeping it accessible to screen readers
+ * Uses clip-path for better support than clip (deprecated)
+ */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+/*
+ * Screen Reader Only - Focusable
+ * Makes sr-only content visible when focused (useful for skip links)
+ */
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: var(--skip-link-padding) !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip-path: none !important;
+  white-space: normal !important;
+}
+
+/*
+ * Skip Links
+ * Allows keyboard users to skip to main content
+ * Should be the first focusable element on the page
+ */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  z-index: 1000;
+  padding: var(--skip-link-padding);
+  background-color: var(--skip-link-bg);
+  color: var(--skip-link-text);
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-color);
+  outline-offset: var(--focus-outline-offset);
+}
+
+.skip-link:hover,
+.skip-link:active {
+  background-color: color-mix(in srgb, var(--skip-link-bg) 90%, black 10%);
+}
+
+/*
+ * Focus Management Utilities
+ * Ensures all interactive elements have visible focus indicators
+ * Meets WCAG 2.1 Level AA contrast requirements (3:1 minimum)
+ */
+
+/* Base focus styles for all focusable elements */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+[tabindex]:focus {
+  outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-color);
+  outline-offset: var(--focus-outline-offset);
+}
+
+/* Enhanced focus for buttons and links */
+.focus-enhanced:focus {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px rgba(0, 102, 204, 0.25);
+}
+
+/* Remove default browser focus outline for elements with custom focus */
+.custom-focus:focus {
+  outline: none;
+}
+
+.custom-focus:focus-visible {
+  outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-color);
+  outline-offset: var(--focus-outline-offset);
+}
+
+/*
+ * High Contrast Mode Support
+ * Improves visibility in high contrast modes
+ */
+@media (prefers-contrast: high) {
+  .sr-only-focusable:focus,
+  .sr-only-focusable:active,
+  .skip-link {
+    background-color: var(--high-contrast-bg);
+    color: var(--high-contrast-text);
+    border: 2px solid var(--high-contrast-text);
+  }
+
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus,
+  select:focus,
+  [tabindex]:focus {
+    outline: 3px solid var(--high-contrast-text);
+  }
+}
+
+/*
+ * Reduced Motion Support
+ * Respects user preference for reduced motion
+ */
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none;
+  }
+
+  .focus-enhanced:focus {
+    box-shadow: none;
+  }
+}
+
+/*
+ * Focus Trap Utilities
+ * For modal dialogs and other overlay components
+ */
+.focus-trap {
+  position: relative;
+}
+
+.focus-trap::before,
+.focus-trap::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/*
+ * Keyboard Navigation Helpers
+ */
+.keyboard-only:not(:focus-visible) {
+  outline: none;
+}
+
+/*
+ * Text and Color Contrast Utilities
+ */
+.high-contrast-text {
+  color: var(--high-contrast-text);
+  background-color: var(--high-contrast-bg);
+}
+
+.visually-hidden-but-accessible {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/*
+ * ARIA Live Region Utilities
+ */
+.sr-live-polite {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.sr-live-assertive {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/*
+ * Accessibility State Indicators
+ */
+[aria-expanded="true"] .expand-icon {
+  transform: rotate(180deg);
+}
+
+[aria-hidden="true"] {
+  display: none !important;
+}
+
+/* Ensure decorative images don't interfere with screen readers */
+img[alt=""],
+img[role="presentation"],
+svg[aria-hidden="true"] {
+  pointer-events: none;
+}
+
+/*
+ * Text Scaling Support
+ * Ensures text can scale up to 200% without breaking layout
+ */
+@media (min-resolution: 192dpi) {
+  .text-scalable {
+    font-size: calc(1rem + 0.25vw);
+  }
+}

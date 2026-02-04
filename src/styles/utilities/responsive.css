@@ -1,0 +1,420 @@
+/*
+ * Responsive Utilities
+ * Mobile-first responsive design utilities for layout control
+ * Breakpoint: 768px+ for tablet/desktop
+ */
+
+/* CSS Custom Properties for responsive design */
+:root {
+  /* Breakpoints */
+  --breakpoint-mobile: 320px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-wide: 1200px;
+
+  /* Spacing scale */
+  --space-xs: 0.25rem;   /* 4px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4rem;     /* 64px */
+
+  /* Container widths */
+  --container-mobile: 100%;
+  --container-tablet: 750px;
+  --container-desktop: 970px;
+  --container-wide: 1170px;
+}
+
+/*
+ * Visibility Utilities
+ * Show/hide elements at different breakpoints
+ */
+
+/* Mobile-first: visible by default */
+.show-mobile {
+  display: block;
+}
+
+.hide-mobile {
+  display: none;
+}
+
+/* Tablet and up (768px+) */
+@media (min-width: 768px) {
+  .show-tablet {
+    display: block;
+  }
+
+  .hide-tablet {
+    display: none;
+  }
+
+  .show-mobile-only {
+    display: none;
+  }
+
+  .hide-mobile-only {
+    display: block;
+  }
+}
+
+/* Desktop and up (1024px+) */
+@media (min-width: 1024px) {
+  .show-desktop {
+    display: block;
+  }
+
+  .hide-desktop {
+    display: none;
+  }
+
+  .show-tablet-only {
+    display: none;
+  }
+
+  .hide-tablet-only {
+    display: block;
+  }
+}
+
+/* Wide screens (1200px+) */
+@media (min-width: 1200px) {
+  .show-wide {
+    display: block;
+  }
+
+  .hide-wide {
+    display: none;
+  }
+
+  .show-desktop-only {
+    display: none;
+  }
+
+  .hide-desktop-only {
+    display: block;
+  }
+}
+
+/*
+ * Responsive Display Utilities
+ * Control display type at different breakpoints
+ */
+
+/* Inline display utilities */
+.inline-mobile { display: inline; }
+.inline-block-mobile { display: inline-block; }
+.block-mobile { display: block; }
+.flex-mobile { display: flex; }
+.grid-mobile { display: grid; }
+
+@media (min-width: 768px) {
+  .inline-tablet { display: inline; }
+  .inline-block-tablet { display: inline-block; }
+  .block-tablet { display: block; }
+  .flex-tablet { display: flex; }
+  .grid-tablet { display: grid; }
+}
+
+@media (min-width: 1024px) {
+  .inline-desktop { display: inline; }
+  .inline-block-desktop { display: inline-block; }
+  .block-desktop { display: block; }
+  .flex-desktop { display: flex; }
+  .grid-desktop { display: grid; }
+}
+
+/*
+ * Responsive Spacing Utilities
+ * Margin and padding utilities for different breakpoints
+ */
+
+/* Base spacing utilities (mobile-first) */
+/* Margin utilities */
+.m-0 { margin: 0; }
+.m-xs { margin: var(--space-xs); }
+.m-sm { margin: var(--space-sm); }
+.m-md { margin: var(--space-md); }
+.m-lg { margin: var(--space-lg); }
+.m-xl { margin: var(--space-xl); }
+.m-2xl { margin: var(--space-2xl); }
+.m-3xl { margin: var(--space-3xl); }
+
+/* Margin directional utilities */
+.mt-0 { margin-top: 0; }
+.mt-xs { margin-top: var(--space-xs); }
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+.mt-2xl { margin-top: var(--space-2xl); }
+.mt-3xl { margin-top: var(--space-3xl); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-xs { margin-bottom: var(--space-xs); }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+.mb-2xl { margin-bottom: var(--space-2xl); }
+.mb-3xl { margin-bottom: var(--space-3xl); }
+
+.ml-0 { margin-left: 0; }
+.ml-xs { margin-left: var(--space-xs); }
+.ml-sm { margin-left: var(--space-sm); }
+.ml-md { margin-left: var(--space-md); }
+.ml-lg { margin-left: var(--space-lg); }
+.ml-xl { margin-left: var(--space-xl); }
+.ml-2xl { margin-left: var(--space-2xl); }
+.ml-3xl { margin-left: var(--space-3xl); }
+
+.mr-0 { margin-right: 0; }
+.mr-xs { margin-right: var(--space-xs); }
+.mr-sm { margin-right: var(--space-sm); }
+.mr-md { margin-right: var(--space-md); }
+.mr-lg { margin-right: var(--space-lg); }
+.mr-xl { margin-right: var(--space-xl); }
+.mr-2xl { margin-right: var(--space-2xl); }
+.mr-3xl { margin-right: var(--space-3xl); }
+
+/* Horizontal and vertical margins */
+.mx-0 { margin-left: 0; margin-right: 0; }
+.mx-xs { margin-left: var(--space-xs); margin-right: var(--space-xs); }
+.mx-sm { margin-left: var(--space-sm); margin-right: var(--space-sm); }
+.mx-md { margin-left: var(--space-md); margin-right: var(--space-md); }
+.mx-lg { margin-left: var(--space-lg); margin-right: var(--space-lg); }
+.mx-xl { margin-left: var(--space-xl); margin-right: var(--space-xl); }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.my-0 { margin-top: 0; margin-bottom: 0; }
+.my-xs { margin-top: var(--space-xs); margin-bottom: var(--space-xs); }
+.my-sm { margin-top: var(--space-sm); margin-bottom: var(--space-sm); }
+.my-md { margin-top: var(--space-md); margin-bottom: var(--space-md); }
+.my-lg { margin-top: var(--space-lg); margin-bottom: var(--space-lg); }
+.my-xl { margin-top: var(--space-xl); margin-bottom: var(--space-xl); }
+
+/* Padding utilities */
+.p-0 { padding: 0; }
+.p-xs { padding: var(--space-xs); }
+.p-sm { padding: var(--space-sm); }
+.p-md { padding: var(--space-md); }
+.p-lg { padding: var(--space-lg); }
+.p-xl { padding: var(--space-xl); }
+.p-2xl { padding: var(--space-2xl); }
+.p-3xl { padding: var(--space-3xl); }
+
+/* Padding directional utilities */
+.pt-0 { padding-top: 0; }
+.pt-xs { padding-top: var(--space-xs); }
+.pt-sm { padding-top: var(--space-sm); }
+.pt-md { padding-top: var(--space-md); }
+.pt-lg { padding-top: var(--space-lg); }
+.pt-xl { padding-top: var(--space-xl); }
+.pt-2xl { padding-top: var(--space-2xl); }
+.pt-3xl { padding-top: var(--space-3xl); }
+
+.pb-0 { padding-bottom: 0; }
+.pb-xs { padding-bottom: var(--space-xs); }
+.pb-sm { padding-bottom: var(--space-sm); }
+.pb-md { padding-bottom: var(--space-md); }
+.pb-lg { padding-bottom: var(--space-lg); }
+.pb-xl { padding-bottom: var(--space-xl); }
+.pb-2xl { padding-bottom: var(--space-2xl); }
+.pb-3xl { padding-bottom: var(--space-3xl); }
+
+.pl-0 { padding-left: 0; }
+.pl-xs { padding-left: var(--space-xs); }
+.pl-sm { padding-left: var(--space-sm); }
+.pl-md { padding-left: var(--space-md); }
+.pl-lg { padding-left: var(--space-lg); }
+.pl-xl { padding-left: var(--space-xl); }
+.pl-2xl { padding-left: var(--space-2xl); }
+.pl-3xl { padding-left: var(--space-3xl); }
+
+.pr-0 { padding-right: 0; }
+.pr-xs { padding-right: var(--space-xs); }
+.pr-sm { padding-right: var(--space-sm); }
+.pr-md { padding-right: var(--space-md); }
+.pr-lg { padding-right: var(--space-lg); }
+.pr-xl { padding-right: var(--space-xl); }
+.pr-2xl { padding-right: var(--space-2xl); }
+.pr-3xl { padding-right: var(--space-3xl); }
+
+/* Horizontal and vertical padding */
+.px-0 { padding-left: 0; padding-right: 0; }
+.px-xs { padding-left: var(--space-xs); padding-right: var(--space-xs); }
+.px-sm { padding-left: var(--space-sm); padding-right: var(--space-sm); }
+.px-md { padding-left: var(--space-md); padding-right: var(--space-md); }
+.px-lg { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+.px-xl { padding-left: var(--space-xl); padding-right: var(--space-xl); }
+
+.py-0 { padding-top: 0; padding-bottom: 0; }
+.py-xs { padding-top: var(--space-xs); padding-bottom: var(--space-xs); }
+.py-sm { padding-top: var(--space-sm); padding-bottom: var(--space-sm); }
+.py-md { padding-top: var(--space-md); padding-bottom: var(--space-md); }
+.py-lg { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+.py-xl { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+
+/*
+ * Responsive Spacing - Tablet (768px+)
+ */
+@media (min-width: 768px) {
+  /* Responsive margin utilities for tablet */
+  .mt-sm-tablet { margin-top: var(--space-sm); }
+  .mt-md-tablet { margin-top: var(--space-md); }
+  .mt-lg-tablet { margin-top: var(--space-lg); }
+  .mt-xl-tablet { margin-top: var(--space-xl); }
+  .mt-2xl-tablet { margin-top: var(--space-2xl); }
+
+  .mb-sm-tablet { margin-bottom: var(--space-sm); }
+  .mb-md-tablet { margin-bottom: var(--space-md); }
+  .mb-lg-tablet { margin-bottom: var(--space-lg); }
+  .mb-xl-tablet { margin-bottom: var(--space-xl); }
+  .mb-2xl-tablet { margin-bottom: var(--space-2xl); }
+
+  .mx-md-tablet { margin-left: var(--space-md); margin-right: var(--space-md); }
+  .mx-lg-tablet { margin-left: var(--space-lg); margin-right: var(--space-lg); }
+  .mx-xl-tablet { margin-left: var(--space-xl); margin-right: var(--space-xl); }
+
+  .my-md-tablet { margin-top: var(--space-md); margin-bottom: var(--space-md); }
+  .my-lg-tablet { margin-top: var(--space-lg); margin-bottom: var(--space-lg); }
+  .my-xl-tablet { margin-top: var(--space-xl); margin-bottom: var(--space-xl); }
+
+  /* Responsive padding utilities for tablet */
+  .pt-md-tablet { padding-top: var(--space-md); }
+  .pt-lg-tablet { padding-top: var(--space-lg); }
+  .pt-xl-tablet { padding-top: var(--space-xl); }
+  .pt-2xl-tablet { padding-top: var(--space-2xl); }
+
+  .pb-md-tablet { padding-bottom: var(--space-md); }
+  .pb-lg-tablet { padding-bottom: var(--space-lg); }
+  .pb-xl-tablet { padding-bottom: var(--space-xl); }
+  .pb-2xl-tablet { padding-bottom: var(--space-2xl); }
+
+  .px-md-tablet { padding-left: var(--space-md); padding-right: var(--space-md); }
+  .px-lg-tablet { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+  .px-xl-tablet { padding-left: var(--space-xl); padding-right: var(--space-xl); }
+
+  .py-md-tablet { padding-top: var(--space-md); padding-bottom: var(--space-md); }
+  .py-lg-tablet { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+  .py-xl-tablet { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+}
+
+/*
+ * Responsive Spacing - Desktop (1024px+)
+ */
+@media (min-width: 1024px) {
+  /* Responsive margin utilities for desktop */
+  .mt-lg-desktop { margin-top: var(--space-lg); }
+  .mt-xl-desktop { margin-top: var(--space-xl); }
+  .mt-2xl-desktop { margin-top: var(--space-2xl); }
+  .mt-3xl-desktop { margin-top: var(--space-3xl); }
+
+  .mb-lg-desktop { margin-bottom: var(--space-lg); }
+  .mb-xl-desktop { margin-bottom: var(--space-xl); }
+  .mb-2xl-desktop { margin-bottom: var(--space-2xl); }
+  .mb-3xl-desktop { margin-bottom: var(--space-3xl); }
+
+  .mx-lg-desktop { margin-left: var(--space-lg); margin-right: var(--space-lg); }
+  .mx-xl-desktop { margin-left: var(--space-xl); margin-right: var(--space-xl); }
+  .mx-2xl-desktop { margin-left: var(--space-2xl); margin-right: var(--space-2xl); }
+
+  .my-lg-desktop { margin-top: var(--space-lg); margin-bottom: var(--space-lg); }
+  .my-xl-desktop { margin-top: var(--space-xl); margin-bottom: var(--space-xl); }
+  .my-2xl-desktop { margin-top: var(--space-2xl); margin-bottom: var(--space-2xl); }
+
+  /* Responsive padding utilities for desktop */
+  .pt-lg-desktop { padding-top: var(--space-lg); }
+  .pt-xl-desktop { padding-top: var(--space-xl); }
+  .pt-2xl-desktop { padding-top: var(--space-2xl); }
+  .pt-3xl-desktop { padding-top: var(--space-3xl); }
+
+  .pb-lg-desktop { padding-bottom: var(--space-lg); }
+  .pb-xl-desktop { padding-bottom: var(--space-xl); }
+  .pb-2xl-desktop { padding-bottom: var(--space-2xl); }
+  .pb-3xl-desktop { padding-bottom: var(--space-3xl); }
+
+  .px-lg-desktop { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+  .px-xl-desktop { padding-left: var(--space-xl); padding-right: var(--space-xl); }
+  .px-2xl-desktop { padding-left: var(--space-2xl); padding-right: var(--space-2xl); }
+
+  .py-lg-desktop { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+  .py-xl-desktop { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+  .py-2xl-desktop { padding-top: var(--space-2xl); padding-bottom: var(--space-2xl); }
+}
+
+/*
+ * Container Utilities
+ * Responsive container widths with proper centering
+ */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: var(--container-tablet);
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: var(--container-desktop);
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: var(--container-wide);
+  }
+}
+
+/*
+ * Responsive Text Alignment
+ */
+.text-left-mobile { text-align: left; }
+.text-center-mobile { text-align: center; }
+.text-right-mobile { text-align: right; }
+
+@media (min-width: 768px) {
+  .text-left-tablet { text-align: left; }
+  .text-center-tablet { text-align: center; }
+  .text-right-tablet { text-align: right; }
+}
+
+@media (min-width: 1024px) {
+  .text-left-desktop { text-align: left; }
+  .text-center-desktop { text-align: center; }
+  .text-right-desktop { text-align: right; }
+}
+
+/*
+ * Responsive Width Utilities
+ */
+.w-full { width: 100%; }
+.w-auto { width: auto; }
+
+@media (min-width: 768px) {
+  .w-half-tablet { width: 50%; }
+  .w-third-tablet { width: 33.333333%; }
+  .w-quarter-tablet { width: 25%; }
+  .w-auto-tablet { width: auto; }
+}
+
+@media (min-width: 1024px) {
+  .w-half-desktop { width: 50%; }
+  .w-third-desktop { width: 33.333333%; }
+  .w-quarter-desktop { width: 25%; }
+  .w-auto-desktop { width: auto; }
+}
