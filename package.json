@@ -1,0 +1,33 @@
+{
+  "name": "donkey-website",
+  "version": "1.0.0",
+  "description": "Educational website about donkeys featuring breed information, care guides, and facts",
+  "main": "build/build.js",
+  "scripts": {
+    "build": "node build/build.js",
+    "build:images": "node build/optimize-images.js",
+    "dev": "serve dist",
+    "clean": "rm -rf dist",
+    "test": "jest",
+    "test:build": "npm run clean && npm run build && npm run test"
+  },
+  "keywords": [
+    "donkey",
+    "education",
+    "static-site",
+    "jamstack"
+  ],
+  "author": "Donkey Website Team",
+  "license": "MIT",
+  "devDependencies": {
+    "sharp": "^0.33.0",
+    "fs-extra": "^11.2.0",
+    "path": "^0.12.7",
+    "jest": "^29.7.0",
+    "@jest/globals": "^29.7.0"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
