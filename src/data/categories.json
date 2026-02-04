@@ -1,0 +1,37 @@
+[
+  {
+    "id": "cat-001",
+    "slug": "bralettes",
+    "name": "Bralettes",
+    "description": "Comfortable and stylish bralettes for everyday wear",
+    "order": 1
+  },
+  {
+    "id": "cat-002",
+    "slug": "panties",
+    "name": "Panties",
+    "description": "Comfortable panties in various styles and fabrics",
+    "order": 2
+  },
+  {
+    "id": "cat-003",
+    "slug": "lingerie-sets",
+    "name": "Lingerie Sets",
+    "description": "Matching lingerie sets for special occasions",
+    "order": 3
+  },
+  {
+    "id": "cat-004",
+    "slug": "sleepwear",
+    "name": "Sleepwear",
+    "description": "Comfortable and elegant sleepwear for a good night's rest",
+    "order": 4
+  },
+  {
+    "id": "cat-005",
+    "slug": "accessories",
+    "name": "Accessories",
+    "description": "Beautiful accessories to complement your lingerie",
+    "order": 5
+  }
+]

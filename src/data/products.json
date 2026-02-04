@@ -1,0 +1,158 @@
+[
+  {
+    "id": "prod-001",
+    "slug": "classic-lace-bralette",
+    "name": "Classic Lace Bralette",
+    "description": "Elegant lace bralette with soft support and beautiful floral pattern",
+    "shortDescription": "Elegant lace bralette with soft support",
+    "category": "bralettes",
+    "images": {
+      "thumbnail": "/images/products/classic-lace-bralette-thumb.jpg",
+      "main": "/images/products/classic-lace-bralette-main.jpg",
+      "gallery": ["/images/products/classic-lace-bralette-1.jpg"]
+    },
+    "features": ["Soft lace fabric", "Wire-free support", "Comfortable fit"],
+    "specifications": [
+      {"key": "Material", "value": "90% Nylon, 10% Elastane"},
+      {"key": "Care", "value": "Hand wash cold"}
+    ],
+    "price": {
+      "display": "$29.99"
+    },
+    "metadata": {
+      "createdAt": "2024-01-01T00:00:00Z",
+      "featured": true,
+      "order": 1
+    }
+  },
+  {
+    "id": "prod-002",
+    "slug": "cotton-comfort-panties",
+    "name": "Cotton Comfort Panties",
+    "description": "Ultra-soft cotton panties designed for all-day comfort with seamless edges",
+    "shortDescription": "Ultra-soft cotton panties for all-day comfort",
+    "category": "panties",
+    "images": {
+      "thumbnail": "/images/products/cotton-comfort-panties-thumb.jpg",
+      "main": "/images/products/cotton-comfort-panties-main.jpg",
+      "gallery": ["/images/products/cotton-comfort-panties-1.jpg"]
+    },
+    "features": ["100% cotton", "Seamless edges", "Breathable fabric"],
+    "specifications": [
+      {"key": "Material", "value": "100% Cotton"},
+      {"key": "Care", "value": "Machine wash warm"}
+    ],
+    "price": {
+      "display": "$15.99"
+    },
+    "metadata": {
+      "createdAt": "2024-01-02T00:00:00Z",
+      "featured": false,
+      "order": 2
+    }
+  },
+  {
+    "id": "prod-003",
+    "slug": "silk-pajama-set",
+    "name": "Silk Pajama Set",
+    "description": "Luxurious silk pajama set with elegant design perfect for a comfortable night's sleep",
+    "shortDescription": "Luxurious silk pajama set with elegant design",
+    "category": ["sleepwear", "lingerie-sets"],
+    "images": {
+      "thumbnail": "/images/products/silk-pajama-set-thumb.jpg",
+      "main": "/images/products/silk-pajama-set-main.jpg",
+      "gallery": ["/images/products/silk-pajama-set-1.jpg"]
+    },
+    "features": ["Pure silk fabric", "Button-up top", "Elastic waist shorts"],
+    "specifications": [
+      {"key": "Material", "value": "100% Mulberry Silk"},
+      {"key": "Care", "value": "Dry clean only"}
+    ],
+    "price": {
+      "display": "$89.99"
+    },
+    "metadata": {
+      "createdAt": "2024-01-03T00:00:00Z",
+      "featured": true,
+      "order": 3
+    }
+  },
+  {
+    "id": "prod-004",
+    "slug": "push-up-bra",
+    "name": "Push-Up Bra",
+    "description": "Supportive push-up bra with padded cups and underwire for enhanced shape and comfort",
+    "shortDescription": "Supportive push-up bra with padded cups",
+    "category": "bralettes",
+    "images": {
+      "thumbnail": "/images/products/push-up-bra-thumb.jpg",
+      "main": "/images/products/push-up-bra-main.jpg",
+      "gallery": ["/images/products/push-up-bra-1.jpg"]
+    },
+    "features": ["Padded cups", "Underwire support", "Adjustable straps"],
+    "specifications": [
+      {"key": "Material", "value": "85% Nylon, 15% Elastane"},
+      {"key": "Care", "value": "Hand wash cold"}
+    ],
+    "price": {
+      "display": "$45.99"
+    },
+    "metadata": {
+      "createdAt": "2024-01-04T00:00:00Z",
+      "featured": false,
+      "order": 4
+    }
+  },
+  {
+    "id": "prod-005",
+    "slug": "jewelry-set",
+    "name": "Delicate Jewelry Set",
+    "description": "Beautiful delicate jewelry set with matching necklace and earrings, perfect complement to lingerie",
+    "shortDescription": "Beautiful delicate jewelry set with matching pieces",
+    "category": "accessories",
+    "images": {
+      "thumbnail": "/images/products/jewelry-set-thumb.jpg",
+      "main": "/images/products/jewelry-set-main.jpg",
+      "gallery": ["/images/products/jewelry-set-1.jpg"]
+    },
+    "features": ["Gold-plated", "Hypoallergenic", "Matching set"],
+    "specifications": [
+      {"key": "Material", "value": "Gold-plated Sterling Silver"},
+      {"key": "Care", "value": "Polish with soft cloth"}
+    ],
+    "price": {
+      "display": "$25.99"
+    },
+    "metadata": {
+      "createdAt": "2024-01-05T00:00:00Z",
+      "featured": false,
+      "order": 5
+    }
+  },
+  {
+    "id": "prod-006",
+    "slug": "complete-lingerie-set",
+    "name": "Complete Lingerie Set",
+    "description": "Complete matching lingerie set with bra and panties in beautiful lace design",
+    "shortDescription": "Complete matching lingerie set with bra and panties",
+    "category": ["lingerie-sets", "bralettes"],
+    "images": {
+      "thumbnail": "/images/products/complete-lingerie-set-thumb.jpg",
+      "main": "/images/products/complete-lingerie-set-main.jpg",
+      "gallery": ["/images/products/complete-lingerie-set-1.jpg"]
+    },
+    "features": ["Matching set", "Lace design", "Comfortable fit"],
+    "specifications": [
+      {"key": "Material", "value": "88% Nylon, 12% Elastane"},
+      {"key": "Care", "value": "Hand wash cold"}
+    ],
+    "price": {
+      "display": "$65.99"
+    },
+    "metadata": {
+      "createdAt": "2024-01-06T00:00:00Z",
+      "featured": true,
+      "order": 1
+    }
+  }
+]
