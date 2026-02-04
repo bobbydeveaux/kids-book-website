@@ -150,8 +150,14 @@ async function main() {
 
     // Step 3: Run content and image tasks in parallel (they don't depend on each other)
     const parallelTasks = [
-      compileMarkdown(),
-      optimizeImages()
+      compileMarkdown(
+        path.join(__dirname, '../src/content'),
+        path.join(__dirname, '../dist/content')
+      ),
+      optimizeImages(
+        path.join(__dirname, '../src/images'),
+        path.join(__dirname, '../dist/images')
+      )
     ];
 
     await Promise.all(parallelTasks.map(async (task, index) => {
@@ -167,10 +173,13 @@ async function main() {
     console.log('\n🎨 Processing styles...');
 
     // Step 4: Bundle CSS (depends on CSS source files)
-    await bundleCSS();
+    await bundleCSS(
+      path.join(__dirname, '../src/styles'),
+      path.join(__dirname, '../dist/styles')
+    );
 
     // Step 5: Generate critical CSS (depends on bundled CSS and compiled content)
-    await generateCriticalCSS();
+    await generateCriticalCSS(path.join(__dirname, '../dist'));
 
     // Step 6: Generate build statistics
     await generateBuildStats();
