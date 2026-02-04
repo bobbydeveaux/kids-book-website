@@ -1,0 +1,15 @@
+{
+  "prTitle": "feat: implement markdown compilation script for donkey website",
+  "prBody": "## Summary\n\nImplemented a comprehensive markdown compilation script (`build/compile-markdown.js`) that processes markdown content for the donkey website project.\n\n### Key Features Implemented:\n\n✅ **Recursive Markdown Processing**: Reads all `.md` files from `src/content/` recursively\n✅ **YAML Frontmatter Support**: Parses frontmatter and extracts as JSON metadata\n✅ **GitHub Flavored Markdown**: Converts markdown to HTML with GFM support using markdown-it\n✅ **Directory Structure Preservation**: Outputs HTML fragments to `dist/content/` maintaining source structure\n✅ **Comprehensive Error Handling**: Logs warnings for missing frontmatter and errors for malformed files\n✅ **Header Anchors**: Automatically generates anchor links for headings (SEO-friendly)\n✅ **Rich Metadata Output**: Each HTML fragment includes metadata, content, generation timestamp, and source file reference\n\n### Technical Implementation:\n\n- **Dependencies**: markdown-it (v14.0.0), markdown-it-anchor (v8.6.7), gray-matter (v4.0.3)\n- **Node.js Support**: Requires Node.js 18+\n- **Script Execution**: `npm run compile-markdown`\n- **Output Format**: JSON structure with metadata and HTML content\n- **Error Resilience**: Continues processing even when individual files have issues\n\n### Sample Content Created:\n\n- `src/content/breeds/miniature-donkey.md` - Comprehensive breed information\n- `src/content/care/feeding.md` - Detailed feeding guidelines\n- `src/content/facts/donkey-intelligence.md` - Intelligence facts with rich formatting\n\n### Testing Results:\n\n- ✅ Successfully processed 3 sample markdown files\n- ✅ Generated proper HTML fragments with metadata\n- ✅ Maintained directory structure in output\n- ✅ Handled frontmatter parsing correctly\n- ✅ Warning system works for files without frontmatter\n\n**Closes #3**\n\n---\n\n**Next Steps**: This script provides the foundation for the static site build pipeline. Future tasks will add image optimization, CSS bundling, and the main build orchestrator.",
+  "testsPass": true,
+  "filesChanged": [
+    "package.json",
+    "build/compile-markdown.js",
+    "src/content/breeds/miniature-donkey.md",
+    "src/content/care/feeding.md",
+    "src/content/facts/donkey-intelligence.md",
+    "dist/content/breeds/miniature-donkey.html",
+    "dist/content/care/feeding.html",
+    "dist/content/facts/donkey-intelligence.html"
+  ]
+}
