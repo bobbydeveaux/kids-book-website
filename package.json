@@ -1,0 +1,24 @@
+{
+  "name": "donkey-website",
+  "version": "1.0.0",
+  "description": "Educational static website about donkeys",
+  "main": "index.js",
+  "scripts": {
+    "compile-markdown": "node build/compile-markdown.js",
+    "build": "npm run compile-markdown",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["donkey", "education", "static-site"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "markdown-it": "^14.0.0",
+    "markdown-it-anchor": "^8.6.7",
+    "markdown-it-table-of-contents": "^0.6.0",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
