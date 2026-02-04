@@ -43,7 +43,7 @@
     "url": "https://github.com/bobbydeveaux/kids-book-website.git"
   },
   "jest": {
-    "testEnvironment": "jsdom",
+    "testEnvironment": "node",
     "testMatch": [
       "**/tests/**/*.test.js"
     ]
