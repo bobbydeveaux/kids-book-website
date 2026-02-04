@@ -1,0 +1,454 @@
+/*
+ * Facts Page Specific Styles
+ * Donkey Website - Facts & About Page
+ * ==================================
+ */
+
+/* Facts page layout styles */
+.facts-main {
+    padding: 2rem 0 3rem;
+    background-color: #fff;
+}
+
+.facts-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .facts-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Enhanced table of contents styling */
+.toc {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    height: fit-content;
+    position: sticky;
+    top: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.toc:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.toc h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: #2c5530;
+    border-bottom: 3px solid #7db87e;
+    padding-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.toc ul ul {
+    margin-left: 1.25rem;
+    margin-top: 0.5rem;
+    border-left: 2px solid #e9ecef;
+    padding-left: 0.75rem;
+}
+
+.toc a {
+    color: #495057;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+    padding-left: 0.75rem;
+    margin-left: -0.75rem;
+    border-radius: 4px;
+}
+
+.toc a:hover,
+.toc a:focus {
+    color: #2c5530;
+    background-color: rgba(125, 184, 126, 0.1);
+    border-left-color: #7db87e;
+    transform: translateX(3px);
+}
+
+.toc ul ul a {
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: 400;
+}
+
+.toc ul ul a:hover,
+.toc ul ul a:focus {
+    color: #495057;
+}
+
+@media (max-width: 1024px) {
+    .toc {
+        position: static;
+        margin-bottom: 2rem;
+        padding: 1.5rem 1.25rem;
+    }
+
+    .toc h2 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Enhanced article content styling */
+.facts-article {
+    max-width: none;
+    color: #333;
+    line-height: 1.7;
+}
+
+.facts-article h1 {
+    font-size: 2.5rem;
+    color: #2c5530;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.facts-article h2 {
+    font-size: 2rem;
+    color: #2c5530;
+    margin: 3rem 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #7db87e;
+    font-weight: 700;
+    position: relative;
+    scroll-margin-top: 2rem;
+}
+
+.facts-article h2:first-child {
+    margin-top: 0;
+}
+
+.facts-article h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 60px;
+    height: 3px;
+    background-color: #2c5530;
+    border-radius: 1.5px;
+}
+
+.facts-article h3 {
+    font-size: 1.5rem;
+    color: #2c5530;
+    margin: 2rem 0 1rem;
+    font-weight: 600;
+    scroll-margin-top: 2rem;
+}
+
+.facts-article h4 {
+    font-size: 1.2rem;
+    color: #495057;
+    margin: 1.5rem 0 0.75rem;
+    font-weight: 600;
+    scroll-margin-top: 2rem;
+}
+
+.facts-article p {
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+    color: #333;
+    font-size: 1.05rem;
+}
+
+.facts-article p:last-child {
+    margin-bottom: 0;
+}
+
+/* Enhanced list styling */
+.facts-article ul,
+.facts-article ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.facts-article ul {
+    list-style: none;
+}
+
+.facts-article ul li::before {
+    content: '🐴';
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.facts-article ol {
+    list-style: decimal;
+}
+
+.facts-article ol li {
+    padding-left: 0.5rem;
+}
+
+.facts-article li {
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+    color: #333;
+    font-size: 1.05rem;
+}
+
+.facts-article li ul,
+.facts-article li ol {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.facts-article li ul li::before {
+    content: '→';
+    color: #7db87e;
+    font-weight: bold;
+}
+
+/* Strong text styling */
+.facts-article strong {
+    color: #2c5530;
+    font-weight: 700;
+}
+
+.facts-article em {
+    color: #495057;
+    font-style: italic;
+}
+
+/* Quote and callout styling */
+.facts-article blockquote {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-left: 5px solid #7db87e;
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    position: relative;
+}
+
+.facts-article blockquote::before {
+    content: '"';
+    font-size: 4rem;
+    color: #7db87e;
+    position: absolute;
+    top: -0.5rem;
+    left: 1rem;
+    font-family: Georgia, serif;
+    opacity: 0.3;
+}
+
+/* Image styling enhancements */
+.facts-article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    margin: 2rem 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.facts-article img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Figure and caption styling */
+.facts-article figure {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.facts-article figcaption {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 0.75rem;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 768px) {
+    .facts-article h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .facts-article h2 {
+        font-size: 1.75rem;
+        margin: 2rem 0 1rem;
+    }
+
+    .facts-article h3 {
+        font-size: 1.35rem;
+        margin: 1.5rem 0 0.75rem;
+    }
+
+    .facts-article h4 {
+        font-size: 1.1rem;
+        margin: 1rem 0 0.5rem;
+    }
+
+    .facts-article p,
+    .facts-article li {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .facts-article ul,
+    .facts-article ol {
+        padding-left: 1.5rem;
+    }
+
+    .facts-article blockquote {
+        margin: 1.5rem 0;
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Loading states and transitions */
+.facts-article img[data-src] {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Print styles */
+@media print {
+    .toc,
+    .site-header,
+    .site-footer {
+        display: none;
+    }
+
+    .facts-container {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .facts-article {
+        max-width: none;
+    }
+
+    .facts-article h2 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    .facts-article img {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
+}
+
+/* Dark mode support (if implemented) */
+@media (prefers-color-scheme: dark) {
+    .facts-main {
+        background-color: #1a1a1a;
+    }
+
+    .facts-article {
+        color: #e0e0e0;
+    }
+
+    .facts-article h1,
+    .facts-article h2,
+    .facts-article h3 {
+        color: #7db87e;
+    }
+
+    .facts-article h4 {
+        color: #a0a0a0;
+    }
+
+    .facts-article strong {
+        color: #7db87e;
+    }
+
+    .toc {
+        background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+        border-color: #404040;
+    }
+
+    .toc h2 {
+        color: #7db87e;
+    }
+
+    .toc a {
+        color: #b0b0b0;
+    }
+
+    .toc a:hover,
+    .toc a:focus {
+        color: #7db87e;
+        background-color: rgba(125, 184, 126, 0.2);
+    }
+
+    .facts-article blockquote {
+        background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+        color: #d0d0d0;
+    }
+}
+
+/* Accessibility enhancements */
+@media (prefers-reduced-motion: reduce) {
+    .toc a,
+    .facts-article img {
+        transition: none;
+    }
+
+    .facts-article img:hover {
+        transform: none;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .facts-article h2::before {
+        background-color: currentColor;
+    }
+
+    .toc {
+        border-width: 2px;
+    }
+
+    .toc a:hover,
+    .toc a:focus {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+    }
+}
