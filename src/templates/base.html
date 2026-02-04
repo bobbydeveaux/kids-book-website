@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{page_description}}">
+    <meta name="keywords" content="donkeys, donkey breeds, donkey care, animal care, equines">
+    <meta name="author" content="Donkey Website">
+
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:title" content="{{page_title}}">
+    <meta property="og:description" content="{{page_description}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{canonical_url}}">
+    <meta property="og:image" content="{{og_image}}">
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{page_title}}">
+    <meta name="twitter:description" content="{{page_description}}">
+    <meta name="twitter:image" content="{{og_image}}">
+
+    <title>{{page_title}}</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{canonical_url}}">
+
+    <!-- Favicon and app icons -->
+    <link rel="icon" type="image/svg+xml" href="/images/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/css/styles.css" as="style">
+    <link rel="preload" href="/js/main.js" as="script">
+
+    <!-- DNS prefetch for external domains (if any) -->
+    <!-- <link rel="dns-prefetch" href="//fonts.googleapis.com"> -->
+
+    <!-- Critical CSS will be inlined here during build process -->
+    <style>
+        /* Critical above-the-fold CSS will be extracted and inlined here */
+        /* This ensures immediate rendering without FOUC */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 3px;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 6px;
+        }
+        /* Temporary basic styles for initial paint */
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+
+    <!-- Main stylesheet with async loading -->
+    <link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'; this.onload=null;">
+
+    <!-- Fallback for CSS if JavaScript is disabled -->
+    <noscript>
+        <link rel="stylesheet" href="/css/styles.css">
+    </noscript>
+</head>
+<body>
+    <!-- Skip to content link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Site header with navigation -->
+    <header class="site-header" role="banner" aria-label="Site header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo and site title -->
+                <a href="/" class="logo" aria-label="Donkey Website - Go to homepage">
+                    <img src="/images/icons/donkey-logo.svg" alt="Donkey Website Logo" width="40" height="40" loading="eager">
+                    <span class="logo-text">Donkey Website</span>
+                </a>
+
+                <!-- Main navigation -->
+                <nav class="main-nav" role="navigation" aria-label="Main site navigation">
+                    <!-- Mobile menu toggle button -->
+                    <button
+                        class="mobile-menu-toggle"
+                        aria-expanded="false"
+                        aria-controls="nav-menu"
+                        aria-label="Toggle navigation menu"
+                        type="button">
+                        <svg class="icon-menu" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                            <use href="#icon-menu"></use>
+                        </svg>
+                        <svg class="icon-close" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" hidden>
+                            <use href="#icon-close"></use>
+                        </svg>
+                        <span class="sr-only">Menu</span>
+                    </button>
+
+                    <!-- Navigation menu -->
+                    <ul id="nav-menu" class="nav-menu" role="menubar">
+                        <li role="none">
+                            <a href="/" role="menuitem" aria-current="{{#if is_home}}page{{/if}}">Home</a>
+                        </li>
+                        <li role="none">
+                            <a href="/breeds/" role="menuitem" aria-current="{{#if is_breeds}}page{{/if}}">Breeds</a>
+                        </li>
+                        <li role="none">
+                            <a href="/care/" role="menuitem" aria-current="{{#if is_care}}page{{/if}}">Care Guide</a>
+                        </li>
+                        <li role="none">
+                            <a href="/facts.html" role="menuitem" aria-current="{{#if is_facts}}page{{/if}}">Facts</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main id="main-content" role="main" aria-label="Main content">
+        {{content}}
+    </main>
+
+    <!-- Site footer -->
+    <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+        <div class="container">
+            <!-- Footer content -->
+            <div class="footer-content">
+                <!-- Copyright information -->
+                <div class="footer-section">
+                    <p>&copy; 2026 Donkey Website. Educational resource about donkeys and their care.</p>
+                    <p>
+                        <small>
+                            This website is for educational purposes only.
+                            Always consult with a veterinarian for professional animal care advice.
+                        </small>
+                    </p>
+                </div>
+
+                <!-- Footer navigation -->
+                <nav class="footer-nav" role="navigation" aria-label="Footer navigation">
+                    <h2 class="sr-only">Footer Navigation</h2>
+                    <ul class="footer-nav-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/breeds/">Browse Breeds</a></li>
+                        <li><a href="/care/">Care Guides</a></li>
+                        <li><a href="/facts.html">Facts & About</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Additional footer links -->
+                <div class="footer-section">
+                    <nav aria-label="Legal and accessibility links">
+                        <ul class="footer-legal">
+                            <li><a href="/privacy.html">Privacy Policy</a></li>
+                            <li><a href="/accessibility.html">Accessibility Statement</a></li>
+                            <li><a href="/sitemap.html">Sitemap</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SVG sprite for icons -->
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <!-- Menu icon -->
+            <symbol id="icon-menu" viewBox="0 0 24 24">
+                <title>Menu</title>
+                <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+            </symbol>
+
+            <!-- Close icon -->
+            <symbol id="icon-close" viewBox="0 0 24 24">
+                <title>Close</title>
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+            </symbol>
+
+            <!-- Arrow right icon -->
+            <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+                <title>Arrow Right</title>
+                <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12l-4.58 4.59z"/>
+            </symbol>
+
+            <!-- External link icon -->
+            <symbol id="icon-external" viewBox="0 0 24 24">
+                <title>External Link</title>
+                <path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js" defer></script>
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Donkey Website",
+        "description": "Your comprehensive guide to donkey breeds, care, and fascinating facts",
+        "url": "{{canonical_url}}",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "{{base_url}}/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</body>
+</html>
