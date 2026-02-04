@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{breed.name}} - Donkey Breed Guide</title>
+    <meta name="description" content="Complete guide to {{breed.name}} donkeys. Learn about characteristics, history, care requirements, and everything you need to know about this breed.">
+    <link rel="canonical" href="/breeds/{{breed.slug}}.html">
+
+    <!-- Structured Data for Breed -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AnimalBreed",
+        "name": "{{breed.name}}",
+        "description": "{{breed.description}}",
+        "url": "/breeds/{{breed.slug}}.html",
+        "image": "/images/breeds/{{breed.images[0]}}",
+        "characteristics": [
+            {
+                "@type": "PropertyValue",
+                "name": "Height",
+                "value": "{{breed.height}}"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Weight",
+                "value": "{{breed.weight}}"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Temperament",
+                "value": "{{breed.temperament}}"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Lifespan",
+                "value": "{{breed.lifespan}}"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Critical CSS will be inlined here -->
+    <style>
+        /* Critical CSS for above-fold content */
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Georgia, serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .breed-header { background: #f8f9fa; padding: 2rem 0; }
+        .breed-layout { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; }
+        @media (min-width: 1024px) { .breed-layout { grid-template-columns: 1fr 2fr; } }
+        .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <nav class="main-navigation" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="/" aria-label="Donkey Website Home">
+                        <svg class="logo" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+                            <!-- Simple donkey icon placeholder -->
+                            <circle cx="20" cy="20" r="18" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+                            <text x="20" y="26" text-anchor="middle" font-size="12" fill="white">🐴</text>
+                        </svg>
+                        <span class="site-title">Donkey Guide</span>
+                    </a>
+                </div>
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="/" role="menuitem">Home</a></li>
+                    <li role="none"><a href="/breeds/" role="menuitem">Breeds</a></li>
+                    <li role="none"><a href="/care/" role="menuitem">Care</a></li>
+                    <li role="none"><a href="/facts.html" role="menuitem">Facts</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <article class="breed-detail" vocab="https://schema.org/" typeof="AnimalBreed">
+            <header class="breed-header">
+                <div class="container">
+                    <nav aria-label="Breadcrumb" role="navigation">
+                        <ol class="breadcrumb" vocab="https://schema.org/" typeof="BreadcrumbList">
+                            <li property="itemListElement" typeof="ListItem">
+                                <a property="item" typeof="WebPage" href="/">
+                                    <span property="name">Home</span>
+                                </a>
+                                <meta property="position" content="1">
+                            </li>
+                            <li property="itemListElement" typeof="ListItem">
+                                <a property="item" typeof="WebPage" href="/breeds/">
+                                    <span property="name">Breeds</span>
+                                </a>
+                                <meta property="position" content="2">
+                            </li>
+                            <li property="itemListElement" typeof="ListItem" aria-current="page">
+                                <span property="name">{{breed.name}}</span>
+                                <meta property="position" content="3">
+                            </li>
+                        </ol>
+                    </nav>
+
+                    <h1 property="name">{{breed.name}}</h1>
+                    <p class="breed-summary" property="description">{{breed.summary}}</p>
+                </div>
+            </header>
+
+            <section class="breed-content">
+                <div class="container">
+                    <div class="breed-layout">
+                        <!-- Image Gallery Section -->
+                        <div class="breed-images">
+                            <div class="image-gallery" role="img" aria-labelledby="gallery-heading">
+                                <h2 id="gallery-heading" class="visually-hidden">{{breed.name}} Images</h2>
+
+                                <div class="main-image">
+                                    <picture>
+                                        <source type="image/webp"
+                                                srcset="/images/breeds/{{breed.images[0]}}-400w.webp 400w,
+                                                        /images/breeds/{{breed.images[0]}}-800w.webp 800w,
+                                                        /images/breeds/{{breed.images[0]}}-1200w.webp 1200w"
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw">
+                                        <img property="image"
+                                             src="/images/breeds/{{breed.images[0]}}-800w.jpg"
+                                             srcset="/images/breeds/{{breed.images[0]}}-400w.jpg 400w,
+                                                     /images/breeds/{{breed.images[0]}}-800w.jpg 800w,
+                                                     /images/breeds/{{breed.images[0]}}-1200w.jpg 1200w"
+                                             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                                             alt="{{breed.name}} showing typical breed characteristics"
+                                             width="800" height="600">
+                                    </picture>
+                                </div>
+
+                                {{#if breed.images[1]}}
+                                <div class="thumbnail-gallery">
+                                    <button type="button"
+                                            class="thumbnail active"
+                                            data-image="{{breed.images[0]}}"
+                                            aria-label="View main image of {{breed.name}}">
+                                        <img src="/images/breeds/{{breed.images[0]}}-400w.jpg"
+                                             alt="{{breed.name}} - Image 1"
+                                             width="150" height="112">
+                                    </button>
+
+                                    {{#each breed.images as |image index|}}
+                                    {{#unless @first}}
+                                    <button type="button"
+                                            class="thumbnail"
+                                            data-image="{{image}}"
+                                            aria-label="View image {{@index}} of {{../breed.name}}">
+                                        <img src="/images/breeds/{{image}}-400w.jpg"
+                                             alt="{{../breed.name}} - Image {{@index}}"
+                                             width="150" height="112"
+                                             loading="lazy">
+                                    </button>
+                                    {{/unless}}
+                                    {{/each}}
+                                </div>
+                                {{/if}}
+                            </div>
+                        </div>
+
+                        <!-- Breed Information Section -->
+                        <div class="breed-info">
+                            <section class="breed-section" aria-labelledby="overview-heading">
+                                <h2 id="overview-heading">Overview</h2>
+                                <p property="description">{{breed.overview}}</p>
+                            </section>
+
+                            <section class="breed-section" aria-labelledby="characteristics-heading">
+                                <h2 id="characteristics-heading">Characteristics</h2>
+
+                                <dl class="characteristics-list">
+                                    <dt>Height</dt>
+                                    <dd property="height">{{breed.height}}</dd>
+
+                                    <dt>Weight</dt>
+                                    <dd property="weight">{{breed.weight}}</dd>
+
+                                    <dt>Temperament</dt>
+                                    <dd property="temperament">{{breed.temperament}}</dd>
+
+                                    <dt>Origin</dt>
+                                    <dd property="origin">{{breed.origin}}</dd>
+
+                                    <dt>Coat Colors</dt>
+                                    <dd property="colors">{{breed.colors}}</dd>
+
+                                    <dt>Average Lifespan</dt>
+                                    <dd property="lifespan">{{breed.lifespan}}</dd>
+                                </dl>
+                            </section>
+
+                            <section class="breed-section" aria-labelledby="history-heading">
+                                <h2 id="history-heading">History & Background</h2>
+                                <div class="section-content">
+                                    {{#each breed.history}}
+                                    <p>{{this}}</p>
+                                    {{/each}}
+                                </div>
+                            </section>
+
+                            <section class="breed-section" aria-labelledby="care-heading">
+                                <h2 id="care-heading">Care Requirements</h2>
+
+                                <div class="care-grid">
+                                    <div class="care-item">
+                                        <h3>Feeding</h3>
+                                        <p>{{breed.care.feeding}}</p>
+                                    </div>
+
+                                    <div class="care-item">
+                                        <h3>Housing</h3>
+                                        <p>{{breed.care.housing}}</p>
+                                    </div>
+
+                                    <div class="care-item">
+                                        <h3>Grooming</h3>
+                                        <p>{{breed.care.grooming}}</p>
+                                    </div>
+
+                                    <div class="care-item">
+                                        <h3>Exercise</h3>
+                                        <p>{{breed.care.exercise}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="care-cta">
+                                    <p><strong>Need detailed care guidance?</strong>
+                                    <a href="/care/">Visit our comprehensive care guides</a>
+                                    for in-depth information on donkey care, feeding schedules, health monitoring, and more.</p>
+                                </div>
+                            </section>
+
+                            <section class="breed-section" aria-labelledby="considerations-heading">
+                                <h2 id="considerations-heading">Special Considerations</h2>
+
+                                {{#if breed.considerations}}
+                                <div class="considerations-list">
+                                    {{#each breed.considerations}}
+                                    <div class="consideration-item">
+                                        <h3>{{this.title}}</h3>
+                                        <p>{{this.description}}</p>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                                {{else}}
+                                <p>{{breed.name}}s are generally hardy and adaptable animals when provided with proper care, suitable shelter, and regular health monitoring.</p>
+                                {{/if}}
+                            </section>
+                        </div>
+                    </div>
+
+                    <!-- Related Breeds Section -->
+                    <section class="related-breeds" aria-labelledby="related-heading">
+                        <h2 id="related-heading">Explore Other Breeds</h2>
+
+                        <div class="related-grid">
+                            <a href="/breeds/miniature-mediterranean.html" class="related-card" aria-label="Learn about Miniature Mediterranean Donkeys">
+                                <img src="/images/breeds/miniature-mediterranean-400w.jpg"
+                                     alt="Miniature Mediterranean Donkey"
+                                     width="200" height="150" loading="lazy">
+                                <h3>Miniature Mediterranean</h3>
+                            </a>
+
+                            <a href="/breeds/standard-donkey.html" class="related-card" aria-label="Learn about Standard Donkeys">
+                                <img src="/images/breeds/standard-donkey-400w.jpg"
+                                     alt="Standard Donkey"
+                                     width="200" height="150" loading="lazy">
+                                <h3>Standard Donkey</h3>
+                            </a>
+
+                            <a href="/breeds/mammoth-donkey.html" class="related-card" aria-label="Learn about Mammoth Donkeys">
+                                <img src="/images/breeds/mammoth-donkey-400w.jpg"
+                                     alt="Mammoth Donkey"
+                                     width="200" height="150" loading="lazy">
+                                <h3>Mammoth Donkey</h3>
+                            </a>
+
+                            <a href="/breeds/poitou-donkey.html" class="related-card" aria-label="Learn about Poitou Donkeys">
+                                <img src="/images/breeds/poitou-donkey-400w.jpg"
+                                     alt="Poitou Donkey"
+                                     width="200" height="150" loading="lazy">
+                                <h3>Poitou Donkey</h3>
+                            </a>
+                        </div>
+
+                        <div class="section-cta">
+                            <a href="/breeds/" class="btn btn-secondary">View All Breeds</a>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/breeds/">Breeds</a></li>
+                        <li><a href="/care/">Care Guides</a></li>
+                        <li><a href="/facts.html">Facts & About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Care Resources</h3>
+                    <ul>
+                        <li><a href="/care/feeding.html">Feeding Guide</a></li>
+                        <li><a href="/care/grooming.html">Grooming</a></li>
+                        <li><a href="/care/housing.html">Housing</a></li>
+                        <li><a href="/care/health.html">Health Care</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>Your comprehensive guide to donkey breeds, care, and companionship. Learn everything you need to know about these remarkable animals.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Donkey Guide. Educational resource for donkey enthusiasts.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Progressive enhancement scripts -->
+    <script>
+        // Image gallery functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainImage = document.querySelector('.main-image img');
+            const mainPicture = document.querySelector('.main-image picture source');
+
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    const imageSlug = this.dataset.image;
+
+                    // Remove active class from all thumbnails
+                    thumbnails.forEach(t => t.classList.remove('active'));
+
+                    // Add active class to clicked thumbnail
+                    this.classList.add('active');
+
+                    // Update main image sources
+                    if (mainImage && imageSlug) {
+                        mainImage.src = `/images/breeds/${imageSlug}-800w.jpg`;
+                        mainImage.srcset = `/images/breeds/${imageSlug}-400w.jpg 400w, /images/breeds/${imageSlug}-800w.jpg 800w, /images/breeds/${imageSlug}-1200w.jpg 1200w`;
+                        mainImage.alt = this.querySelector('img').alt.replace(/Image \d+/, 'showing typical breed characteristics');
+
+                        // Update WebP source
+                        if (mainPicture) {
+                            mainPicture.srcset = `/images/breeds/${imageSlug}-400w.webp 400w, /images/breeds/${imageSlug}-800w.webp 800w, /images/breeds/${imageSlug}-1200w.webp 1200w`;
+                        }
+                    }
+                });
+
+                // Keyboard accessibility
+                thumbnail.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+        });
+
+        // Lazy loading fallback for older browsers
+        if ('IntersectionObserver' in window) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy');
+                        }
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        }
+
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('nav-open');
+                navToggle.setAttribute('aria-expanded',
+                    navToggle.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'
+                );
+            });
+        }
+    </script>
+</body>
+</html>
