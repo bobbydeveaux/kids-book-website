@@ -1,0 +1,433 @@
+/* Accessibility Utilities */
+/* Screen reader, focus states, and accessibility enhancements */
+
+/* Screen reader only text - visually hidden but accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Show on focus for screen reader text that should become visible */
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Focus management */
+.focus-trap {
+  position: relative;
+}
+
+/* Enhanced focus styles for better keyboard navigation */
+.focus-visible:focus,
+[data-focus-visible]:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Remove default browser focus outline when using custom styles */
+.focus-visible:focus:not(:focus-visible),
+[data-focus-visible]:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Skip navigation links */
+.skip-nav {
+  position: absolute;
+  top: -100px;
+  left: var(--spacing-4);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-2) var(--spacing-4);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+  z-index: var(--z-index-modal);
+  transition: var(--transition-fast);
+}
+
+.skip-nav:focus {
+  top: var(--spacing-4);
+}
+
+/* Skip to main content */
+.skip-to-main:focus {
+  position: absolute;
+  top: var(--spacing-4);
+  left: var(--spacing-4);
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-2) var(--spacing-4);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  z-index: var(--z-index-modal);
+}
+
+/* Keyboard navigation enhancements */
+.keyboard-nav button:focus,
+.keyboard-nav a:focus,
+.keyboard-nav input:focus,
+.keyboard-nav select:focus,
+.keyboard-nav textarea:focus,
+.keyboard-nav [tabindex]:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .high-contrast-border {
+    border: 2px solid currentColor;
+  }
+
+  .high-contrast-bg {
+    background-color: var(--color-text);
+    color: var(--color-background);
+  }
+
+  /* Enhanced button contrast */
+  .btn {
+    border-width: 2px;
+  }
+
+  /* Enhanced link contrast */
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+
+  /* Enhanced form control contrast */
+  input,
+  select,
+  textarea {
+    border-width: 2px;
+  }
+}
+
+/* Motion reduction preferences */
+@media (prefers-reduced-motion: reduce) {
+  .no-motion * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .no-motion *::before,
+  .no-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ARIA live region utilities */
+.sr-live {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.sr-live[aria-live="polite"] {
+  /* Polite announcements for non-urgent updates */
+}
+
+.sr-live[aria-live="assertive"] {
+  /* Assertive announcements for urgent updates */
+}
+
+/* Form accessibility enhancements */
+.form-group {
+  margin-bottom: var(--spacing-4);
+}
+
+.form-label {
+  display: block;
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-2);
+  color: var(--color-text);
+}
+
+.form-label.required::after {
+  content: ' *';
+  color: var(--color-error);
+  font-weight: var(--font-weight-normal);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--spacing-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  transition: var(--transition-fast);
+  background-color: var(--color-white);
+  color: var(--color-text);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+.form-input:invalid {
+  border-color: var(--color-error);
+}
+
+.form-input:invalid:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-error {
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-1);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.form-help {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-1);
+}
+
+/* Focus management for modals and dropdowns */
+.focus-lock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: var(--z-index-modal);
+}
+
+/* Color contrast utilities */
+.contrast-aa {
+  /* Ensure at least AA contrast ratio (4.5:1) */
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+.contrast-aaa {
+  /* Ensure AAA contrast ratio (7:1) */
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+/* Text size utilities for accessibility */
+.text-large {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+}
+
+.text-extra-large {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Button accessibility enhancements */
+.btn-accessible {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Link accessibility */
+.link-external::after {
+  content: ' ↗';
+  font-size: var(--font-size-sm);
+  opacity: 0.7;
+}
+
+.link-download::after {
+  content: ' ⬇';
+  font-size: var(--font-size-sm);
+  opacity: 0.7;
+}
+
+/* Table accessibility */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-text);
+}
+
+/* Error and alert styling for accessibility */
+.alert {
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-4);
+  border: 1px solid transparent;
+}
+
+.alert-error {
+  background-color: #FEE2E2;
+  border-color: var(--color-error);
+  color: #991B1B;
+}
+
+.alert-warning {
+  background-color: #FEF3C7;
+  border-color: var(--color-warning);
+  color: #92400E;
+}
+
+.alert-success {
+  background-color: #D1FAE5;
+  border-color: var(--color-success);
+  color: #065F46;
+}
+
+.alert-info {
+  background-color: #DBEAFE;
+  border-color: var(--color-focus);
+  color: #1E40AF;
+}
+
+.alert-title {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-2);
+}
+
+.alert-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: var(--spacing-2);
+  flex-shrink: 0;
+}
+
+/* Landmark identification (for debugging) */
+[role="main"],
+[role="navigation"],
+[role="banner"],
+[role="contentinfo"],
+[role="complementary"],
+[role="search"] {
+  /* Add visual border in development mode */
+}
+
+/* Debug mode for accessibility testing */
+.a11y-debug [role] {
+  outline: 2px dashed #ff0080;
+  outline-offset: 2px;
+}
+
+.a11y-debug [aria-label]::before {
+  content: '[' attr(aria-label) ']';
+  background: #ff0080;
+  color: white;
+  font-size: var(--font-size-xs);
+  padding: 2px 4px;
+  border-radius: var(--radius-sm);
+  position: absolute;
+  z-index: 1000;
+}
+
+/* Language and reading direction support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .skip-nav {
+  left: auto;
+  right: var(--spacing-4);
+}
+
+[lang]:not([lang="en"]) {
+  /* Specific language styling could go here */
+}
+
+/* Print accessibility */
+@media print {
+  .sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  .skip-nav,
+  .focus-lock {
+    display: none;
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: var(--font-size-xs);
+    color: #666;
+  }
+}
+
+/* Touch target sizing for mobile accessibility */
+@media (max-width: 768px) {
+  .touch-target {
+    min-width: 48px;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Ensure adequate spacing between touch targets */
+  .touch-targets > * + * {
+    margin-left: var(--spacing-2);
+  }
+}
+
+/* Voice control and speech recognition support */
+[data-voice-command] {
+  /* Elements that can be activated by voice commands */
+  position: relative;
+}
+
+[data-voice-command]::after {
+  /* Optionally show voice command hints in development */
+  content: attr(data-voice-command);
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: var(--font-size-xs);
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 2px 4px;
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Development helper: show voice commands on hover */
+.dev-mode [data-voice-command]:hover::after {
+  opacity: 1;
+}
