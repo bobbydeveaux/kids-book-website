@@ -1,0 +1,21 @@
+{
+  "featuredProductIds": [
+    "prod-001",
+    "prod-003",
+    "prod-005",
+    "prod-007"
+  ],
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2026-02-04",
+    "description": "Featured products displayed on homepage",
+    "displayOrder": "priority",
+    "maxDisplayCount": 4,
+    "refreshPolicyDays": 7,
+    "config": {
+      "showFeaturedBadge": true,
+      "enableRotation": false,
+      "priority": "high"
+    }
+  }
+}
