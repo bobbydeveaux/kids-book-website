@@ -1,0 +1,383 @@
+/*
+ * Global CSS Reset and Base Styles
+ * Lingerie Website - Modern CSS Reset with accessibility improvements
+ */
+
+/* ============================================================================
+   CSS Reset - Modern minimal reset
+   ============================================================================ */
+
+/* Box-sizing reset - apply border-box to all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation on mobile devices */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove list styles on ul, ol elements with class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================================
+   Global Base Styles
+   ============================================================================ */
+
+/* Smooth scrolling for users who don't prefer reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Root element styles */
+html {
+  font-size: 16px; /* Base font size */
+  background-color: var(--color-background, #ffffff);
+  color: var(--color-text, #333333);
+}
+
+/* Body styles with default font family and improved rendering */
+body {
+  font-family: var(--font-family-base, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif);
+  font-weight: var(--font-weight-normal, 400);
+  line-height: var(--line-height-base, 1.6);
+  color: var(--color-text, #333333);
+  background-color: var(--color-background, #ffffff);
+
+  /* Improve text rendering */
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1;
+  font-kerning: normal;
+
+  /* Better font smoothing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================================
+   Typography Base Styles
+   ============================================================================ */
+
+/* Heading elements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold, 600);
+  line-height: var(--line-height-heading, 1.2);
+  margin-bottom: var(--spacing-sm, 0.5rem);
+  color: var(--color-heading, inherit);
+}
+
+h1 {
+  font-size: var(--font-size-h1, 2.5rem);
+}
+
+h2 {
+  font-size: var(--font-size-h2, 2rem);
+}
+
+h3 {
+  font-size: var(--font-size-h3, 1.5rem);
+}
+
+h4 {
+  font-size: var(--font-size-h4, 1.25rem);
+}
+
+h5 {
+  font-size: var(--font-size-h5, 1.125rem);
+}
+
+h6 {
+  font-size: var(--font-size-h6, 1rem);
+}
+
+/* Paragraph and text elements */
+p {
+  margin-bottom: var(--spacing-md, 1rem);
+}
+
+/* Links */
+a {
+  color: var(--color-link, #0066cc);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-link-hover, #0052a3);
+  text-decoration: underline;
+}
+
+/* ============================================================================
+   Accessibility - Focus Styles
+   ============================================================================ */
+
+/* High contrast focus styles for better accessibility */
+:focus {
+  outline: 2px solid var(--color-focus, #005fcc);
+  outline-offset: 2px;
+}
+
+/* Remove outline for mouse users but keep for keyboard users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus, #005fcc);
+  outline-offset: 2px;
+}
+
+/* Enhanced focus styles for interactive elements */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-focus, #005fcc);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--color-focus-shadow, rgba(0, 95, 204, 0.1));
+}
+
+/* ============================================================================
+   Form Elements Base Styles
+   ============================================================================ */
+
+/* Button reset and base styles */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Input and textarea base styles */
+input,
+textarea,
+select {
+  border: 1px solid var(--color-border, #cccccc);
+  border-radius: var(--border-radius, 4px);
+  padding: var(--spacing-xs, 0.5rem);
+  background-color: var(--color-input-background, #ffffff);
+  color: var(--color-text, #333333);
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled,
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================================================
+   Utility Classes
+   ============================================================================ */
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--color-background, #ffffff);
+  color: var(--color-text, #333333);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* ============================================================================
+   CSS Variables - Fallback Values
+   ============================================================================ */
+
+:root {
+  /* Colors */
+  --color-background: #ffffff;
+  --color-text: #333333;
+  --color-heading: #222222;
+  --color-link: #0066cc;
+  --color-link-hover: #0052a3;
+  --color-border: #cccccc;
+  --color-focus: #005fcc;
+  --color-focus-shadow: rgba(0, 95, 204, 0.1);
+  --color-input-background: #ffffff;
+
+  /* Typography */
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+  --line-height-base: 1.6;
+  --line-height-heading: 1.2;
+
+  /* Font sizes */
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+  --font-size-h4: 1.25rem;
+  --font-size-h5: 1.125rem;
+  --font-size-h6: 1rem;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Border radius */
+  --border-radius: 4px;
+  --border-radius-sm: 2px;
+  --border-radius-lg: 8px;
+}
+
+/* ============================================================================
+   Print Styles
+   ============================================================================ */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
