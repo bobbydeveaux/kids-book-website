@@ -1,0 +1,100 @@
+<!-- Home page template -->
+<!-- Hero section -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-image">
+    <picture>
+      <source
+        srcset="/images/hero/donkey-hero-400w.webp 400w,
+                /images/hero/donkey-hero-800w.webp 800w,
+                /images/hero/donkey-hero-1200w.webp 1200w"
+        type="image/webp">
+      <source
+        srcset="/images/hero/donkey-hero-400w.jpg 400w,
+                /images/hero/donkey-hero-800w.jpg 800w,
+                /images/hero/donkey-hero-1200w.jpg 1200w"
+        type="image/jpeg">
+      <img
+        src="/images/hero/donkey-hero-800w.jpg"
+        alt="Peaceful donkey standing in green meadow under blue sky, showing the gentle nature of these remarkable animals"
+        width="1200"
+        height="600"
+        loading="eager"
+        class="hero-img">
+    </picture>
+  </div>
+  <div class="hero-content">
+    <div class="container">
+      <h1 id="hero-heading">Discover the World of Donkeys</h1>
+      <p class="hero-subtitle">Learn about donkey breeds, proper care, and fascinating facts about these remarkable animals that have served humans for thousands of years.</p>
+      <a href="/breeds/" class="btn btn-primary">Explore Breeds</a>
+    </div>
+  </div>
+</section>
+
+<!-- Overview cards -->
+<section class="overview-cards" aria-labelledby="overview-heading">
+  <div class="container">
+    <h2 id="overview-heading" class="sr-only">Site sections</h2>
+
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-icon">
+          <img src="/images/icons/donkey-breeds-icon.svg" alt="" aria-hidden="true" width="48" height="48">
+        </div>
+        <h3>Donkey Breeds</h3>
+        <p>Explore different donkey breeds from around the world, from the tiny Miniature Mediterranean to the sturdy American Mammoth Jackstock.</p>
+        <a href="/breeds/" class="btn btn-secondary" aria-describedby="breeds-desc">
+          Learn More
+          <span class="sr-only"> about donkey breeds</span>
+        </a>
+        <span id="breeds-desc" class="sr-only">Discover various donkey breeds including their characteristics, origins, and unique traits</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">
+          <img src="/images/icons/care-guide-icon.svg" alt="" aria-hidden="true" width="48" height="48">
+        </div>
+        <h3>Care Guide</h3>
+        <p>Learn essential donkey care including feeding, grooming, housing, and health management for happy, healthy donkeys.</p>
+        <a href="/care/" class="btn btn-secondary" aria-describedby="care-desc">
+          Learn More
+          <span class="sr-only"> about donkey care</span>
+        </a>
+        <span id="care-desc" class="sr-only">Comprehensive guide covering feeding, grooming, housing, and health care for donkeys</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">
+          <img src="/images/icons/facts-icon.svg" alt="" aria-hidden="true" width="48" height="48">
+        </div>
+        <h3>Facts & History</h3>
+        <p>Discover fascinating facts about donkeys, their ancient history, and their important role in human civilization throughout the ages.</p>
+        <a href="/facts.html" class="btn btn-secondary" aria-describedby="facts-desc">
+          Learn More
+          <span class="sr-only"> about donkey facts and history</span>
+        </a>
+        <span id="facts-desc" class="sr-only">Explore interesting facts about donkey history, behavior, and their relationship with humans</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Featured content section -->
+<section class="featured-content" aria-labelledby="featured-heading">
+  <div class="container">
+    <h2 id="featured-heading">Did You Know?</h2>
+    <div class="featured-fact">
+      <div class="fact-image">
+        <img src="/images/featured/donkey-fact.jpg"
+             alt="Close-up of a donkey's face showing their intelligent, gentle expression and long ears"
+             width="300"
+             height="200"
+             loading="lazy">
+      </div>
+      <div class="fact-content">
+        <p>Donkeys have excellent memories and can recognize areas and other donkeys they haven't seen for 20-25 years! Their incredible intelligence and loyalty have made them valuable companions to humans for over 5,000 years.</p>
+        <a href="/facts.html" class="btn btn-outline">Discover More Facts</a>
+      </div>
+    </div>
+  </div>
+</section>

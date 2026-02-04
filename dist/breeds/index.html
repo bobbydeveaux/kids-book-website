@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore different donkey breeds from around the world. Learn about Miniature Mediterranean, American Mammoth Jackstock, Andalusian, and Poitou donkeys.">
+  <meta name="keywords" content="donkey breeds, Miniature Mediterranean, American Mammoth Jackstock, Andalusian donkey, Poitou donkey">
+  <meta name="author" content="Donkey Website">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://donkey-website.com/breeds/">
+  <meta property="og:title" content="Donkey Breeds - Donkey Website">
+  <meta property="og:description" content="Discover the diverse world of donkey breeds from around the globe">
+  <meta property="og:image" content="https://donkey-website.com/images/breeds/breed-gallery.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://donkey-website.com/breeds/">
+  <meta property="twitter:title" content="Donkey Breeds - Donkey Website">
+  <meta property="twitter:description" content="Discover the diverse world of donkey breeds from around the globe">
+  <meta property="twitter:image" content="https://donkey-website.com/images/breeds/breed-gallery.jpg">
+
+  <title>Donkey Breeds - Donkey Website</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Critical CSS inline for performance -->
+  <style>
+    /* Critical CSS for above-the-fold content */
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: #000;
+      color: #fff;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip link for keyboard navigation accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header with navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo" aria-label="Donkey Website Home">
+          <img src="/images/icons/donkey-logo.svg" alt="Donkey Website" width="40" height="40">
+          <span>Donkey Website</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-menu">
+            <svg class="icon-menu" aria-hidden="true"><use href="#icon-menu"></use></svg>
+            <svg class="icon-close" aria-hidden="true" hidden><use href="#icon-close"></use></svg>
+            <span class="sr-only">Toggle menu</span>
+          </button>
+
+          <ul class="nav-menu" id="nav-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/breeds/" aria-current="page">Breeds</a></li>
+            <li><a href="/care/">Care Guide</a></li>
+            <li><a href="/facts.html">Facts</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content area with landmark -->
+  <main id="main-content">
+    <!-- Breadcrumb navigation -->
+    <nav aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="/">Home</a></li>
+          <li aria-current="page">Breeds</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Page header -->
+    <header class="page-header">
+      <div class="container">
+        <h1>Donkey Breeds</h1>
+        <p class="page-subtitle">Discover the diverse world of donkey breeds, each with unique characteristics, origins, and purposes. From miniature companions to working animals, learn about these remarkable creatures.</p>
+      </div>
+    </header>
+
+    <!-- Breed gallery -->
+    <section class="breed-gallery" aria-labelledby="breeds-heading">
+      <div class="container">
+        <h2 id="breeds-heading" class="sr-only">Available breed information</h2>
+
+        <div class="breed-grid">
+          <article class="breed-card">
+            <div class="breed-image">
+              <img src="/images/breeds/miniature-mediterranean-thumb.jpg"
+                   alt="Miniature Mediterranean donkey standing in a field, showing its compact size and distinctive grey coloring"
+                   width="300"
+                   height="200"
+                   loading="lazy">
+            </div>
+            <div class="breed-info">
+              <h3>Miniature Mediterranean</h3>
+              <p class="breed-origin">Origin: Mediterranean islands</p>
+              <p class="breed-description">The smallest donkey breed, standing just 26-36 inches tall. Known for their gentle temperament and intelligence, making them excellent companion animals.</p>
+              <ul class="breed-highlights" aria-label="Key characteristics">
+                <li>Height: 26-36 inches</li>
+                <li>Color: Usually grey or brown</li>
+                <li>Temperament: Gentle, intelligent</li>
+              </ul>
+              <a href="/breeds/miniature-mediterranean.html" class="btn btn-primary" aria-describedby="mini-med-desc">
+                Learn More
+                <span class="sr-only"> about Miniature Mediterranean donkeys</span>
+              </a>
+              <span id="mini-med-desc" class="sr-only">Detailed information about Miniature Mediterranean donkey characteristics, care, and history</span>
+            </div>
+          </article>
+
+          <article class="breed-card">
+            <div class="breed-image">
+              <img src="/images/breeds/american-mammoth-thumb.jpg"
+                   alt="American Mammoth Jackstock donkey showing its impressive size and muscular build in a pasture setting"
+                   width="300"
+                   height="200"
+                   loading="lazy">
+            </div>
+            <div class="breed-info">
+              <h3>American Mammoth Jackstock</h3>
+              <p class="breed-origin">Origin: United States</p>
+              <p class="breed-description">The largest donkey breed, developed in America for mule production. These impressive animals can reach over 14 hands high and are known for their strength and endurance.</p>
+              <ul class="breed-highlights" aria-label="Key characteristics">
+                <li>Height: 14+ hands (56+ inches)</li>
+                <li>Color: Black, brown, grey</li>
+                <li>Temperament: Strong, hardworking</li>
+              </ul>
+              <a href="/breeds/american-mammoth-jackstock.html" class="btn btn-primary" aria-describedby="mammoth-desc">
+                Learn More
+                <span class="sr-only"> about American Mammoth Jackstock donkeys</span>
+              </a>
+              <span id="mammoth-desc" class="sr-only">Comprehensive information about American Mammoth Jackstock donkey breeding, uses, and characteristics</span>
+            </div>
+          </article>
+
+          <article class="breed-card">
+            <div class="breed-image">
+              <img src="/images/breeds/andalusian-thumb.jpg"
+                   alt="Andalusian donkey in traditional Spanish countryside, displaying its elegant build and classic appearance"
+                   width="300"
+                   height="200"
+                   loading="lazy">
+            </div>
+            <div class="breed-info">
+              <h3>Andalusian</h3>
+              <p class="breed-origin">Origin: Andalusia, Spain</p>
+              <p class="breed-description">A medium-sized breed from southern Spain, prized for their sure-footedness and endurance. Traditional working animals of the Iberian Peninsula.</p>
+              <ul class="breed-highlights" aria-label="Key characteristics">
+                <li>Height: 11-13 hands (44-52 inches)</li>
+                <li>Color: Grey, brown, white</li>
+                <li>Temperament: Hardy, sure-footed</li>
+              </ul>
+              <a href="/breeds/andalusian.html" class="btn btn-primary" aria-describedby="andalusian-desc">
+                Learn More
+                <span class="sr-only"> about Andalusian donkeys</span>
+              </a>
+              <span id="andalusian-desc" class="sr-only">Learn about Andalusian donkey heritage, characteristics, and traditional uses in Spain</span>
+            </div>
+          </article>
+
+          <article class="breed-card">
+            <div class="breed-image">
+              <img src="/images/breeds/poitou-thumb.jpg"
+                   alt="Poitou donkey with its distinctive long, shaggy brown coat characteristic of this rare French breed"
+                   width="300"
+                   height="200"
+                   loading="lazy">
+            </div>
+            <div class="breed-info">
+              <h3>Poitou</h3>
+              <p class="breed-origin">Origin: Poitou region, France</p>
+              <p class="breed-description">A rare and distinctive breed known for their large size and unique shaggy coat called a "cadanette." Originally bred to produce large mules for agricultural work.</p>
+              <ul class="breed-highlights" aria-label="Key characteristics">
+                <li>Height: 13-14 hands (52-56 inches)</li>
+                <li>Color: Brown with shaggy coat</li>
+                <li>Temperament: Docile, strong</li>
+              </ul>
+              <a href="/breeds/poitou.html" class="btn btn-primary" aria-describedby="poitou-desc">
+                Learn More
+                <span class="sr-only"> about Poitou donkeys</span>
+              </a>
+              <span id="poitou-desc" class="sr-only">Discover the history and unique characteristics of the rare Poitou donkey breed from France</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breed comparison section -->
+    <section class="breed-comparison" aria-labelledby="comparison-heading">
+      <div class="container">
+        <h2 id="comparison-heading">Breed Comparison</h2>
+        <p>Each donkey breed has evolved for different purposes and environments. Use this quick reference to understand the key differences.</p>
+
+        <div class="comparison-table-container">
+          <table class="breed-comparison-table" role="table" aria-label="Donkey breed comparison">
+            <caption class="sr-only">Comparison of four donkey breeds showing height, origin, and primary use</caption>
+            <thead>
+              <tr>
+                <th scope="col">Breed</th>
+                <th scope="col">Height Range</th>
+                <th scope="col">Origin</th>
+                <th scope="col">Primary Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Miniature Mediterranean</th>
+                <td>26-36 inches</td>
+                <td>Mediterranean</td>
+                <td>Companion animal</td>
+              </tr>
+              <tr>
+                <th scope="row">American Mammoth Jackstock</th>
+                <td>56+ inches</td>
+                <td>United States</td>
+                <td>Mule production</td>
+              </tr>
+              <tr>
+                <th scope="row">Andalusian</th>
+                <td>44-52 inches</td>
+                <td>Spain</td>
+                <td>Pack animal, riding</td>
+              </tr>
+              <tr>
+                <th scope="row">Poitou</th>
+                <td>52-56 inches</td>
+                <td>France</td>
+                <td>Agricultural work</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Donkey Website. Educational resource about donkeys.</p>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-nav">
+          <li><a href="/breeds/">Breeds</a></li>
+          <li><a href="/care/">Care Guide</a></li>
+          <li><a href="/facts.html">Facts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- SVG Sprite for icons -->
+  <svg class="svg-sprite" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+    <defs>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- JavaScript -->
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
