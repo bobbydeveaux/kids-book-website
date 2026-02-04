@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Component Test</title>
+    <link rel="stylesheet" href="src/styles/base/variables.css">
+    <link rel="stylesheet" href="src/styles/components/button.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #f8fafc;
+        }
+
+        .demo-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .demo-section h2 {
+            margin-top: 0;
+            color: #1e293b;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .demo-row {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .state-demo {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            margin: 0.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .demo-label {
+            font-weight: 600;
+            color: #64748b;
+            min-width: 100px;
+        }
+
+        .icon {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+        }
+
+        /* Simple icon styles for demo */
+        .icon-plus::before { content: "➕"; }
+        .icon-download::before { content: "⬇️"; }
+        .icon-close::before { content: "✖️"; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <h1>Button Component Demo</h1>
+    <p>Testing the reusable button component with all variants and states.</p>
+
+    <!-- Button Variants -->
+    <div class="demo-section">
+        <h2>Button Variants</h2>
+        <div class="demo-row">
+            <button class="btn btn--primary">Primary Button</button>
+            <button class="btn btn--secondary">Secondary Button</button>
+            <button class="btn btn--tertiary">Tertiary Button</button>
+        </div>
+    </div>
+
+    <!-- Button Sizes -->
+    <div class="demo-section">
+        <h2>Button Sizes</h2>
+        <div class="demo-row">
+            <button class="btn btn--small">Small</button>
+            <button class="btn btn--medium">Medium</button>
+            <button class="btn btn--large">Large</button>
+        </div>
+    </div>
+
+    <!-- Interactive States -->
+    <div class="demo-section">
+        <h2>Interactive States</h2>
+
+        <div class="state-demo">
+            <span class="demo-label">Normal:</span>
+            <button class="btn">Normal State</button>
+        </div>
+
+        <div class="state-demo">
+            <span class="demo-label">Disabled:</span>
+            <button class="btn" disabled>Disabled State</button>
+            <button class="btn btn--secondary" disabled>Secondary Disabled</button>
+            <button class="btn btn--tertiary" disabled>Tertiary Disabled</button>
+        </div>
+
+        <div class="state-demo">
+            <span class="demo-label">Focus:</span>
+            <button class="btn" tabindex="0">Focus me with Tab</button>
+        </div>
+    </div>
+
+    <!-- Button Combinations -->
+    <div class="demo-section">
+        <h2>Size + Variant Combinations</h2>
+
+        <div class="demo-grid">
+            <button class="btn btn--primary btn--small">Primary Small</button>
+            <button class="btn btn--primary btn--medium">Primary Medium</button>
+            <button class="btn btn--primary btn--large">Primary Large</button>
+
+            <button class="btn btn--secondary btn--small">Secondary Small</button>
+            <button class="btn btn--secondary btn--medium">Secondary Medium</button>
+            <button class="btn btn--secondary btn--large">Secondary Large</button>
+
+            <button class="btn btn--tertiary btn--small">Tertiary Small</button>
+            <button class="btn btn--tertiary btn--medium">Tertiary Medium</button>
+            <button class="btn btn--tertiary btn--large">Tertiary Large</button>
+        </div>
+    </div>
+
+    <!-- Icon Buttons -->
+    <div class="demo-section">
+        <h2>Icon Buttons</h2>
+
+        <div class="demo-row">
+            <button class="btn btn--icon-left">
+                <span class="icon icon-plus"></span>
+                Add Item
+            </button>
+
+            <button class="btn btn--secondary btn--icon-right">
+                Download
+                <span class="icon icon-download"></span>
+            </button>
+
+            <button class="btn btn--tertiary btn--icon-only" aria-label="Close">
+                <span class="icon icon-close"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Full Width Buttons -->
+    <div class="demo-section">
+        <h2>Full Width Buttons</h2>
+
+        <button class="btn btn--primary btn--full-width">Full Width Primary</button>
+        <br><br>
+        <button class="btn btn--secondary btn--full-width">Full Width Secondary</button>
+        <br><br>
+        <button class="btn btn--tertiary btn--full-width">Full Width Tertiary</button>
+    </div>
+
+    <!-- Button Group -->
+    <div class="demo-section">
+        <h2>Button Groups</h2>
+
+        <div class="btn-group">
+            <button class="btn btn--tertiary">Cancel</button>
+            <button class="btn btn--secondary">Save Draft</button>
+            <button class="btn btn--primary">Publish</button>
+        </div>
+    </div>
+
+    <!-- Accessibility Test -->
+    <div class="demo-section">
+        <h2>Accessibility Test</h2>
+        <p>Navigate with Tab key to test focus indicators:</p>
+        <div class="demo-row">
+            <button class="btn btn--primary">Button 1</button>
+            <button class="btn btn--secondary">Button 2</button>
+            <button class="btn btn--tertiary">Button 3</button>
+            <button class="btn" disabled>Disabled Button</button>
+        </div>
+    </div>
+
+    <!-- Touch Target Test (Mobile) -->
+    <div class="demo-section">
+        <h2>Mobile Touch Targets</h2>
+        <p>These buttons meet the minimum 44px touch target on mobile:</p>
+        <div class="demo-row">
+            <button class="btn btn--small">Small (40px+)</button>
+            <button class="btn btn--medium">Medium (40px)</button>
+            <button class="btn btn--large">Large (44px)</button>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactivity for testing
+        document.addEventListener('DOMContentLoaded', function() {
+            // Test focus indicators
+            const buttons = document.querySelectorAll('.btn:not([disabled])');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    console.log(`Clicked: ${this.textContent.trim()}`);
+                });
+            });
+
+            // Show hover states in console for testing
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    console.log(`Hover: ${this.textContent.trim()}`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
