@@ -1,0 +1,51 @@
+{
+  "name": "kids-book-website",
+  "version": "1.0.0",
+  "description": "A delightful educational website about donkeys for kids",
+  "main": "build/build.js",
+  "scripts": {
+    "build": "node build/build.js",
+    "dev": "npm run build && python3 -m http.server 8000 --directory dist",
+    "clean": "rm -rf dist/",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint:css": "stylelint 'src/styles/**/*.css'",
+    "prebuild": "npm run clean"
+  },
+  "keywords": [
+    "donkeys",
+    "kids",
+    "education",
+    "static-site",
+    "website"
+  ],
+  "author": "Bobby Deveaux",
+  "license": "MIT",
+  "devDependencies": {
+    "sharp": "^0.33.0",
+    "clean-css": "^5.3.2",
+    "terser": "^5.24.0",
+    "markdown-it": "^14.0.0",
+    "gray-matter": "^4.0.3",
+    "jest": "^29.7.0",
+    "jsdom": "^23.0.1",
+    "puppeteer": "^21.5.2",
+    "lighthouse": "^11.4.0",
+    "stylelint": "^16.0.2",
+    "stylelint-config-standard": "^35.0.0"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobbydeveaux/kids-book-website.git"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  }
+}
