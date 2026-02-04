@@ -1,0 +1,313 @@
+/* Typography Styles - Responsive and Mobile-First */
+
+/* Base Typography */
+html {
+  font-size: 16px; /* Base font size for rem calculations */
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  font-size: 1rem; /* 16px */
+  letter-spacing: var(--letter-spacing-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings - Using clamp() for fluid responsive scaling */
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem); /* Mobile: 32px, Desktop: 56px */
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem); /* Mobile: 28px, Desktop: 40px */
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem); /* Mobile: 24px, Desktop: 32px */
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+h4 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem); /* Mobile: 20px, Desktop: 24px */
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+h5 {
+  font-size: clamp(1.125rem, 1.5vw, 1.25rem); /* Mobile: 18px, Desktop: 20px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+h6 {
+  font-size: clamp(1rem, 1vw, 1.125rem); /* Mobile: 16px, Desktop: 18px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-sm) 0;
+  text-transform: uppercase;
+}
+
+/* Body Text */
+
+p {
+  font-size: clamp(1rem, 1.25vw, 1.125rem); /* Mobile: 16px, Desktop: 18px */
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+/* Large/Lead text */
+.text-lead {
+  font-size: clamp(1.125rem, 1.5vw, 1.25rem); /* Mobile: 18px, Desktop: 20px */
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text);
+}
+
+/* Small text */
+.text-small {
+  font-size: clamp(0.875rem, 1vw, 1rem); /* Mobile: 14px, Desktop: 16px */
+  line-height: var(--line-height-normal);
+}
+
+/* Links */
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration-thickness: 2px;
+}
+
+a:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+a:active {
+  color: var(--color-primary-dark);
+}
+
+/* Remove underline for special link types */
+a.no-underline {
+  text-decoration: none;
+}
+
+a.no-underline:hover {
+  text-decoration: underline;
+}
+
+/* Text Utilities - Color */
+
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+.text-primary-dark {
+  color: var(--color-primary-dark) !important;
+}
+
+.text-primary-light {
+  color: var(--color-primary-light) !important;
+}
+
+.text-secondary {
+  color: var(--color-text-secondary) !important;
+}
+
+.text-white {
+  color: var(--color-background) !important;
+}
+
+/* Text Utilities - Weight */
+
+.font-normal {
+  font-weight: var(--font-weight-normal) !important;
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium) !important;
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold) !important;
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold) !important;
+}
+
+/* Text Utilities - Alignment */
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+/* Text Utilities - Line Height */
+
+.leading-tight {
+  line-height: var(--line-height-tight) !important;
+}
+
+.leading-normal {
+  line-height: var(--line-height-normal) !important;
+}
+
+.leading-relaxed {
+  line-height: var(--line-height-relaxed) !important;
+}
+
+/* Text Utilities - Letter Spacing */
+
+.tracking-tight {
+  letter-spacing: var(--letter-spacing-tight) !important;
+}
+
+.tracking-normal {
+  letter-spacing: var(--letter-spacing-normal) !important;
+}
+
+.tracking-wide {
+  letter-spacing: var(--letter-spacing-wide) !important;
+}
+
+/* Text Utilities - Transform */
+
+.uppercase {
+  text-transform: uppercase !important;
+}
+
+.lowercase {
+  text-transform: lowercase !important;
+}
+
+.capitalize {
+  text-transform: capitalize !important;
+}
+
+/* Special Typography Elements */
+
+strong,
+.strong {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+em,
+.italic {
+  font-style: italic;
+}
+
+/* Hero/Subtitle text styling for specific components */
+.hero-subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.5rem); /* Mobile: 18px, Desktop: 24px */
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+/* Card title styling */
+.card-title {
+  font-size: clamp(1.25rem, 1.5vw, 1.5rem); /* Mobile: 20px, Desktop: 24px */
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+/* Responsive Typography Adjustments */
+
+/* Tablet breakpoint - 768px */
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.0625rem; /* 17px */
+  }
+
+  p {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  h1 {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  h2,
+  h3 {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+/* Desktop breakpoint - 1024px */
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.125rem; /* 18px */
+  }
+
+  /* Improve readability with increased line height on larger screens */
+  p {
+    line-height: 1.8;
+  }
+}
+
+/* Print styles */
+@media print {
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    color: #000 !important;
+  }
+
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  a {
+    text-decoration: underline !important;
+    color: #000 !important;
+  }
+}

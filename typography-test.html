@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography Test - Donkey Website</title>
+    <link rel="stylesheet" href="src/styles/base/variables.css">
+    <link rel="stylesheet" href="src/styles/base/typography.css">
+    <style>
+        /* Minimal container for testing */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        .test-section {
+            margin-bottom: 3rem;
+            padding: 1rem;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+        }
+        .breakpoint-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #333;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="breakpoint-indicator" id="breakpoint">Mobile</div>
+
+    <div class="container">
+        <div class="test-section">
+            <h1>Typography Test Page</h1>
+            <p class="text-lead">This page demonstrates the responsive typography system using clamp() for fluid scaling from mobile to desktop breakpoints.</p>
+        </div>
+
+        <div class="test-section">
+            <h1>Heading Level 1 - Main Title</h1>
+            <h2>Heading Level 2 - Section Title</h2>
+            <h3>Heading Level 3 - Subsection</h3>
+            <h4>Heading Level 4 - Content Header</h4>
+            <h5>Heading Level 5 - Minor Header</h5>
+            <h6>Heading Level 6 - Label/Caption</h6>
+        </div>
+
+        <div class="test-section">
+            <h2>Body Text and Paragraphs</h2>
+            <p>This is regular paragraph text that demonstrates the base typography styles. The text should be readable and comfortable to read at all screen sizes. Line heights are optimized for readability across mobile and desktop viewports.</p>
+
+            <p class="text-lead">This is lead text that is slightly larger than regular paragraph text. It's useful for introductory content or emphasis.</p>
+
+            <p class="text-small">This is small text for supplementary information, captions, or fine print.</p>
+
+            <p>Here's a paragraph with <strong>bold text</strong>, <em>italic text</em>, and <a href="#test">a test link</a> to demonstrate inline text styling.</p>
+        </div>
+
+        <div class="test-section">
+            <h2>Link Styles</h2>
+            <p>Regular links: <a href="#test">Standard link</a> | <a href="#test">Another link</a></p>
+            <p>No underline links: <a href="#test" class="no-underline">Link without underline</a></p>
+            <p>Text color utilities:
+                <span class="text-primary">Primary color text</span> |
+                <span class="text-primary-dark">Primary dark text</span> |
+                <span class="text-secondary">Secondary text color</span>
+            </p>
+        </div>
+
+        <div class="test-section">
+            <h2>Font Weight Utilities</h2>
+            <p class="font-normal">Normal weight text</p>
+            <p class="font-medium">Medium weight text</p>
+            <p class="font-semibold">Semibold weight text</p>
+            <p class="font-bold">Bold weight text</p>
+        </div>
+
+        <div class="test-section">
+            <h2>Text Alignment</h2>
+            <p class="text-left">Left aligned text</p>
+            <p class="text-center">Center aligned text</p>
+            <p class="text-right">Right aligned text</p>
+        </div>
+
+        <div class="test-section">
+            <h2>Line Height and Letter Spacing</h2>
+            <p class="leading-tight">Tight line height for compact text layouts that need to save space while maintaining readability.</p>
+            <p class="leading-normal">Normal line height for standard reading comfort and optimal text flow in most content scenarios.</p>
+            <p class="leading-relaxed">Relaxed line height for improved readability in long-form content where extra spacing enhances comprehension.</p>
+
+            <p class="tracking-tight">Tight letter spacing</p>
+            <p class="tracking-normal">Normal letter spacing</p>
+            <p class="tracking-wide">Wide letter spacing</p>
+        </div>
+
+        <div class="test-section">
+            <h2>Special Components</h2>
+            <div>
+                <h3 class="card-title">Card Title Example</h3>
+                <p>This demonstrates how card titles are styled within component contexts.</p>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <h1>Welcome to the Donkey Website</h1>
+                <p class="hero-subtitle">Your comprehensive guide to donkey breeds, care, and fascinating facts</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple breakpoint indicator
+        function updateBreakpoint() {
+            const indicator = document.getElementById('breakpoint');
+            const width = window.innerWidth;
+
+            if (width < 640) {
+                indicator.textContent = `Mobile (${width}px)`;
+            } else if (width < 768) {
+                indicator.textContent = `Small Tablet (${width}px)`;
+            } else if (width < 1024) {
+                indicator.textContent = `Tablet (${width}px)`;
+            } else {
+                indicator.textContent = `Desktop (${width}px)`;
+            }
+        }
+
+        updateBreakpoint();
+        window.addEventListener('resize', updateBreakpoint);
+    </script>
+</body>
+</html>
