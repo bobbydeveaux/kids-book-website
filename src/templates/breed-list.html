@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donkey Breeds - Complete Guide to Donkey Types</title>
+    <meta name="description" content="Explore the diverse world of donkey breeds, from miniature to mammoth. Learn about characteristics, history, and care requirements for each breed type.">
+    <link rel="canonical" href="/breeds/">
+
+    <!-- Critical CSS will be inlined here -->
+    <style>
+        /* Critical CSS for above-fold content */
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Georgia, serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .page-header { background: #f8f9fa; padding: 2rem 0; }
+        .breed-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; }
+        @media (min-width: 768px) { .breed-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .breed-grid { grid-template-columns: repeat(3, 1fr); } }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <nav class="main-navigation" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="/" aria-label="Donkey Website Home">
+                        <svg class="logo" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+                            <!-- Simple donkey icon placeholder -->
+                            <circle cx="20" cy="20" r="18" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+                            <text x="20" y="26" text-anchor="middle" font-size="12" fill="white">🐴</text>
+                        </svg>
+                        <span class="site-title">Donkey Guide</span>
+                    </a>
+                </div>
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="/" role="menuitem">Home</a></li>
+                    <li role="none"><a href="/breeds/" role="menuitem" aria-current="page">Breeds</a></li>
+                    <li role="none"><a href="/care/" role="menuitem">Care</a></li>
+                    <li role="none"><a href="/facts.html" role="menuitem">Facts</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <section class="page-header">
+            <div class="container">
+                <nav aria-label="Breadcrumb" role="navigation">
+                    <ol class="breadcrumb" vocab="https://schema.org/" typeof="BreadcrumbList">
+                        <li property="itemListElement" typeof="ListItem">
+                            <a property="item" typeof="WebPage" href="/">
+                                <span property="name">Home</span>
+                            </a>
+                            <meta property="position" content="1">
+                        </li>
+                        <li property="itemListElement" typeof="ListItem" aria-current="page">
+                            <span property="name">Breeds</span>
+                            <meta property="position" content="2">
+                        </li>
+                    </ol>
+                </nav>
+
+                <h1>Donkey Breeds</h1>
+                <p class="lead">Explore the diverse world of donkey breeds, from miniature to mammoth. Each breed has unique characteristics, history, and care requirements that make them special companions.</p>
+            </div>
+        </section>
+
+        <section class="breeds-gallery" aria-labelledby="breeds-heading">
+            <div class="container">
+                <h2 id="breeds-heading" class="visually-hidden">Available Donkey Breeds</h2>
+
+                <div class="breed-grid">
+                    <article class="breed-card" vocab="https://schema.org/" typeof="AnimalBreed">
+                        <div class="card-image">
+                            <picture>
+                                <source type="image/webp"
+                                        srcset="/images/breeds/miniature-mediterranean-400w.webp 400w,
+                                                /images/breeds/miniature-mediterranean-800w.webp 800w"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                                <img src="/images/breeds/miniature-mediterranean-400w.jpg"
+                                     srcset="/images/breeds/miniature-mediterranean-400w.jpg 400w,
+                                             /images/breeds/miniature-mediterranean-800w.jpg 800w"
+                                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                     alt="Miniature Mediterranean Donkey standing in a pastoral setting"
+                                     loading="lazy"
+                                     width="400" height="300">
+                            </picture>
+                        </div>
+
+                        <div class="card-content">
+                            <header class="card-header">
+                                <h3 property="name">
+                                    <a href="/breeds/miniature-mediterranean.html"
+                                       aria-describedby="miniature-desc">Miniature Mediterranean</a>
+                                </h3>
+                                <div class="breed-stats">
+                                    <span class="stat" property="height">32-34 inches</span>
+                                    <span class="stat" property="weight">200-350 lbs</span>
+                                </div>
+                            </header>
+
+                            <p id="miniature-desc" property="description">
+                                Charming small donkeys from Mediterranean islands, known for their gentle temperament
+                                and friendly nature. Perfect companions for small farms and therapy work.
+                            </p>
+
+                            <footer class="card-footer">
+                                <a href="/breeds/miniature-mediterranean.html"
+                                   class="btn btn-primary"
+                                   aria-label="Learn more about Miniature Mediterranean Donkeys">
+                                    Learn More
+                                </a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="breed-card" vocab="https://schema.org/" typeof="AnimalBreed">
+                        <div class="card-image">
+                            <picture>
+                                <source type="image/webp"
+                                        srcset="/images/breeds/standard-donkey-400w.webp 400w,
+                                                /images/breeds/standard-donkey-800w.webp 800w"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                                <img src="/images/breeds/standard-donkey-400w.jpg"
+                                     srcset="/images/breeds/standard-donkey-400w.jpg 400w,
+                                             /images/breeds/standard-donkey-800w.jpg 800w"
+                                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                     alt="Standard Donkey in a field with traditional farm setting"
+                                     loading="lazy"
+                                     width="400" height="300">
+                            </picture>
+                        </div>
+
+                        <div class="card-content">
+                            <header class="card-header">
+                                <h3 property="name">
+                                    <a href="/breeds/standard-donkey.html"
+                                       aria-describedby="standard-desc">Standard Donkey</a>
+                                </h3>
+                                <div class="breed-stats">
+                                    <span class="stat" property="height">36-48 inches</span>
+                                    <span class="stat" property="weight">400-700 lbs</span>
+                                </div>
+                            </header>
+
+                            <p id="standard-desc" property="description">
+                                The classic donkey breed found worldwide, prized for their intelligence,
+                                sure-footedness, and reliable work ethic. Excellent for farm work and companionship.
+                            </p>
+
+                            <footer class="card-footer">
+                                <a href="/breeds/standard-donkey.html"
+                                   class="btn btn-primary"
+                                   aria-label="Learn more about Standard Donkeys">
+                                    Learn More
+                                </a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="breed-card" vocab="https://schema.org/" typeof="AnimalBreed">
+                        <div class="card-image">
+                            <picture>
+                                <source type="image/webp"
+                                        srcset="/images/breeds/mammoth-donkey-400w.webp 400w,
+                                                /images/breeds/mammoth-donkey-800w.webp 800w"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                                <img src="/images/breeds/mammoth-donkey-400w.jpg"
+                                     srcset="/images/breeds/mammoth-donkey-400w.jpg 400w,
+                                             /images/breeds/mammoth-donkey-800w.jpg 800w"
+                                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                     alt="Large Mammoth Donkey showing impressive size and stature"
+                                     loading="lazy"
+                                     width="400" height="300">
+                            </picture>
+                        </div>
+
+                        <div class="card-content">
+                            <header class="card-header">
+                                <h3 property="name">
+                                    <a href="/breeds/mammoth-donkey.html"
+                                       aria-describedby="mammoth-desc">Mammoth Donkey</a>
+                                </h3>
+                                <div class="breed-stats">
+                                    <span class="stat" property="height">56+ inches</span>
+                                    <span class="stat" property="weight">900-1,300 lbs</span>
+                                </div>
+                            </header>
+
+                            <p id="mammoth-desc" property="description">
+                                The largest donkey breed, originally developed in America for mule production.
+                                Impressive size with gentle giants' temperament, perfect for large farms and breeding.
+                            </p>
+
+                            <footer class="card-footer">
+                                <a href="/breeds/mammoth-donkey.html"
+                                   class="btn btn-primary"
+                                   aria-label="Learn more about Mammoth Donkeys">
+                                    Learn More
+                                </a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="breed-card" vocab="https://schema.org/" typeof="AnimalBreed">
+                        <div class="card-image">
+                            <picture>
+                                <source type="image/webp"
+                                        srcset="/images/breeds/poitou-donkey-400w.webp 400w,
+                                                /images/breeds/poitou-donkey-800w.webp 800w"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                                <img src="/images/breeds/poitou-donkey-400w.jpg"
+                                     srcset="/images/breeds/poitou-donkey-400w.jpg 400w,
+                                             /images/breeds/poitou-donkey-800w.jpg 800w"
+                                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                     alt="Poitou Donkey displaying its characteristic long, shaggy coat"
+                                     loading="lazy"
+                                     width="400" height="300">
+                            </picture>
+                        </div>
+
+                        <div class="card-content">
+                            <header class="card-header">
+                                <h3 property="name">
+                                    <a href="/breeds/poitou-donkey.html"
+                                       aria-describedby="poitou-desc">Poitou Donkey</a>
+                                </h3>
+                                <div class="breed-stats">
+                                    <span class="stat" property="height">52-56 inches</span>
+                                    <span class="stat" property="weight">700-950 lbs</span>
+                                </div>
+                            </header>
+
+                            <p id="poitou-desc" property="description">
+                                Rare French breed famous for their distinctive long, shaggy coat called a "cadanette."
+                                Historic breed prized for producing high-quality mules, now a conservation priority.
+                            </p>
+
+                            <footer class="card-footer">
+                                <a href="/breeds/poitou-donkey.html"
+                                   class="btn btn-primary"
+                                   aria-label="Learn more about Poitou Donkeys">
+                                    Learn More
+                                </a>
+                            </footer>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="breeds-cta">
+                    <p>Need help choosing the right breed for you? <a href="/care/">Read our care guides</a> to learn more about donkey care requirements.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/breeds/">Breeds</a></li>
+                        <li><a href="/care/">Care Guides</a></li>
+                        <li><a href="/facts.html">Facts & About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Care Resources</h3>
+                    <ul>
+                        <li><a href="/care/feeding.html">Feeding Guide</a></li>
+                        <li><a href="/care/grooming.html">Grooming</a></li>
+                        <li><a href="/care/housing.html">Housing</a></li>
+                        <li><a href="/care/health.html">Health Care</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>Your comprehensive guide to donkey breeds, care, and companionship. Learn everything you need to know about these remarkable animals.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Donkey Guide. Educational resource for donkey enthusiasts.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Progressive enhancement scripts -->
+    <script>
+        // Lazy loading fallback for older browsers
+        if ('IntersectionObserver' in window) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy');
+                        }
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        }
+
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('nav-open');
+                navToggle.setAttribute('aria-expanded',
+                    navToggle.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'
+                );
+            });
+        }
+    </script>
+</body>
+</html>
