@@ -1,0 +1,285 @@
+[
+  {
+    "id": "prod-001",
+    "name": "Classic Lace Bralette",
+    "slug": "classic-lace-bralette",
+    "description": "A timeless lace bralette with delicate floral patterns. Features soft, stretchy fabric for all-day comfort and a wireless design for natural support.",
+    "shortDescription": "Timeless lace bralette with delicate floral patterns",
+    "category": ["bralettes", "sets"],
+    "images": {
+      "thumbnail": "/images/products/prod-001-thumb.jpg",
+      "main": "/images/products/prod-001-main.jpg",
+      "gallery": [
+        "/images/products/prod-001-1.jpg",
+        "/images/products/prod-001-2.jpg"
+      ]
+    },
+    "features": [
+      "Wireless support",
+      "Delicate lace pattern",
+      "Adjustable straps",
+      "Soft stretchy fabric"
+    ],
+    "specifications": [
+      { "key": "Material", "value": "90% Nylon, 10% Spandex" },
+      { "key": "Care", "value": "Hand wash cold, line dry" },
+      { "key": "Sizes", "value": "XS-XL" },
+      { "key": "Colors", "value": "Black, White, Blush" }
+    ],
+    "price": {
+      "display": "$29.99"
+    },
+    "metadata": {
+      "createdAt": "2026-01-15T10:00:00Z",
+      "featured": true,
+      "order": 1
+    }
+  },
+  {
+    "id": "prod-002",
+    "name": "Push-Up Underwire Bra",
+    "slug": "push-up-underwire-bra",
+    "description": "Enhance your natural curves with this supportive push-up bra. Features underwire construction and padded cups for lift and shape.",
+    "shortDescription": "Supportive push-up bra with underwire construction",
+    "category": "underwire-bras",
+    "images": {
+      "thumbnail": "/images/products/prod-002-thumb.jpg",
+      "main": "/images/products/prod-002-main.jpg",
+      "gallery": [
+        "/images/products/prod-002-1.jpg"
+      ]
+    },
+    "features": [
+      "Underwire support",
+      "Push-up padding",
+      "Adjustable straps",
+      "Hook and eye closure"
+    ],
+    "specifications": [
+      { "key": "Material", "value": "85% Polyester, 15% Elastane" },
+      { "key": "Care", "value": "Machine wash cold" },
+      { "key": "Sizes", "value": "32A-38DD" },
+      { "key": "Colors", "value": "Black, Nude, Navy" }
+    ],
+    "price": {
+      "display": "$39.99"
+    },
+    "metadata": {
+      "createdAt": "2026-01-16T10:00:00Z",
+      "featured": false,
+      "order": 2
+    }
+  },
+  {
+    "id": "prod-003",
+    "name": "Seamless Hipster Panties",
+    "slug": "seamless-hipster-panties",
+    "description": "Ultra-smooth seamless panties that lay flat under clothing. Perfect for everyday wear with a comfortable hipster cut.",
+    "shortDescription": "Ultra-smooth seamless panties with hipster cut",
+    "category": "panties",
+    "images": {
+      "thumbnail": "/images/products/prod-003-thumb.jpg",
+      "main": "/images/products/prod-003-main.jpg",
+      "gallery": [
+        "/images/products/prod-003-1.jpg",
+        "/images/products/prod-003-2.jpg"
+      ]
+    },
+    "features": [
+      "Seamless construction",
+      "Hipster cut",
+      "No-show design",
+      "Breathable fabric"
+    ],
+    "specifications": [
+      { "key": "Material", "value": "92% Nylon, 8% Spandex" },
+      { "key": "Care", "value": "Machine wash warm" },
+      { "key": "Sizes", "value": "XS-XXL" },
+      { "key": "Colors", "value": "Black, White, Nude, Pink" }
+    ],
+    "price": {
+      "display": "$14.99"
+    },
+    "metadata": {
+      "createdAt": "2026-01-17T10:00:00Z",
+      "featured": true,
+      "order": 3
+    }
+  },
+  {
+    "id": "prod-004",
+    "name": "Satin Sleep Set",
+    "slug": "satin-sleep-set",
+    "description": "Luxurious satin sleep set including camisole and shorts. Features adjustable straps and elastic waistband for comfort.",
+    "shortDescription": "Luxurious satin camisole and shorts sleep set",
+    "category": ["sleepwear", "sets"],
+    "images": {
+      "thumbnail": "/images/products/prod-004-thumb.jpg",
+      "main": "/images/products/prod-004-main.jpg",
+      "gallery": [
+        "/images/products/prod-004-1.jpg"
+      ]
+    },
+    "features": [
+      "Satin finish",
+      "Adjustable straps",
+      "Elastic waistband",
+      "Two-piece set"
+    ],
+    "specifications": [
+      { "key": "Material", "value": "100% Polyester Satin" },
+      { "key": "Care", "value": "Machine wash cold, tumble dry low" },
+      { "key": "Sizes", "value": "XS-XL" },
+      { "key": "Colors", "value": "Champagne, Navy, Burgundy" }
+    ],
+    "price": {
+      "display": "$49.99"
+    },
+    "metadata": {
+      "createdAt": "2026-01-18T10:00:00Z",
+      "featured": false,
+      "order": 4
+    }
+  },
+  {
+    "id": "prod-005",
+    "name": "Sports Bralette",
+    "slug": "sports-bralette",
+    "description": "Active-wear inspired bralette with moisture-wicking fabric. Perfect for light workouts or casual wear.",
+    "shortDescription": "Active-wear bralette with moisture-wicking fabric",
+    "category": "bralettes",
+    "images": {
+      "thumbnail": "/images/products/prod-005-thumb.jpg",
+      "main": "/images/products/prod-005-main.jpg",
+      "gallery": [
+        "/images/products/prod-005-1.jpg"
+      ]
+    },
+    "features": [
+      "Moisture-wicking fabric",
+      "Medium support",
+      "Racerback design",
+      "Removable pads"
+    ],
+    "specifications": [
+      { "key": "Material", "value": "88% Polyester, 12% Spandex" },
+      { "key": "Care", "value": "Machine wash cold" },
+      { "key": "Sizes", "value": "XS-XL" },
+      { "key": "Colors", "value": "Black, Gray, Navy" }
+    ],
+    "price": {
+      "display": "$34.99"
+    },
+    "metadata": {
+      "createdAt": "2026-01-19T10:00:00Z",
+      "featured": true,
+      "order": 5
+    }
+  },
+  {
+    "id": "prod-006",
+    "name": "Lace Thong",
+    "slug": "lace-thong",
+    "description": "Delicate lace thong with minimal coverage. Features soft lace overlay and comfortable stretch fabric.",
+    "shortDescription": "Delicate lace thong with minimal coverage",
+    "category": "panties",
+    "images": {
+      "thumbnail": "/images/products/prod-006-thumb.jpg",
+      "main": "/images/products/prod-006-main.jpg",
+      "gallery": [
+        "/images/products/prod-006-1.jpg"
+      ]
+    },
+    "features": [
+      "Delicate lace overlay",
+      "Minimal coverage",
+      "Stretch fabric",
+      "No visible panty lines"
+    ],
+    "specifications": [
+      { "key": "Material", "value": "89% Nylon, 11% Spandex" },
+      { "key": "Care", "value": "Hand wash cold" },
+      { "key": "Sizes", "value": "XS-L" },
+      { "key": "Colors", "value": "Black, White, Red" }
+    ],
+    "price": {
+      "display": "$18.99"
+    },
+    "metadata": {
+      "createdAt": "2026-01-20T10:00:00Z",
+      "featured": false,
+      "order": 6
+    }
+  },
+  {
+    "id": "prod-007",
+    "name": "Matching Lingerie Set",
+    "slug": "matching-lingerie-set",
+    "description": "Coordinated bralette and panty set in matching lace. Perfect for special occasions or when you want to feel your best.",
+    "shortDescription": "Coordinated bralette and panty set in matching lace",
+    "category": ["sets", "bralettes", "panties"],
+    "images": {
+      "thumbnail": "/images/products/prod-007-thumb.jpg",
+      "main": "/images/products/prod-007-main.jpg",
+      "gallery": [
+        "/images/products/prod-007-1.jpg",
+        "/images/products/prod-007-2.jpg"
+      ]
+    },
+    "features": [
+      "Matching set",
+      "Coordinated lace pattern",
+      "Two-piece set",
+      "Wireless bralette"
+    ],
+    "specifications": [
+      { "key": "Material", "value": "90% Nylon, 10% Spandex" },
+      { "key": "Care", "value": "Hand wash cold, line dry" },
+      { "key": "Sizes", "value": "XS-XL" },
+      { "key": "Colors", "value": "Black, White, Burgundy" }
+    ],
+    "price": {
+      "display": "$44.99"
+    },
+    "metadata": {
+      "createdAt": "2026-01-21T10:00:00Z",
+      "featured": true,
+      "order": 7
+    }
+  },
+  {
+    "id": "prod-008",
+    "name": "Silk Robe",
+    "slug": "silk-robe",
+    "description": "Elegant silk robe with tie closure. Perfect for lounging or as part of your morning routine.",
+    "shortDescription": "Elegant silk robe with tie closure",
+    "category": "sleepwear",
+    "images": {
+      "thumbnail": "/images/products/prod-008-thumb.jpg",
+      "main": "/images/products/prod-008-main.jpg",
+      "gallery": [
+        "/images/products/prod-008-1.jpg"
+      ]
+    },
+    "features": [
+      "Pure silk fabric",
+      "Tie closure",
+      "Three-quarter sleeves",
+      "Knee-length"
+    ],
+    "specifications": [
+      { "key": "Material", "value": "100% Mulberry Silk" },
+      { "key": "Care", "value": "Dry clean only" },
+      { "key": "Sizes", "value": "XS-XL" },
+      { "key": "Colors", "value": "Champagne, Black, Navy" }
+    ],
+    "price": {
+      "display": "$89.99"
+    },
+    "metadata": {
+      "createdAt": "2026-01-22T10:00:00Z",
+      "featured": false,
+      "order": 8
+    }
+  }
+]

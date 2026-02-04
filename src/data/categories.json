@@ -1,0 +1,37 @@
+[
+  {
+    "id": "cat-001",
+    "name": "Bralettes",
+    "slug": "bralettes",
+    "description": "Comfortable, wire-free bralettes for everyday wear",
+    "order": 1
+  },
+  {
+    "id": "cat-002",
+    "name": "Underwire Bras",
+    "slug": "underwire-bras",
+    "description": "Supportive underwire bras for enhanced lift and shape",
+    "order": 2
+  },
+  {
+    "id": "cat-003",
+    "name": "Panties",
+    "slug": "panties",
+    "description": "Comfortable and stylish panties in various styles",
+    "order": 3
+  },
+  {
+    "id": "cat-004",
+    "name": "Sleepwear",
+    "slug": "sleepwear",
+    "description": "Luxurious sleepwear and loungewear for comfort",
+    "order": 4
+  },
+  {
+    "id": "cat-005",
+    "name": "Sets",
+    "slug": "sets",
+    "description": "Coordinated lingerie sets for a perfect match",
+    "order": 5
+  }
+]
