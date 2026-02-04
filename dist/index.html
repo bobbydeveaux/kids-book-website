@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about donkeys - their breeds, care, and fascinating facts. Educational resource for donkey enthusiasts.">
+  <meta name="keywords" content="donkeys, donkey breeds, donkey care, equines, farm animals">
+  <meta name="author" content="Donkey Website">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://donkey-website.com/">
+  <meta property="og:title" content="Home - Donkey Website">
+  <meta property="og:description" content="Discover the world of donkeys - their breeds, care, and fascinating facts">
+  <meta property="og:image" content="https://donkey-website.com/images/hero/donkey-hero-800w.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://donkey-website.com/">
+  <meta property="twitter:title" content="Home - Donkey Website">
+  <meta property="twitter:description" content="Discover the world of donkeys - their breeds, care, and fascinating facts">
+  <meta property="twitter:image" content="https://donkey-website.com/images/hero/donkey-hero-800w.jpg">
+
+  <title>Home - Donkey Website</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Critical CSS inline for performance -->
+  <style>
+    /* Critical CSS for above-the-fold content */
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: #000;
+      color: #fff;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip link for keyboard navigation accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header with navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo" aria-label="Donkey Website Home">
+          <img src="/images/icons/donkey-logo.svg" alt="Donkey Website" width="40" height="40">
+          <span>Donkey Website</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-menu">
+            <svg class="icon-menu" aria-hidden="true"><use href="#icon-menu"></use></svg>
+            <svg class="icon-close" aria-hidden="true" hidden><use href="#icon-close"></use></svg>
+            <span class="sr-only">Toggle menu</span>
+          </button>
+
+          <ul class="nav-menu" id="nav-menu">
+            <li><a href="/" aria-current="page">Home</a></li>
+            <li><a href="/breeds/">Breeds</a></li>
+            <li><a href="/care/">Care Guide</a></li>
+            <li><a href="/facts.html">Facts</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content area with landmark -->
+  <main id="main-content">
+    <!-- Hero section -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-image">
+        <picture>
+          <source
+            srcset="/images/hero/donkey-hero-400w.webp 400w,
+                    /images/hero/donkey-hero-800w.webp 800w,
+                    /images/hero/donkey-hero-1200w.webp 1200w"
+            type="image/webp">
+          <source
+            srcset="/images/hero/donkey-hero-400w.jpg 400w,
+                    /images/hero/donkey-hero-800w.jpg 800w,
+                    /images/hero/donkey-hero-1200w.jpg 1200w"
+            type="image/jpeg">
+          <img
+            src="/images/hero/donkey-hero-800w.jpg"
+            alt="Peaceful donkey standing in green meadow under blue sky, showing the gentle nature of these remarkable animals"
+            width="1200"
+            height="600"
+            loading="eager"
+            class="hero-img">
+        </picture>
+      </div>
+      <div class="hero-content">
+        <div class="container">
+          <h1 id="hero-heading">Discover the World of Donkeys</h1>
+          <p class="hero-subtitle">Learn about donkey breeds, proper care, and fascinating facts about these remarkable animals that have served humans for thousands of years.</p>
+          <a href="/breeds/" class="btn btn-primary">Explore Breeds</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview cards -->
+    <section class="overview-cards" aria-labelledby="overview-heading">
+      <div class="container">
+        <h2 id="overview-heading" class="sr-only">Site sections</h2>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-icon">
+              <img src="/images/icons/donkey-breeds-icon.svg" alt="" aria-hidden="true" width="48" height="48">
+            </div>
+            <h3>Donkey Breeds</h3>
+            <p>Explore different donkey breeds from around the world, from the tiny Miniature Mediterranean to the sturdy American Mammoth Jackstock.</p>
+            <a href="/breeds/" class="btn btn-secondary" aria-describedby="breeds-desc">
+              Learn More
+              <span class="sr-only"> about donkey breeds</span>
+            </a>
+            <span id="breeds-desc" class="sr-only">Discover various donkey breeds including their characteristics, origins, and unique traits</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <img src="/images/icons/care-guide-icon.svg" alt="" aria-hidden="true" width="48" height="48">
+            </div>
+            <h3>Care Guide</h3>
+            <p>Learn essential donkey care including feeding, grooming, housing, and health management for happy, healthy donkeys.</p>
+            <a href="/care/" class="btn btn-secondary" aria-describedby="care-desc">
+              Learn More
+              <span class="sr-only"> about donkey care</span>
+            </a>
+            <span id="care-desc" class="sr-only">Comprehensive guide covering feeding, grooming, housing, and health care for donkeys</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <img src="/images/icons/facts-icon.svg" alt="" aria-hidden="true" width="48" height="48">
+            </div>
+            <h3>Facts & History</h3>
+            <p>Discover fascinating facts about donkeys, their ancient history, and their important role in human civilization throughout the ages.</p>
+            <a href="/facts.html" class="btn btn-secondary" aria-describedby="facts-desc">
+              Learn More
+              <span class="sr-only"> about donkey facts and history</span>
+            </a>
+            <span id="facts-desc" class="sr-only">Explore interesting facts about donkey history, behavior, and their relationship with humans</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured content section -->
+    <section class="featured-content" aria-labelledby="featured-heading">
+      <div class="container">
+        <h2 id="featured-heading">Did You Know?</h2>
+        <div class="featured-fact">
+          <div class="fact-image">
+            <img src="/images/featured/donkey-fact.jpg"
+                 alt="Close-up of a donkey's face showing their intelligent, gentle expression and long ears"
+                 width="300"
+                 height="200"
+                 loading="lazy">
+          </div>
+          <div class="fact-content">
+            <p>Donkeys have excellent memories and can recognize areas and other donkeys they haven't seen for 20-25 years! Their incredible intelligence and loyalty have made them valuable companions to humans for over 5,000 years.</p>
+            <a href="/facts.html" class="btn btn-outline">Discover More Facts</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Donkey Website. Educational resource about donkeys.</p>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-nav">
+          <li><a href="/breeds/">Breeds</a></li>
+          <li><a href="/care/">Care Guide</a></li>
+          <li><a href="/facts.html">Facts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- SVG Sprite for icons -->
+  <svg class="svg-sprite" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+    <defs>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- JavaScript -->
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
