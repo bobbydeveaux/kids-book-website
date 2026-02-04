@@ -1,0 +1,100 @@
+[build]
+  # Specify the build command
+  command = "npm run build"
+
+  # Specify the directory to publish
+  publish = "dist"
+
+  # Set Node.js version
+  environment = { NODE_VERSION = "18" }
+
+# Enable clean URLs (remove .html extension)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  conditions = {Role = ["admin"]}
+
+# Specific redirects for content pages
+[[redirects]]
+  from = "/breeds/:slug"
+  to = "/content/breeds/:slug.html"
+  status = 200
+
+[[redirects]]
+  from = "/care/:slug"
+  to = "/content/care/:slug.html"
+  status = 200
+
+[[redirects]]
+  from = "/facts/:slug"
+  to = "/content/facts/:slug.html"
+  status = 200
+
+# Clean URL redirects (remove .html)
+[[redirects]]
+  from = "/*.html"
+  to = "/:splat"
+  status = 301
+
+# 404 page redirect
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Set cache headers for static assets
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/styles/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Set security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Enable gzip compression
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "*.json"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Preconnect hints for performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Link = '''</styles/critical.css>; rel=preload; as=style,
+              </styles/styles.min.css>; rel=preload; as=style; media=print; onload="this.media='all'",
+              <https://fonts.googleapis.com>; rel=preconnect,
+              <https://fonts.gstatic.com>; rel=preconnect; crossorigin'''
