@@ -1,0 +1,33 @@
+{
+  "name": "donkey-website",
+  "version": "1.0.0",
+  "description": "A comprehensive website about donkeys with breed information, care guides, and fascinating facts",
+  "main": "build/build.js",
+  "scripts": {
+    "build": "node build/build.js",
+    "bundle-css": "node build/bundle-css.js",
+    "dev": "npm run build && npx serve dist",
+    "start": "npx serve dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobbydeveaux/donkey-website"
+  },
+  "keywords": [
+    "donkey",
+    "animals",
+    "education",
+    "static-site"
+  ],
+  "author": "Bobby Deveaux",
+  "license": "MIT",
+  "dependencies": {
+    "clean-css": "^5.3.2"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
