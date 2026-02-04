@@ -1,0 +1,19 @@
+{
+  "prTitle": "feat: validate HTML templates and create integration tests",
+  "prBody": "## Summary\n\nImplemented comprehensive HTML template validation and integration testing infrastructure for the donkey website project as specified in task #24.\n\n### 🔧 Core Implementation\n\n**HTML Template Validation Utilities (`build/compile-markdown.js`):**\n- `parseMarkdownFile()` - Parse markdown files with YAML frontmatter\n- `validateContent()` - Validate content schemas for breed, care, and fact types\n- `renderTemplate()` - Simple mustache-style template rendering\n- `validateHtmlStructure()` - Comprehensive HTML validation (DOCTYPE, semantic elements, accessibility)\n- `extractLinks()` & `isInternalLink()` - Link extraction and validation utilities\n\n**HTML Templates (`src/templates/`):**\n- `base.html` - Main layout template with semantic structure\n- `home.html` - Homepage content template\n- `breed-list.html` & `breed-detail.html` - Breed pages\n- `care-guide.html` - Care guide template\n- `facts.html` - Facts page template\n\n### 🧪 Comprehensive Test Suite\n\n**Unit Tests (`tests/build/compile-markdown.test.js`):**\n- ✅ 23 passing tests covering all validation utilities\n- Markdown parsing with/without frontmatter\n- Content schema validation for all content types\n- Template rendering with missing data handling\n- HTML structure validation (DOCTYPE, lang, semantic elements)\n- Link extraction and classification\n\n**Integration Tests:**\n- **Build Pipeline (`tests/integration/build-pipeline.test.js`):**\n  - HTML file generation validation\n  - CSS bundling and critical CSS inlining\n  - Semantic HTML structure verification\n  - Page title consistency checks\n  - Image format generation validation\n\n- **Link Validation (`tests/integration/link-validator.test.js`):**\n  - Internal link resolution and validation\n  - Broken link detection\n  - External link identification\n  - Relative/absolute path handling\n  - Directory link support (trailing slash)\n\n### ⚙️ Technical Implementation\n\n**Testing Infrastructure:**\n- Jest with ES modules support (`--experimental-vm-modules`)\n- JSDOM environment for DOM testing\n- Sequential test execution (`--runInBand`) to prevent race conditions\n- Comprehensive test fixtures and mock HTML files\n\n**Quality Assurance:**\n- All 37 tests passing (23 unit + 14 integration)\n- Full coverage of HTML validation scenarios\n- Robust error handling and edge case testing\n- Link validation prevents broken internal references\n\n### 📋 Validation Features\n\n**HTML Structure Validation:**\n- DOCTYPE declaration checking\n- HTML lang attribute validation\n- Semantic element presence (header, main, footer)\n- Title and meta charset verification\n- Accessibility attribute checking\n\n**Content Validation:**\n- YAML frontmatter schema validation\n- Required field checking by content type\n- Image reference validation\n- Template data injection with graceful fallbacks\n\n**Link Validation:**\n- Comprehensive link extraction from HTML\n- Internal vs external link classification\n- File existence verification for internal links\n- Relative path resolution\n- Support for directory indexes\n\nCloses #24",
+  "testsPass": true,
+  "filesChanged": [
+    "package.json",
+    "jest.config.js",
+    "build/compile-markdown.js",
+    "src/templates/base.html",
+    "src/templates/home.html",
+    "src/templates/breed-list.html",
+    "src/templates/breed-detail.html",
+    "src/templates/care-guide.html",
+    "src/templates/facts.html",
+    "tests/build/compile-markdown.test.js",
+    "tests/integration/build-pipeline.test.js",
+    "tests/integration/link-validator.test.js"
+  ]
+}
