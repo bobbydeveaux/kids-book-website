@@ -1,0 +1,2244 @@
+GeneratedAt: "2026-02-04T22:29:18Z"
+Plan: lingerie-website-plan
+Sprints:
+- Features:
+  - FeatureID: lingerie-website-feat-product-detail-page
+    FeatureTitle: Product Detail Page
+    Tasks:
+    - AcceptanceCriteria:
+      - useProduct.js file created in src/hooks/ directory
+      - Hook accepts slug parameter and returns product object or null
+      - Hook correctly searches mock products data by slug
+      - Returns null when product with given slug is not found
+      - Hook is properly exported for use in other components
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Implement the useProduct hook that takes a product slug as parameter
+        and returns the matching product from the mock data. The hook should search
+        through the products array and find the product with matching slug. Return
+        null if no product is found. This hook will be used by the ProductDetailPage
+        to fetch product data based on URL parameters.
+      EstimatedEffort: S
+      Files:
+      - src/hooks/useProduct.js
+      ID: task-lingerie-website-feat-product-detail-page-1
+      Title: Create useProduct custom hook
+    - AcceptanceCriteria:
+      - useScrollToTop.js file created in src/hooks/ directory
+      - Hook uses useEffect to trigger scroll on component mount
+      - Window scrolls to top (0, 0) position when hook is called
+      - Hook has no dependencies to prevent re-scrolling on updates
+      - Hook is properly exported for reuse across pages
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Implement the useScrollToTop hook that automatically scrolls the
+        page to the top when the component mounts. This hook should use useEffect
+        with an empty dependency array to trigger the scroll behavior once on mount.
+        The hook will ensure users start at the top of the page when navigating to
+        a product detail page.
+      EstimatedEffort: S
+      Files:
+      - src/hooks/useScrollToTop.js
+      ID: task-lingerie-website-feat-product-detail-page-2
+      Title: Create useScrollToTop custom hook
+    - AcceptanceCriteria:
+      - ProductDetailPage.jsx file created in src/pages/ProductDetailPage/ directory
+      - Component uses useParams to extract slug from URL
+      - useProduct hook called with slug parameter
+      - useScrollToTop hook integrated and working
+      - Navigate component used to redirect to /404 when product is null
+      - ProductDetail component rendered with product prop when product exists
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-product-detail-page-1
+      - task-lingerie-website-feat-product-detail-page-2
+      Description: Create the ProductDetailPage component with routing integration.
+        Implement useParams to extract the slug from URL parameters. Integrate the
+        useProduct and useScrollToTop hooks. Add conditional rendering to handle product
+        not found scenario with redirect to 404 page. Set up the basic component structure
+        with proper imports from react-router-dom.
+      EstimatedEffort: M
+      Files:
+      - src/pages/ProductDetailPage/ProductDetailPage.jsx
+      ID: task-lingerie-website-feat-product-detail-page-3
+      Title: Create ProductDetailPage component structure
+    - AcceptanceCriteria:
+      - ProductDetailPage.module.css file created in src/pages/ProductDetailPage/
+        directory
+      - productDetailPage class defined with container styling
+      - Proper padding and max-width applied for content containment
+      - Responsive styles added for mobile, tablet, and desktop viewports
+      - Styles imported and applied correctly in ProductDetailPage.jsx
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-product-detail-page-3
+      Description: Create the CSS module for ProductDetailPage with proper layout
+        styling. Add responsive design for the page container that wraps the ProductDetail
+        component. Ensure proper spacing, alignment, and responsive behavior across
+        different screen sizes. The styling should be minimal as most styling is handled
+        by the ProductDetail component itself.
+      EstimatedEffort: S
+      Files:
+      - src/pages/ProductDetailPage/ProductDetailPage.module.css
+      - src/pages/ProductDetailPage/ProductDetailPage.jsx
+      ID: task-lingerie-website-feat-product-detail-page-4
+      Title: Style ProductDetailPage component
+    - AcceptanceCriteria:
+      - Navigation to valid product slug displays correct product
+      - Navigation to invalid slug redirects to /404 page
+      - URL parameter extraction working correctly
+      - Page scrolls to top on component mount
+      - ProductDetail component receives correct product data
+      - No console errors when navigating between products
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-product-detail-page-4
+      Description: Verify that the ProductDetailPage correctly loads when navigating
+        to /product/:slug routes. Test that valid product slugs display the correct
+        product information. Test that invalid slugs properly redirect to the 404
+        page. Verify that the page scrolls to top on navigation. Ensure all URL parameter
+        handling works correctly.
+      EstimatedEffort: M
+      Files:
+      - src/pages/ProductDetailPage/ProductDetailPage.jsx
+      - src/hooks/useProduct.js
+      - src/hooks/useScrollToTop.js
+      ID: task-lingerie-website-feat-product-detail-page-5
+      Title: Test ProductDetailPage routing and navigation
+  - FeatureID: lingerie-website-feat-responsive-design
+    FeatureTitle: Mobile-First Responsive Design
+    Tasks:
+    - AcceptanceCriteria:
+      - CSS variables defined for breakpoints (640px, 768px, 1024px, 1280px)
+      - Container utility classes created with responsive max-widths
+      - Grid and flexbox utility classes implemented for common patterns
+      - Mobile-first media queries established in global stylesheet
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Establish global CSS custom properties for breakpoints, spacing
+        scale, and container max-widths. Create utility classes for responsive containers,
+        grid systems, and common layout patterns. Set up mobile-first media query
+        structure.
+      EstimatedEffort: S
+      Files:
+      - src/index.css
+      - src/styles/utilities.css
+      ID: task-lingerie-website-feat-responsive-design-1
+      Title: Create responsive layout CSS utilities
+    - AcceptanceCriteria:
+      - Header collapses to mobile layout below 768px with hamburger icon
+      - Navigation displays as slide-out menu on mobile, horizontal bar on desktop
+      - Logo and navigation elements scale appropriately across breakpoints
+      - Touch targets meet 44px minimum on mobile devices
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-responsive-design-1
+      Description: Update Header.module.css and Navigation.module.css to support mobile
+        (375px), tablet (768px), and desktop (1920px+) layouts. Implement hamburger
+        menu for mobile, horizontal navigation for desktop. Use flexbox for alignment
+        and spacing.
+      EstimatedEffort: M
+      Files:
+      - src/components/Header/Header.module.css
+      - src/components/Navigation/Navigation.module.css
+      ID: task-lingerie-website-feat-responsive-design-2
+      Title: Implement responsive Header and Navigation
+    - AcceptanceCriteria:
+      - ProductCard images scale proportionally maintaining aspect ratio
+      - ProductGrid displays 1 column (mobile), 2-3 columns (tablet), 4 columns (desktop)
+      - Typography sizes adjust across breakpoints for readability
+      - Card spacing and padding responsive to viewport width
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-responsive-design-1
+      Description: Update ProductCard component to adapt card size, image dimensions,
+        and typography across viewports. Modify ProductGrid to display 1 column on
+        mobile, 2-3 on tablet, and 4+ on desktop using CSS Grid with auto-fit/minmax
+        pattern.
+      EstimatedEffort: M
+      Files:
+      - src/components/ProductCard/ProductCard.module.css
+      - src/components/ProductGrid/ProductGrid.module.css
+      ID: task-lingerie-website-feat-responsive-design-3
+      Title: Make ProductCard and ProductGrid responsive
+    - AcceptanceCriteria:
+      - ProductDetail layout switches from horizontal to vertical at 768px breakpoint
+      - ProductImage gallery displays single column on mobile, multi-column on desktop
+      - Image zoom behavior adapts to touch (pinch-zoom) vs desktop (hover-zoom)
+      - Product details section maintains readable width on all viewports
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-responsive-design-1
+      Description: Implement responsive layout for ProductDetail page with image gallery
+        on left (desktop) or top (mobile). Update ProductImage component to support
+        responsive image loading and zoom interactions appropriate for touch vs mouse.
+      EstimatedEffort: M
+      Files:
+      - src/components/ProductDetail/ProductDetail.module.css
+      - src/components/ProductImage/ProductImage.module.css
+      ID: task-lingerie-website-feat-responsive-design-4
+      Title: Responsive ProductDetail and ProductImage components
+    - AcceptanceCriteria:
+      - Footer content stacks vertically on mobile, displays in columns on desktop
+      - Layout wrapper applies responsive padding (16px mobile, 24px tablet, 32px
+        desktop)
+      - Max-width constraints enforced per breakpoint in Layout component
+      - Footer links and text remain readable across all viewport sizes
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-responsive-design-1
+      Description: Make Footer component responsive with stacked layout on mobile
+        and multi-column on desktop. Update Layout wrapper to apply appropriate padding
+        and max-width constraints per breakpoint. Ensure consistent spacing system.
+      EstimatedEffort: S
+      Files:
+      - src/components/Footer/Footer.module.css
+      - src/components/Layout/Layout.module.css
+      ID: task-lingerie-website-feat-responsive-design-5
+      Title: Update Footer and Layout wrapper responsiveness
+    - AcceptanceCriteria:
+      - Hero section scales from full-viewport (mobile) to constrained height (desktop)
+      - Featured products section uses responsive grid matching ProductGrid patterns
+      - Category cards adapt from single column to multi-column layout
+      - All sections maintain visual hierarchy across breakpoints
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-responsive-design-2
+      - task-lingerie-website-feat-responsive-design-3
+      Description: Update Home.module.css to implement responsive hero section, featured
+        products grid, and category sections. Ensure proper spacing, typography scaling,
+        and image handling across all breakpoints using CSS Grid and Flexbox.
+      EstimatedEffort: M
+      Files:
+      - src/pages/Home/Home.module.css
+      ID: task-lingerie-website-feat-responsive-design-6
+      Title: Responsive Home page layout and sections
+    - AcceptanceCriteria:
+      - Page layout switches to single column below 768px breakpoint
+      - Size selector and quantity controls adapt to touch-friendly sizing on mobile
+      - Add-to-cart button remains accessible and prominent across viewports
+      - Product description and details sections maintain readability
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-responsive-design-4
+      Description: Update ProductDetail page CSS to implement responsive two-column
+        layout (desktop) that collapses to single column (mobile). Handle product
+        information, size selection, and add-to-cart button positioning for optimal
+        mobile UX.
+      EstimatedEffort: S
+      Files:
+      - src/pages/ProductDetail/ProductDetail.module.css
+      ID: task-lingerie-website-feat-responsive-design-7
+      Title: Responsive ProductDetail page layout
+    - AcceptanceCriteria:
+      - 404 content centered and readable on all viewport sizes
+      - Error message typography scales appropriately (larger on desktop)
+      - Navigation buttons meet minimum 44px touch target on mobile
+      - Page maintains brand consistency across breakpoints
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-responsive-design-1
+      Description: Update NotFound.module.css to ensure error page displays properly
+        on all viewports. Center content appropriately, scale typography, and ensure
+        call-to-action buttons are touch-friendly on mobile devices.
+      EstimatedEffort: S
+      Files:
+      - src/pages/NotFound/NotFound.module.css
+      ID: task-lingerie-website-feat-responsive-design-8
+      Title: Responsive 404 NotFound page
+    - AcceptanceCriteria:
+      - Button component has responsive padding and font-size variants
+      - Card component adapts spacing and shadows across breakpoints
+      - Image component handles responsive sizing with aspect ratio preservation
+      - All components maintain 44px minimum touch targets on mobile
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-responsive-design-1
+      Description: Ensure Button, Card, and Image base components have responsive
+        styles. Update component CSS modules to handle different sizes, spacing, and
+        touch interactions across breakpoints. Verify consistency with design system.
+      EstimatedEffort: M
+      Files:
+      - src/components/Button/Button.module.css
+      - src/components/Card/Card.module.css
+      - src/components/Image/Image.module.css
+      ID: task-lingerie-website-feat-responsive-design-9
+      Title: Update base component styles for responsiveness
+    - AcceptanceCriteria:
+      - All pages tested and verified on mobile, tablet, and desktop viewports
+      - Layout remains intact across major browsers (Chrome, Firefox, Safari)
+      - No horizontal scrolling occurs at any breakpoint
+      - Documentation added with screenshots of responsive behavior
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-responsive-design-2
+      - task-lingerie-website-feat-responsive-design-3
+      - task-lingerie-website-feat-responsive-design-4
+      - task-lingerie-website-feat-responsive-design-5
+      - task-lingerie-website-feat-responsive-design-6
+      - task-lingerie-website-feat-responsive-design-7
+      - task-lingerie-website-feat-responsive-design-8
+      - task-lingerie-website-feat-responsive-design-9
+      Description: Test all responsive layouts across Chrome, Firefox, Safari on mobile
+        (375px), tablet (768px), and desktop (1920px+). Fix any layout bugs, alignment
+        issues, or breakpoint inconsistencies. Document viewport testing results.
+      EstimatedEffort: M
+      Files:
+      - src/components/**/*.module.css
+      - src/pages/**/*.module.css
+      - README.md
+      ID: task-lingerie-website-feat-responsive-design-10
+      Title: Cross-browser responsive testing and refinement
+  Sprint: 4
+- Features:
+  - FeatureID: lingerie-website-feat-performance-optimization
+    FeatureTitle: Performance Optimization and Code Splitting
+    Tasks:
+    - AcceptanceCriteria:
+      - Vite config defines manualChunks with vendor, ui-components, and product-components
+      - Build output shows three separate chunk files in dist/
+      - Vendor chunk contains all node_modules dependencies
+      - UI and product chunks correctly separate component types
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: 'Set up Vite build configuration with manual chunk splitting strategy.
+        Create three main chunks: vendor (node_modules dependencies), ui-components
+        (reusable UI components), and product-components (product-specific components).
+        Configure rollupOptions to define the chunk splitting logic and ensure optimal
+        bundle sizes.'
+      EstimatedEffort: M
+      Files:
+      - vite.config.js
+      ID: task-lingerie-website-feat-performance-optimization-1
+      Title: Configure Vite manual chunk splitting
+    - AcceptanceCriteria:
+      - Image.jsx implements IntersectionObserver for lazy loading
+      - Component supports placeholder during loading
+      - Error state renders fallback image
+      - Supports srcset for responsive images
+      - Images only load when entering viewport
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create an optimized Image component with lazy loading using Intersection
+        Observer API. Add loading states, error handling, and fallback images. Support
+        responsive srcset attributes for different viewport sizes. Include fade-in
+        animation on load.
+      EstimatedEffort: M
+      Files:
+      - src/components/ui/Image/Image.jsx
+      - src/components/ui/Image/Image.module.css
+      ID: task-lingerie-website-feat-performance-optimization-2
+      Title: Implement lazy-loaded Image component
+    - AcceptanceCriteria:
+      - All route components wrapped with React.lazy()
+      - Suspense component wraps Routes with fallback UI
+      - Network tab shows separate chunks loaded per route
+      - Error boundary handles lazy loading failures
+      - Initial bundle size reduced by splitting routes
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-performance-optimization-1
+      Description: Refactor App.jsx to use React.lazy() and Suspense for all route
+        components. Implement lazy loading for Home, Shop, ProductDetail, About, and
+        Contact pages. Add loading fallback component with spinner or skeleton UI.
+        Ensure proper error boundaries around lazy-loaded routes.
+      EstimatedEffort: M
+      Files:
+      - src/App.jsx
+      ID: task-lingerie-website-feat-performance-optimization-3
+      Title: Implement route-based code splitting with React.lazy
+    - AcceptanceCriteria:
+      - Build configuration enforces 200KB JS gzipped budget
+      - Build configuration enforces 50KB CSS gzipped budget
+      - Build process warns when budgets approached (>80%)
+      - Build output displays chunk sizes with gzip comparison
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-performance-optimization-1
+      Description: Add build size warnings and performance budgets to vite.config.js.
+        Configure maxAssetSize and maxChunkSize to enforce <200KB JavaScript (gzipped)
+        and <50KB CSS (gzipped) limits. Set up build warnings that fail CI if budgets
+        are exceeded.
+      EstimatedEffort: S
+      Files:
+      - vite.config.js
+      ID: task-lingerie-website-feat-performance-optimization-4
+      Title: Configure performance budgets in Vite
+    - AcceptanceCriteria:
+      - ProductCard uses lazy Image component for product thumbnails
+      - ProductImage uses lazy Image component for detail views
+      - Above-fold images use loading='eager' attribute
+      - Below-fold images use lazy loading
+      - All product images define srcset with 1x, 2x, 3x variants
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-performance-optimization-2
+      Description: Integrate lazy-loaded Image component into ProductImage and ProductCard
+        components. Configure thumbnail images to load eagerly for above-fold content,
+        and detail images to load lazily. Set up proper srcset with multiple resolutions
+        for responsive loading.
+      EstimatedEffort: M
+      Files:
+      - src/components/product/ProductImage/ProductImage.jsx
+      - src/components/product/ProductCard/ProductCard.jsx
+      ID: task-lingerie-website-feat-performance-optimization-5
+      Title: Optimize product image loading strategy
+    - AcceptanceCriteria:
+      - index.html includes modulepreload for vendor chunk
+      - Critical route chunks have preload links
+      - DNS prefetch configured for external domains
+      - Lighthouse shows improved resource loading metrics
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-performance-optimization-1
+      Description: Configure Vite to generate preload/prefetch hints for critical
+        chunks. Add modulepreload for vendor bundle and initial route chunks. Configure
+        DNS prefetch for external resources. Update index.html template with resource
+        hints.
+      EstimatedEffort: S
+      Files:
+      - vite.config.js
+      - index.html
+      ID: task-lingerie-website-feat-performance-optimization-6
+      Title: Add preload hints for critical resources
+    - AcceptanceCriteria:
+      - All JS chunks under 200KB gzipped
+      - All CSS chunks under 50KB gzipped
+      - Lighthouse performance score >90 for all routes
+      - Network waterfall shows proper code splitting
+      - Lazy loaded images only fetch when visible
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-performance-optimization-3
+      - task-lingerie-website-feat-performance-optimization-4
+      - task-lingerie-website-feat-performance-optimization-5
+      - task-lingerie-website-feat-performance-optimization-6
+      Description: Run production builds and verify all chunks meet size requirements.
+        Use bundlesize or similar tool to validate gzipped sizes. Test lazy loading
+        behavior in browser DevTools. Generate Lighthouse performance reports for
+        all routes and ensure scores >90.
+      EstimatedEffort: M
+      Files:
+      - vite.config.js
+      - src/App.jsx
+      - src/components/ui/Image/Image.jsx
+      ID: task-lingerie-website-feat-performance-optimization-7
+      Title: Verify performance budgets and build optimization
+  - FeatureID: lingerie-website-feat-testing
+    FeatureTitle: Automated Testing Suite
+    Tasks:
+    - AcceptanceCriteria:
+      - vitest.config.js created with react plugin and jsdom environment
+      - Test setup file (src/test/setup.js) created with RTL configuration
+      - All testing dependencies installed in package.json
+      - Test script added to package.json for running unit tests
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Configure Vitest with React Testing Library for the project. Create
+        vitest.config.js with jsdom environment and globals enabled. Set up the test
+        setup file with React Testing Library configuration and any global test utilities.
+        Install required dependencies including vitest, @testing-library/react, @testing-library/jest-dom,
+        and jsdom.
+      EstimatedEffort: S
+      Files:
+      - vitest.config.js
+      - src/test/setup.js
+      - package.json
+      ID: task-lingerie-website-feat-testing-1
+      Title: Setup Vitest and testing infrastructure
+    - AcceptanceCriteria:
+      - All 7 productService functions have test coverage
+      - Edge cases tested (invalid IDs, empty results, non-existent data)
+      - Tests pass successfully with 100% productService coverage
+      - Test descriptions clearly indicate what is being tested
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-testing-1
+      Description: Create comprehensive unit tests for all productService functions
+        including getProducts, getProductById, getProductBySlug, getProductsByCategory,
+        getFeaturedProducts, getCategories, and searchProducts. Test both happy paths
+        and edge cases like invalid IDs, non-existent categories, and empty search
+        results. Ensure all product service logic is validated with proper assertions.
+      EstimatedEffort: M
+      Files:
+      - src/services/__tests__/productService.test.js
+      ID: task-lingerie-website-feat-testing-2
+      Title: Implement product service unit tests
+    - AcceptanceCriteria:
+      - All button variants render correctly
+      - All button sizes render with correct classes
+      - Click handlers fire when button is clicked
+      - Disabled and loading states prevent clicks
+      - Tests pass with complete Button component coverage
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-testing-1
+      Description: Create unit tests for the Button UI component using React Testing
+        Library. Test rendering with different variants (primary, secondary, outline),
+        sizes (sm, md, lg), and states (default, disabled, loading). Verify click
+        handlers are called correctly and accessibility attributes are present. Test
+        className prop merging and children rendering.
+      EstimatedEffort: S
+      Files:
+      - src/components/ui/Button/__tests__/Button.test.jsx
+      ID: task-lingerie-website-feat-testing-3
+      Title: Implement Button component tests
+    - AcceptanceCriteria:
+      - Product data renders correctly (image, name, price, category)
+      - Featured badge shows only for featured products
+      - Discount prices display with strikethrough on original price
+      - Click navigation works with correct product slug
+      - Tests pass with complete ProductCard coverage
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-testing-1
+      Description: Create unit tests for the ProductCard component verifying product
+        information rendering (image, name, price, category), featured badge display,
+        discount price rendering, and navigation on click. Test edge cases like missing
+        images, multiple categories, and products without discounts. Mock router navigation
+        and verify correct product slug is used.
+      EstimatedEffort: M
+      Files:
+      - src/components/product/ProductCard/__tests__/ProductCard.test.jsx
+      ID: task-lingerie-website-feat-testing-4
+      Title: Implement ProductCard component tests
+    - AcceptanceCriteria:
+      - Navigation between all major routes works correctly
+      - URL parameters and slugs are properly handled
+      - Browser history navigation (back/forward) works
+      - Direct URL access loads correct components
+      - Integration tests pass successfully
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-testing-1
+      Description: Implement integration tests for the navigation flow between pages.
+        Test routing from homepage to product listings, product detail pages, and
+        category pages. Verify URL changes, navigation state, and component mounting/unmounting.
+        Test browser back/forward navigation and direct URL access to different routes.
+      EstimatedEffort: M
+      Files:
+      - src/test/integration/navigation.test.jsx
+      ID: task-lingerie-website-feat-testing-5
+      Title: Create navigation integration tests
+    - AcceptanceCriteria:
+      - playwright.config.js created with multi-browser support
+      - Playwright installed with all required browsers
+      - E2E test directory structure created
+      - E2E test scripts added to package.json
+      AgentType: qa-engineer
+      Dependencies: []
+      Description: Configure Playwright for end-to-end testing. Create playwright.config.js
+        with browser configurations (Chromium, Firefox, WebKit), base URL setup, and
+        test directory. Install Playwright and required browsers. Set up test helpers
+        and utilities for common E2E operations. Add E2E test scripts to package.json.
+      EstimatedEffort: S
+      Files:
+      - playwright.config.js
+      - package.json
+      ID: task-lingerie-website-feat-testing-6
+      Title: Setup Playwright for E2E testing
+    - AcceptanceCriteria:
+      - Hero section elements are visible and interactive
+      - Featured products grid renders with correct product count
+      - Category links navigate to correct pages
+      - Page loads within acceptable performance threshold
+      - E2E homepage tests pass on all configured browsers
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-testing-6
+      Description: Create Playwright tests for the homepage validating hero section
+        display, featured products grid rendering, category navigation, and responsive
+        behavior. Test page load performance, image loading, and interactive elements.
+        Verify all homepage links and buttons are functional and navigation works
+        correctly.
+      EstimatedEffort: M
+      Files:
+      - e2e/homepage.spec.js
+      ID: task-lingerie-website-feat-testing-7
+      Title: Implement homepage E2E tests
+    - AcceptanceCriteria:
+      - Product details render correctly from URL slug
+      - Image gallery navigation works smoothly
+      - Size and color selection updates state correctly
+      - Add to cart button triggers expected behavior
+      - Tests pass for multiple product types
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-testing-6
+      Description: Create Playwright tests for product detail pages. Test product
+        information display (images, title, price, description, sizes, colors), image
+        gallery interaction, size and color selection, add-to-cart functionality,
+        and related products section. Verify breadcrumb navigation and back-to-listing
+        functionality. Test with multiple product types.
+      EstimatedEffort: M
+      Files:
+      - e2e/productDetail.spec.js
+      ID: task-lingerie-website-feat-testing-8
+      Title: Implement product detail E2E tests
+    - AcceptanceCriteria:
+      - Header and footer navigation links work correctly
+      - Category filtering updates product listings
+      - Mobile menu opens, closes, and navigates properly
+      - Multi-page user journeys complete successfully
+      - All navigation tests pass on desktop and mobile viewports
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-testing-6
+      Description: Create comprehensive E2E tests for navigation flows across the
+        entire application. Test header navigation, footer links, category filtering,
+        search functionality, and breadcrumb navigation. Verify mobile menu behavior,
+        navigation persistence across page loads, and correct URL updates. Test complex
+        user journeys spanning multiple pages.
+      EstimatedEffort: M
+      Files:
+      - e2e/navigation.spec.js
+      ID: task-lingerie-website-feat-testing-9
+      Title: Implement navigation E2E tests
+  - FeatureID: lingerie-website-feat-deployment-config
+    FeatureTitle: Deployment Configuration and Documentation
+    Tasks:
+    - AcceptanceCriteria:
+      - _redirects file created in public/ directory
+      - SPA fallback rule configured (/* /index.html 200)
+      - 404 handling configured appropriately
+      - File follows Netlify redirect syntax specification
+      AgentType: devops-engineer
+      Dependencies: []
+      Description: Create _redirects file for Netlify with SPA routing rules. Configure
+        redirects to handle client-side routing so all routes serve index.html. Add
+        redirect rules for 404 pages and trailing slash handling. Ensure API proxying
+        is configured if needed.
+      EstimatedEffort: S
+      Files:
+      - public/_redirects
+      ID: task-lingerie-website-feat-deployment-config-1
+      Title: Create Netlify deployment configuration
+    - AcceptanceCriteria:
+      - vercel.json file created in project root
+      - Build command and output directory configured
+      - Rewrites configured for SPA routing
+      - Headers configured for caching and security
+      AgentType: devops-engineer
+      Dependencies: []
+      Description: Create vercel.json configuration file with build settings and routing
+        rules. Configure rewrites for SPA routing and headers for static assets. Set
+        up environment variable placeholders and build output directory. Add configuration
+        for image optimization if using Vercel's image service.
+      EstimatedEffort: S
+      Files:
+      - vercel.json
+      ID: task-lingerie-website-feat-deployment-config-2
+      Title: Create Vercel deployment configuration
+    - AcceptanceCriteria:
+      - robots.txt file created in public/ directory
+      - User-agent rules properly configured
+      - Sitemap URL included in configuration
+      - File follows robots.txt standard format
+      AgentType: devops-engineer
+      Dependencies: []
+      Description: Create robots.txt file to control search engine crawling behavior.
+        Allow all user-agents to crawl public pages. Block crawling of admin or testing
+        routes if any exist. Include sitemap reference for better SEO indexing.
+      EstimatedEffort: S
+      Files:
+      - public/robots.txt
+      ID: task-lingerie-website-feat-deployment-config-3
+      Title: Create robots.txt for SEO
+    - AcceptanceCriteria:
+      - README.md file created with all required sections
+      - Setup instructions are clear and complete
+      - Build and deployment commands documented
+      - Development workflow explained step-by-step
+      - Technology stack and features listed
+      AgentType: devops-engineer
+      Dependencies: []
+      Description: Create detailed README.md with project overview, technology stack,
+        and features. Document local development setup including prerequisites, installation
+        steps, and running the dev server. Include environment variable configuration,
+        build commands, and deployment instructions. Add sections for project structure,
+        contributing guidelines, and troubleshooting common issues.
+      EstimatedEffort: M
+      Files:
+      - README.md
+      ID: task-lingerie-website-feat-deployment-config-4
+      Title: Write comprehensive README documentation
+    - AcceptanceCriteria:
+      - Build script configured for production optimization
+      - Output generates to correct directory (dist/ or build/)
+      - Assets are minified and optimized
+      - Environment variables handled correctly
+      - Build completes without errors
+      AgentType: devops-engineer
+      Dependencies: []
+      Description: Create or update build script to generate optimized production
+        bundle. Configure webpack/vite for production mode with minification, tree-shaking,
+        and code splitting. Set up environment-specific configuration handling. Ensure
+        CSS is extracted and optimized, and images are processed correctly.
+      EstimatedEffort: M
+      Files:
+      - package.json
+      - vite.config.js
+      ID: task-lingerie-website-feat-deployment-config-5
+      Title: Create production build script
+    - AcceptanceCriteria:
+      - Production build generates successfully
+      - All static assets have correct paths and load
+      - JavaScript bundles are properly minified
+      - CSS is extracted and optimized
+      - No console errors in production build
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-deployment-config-5
+      Description: Generate production build and verify all assets are correctly bundled.
+        Check that images, fonts, and static assets load with correct paths. Verify
+        code splitting and lazy loading work correctly. Test that environment variables
+        are properly injected and source maps are configured appropriately for production.
+      EstimatedEffort: M
+      Files:
+      - package.json
+      ID: task-lingerie-website-feat-deployment-config-6
+      Title: Verify production build output
+    - AcceptanceCriteria:
+      - Site successfully deploys to Netlify
+      - All routes accessible via direct URL
+      - Static assets load with correct caching
+      - No 404 errors for SPA routes
+      - Performance metrics meet baseline requirements
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-deployment-config-1
+      - task-lingerie-website-feat-deployment-config-6
+      Description: Deploy the production build to Netlify staging environment. Verify
+        all routes work correctly with client-side routing. Test that redirects and
+        rewrites function as expected. Check asset loading, caching headers, and page
+        load performance. Verify responsive design and cross-browser compatibility.
+      EstimatedEffort: M
+      Files:
+      - public/_redirects
+      ID: task-lingerie-website-feat-deployment-config-7
+      Title: Test deployment on Netlify
+    - AcceptanceCriteria:
+      - Site successfully deploys to Vercel
+      - All routes work with SPA routing
+      - Headers and caching configured correctly
+      - Build process completes successfully
+      - Performance comparable to Netlify deployment
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-deployment-config-2
+      - task-lingerie-website-feat-deployment-config-6
+      Description: Deploy the production build to Vercel staging environment. Verify
+        all configuration settings work correctly including rewrites and headers.
+        Test edge caching behavior and image optimization if configured. Validate
+        environment variable injection and build process. Compare performance metrics
+        with Netlify deployment.
+      EstimatedEffort: M
+      Files:
+      - vercel.json
+      ID: task-lingerie-website-feat-deployment-config-8
+      Title: Test deployment on Vercel
+  Sprint: 5
+- Features:
+  - FeatureID: lingerie-website-feat-project-setup
+    FeatureTitle: Project Setup and Configuration
+    Tasks:
+    - AcceptanceCriteria:
+      - Vite project created with React template
+      - All required directories exist under src/ and public/
+      - Git repository initialized with proper .gitignore
+      - Project can be started with npm run dev
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create a new Vite project with React template. Set up the basic
+        directory structure including src/, public/, and subdirectories for components
+        (ui, layout, product), pages, data, services, utils, and hooks. Initialize
+        git repository and create .gitignore file with appropriate Node.js and Vite
+        entries.
+      EstimatedEffort: S
+      Files:
+      - package.json
+      - .gitignore
+      - vite.config.js
+      - index.html
+      ID: task-lingerie-website-feat-project-setup-1
+      Title: Initialize Vite + React project structure
+    - AcceptanceCriteria:
+      - react-router-dom installed and listed in package.json
+      - vite.config.js configured with path aliases
+      - Build process runs successfully with npm run build
+      - Path aliases resolve correctly in imports
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-project-setup-1
+      Description: Install react-router-dom for routing functionality. Configure vite.config.js
+        with appropriate build settings, path aliases (@/components, @/pages, etc.),
+        and optimization options. Set up HTML entry point with meta tags and basic
+        structure.
+      EstimatedEffort: S
+      Files:
+      - package.json
+      - vite.config.js
+      ID: task-lingerie-website-feat-project-setup-2
+      Title: Install and configure core dependencies
+    - AcceptanceCriteria:
+      - ESLint configured with React plugins in .eslintrc.cjs
+      - Prettier configured in .prettierrc
+      - npm run lint executes without errors on initial codebase
+      - npm run format successfully formats code
+      - ESLint and Prettier work together without rule conflicts
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-project-setup-1
+      Description: Install ESLint and Prettier with React-specific plugins and configurations.
+        Create .eslintrc.cjs with rules for React hooks, JSX, and best practices.
+        Create .prettierrc with consistent formatting rules. Add lint and format scripts
+        to package.json. Ensure both tools work together without conflicts.
+      EstimatedEffort: M
+      Files:
+      - package.json
+      - .eslintrc.cjs
+      - .prettierrc
+      ID: task-lingerie-website-feat-project-setup-3
+      Title: Configure ESLint and Prettier
+    - AcceptanceCriteria:
+      - Vitest and @testing-library/react installed
+      - vitest.config.js created with jsdom environment
+      - Sample test file runs successfully with npm run test
+      - Coverage reports can be generated with npm run test:coverage
+      - Test scripts added to package.json
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-project-setup-2
+      Description: Install Vitest and React Testing Library with necessary dependencies.
+        Configure vitest.config.js with appropriate test environment, coverage settings,
+        and globals. Create a sample test file to verify setup. Add test scripts to
+        package.json for running tests and generating coverage reports.
+      EstimatedEffort: M
+      Files:
+      - package.json
+      - vitest.config.js
+      ID: task-lingerie-website-feat-project-setup-4
+      Title: Set up Vitest for unit testing
+    - AcceptanceCriteria:
+      - Playwright installed with browsers
+      - playwright.config.js configured for multi-browser testing
+      - Basic e2e test runs successfully with npm run test:e2e
+      - Test runs in headless and headed modes
+      - Playwright report generation works correctly
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-project-setup-2
+      Description: Install Playwright and initialize configuration. Create playwright.config.js
+        with settings for multiple browsers (chromium, firefox, webkit), base URL,
+        and test directories. Set up a basic e2e test to verify the setup. Add Playwright
+        test scripts to package.json.
+      EstimatedEffort: M
+      Files:
+      - package.json
+      - playwright.config.js
+      ID: task-lingerie-website-feat-project-setup-5
+      Title: Set up Playwright for e2e testing
+    - AcceptanceCriteria:
+      - All UI component files created with basic exports
+      - All layout component files created with structure
+      - All product component files created as stubs
+      - Each component has corresponding CSS module file
+      - No import errors when components are imported
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-project-setup-2
+      Description: Create placeholder files for all UI components (Button, Card, Image,
+        Grid, Container, Link) with basic implementations and CSS modules. Create
+        layout components (Header, Footer, Navigation, Layout) with simple structure.
+        Create product components (ProductCard, ProductGrid, ProductDetail) as empty
+        exports. Each component should have proper file structure with .jsx and .module.css
+        files.
+      EstimatedEffort: M
+      Files:
+      - src/components/ui/Button/Button.jsx
+      - src/components/ui/Card/Card.jsx
+      - src/components/ui/Image/Image.jsx
+      - src/components/ui/Grid/Grid.jsx
+      - src/components/ui/Container/Container.jsx
+      - src/components/ui/Link/Link.jsx
+      - src/components/layout/Header/Header.jsx
+      - src/components/layout/Footer/Footer.jsx
+      - src/components/layout/Navigation/Navigation.jsx
+      - src/components/layout/Layout/Layout.jsx
+      - src/components/product/ProductCard/ProductCard.jsx
+      - src/components/product/ProductGrid/ProductGrid.jsx
+      - src/components/product/ProductDetail/ProductDetail.jsx
+      ID: task-lingerie-website-feat-project-setup-6
+      Title: Create base component stubs
+    - AcceptanceCriteria:
+      - All page component files created with basic content
+      - React Router configured with all routes in App.jsx
+      - Layout component wraps all page routes
+      - Navigation between pages works correctly
+      - 404 page displays for unknown routes
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-project-setup-6
+      Description: Create placeholder page components (HomePage, ProductsPage, ProductDetailPage,
+        AboutPage, ContactPage, NotFoundPage). Set up React Router in App.jsx with
+        routes for all pages. Create a basic Layout wrapper that includes Header,
+        Footer, and main content area. Verify navigation works between all routes.
+      EstimatedEffort: M
+      Files:
+      - src/pages/HomePage.jsx
+      - src/pages/ProductsPage.jsx
+      - src/pages/ProductDetailPage.jsx
+      - src/pages/AboutPage.jsx
+      - src/pages/ContactPage.jsx
+      - src/pages/NotFoundPage.jsx
+      - src/App.jsx
+      ID: task-lingerie-website-feat-project-setup-7
+      Title: Create page stubs and routing structure
+    - AcceptanceCriteria:
+      - data/ directory created for product data files
+      - services/ directory with api.js and storage.js stubs
+      - utils/ directory with formatters.js and validators.js stubs
+      - hooks/ directory with useLocalStorage.js and useDebounce.js stubs
+      - Each directory has index.js for exports
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-project-setup-2
+      Description: Create directory structure for data/, services/, utils/, and hooks/.
+        Add placeholder files for common utilities (formatters, validators), service
+        modules (api, storage), and custom hooks (useLocalStorage, useDebounce). Create
+        index.js files for clean exports. Add basic JSDoc comments for future implementation.
+      EstimatedEffort: S
+      Files:
+      - src/data/index.js
+      - src/services/api.js
+      - src/services/storage.js
+      - src/utils/formatters.js
+      - src/utils/validators.js
+      - src/hooks/useLocalStorage.js
+      - src/hooks/useDebounce.js
+      ID: task-lingerie-website-feat-project-setup-8
+      Title: Set up utility directories and services
+    - AcceptanceCriteria:
+      - public/images/products/ directory created
+      - public/images/logo.svg placeholder added
+      - Global CSS file with CSS variables created
+      - Base reset styles applied
+      - CSS variables accessible in component styles
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-project-setup-1
+      Description: Set up public/ directory with images/ subdirectory structure. Add
+        placeholder images for products and logo. Create global CSS file with CSS
+        variables for colors, typography, spacing, and breakpoints. Create a base
+        reset/normalize stylesheet. Import global styles in main.jsx.
+      EstimatedEffort: S
+      Files:
+      - public/favicon.ico
+      - public/robots.txt
+      - src/styles/global.css
+      - src/styles/reset.css
+      - src/main.jsx
+      ID: task-lingerie-website-feat-project-setup-9
+      Title: Configure public assets and global styles
+    - AcceptanceCriteria:
+      - All npm scripts execute without errors
+      - README.md contains setup and usage instructions
+      - Linting passes on all files
+      - Sample tests pass successfully
+      - Development server starts and displays basic UI
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-project-setup-3
+      - task-lingerie-website-feat-project-setup-4
+      - task-lingerie-website-feat-project-setup-5
+      - task-lingerie-website-feat-project-setup-7
+      - task-lingerie-website-feat-project-setup-8
+      - task-lingerie-website-feat-project-setup-9
+      Description: Run all linting, formatting, and testing commands to verify the
+        setup is working correctly. Create a README.md with project setup instructions,
+        available scripts, directory structure overview, and development guidelines.
+        Ensure all tasks in package.json work as expected. Fix any configuration issues
+        discovered during verification.
+      EstimatedEffort: M
+      Files:
+      - README.md
+      - package.json
+      ID: task-lingerie-website-feat-project-setup-10
+      Title: Verify complete setup and documentation
+  - FeatureID: lingerie-website-feat-data-layer
+    FeatureTitle: Static Data Layer and Product Service
+    Tasks:
+    - AcceptanceCriteria:
+      - products.json file created in src/data/ directory
+      - Contains 6-8 complete product objects with all required fields
+      - Products span multiple categories for testing filtering
+      - JSON is valid and properly formatted
+      - At least 2 products have featured metadata flag set
+      AgentType: backend-engineer
+      Dependencies: []
+      Description: Create the products.json file with sample product data. Include
+        at least 6-8 products across different categories (bras, panties, lingerie
+        sets, sleepwear). Each product should have all required fields including id,
+        slug, name, description, shortDescription, price, images array, category,
+        sizes, colors, and metadata. Ensure proper JSON formatting and validation.
+      EstimatedEffort: S
+      Files:
+      - src/data/products.json
+      ID: task-lingerie-website-feat-data-layer-1
+      Title: Create products.json data file
+    - AcceptanceCriteria:
+      - categories.json file created in src/data/ directory
+      - Contains 5+ category objects with all required fields
+      - Category slugs match those referenced in products.json
+      - Order field set appropriately for sorting
+      - JSON is valid and properly formatted
+      AgentType: backend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-data-layer-1
+      Description: Create the categories.json file with category definitions. Include
+        categories for bras, panties, lingerie sets, sleepwear, and accessories. Each
+        category should have slug, name, description, order, and metadata fields.
+        Ensure categories align with the category values used in products.json.
+      EstimatedEffort: S
+      Files:
+      - src/data/categories.json
+      ID: task-lingerie-website-feat-data-layer-2
+      Title: Create categories.json data file
+    - AcceptanceCriteria:
+      - featured.json file created in src/data/ directory
+      - Contains featuredProductIds array with 3-4 valid product IDs
+      - Product IDs reference actual products from products.json
+      - JSON is valid and properly formatted
+      - Includes metadata for ordering or additional configuration
+      AgentType: backend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-data-layer-1
+      Description: Create the featured.json file to define which products should be
+        featured on the homepage. Include a featuredProductIds array with 3-4 product
+        IDs from products.json. Add metadata for feature ordering and any additional
+        configuration needed for the featured products section.
+      EstimatedEffort: S
+      Files:
+      - src/data/featured.json
+      ID: task-lingerie-website-feat-data-layer-3
+      Title: Create featured.json data file
+    - AcceptanceCriteria:
+      - productService.js file created in src/services/ directory
+      - All three core retrieval functions implemented with proper JSDoc
+      - JSON data files imported correctly
+      - Functions return expected data types per LLD specification
+      - getProductById and getProductBySlug handle not-found cases correctly
+      AgentType: backend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-data-layer-1
+      - task-lingerie-website-feat-data-layer-2
+      - task-lingerie-website-feat-data-layer-3
+      Description: 'Create productService.js and implement the core retrieval functions:
+        getProducts, getProductById, and getProductBySlug. Import the JSON data files
+        and implement proper error handling for not-found cases. Follow the LLD specifications
+        exactly for function signatures and return types.'
+      EstimatedEffort: M
+      Files:
+      - src/services/productService.js
+      ID: task-lingerie-website-feat-data-layer-4
+      Title: Implement core product retrieval functions
+    - AcceptanceCriteria:
+      - getProductsByCategory function handles both string and array category fields
+      - Products sorted by metadata.order when returned
+      - getCategories returns all categories sorted by order field
+      - getCategoryBySlug correctly finds categories by slug
+      - All functions have proper JSDoc documentation
+      AgentType: backend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-data-layer-4
+      Description: Implement getProductsByCategory, getCategories, and getCategoryBySlug
+        functions in productService.js. Handle both single category and array category
+        formats in product data. Implement proper sorting by metadata order field.
+        Ensure category filtering works correctly for products with multiple categories.
+      EstimatedEffort: M
+      Files:
+      - src/services/productService.js
+      ID: task-lingerie-website-feat-data-layer-5
+      Title: Implement category and filtering functions
+    - AcceptanceCriteria:
+      - getFeaturedProducts retrieves products from featuredProductIds array
+      - Fallback to metadata.featured flag works when featuredProductIds is empty
+      - searchProducts performs case-insensitive search across all text fields
+      - Empty search query returns empty array
+      - Search results are relevant and accurate
+      AgentType: backend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-data-layer-4
+      Description: Implement getFeaturedProducts and searchProducts functions in productService.js.
+        getFeaturedProducts should use featured.json data as primary source with fallback
+        to metadata.featured flag. searchProducts should search across name, description,
+        and shortDescription fields with case-insensitive matching.
+      EstimatedEffort: M
+      Files:
+      - src/services/productService.js
+      ID: task-lingerie-website-feat-data-layer-6
+      Title: Implement featured products and search functions
+    - AcceptanceCriteria:
+      - Test file created for productService.js
+      - All three core retrieval functions have test coverage
+      - Tests cover both success and failure scenarios
+      - Edge cases tested (empty results, invalid IDs)
+      - All tests pass successfully
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-data-layer-4
+      Description: Create comprehensive unit tests for getProducts, getProductById,
+        and getProductBySlug functions. Test successful retrieval, not-found cases,
+        and edge cases. Use a testing framework (Jest or similar) and ensure tests
+        are isolated and repeatable.
+      EstimatedEffort: M
+      Files:
+      - src/services/productService.test.js
+      ID: task-lingerie-website-feat-data-layer-7
+      Title: Create unit tests for product retrieval functions
+    - AcceptanceCriteria:
+      - Tests cover all filtering and search functions
+      - Category filtering tested with both string and array formats
+      - Featured products tested with both primary and fallback sources
+      - Search tests include case-insensitivity and multi-field matching
+      - Sorting behavior validated in applicable tests
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-data-layer-5
+      - task-lingerie-website-feat-data-layer-6
+      - task-lingerie-website-feat-data-layer-7
+      Description: Create comprehensive unit tests for getProductsByCategory, getFeaturedProducts,
+        and searchProducts functions. Test category filtering with single and array
+        categories, featured product retrieval with both data sources, and search
+        with various query types. Ensure proper sorting validation in tests.
+      EstimatedEffort: M
+      Files:
+      - src/services/productService.test.js
+      ID: task-lingerie-website-feat-data-layer-8
+      Title: Create unit tests for filtering and search functions
+  - FeatureID: lingerie-website-feat-global-styles
+    FeatureTitle: Global Styles and Design System
+    Tasks:
+    - AcceptanceCriteria:
+      - variables.css file created with all color variables (primary, secondary, text,
+        background)
+      - Spacing scale defined using spacing-unit base (0.25rem increments)
+      - Typography variables created (font families, sizes, weights, line heights)
+      - Breakpoint variables defined for responsive design (mobile, tablet, desktop)
+      - All CSS custom properties follow naming convention --category-property format
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create src/styles/variables.css with CSS custom properties for
+        colors, spacing, typography, and breakpoints. Define the complete design system
+        tokens including primary/secondary colors, text colors, spacing units, font
+        families, font sizes, and responsive breakpoints. Ensure all values follow
+        the design specifications from the feature description.
+      EstimatedEffort: S
+      Files:
+      - src/styles/variables.css
+      ID: task-lingerie-website-feat-global-styles-1
+      Title: Create CSS variables and design tokens
+    - AcceptanceCriteria:
+      - global.css file created with comprehensive CSS reset
+      - Box-sizing set to border-box for all elements
+      - Body styles include default font family and color from variables
+      - Focus styles defined for accessibility
+      - Smooth scrolling and font smoothing enabled
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-global-styles-1
+      Description: Create src/styles/global.css with modern CSS reset (box-sizing,
+        margins, padding normalization). Add global base styles for html, body, and
+        common elements. Include font smoothing, default font stack, and accessibility
+        improvements. Ensure the reset is minimal and doesn't interfere with component-specific
+        styles.
+      EstimatedEffort: S
+      Files:
+      - src/styles/global.css
+      ID: task-lingerie-website-feat-global-styles-2
+      Title: Implement CSS reset and global styles
+    - AcceptanceCriteria:
+      - Both CSS files imported in main.jsx before App component
+      - Import order is variables.css first, then global.css
+      - Application builds successfully without CSS errors
+      - CSS variables accessible in browser DevTools
+      - Global reset styles applied to rendered HTML elements
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-global-styles-1
+      - task-lingerie-website-feat-global-styles-2
+      Description: Import variables.css and global.css in src/main.jsx in the correct
+        order. Ensure styles are loaded before any component rendering. Verify that
+        CSS custom properties are accessible to all components. Test that the import
+        order ensures variables are available when global styles reference them.
+      EstimatedEffort: S
+      Files:
+      - src/main.jsx
+      ID: task-lingerie-website-feat-global-styles-3
+      Title: Integrate global styles into application
+    - AcceptanceCriteria:
+      - Container.jsx created with proper prop types and defaults
+      - Container.module.css implements responsive max-widths using breakpoint variables
+      - Component uses CSS custom properties for padding and spacing
+      - Fluid prop toggles between constrained and full-width layouts
+      - Component properly centers content horizontally
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-global-styles-3
+      Description: Implement src/components/ui/Container component with JSX and CSS
+        modules. Add responsive max-width constraints, horizontal padding, and centering.
+        Use CSS custom properties for spacing values. Support optional fluid prop
+        for full-width layouts. Ensure component is reusable across different page
+        layouts.
+      EstimatedEffort: M
+      Files:
+      - src/components/ui/Container/Container.jsx
+      - src/components/ui/Container/Container.module.css
+      ID: task-lingerie-website-feat-global-styles-4
+      Title: Create Container component with responsive layout
+    - AcceptanceCriteria:
+      - Grid.jsx created with columns, gap, and responsive column props
+      - Grid.module.css implements CSS Grid layout
+      - Component responds to breakpoint changes automatically
+      - Gap spacing uses CSS custom property values from variables
+      - Grid works correctly with 1-4 column configurations
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-global-styles-3
+      Description: Implement src/components/ui/Grid component using CSS Grid. Support
+        configurable columns (1-4), gap spacing, and responsive behavior. Add props
+        for columns at different breakpoints (mobile, tablet, desktop). Use CSS custom
+        properties for gap values. Ensure grid collapses appropriately on smaller
+        screens.
+      EstimatedEffort: M
+      Files:
+      - src/components/ui/Grid/Grid.jsx
+      - src/components/ui/Grid/Grid.module.css
+      ID: task-lingerie-website-feat-global-styles-5
+      Title: Create Grid component with flexible columns
+    - AcceptanceCriteria:
+      - Card.jsx created with proper semantic HTML (article or div)
+      - Card.module.css implements shadow, border-radius, and padding using variables
+      - Hover state transitions smoothly (transform and shadow)
+      - Interactive cards show pointer cursor and keyboard focus states
+      - Component accepts children prop for flexible content
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-global-styles-3
+      Description: Implement src/components/ui/Card component with elevation (box-shadow),
+        border-radius, and padding. Add hover state with smooth transition. Support
+        optional onClick for interactive cards. Use CSS custom properties for colors
+        and spacing. Ensure card is accessible and semantic.
+      EstimatedEffort: M
+      Files:
+      - src/components/ui/Card/Card.jsx
+      - src/components/ui/Card/Card.module.css
+      ID: task-lingerie-website-feat-global-styles-6
+      Title: Create Card component with hover states
+    - AcceptanceCriteria:
+      - Image.jsx implements loading='lazy' attribute
+      - Component handles image load errors with fallback or error state
+      - Alt text is required prop (enforced via PropTypes)
+      - Image.module.css includes object-fit and aspect ratio support
+      - Component prevents layout shift during image loading
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-global-styles-3
+      Description: Implement src/components/ui/Image component with native lazy loading,
+        error handling, and loading states. Add alt text requirement for accessibility.
+        Support optional aspect ratio constraints. Implement onError callback for
+        fallback images. Use object-fit for responsive image scaling.
+      EstimatedEffort: M
+      Files:
+      - src/components/ui/Image/Image.jsx
+      - src/components/ui/Image/Image.module.css
+      ID: task-lingerie-website-feat-global-styles-7
+      Title: Create Image component with lazy loading
+    - AcceptanceCriteria:
+      - Button.jsx supports variant prop (primary, secondary, outline)
+      - Button.module.css implements all three variants using color variables
+      - Disabled and loading states prevent interaction and show visual feedback
+      - Focus states meet accessibility standards (visible outline)
+      - Component can render as button or anchor tag based on props
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-global-styles-3
+      Description: Implement src/components/ui/Button component with three variants
+        (primary, secondary, outline). Add disabled state and loading state. Use CSS
+        custom properties for colors. Ensure proper focus states for accessibility.
+        Support both button and link (as='a') rendering.
+      EstimatedEffort: M
+      Files:
+      - src/components/ui/Button/Button.jsx
+      - src/components/ui/Button/Button.module.css
+      ID: task-lingerie-website-feat-global-styles-8
+      Title: Create Button component with variants
+    - AcceptanceCriteria:
+      - Link.jsx wraps React Router Link for internal navigation
+      - External links automatically get target='_blank' and rel='noopener noreferrer'
+      - Link.module.css implements variant styles using color variables
+      - Focus and hover states clearly visible
+      - Component maintains proper accessibility attributes
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-global-styles-3
+      Description: Implement src/components/ui/Link component that wraps React Router's
+        Link component. Add variant support (default, button, nav). Include external
+        link detection (opens in new tab with rel attributes). Style using CSS custom
+        properties for colors. Ensure accessibility with proper ARIA attributes.
+      EstimatedEffort: S
+      Files:
+      - src/components/ui/Link/Link.jsx
+      - src/components/ui/Link/Link.module.css
+      ID: task-lingerie-website-feat-global-styles-9
+      Title: Create Link component with React Router integration
+    - AcceptanceCriteria:
+      - Documentation created showing usage examples for all UI components
+      - Integration test file verifies all components render without errors
+      - Test confirms CSS variables are applied correctly to components
+      - Responsive behavior tested at mobile, tablet, and desktop breakpoints
+      - All components pass accessibility checks (no missing alt text, proper focus
+        states)
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-global-styles-4
+      - task-lingerie-website-feat-global-styles-5
+      - task-lingerie-website-feat-global-styles-6
+      - task-lingerie-website-feat-global-styles-7
+      - task-lingerie-website-feat-global-styles-8
+      - task-lingerie-website-feat-global-styles-9
+      Description: Document all UI components in README or Storybook format. Create
+        integration test that renders all components together to verify design system
+        consistency. Test that all components correctly use CSS custom properties.
+        Verify responsive behavior at different breakpoints. Ensure no console errors
+        or warnings.
+      EstimatedEffort: M
+      Files:
+      - src/components/ui/README.md
+      - src/components/ui/__tests__/integration.test.jsx
+      ID: task-lingerie-website-feat-global-styles-10
+      Title: Create component documentation and integration tests
+  Sprint: 1
+- Features:
+  - FeatureID: lingerie-website-feat-ui-components
+    FeatureTitle: Reusable UI Component Library
+    Tasks:
+    - AcceptanceCriteria:
+      - Button.jsx created with all three variants (primary, secondary, outline)
+      - Button.module.css implements styles for all variants and sizes
+      - PropTypes validation covers all props including variant, size, disabled, type
+      - Component accepts and spreads additional props to native button element
+      - Disabled state properly applied and styled
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create the Button component with primary, secondary, and outline
+        variants. Implement size variations (small, medium, large) and handle disabled
+        states. Use CSS Modules for scoped styling with proper class composition.
+        Include PropTypes validation for all props.
+      EstimatedEffort: S
+      Files:
+      - src/components/ui/Button/Button.jsx
+      - src/components/ui/Button/Button.module.css
+      ID: task-lingerie-website-feat-ui-components-1
+      Title: Implement Button component with variants
+    - AcceptanceCriteria:
+      - Card.jsx created with children rendering
+      - Card.module.css provides base card styling (padding, border, shadow)
+      - className prop merges correctly with base styles
+      - PropTypes validation for children and className
+      - Component properly spreads additional props to div element
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create a simple Card wrapper component with CSS Modules styling.
+        Implement flexible composition pattern to accept any children. Support className
+        prop for custom styling overrides and spread additional props to the container
+        div.
+      EstimatedEffort: S
+      Files:
+      - src/components/ui/Card/Card.jsx
+      - src/components/ui/Card/Card.module.css
+      ID: task-lingerie-website-feat-ui-components-2
+      Title: Implement Card component
+    - AcceptanceCriteria:
+      - Image.jsx created with lazy loading attribute support
+      - Error state displays placeholder with 'Image not available' text
+      - Loading state tracked and applies loaded class when image loads
+      - Image.module.css styles image, placeholder, and loaded states
+      - PropTypes validation for src, alt, loading, onError props
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create Image component with native lazy loading support, error
+        handling, and loading states. Implement error fallback UI showing placeholder
+        text. Track loaded and error states using React hooks. Include onError and
+        onLoad callbacks.
+      EstimatedEffort: M
+      Files:
+      - src/components/ui/Image/Image.jsx
+      - src/components/ui/Image/Image.module.css
+      ID: task-lingerie-website-feat-ui-components-3
+      Title: Implement Image component with lazy loading
+    - AcceptanceCriteria:
+      - Grid.jsx created with columns prop accepting mobile/tablet/desktop object
+      - Grid.module.css uses CSS custom properties for responsive columns
+      - Gap prop supports small, medium, large variations
+      - CSS Grid layout properly responds to breakpoints
+      - PropTypes validation for columns, gap, and className props
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create Grid component with configurable column counts per breakpoint
+        (mobile, tablet, desktop). Use CSS custom properties to pass breakpoint values
+        from JavaScript to CSS. Implement gap size variations (small, medium, large).
+        Support flexible column configuration via props.
+      EstimatedEffort: M
+      Files:
+      - src/components/ui/Grid/Grid.jsx
+      - src/components/ui/Grid/Grid.module.css
+      ID: task-lingerie-website-feat-ui-components-4
+      Title: Implement Grid component with responsive breakpoints
+    - AcceptanceCriteria:
+      - Container.jsx created with children rendering
+      - Container.module.css implements max-width and centering
+      - Responsive max-width adjusts for mobile, tablet, desktop breakpoints
+      - Horizontal padding applied for mobile viewports
+      - PropTypes validation for children and className
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create Container component as a max-width wrapper for content.
+        Implement responsive max-width that adjusts by breakpoint. Center content
+        using margin auto. Support className for custom styling overrides and spread
+        additional props.
+      EstimatedEffort: S
+      Files:
+      - src/components/ui/Container/Container.jsx
+      - src/components/ui/Container/Container.module.css
+      ID: task-lingerie-website-feat-ui-components-5
+      Title: Implement Container component
+    - AcceptanceCriteria:
+      - Link.jsx created with automatic external link detection
+      - External links open in new tab with security attributes
+      - Link.module.css implements base and variant styles
+      - Hover and active states properly styled
+      - PropTypes validation for href, children, variant, className
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create Link component supporting both internal navigation and external
+        links. Detect external URLs and add target='_blank' and rel='noopener noreferrer'
+        automatically. Support variant prop for different link styles. Use CSS Modules
+        for styling with hover and active states.
+      EstimatedEffort: S
+      Files:
+      - src/components/ui/Link/Link.jsx
+      - src/components/ui/Link/Link.module.css
+      ID: task-lingerie-website-feat-ui-components-6
+      Title: Implement Link component
+    - AcceptanceCriteria:
+      - Each component folder has index.js exporting default component
+      - src/components/ui/index.js exports all six components
+      - Named exports allow destructured imports
+      - Import statements work correctly from any application file
+      - No circular dependencies introduced
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-ui-components-1
+      - task-lingerie-website-feat-ui-components-2
+      - task-lingerie-website-feat-ui-components-3
+      - task-lingerie-website-feat-ui-components-4
+      - task-lingerie-website-feat-ui-components-5
+      - task-lingerie-website-feat-ui-components-6
+      Description: Create index.js files to export all UI components from their respective
+        folders and a main ui/index.js barrel export. This enables clean imports throughout
+        the application. Verify all components are properly exported and importable.
+      EstimatedEffort: S
+      Files:
+      - src/components/ui/Button/index.js
+      - src/components/ui/Card/index.js
+      - src/components/ui/Image/index.js
+      - src/components/ui/Grid/index.js
+      - src/components/ui/Container/index.js
+      - src/components/ui/Link/index.js
+      - src/components/ui/index.js
+      ID: task-lingerie-website-feat-ui-components-7
+      Title: Create component index and barrel exports
+    - AcceptanceCriteria:
+      - Test files created for all six components
+      - Button tests cover all variants, sizes, and click handlers
+      - Image tests verify lazy loading, error states, and callbacks
+      - Grid tests validate responsive column configurations
+      - Link tests verify external link detection and attributes
+      - All tests pass with minimum 80% coverage
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-ui-components-7
+      Description: Write unit tests for all six UI components using React Testing
+        Library. Test component rendering, prop variations, user interactions, and
+        error states. Verify accessibility attributes and CSS class application. Achieve
+        minimum 80% code coverage.
+      EstimatedEffort: M
+      Files:
+      - src/components/ui/Button/Button.test.jsx
+      - src/components/ui/Card/Card.test.jsx
+      - src/components/ui/Image/Image.test.jsx
+      - src/components/ui/Grid/Grid.test.jsx
+      - src/components/ui/Container/Container.test.jsx
+      - src/components/ui/Link/Link.test.jsx
+      ID: task-lingerie-website-feat-ui-components-8
+      Title: Create component unit tests
+  - FeatureID: lingerie-website-feat-layout-components
+    FeatureTitle: Site Layout and Navigation
+    Tasks:
+    - AcceptanceCriteria:
+      - Header.jsx file created with logo and branding structure
+      - Header.module.css implements sticky positioning and base styles
+      - Logo image and text display correctly with proper alignment
+      - Header responds to viewport changes and hides logo text on mobile
+      - Container component properly wraps header content
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create the Header component with logo and branding elements. Implement
+        the sticky header positioning and basic layout structure. Integrate the Container
+        component and prepare the slot for Navigation component. Set up the Link component
+        from react-router-dom for the logo.
+      EstimatedEffort: S
+      Files:
+      - src/components/layout/Header/Header.jsx
+      - src/components/layout/Header/Header.module.css
+      ID: task-lingerie-website-feat-layout-components-1
+      Title: Implement Header component structure
+    - AcceptanceCriteria:
+      - Navigation.jsx file created with category fetching logic
+      - Navigation.module.css implements responsive navigation styles
+      - Categories retrieved from productService.getCategories()
+      - Home link and first 4 category links render correctly
+      - Links use proper query parameter format for category filtering
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create the Navigation component that fetches and displays category
+        links. Integrate with productService to retrieve categories. Implement responsive
+        navigation behavior with proper link structure. Limit displayed categories
+        to first 4 items and use category slugs for routing.
+      EstimatedEffort: M
+      Files:
+      - src/components/layout/Navigation/Navigation.jsx
+      - src/components/layout/Navigation/Navigation.module.css
+      ID: task-lingerie-website-feat-layout-components-2
+      Title: Implement Navigation component with category links
+    - AcceptanceCriteria:
+      - Footer.jsx file created with copyright and links structure
+      - Footer.module.css implements footer styling and layout
+      - Current year displays dynamically in copyright notice
+      - All three footer links (Privacy, Terms, Contact) render correctly
+      - Container component properly wraps footer content
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create the Footer component with copyright information and utility
+        links. Implement dynamic year calculation for copyright notice. Add links
+        for Privacy Policy, Terms of Service, and Contact. Style the footer with proper
+        spacing and layout using CSS modules.
+      EstimatedEffort: S
+      Files:
+      - src/components/layout/Footer/Footer.jsx
+      - src/components/layout/Footer/Footer.module.css
+      ID: task-lingerie-website-feat-layout-components-3
+      Title: Implement Footer component with links
+    - AcceptanceCriteria:
+      - Navigation component imported and rendered in Header
+      - Header layout displays logo on left and navigation on right
+      - Responsive behavior maintains proper spacing on all screen sizes
+      - Sticky header works correctly with full header content
+      - z-index prevents header from being covered by other content
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-layout-components-1
+      - task-lingerie-website-feat-layout-components-2
+      Description: Complete the Header component by integrating the Navigation component.
+        Ensure proper alignment between logo and navigation elements. Implement responsive
+        behavior where navigation adapts to different screen sizes. Verify sticky
+        header functionality works with both logo and navigation visible.
+      EstimatedEffort: S
+      Files:
+      - src/components/layout/Header/Header.jsx
+      - src/components/layout/Header/Header.module.css
+      ID: task-lingerie-website-feat-layout-components-4
+      Title: Integrate Navigation into Header component
+    - AcceptanceCriteria:
+      - Layout.jsx file created with Header, main, and Footer composition
+      - Layout.module.css implements full-height layout structure
+      - Children prop correctly renders page content in main area
+      - Footer sticks to bottom of viewport on short pages
+      - Layout maintains proper structure on all viewport heights
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-layout-components-4
+      - task-lingerie-website-feat-layout-components-3
+      Description: Create the Layout component that composes Header, main content
+        area, and Footer. Implement the children prop to accept page content. Set
+        up proper semantic HTML structure with header, main, and footer elements.
+        Apply CSS Grid or Flexbox for sticky footer behavior ensuring footer stays
+        at bottom of viewport.
+      EstimatedEffort: M
+      Files:
+      - src/components/layout/Layout/Layout.jsx
+      - src/components/layout/Layout/Layout.module.css
+      ID: task-lingerie-website-feat-layout-components-5
+      Title: Implement Layout wrapper component
+    - AcceptanceCriteria:
+      - Hamburger menu icon displays on mobile viewports
+      - Mobile navigation opens and closes with toggle interaction
+      - Navigation links remain accessible in mobile menu
+      - ARIA labels present for menu toggle and navigation
+      - Smooth transitions between mobile and desktop navigation
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-layout-components-2
+      Description: Enhance Navigation component with mobile-friendly behavior. Implement
+        hamburger menu toggle for small screens. Add mobile navigation styles with
+        slide-in or dropdown behavior. Ensure navigation remains accessible and usable
+        on all device sizes. Add appropriate ARIA labels for accessibility.
+      EstimatedEffort: M
+      Files:
+      - src/components/layout/Navigation/Navigation.jsx
+      - src/components/layout/Navigation/Navigation.module.css
+      ID: task-lingerie-website-feat-layout-components-6
+      Title: Add responsive mobile navigation behavior
+    - AcceptanceCriteria:
+      - CSS variables defined for colors, spacing, and typography
+      - All layout component CSS modules use custom properties
+      - Variables documented with clear naming conventions
+      - Color scheme remains consistent across Header, Navigation, and Footer
+      - Variables support potential dark mode implementation
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-layout-components-1
+      - task-lingerie-website-feat-layout-components-2
+      - task-lingerie-website-feat-layout-components-3
+      Description: Define and document CSS custom properties (variables) used across
+        layout components. Set up color scheme variables for background, borders,
+        and text. Ensure consistent spacing and typography variables. Verify all layout
+        components reference these variables correctly for maintainability and theme
+        support.
+      EstimatedEffort: S
+      Files:
+      - src/components/layout/Header/Header.module.css
+      - src/components/layout/Navigation/Navigation.module.css
+      - src/components/layout/Footer/Footer.module.css
+      - src/components/layout/Layout/Layout.module.css
+      ID: task-lingerie-website-feat-layout-components-7
+      Title: Implement CSS custom properties for layout theming
+    - AcceptanceCriteria:
+      - Test files created for Header, Navigation, Footer, and Layout
+      - Tests verify component rendering and content accuracy
+      - Navigation tests mock productService.getCategories()
+      - Responsive behavior tested with viewport size changes
+      - All layout integration tests pass successfully
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-layout-components-5
+      - task-lingerie-website-feat-layout-components-6
+      Description: Create comprehensive tests for layout components using React Testing
+        Library. Test Header rendering, Navigation link generation, Footer content,
+        and Layout composition. Verify sticky header behavior, responsive navigation
+        toggle, and proper component integration. Mock productService for Navigation
+        tests.
+      EstimatedEffort: M
+      Files:
+      - src/components/layout/Header/Header.test.jsx
+      - src/components/layout/Navigation/Navigation.test.jsx
+      - src/components/layout/Footer/Footer.test.jsx
+      - src/components/layout/Layout/Layout.test.jsx
+      ID: task-lingerie-website-feat-layout-components-8
+      Title: Add layout component integration tests
+  - FeatureID: lingerie-website-feat-routing
+    FeatureTitle: Client-Side Routing and Error Handling
+    Tasks:
+    - AcceptanceCriteria:
+      - constants.js exports ROUTES object with HOME, PRODUCT_DETAIL, and NOT_FOUND
+        paths
+      - constants.js exports BREAKPOINTS object with all responsive breakpoints
+      - helpers.js implements formatPrice with currency parameter support
+      - helpers.js implements truncateText and generateSlug functions
+      - All functions have proper JSDoc comments
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create the constants.js file with ROUTES and BREAKPOINTS definitions.
+        Implement helper functions in helpers.js for formatPrice, truncateText, and
+        generateSlug. Ensure all utilities are properly exported and follow consistent
+        naming conventions.
+      EstimatedEffort: S
+      Files:
+      - src/utils/constants.js
+      - src/utils/helpers.js
+      ID: task-lingerie-website-feat-routing-1
+      Title: Implement utility constants and helper functions
+    - AcceptanceCriteria:
+      - useProduct hook fetches product by slug using getProductBySlug service
+      - useProduct returns product object or null if not found
+      - useScrollToTop executes window.scrollTo on mount with proper cleanup
+      - Both hooks include JSDoc comments with parameter and return types
+      - Hooks are properly exported as named exports
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create useProduct hook that accepts a slug parameter and returns
+        product data from productService. Implement useScrollToTop hook using useEffect
+        to scroll window to top on component mount. Ensure both hooks follow React
+        best practices and include proper type documentation.
+      EstimatedEffort: S
+      Files:
+      - src/hooks/useProduct.js
+      - src/hooks/useScrollToTop.js
+      ID: task-lingerie-website-feat-routing-2
+      Title: Implement custom React hooks
+    - AcceptanceCriteria:
+      - ErrorBoundary catches React component errors using getDerivedStateFromError
+      - componentDidCatch logs errors to console with error details
+      - Error UI displays centered message with refresh button
+      - Refresh button triggers window.location.reload()
+      - PropTypes validation enforces children prop requirement
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create ErrorBoundary class component with error state management
+        using getDerivedStateFromError and componentDidCatch lifecycle methods. Implement
+        error UI with centered layout, error message, and refresh button. Ensure PropTypes
+        validation for children prop.
+      EstimatedEffort: M
+      Files:
+      - src/ErrorBoundary.jsx
+      ID: task-lingerie-website-feat-routing-3
+      Title: Implement ErrorBoundary component
+    - AcceptanceCriteria:
+      - BrowserRouter wraps entire application routing structure
+      - Routes configured for HOME, PRODUCT_DETAIL, and NOT_FOUND paths from constants
+      - All page components lazy-loaded using React.lazy
+      - Suspense component provides loading fallback for lazy routes
+      - Routes use path constants from utils/constants.js
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-routing-1
+      Description: Update App.jsx to import and configure React Router with BrowserRouter,
+        Routes, and Route components. Implement lazy loading using React.lazy for
+        HomePage, ProductDetailPage, and NotFoundPage components. Wrap lazy-loaded
+        routes with Suspense component showing loading fallback.
+      EstimatedEffort: M
+      Files:
+      - src/App.jsx
+      ID: task-lingerie-website-feat-routing-4
+      Title: Configure React Router with lazy loading
+    - AcceptanceCriteria:
+      - ErrorBoundary wraps entire Router component tree
+      - Error boundary catches errors from all route components
+      - App.module.css provides any necessary layout styles
+      - Component hierarchy follows React best practices
+      - Application renders without console errors or warnings
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-routing-3
+      - task-lingerie-website-feat-routing-4
+      Description: Wrap the Router configuration with ErrorBoundary component to catch
+        routing and component errors. Ensure ErrorBoundary is positioned correctly
+        in component hierarchy to catch all child errors. Add App.module.css styles
+        for layout structure if needed.
+      EstimatedEffort: S
+      Files:
+      - src/App.jsx
+      - src/App.module.css
+      ID: task-lingerie-website-feat-routing-5
+      Title: Integrate ErrorBoundary and routing structure
+    - AcceptanceCriteria:
+      - useScrollToTop hook called in all page components
+      - Page scrolls to top when navigating to HomePage
+      - Page scrolls to top when navigating to ProductDetailPage
+      - Page scrolls to top when navigating to NotFoundPage
+      - Scroll behavior works consistently across route changes
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-routing-2
+      - task-lingerie-website-feat-routing-5
+      Description: Add useScrollToTop hook to HomePage, ProductDetailPage, and NotFoundPage
+        components to ensure scroll resets on route navigation. Verify scroll behavior
+        works correctly when navigating between routes using React Router navigation.
+      EstimatedEffort: S
+      Files:
+      - src/pages/HomePage.jsx
+      - src/pages/ProductDetailPage.jsx
+      - src/pages/NotFoundPage.jsx
+      ID: task-lingerie-website-feat-routing-6
+      Title: Integrate useScrollToTop in page components
+    - AcceptanceCriteria:
+      - ProductDetailPage extracts slug from URL using useParams
+      - useProduct hook called with slug parameter
+      - Loading state handled with appropriate UI indicator
+      - Product data displays correctly when product found
+      - User-friendly message shown when product is null
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-routing-2
+      - task-lingerie-website-feat-routing-5
+      Description: Update ProductDetailPage to use useProduct hook with slug from
+        URL params via useParams hook. Handle loading states and null product cases
+        with appropriate UI feedback. Ensure product data renders correctly when found
+        and shows 404-style message when not found.
+      EstimatedEffort: M
+      Files:
+      - src/pages/ProductDetailPage.jsx
+      ID: task-lingerie-website-feat-routing-7
+      Title: Integrate useProduct hook in ProductDetailPage
+    - AcceptanceCriteria:
+      - NotFoundPage component created with centered layout
+      - 404 message clearly displayed to users
+      - Link to homepage uses ROUTES.HOME constant
+      - Styling consistent with application design patterns
+      - Component renders without errors or warnings
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-routing-1
+      Description: Create NotFoundPage component with centered layout showing 404
+        error message and navigation link back to homepage. Use ROUTES constants for
+        navigation paths. Apply consistent styling with error boundary UI patterns.
+      EstimatedEffort: S
+      Files:
+      - src/pages/NotFoundPage.jsx
+      - src/pages/NotFoundPage.module.css
+      ID: task-lingerie-website-feat-routing-8
+      Title: Implement NotFoundPage component
+    - AcceptanceCriteria:
+      - ErrorBoundary tests verify getDerivedStateFromError and componentDidCatch
+        behavior
+      - Route navigation tests cover all defined routes
+      - Lazy loading tests verify Suspense fallback behavior
+      - useProduct and useScrollToTop hooks have unit tests
+      - All tests pass with 80%+ code coverage for routing logic
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-routing-5
+      - task-lingerie-website-feat-routing-6
+      - task-lingerie-website-feat-routing-7
+      - task-lingerie-website-feat-routing-8
+      Description: Create unit tests for ErrorBoundary component verifying error catching
+        and UI rendering. Write integration tests for route navigation including lazy
+        loading, 404 handling, and scroll behavior. Test custom hooks in isolation
+        with mock data.
+      EstimatedEffort: M
+      Files:
+      - src/ErrorBoundary.test.jsx
+      - src/App.test.jsx
+      - src/hooks/useProduct.test.js
+      - src/hooks/useScrollToTop.test.js
+      ID: task-lingerie-website-feat-routing-9
+      Title: Test routing configuration and error handling
+  Sprint: 2
+- Features:
+  - FeatureID: lingerie-website-feat-product-components
+    FeatureTitle: Product Display Components
+    Tasks:
+    - AcceptanceCriteria:
+      - ProductCard component renders all product information correctly
+      - Hover animation works smoothly with transform and box-shadow
+      - Component uses Card and Image from ui-components
+      - PropTypes validation covers all required fields
+      - CSS module implements 3:4 aspect ratio and responsive styles
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create the ProductCard component that displays product preview
+        with image, name, description, and price. Implement hover effects and responsive
+        design. Use the Card and Image components from ui-components. Ensure proper
+        PropTypes validation and accessibility attributes.
+      EstimatedEffort: M
+      Files:
+      - src/components/product/ProductCard/ProductCard.jsx
+      - src/components/product/ProductCard/ProductCard.module.css
+      ID: task-lingerie-website-feat-product-components-1
+      Title: Implement ProductCard component with styling
+    - AcceptanceCriteria:
+      - ProductGrid renders products using ProductCard components
+      - Grid layout responds correctly to mobile, tablet, desktop breakpoints
+      - Empty state displays when no products provided
+      - Component accepts configurable column counts via props
+      - PropTypes validation includes products array and columns config
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-product-components-1
+      Description: Create the ProductGrid component that displays products in a responsive
+        grid using the Grid component from ui-components. Implement configurable column
+        layouts for mobile, tablet, and desktop. Handle empty states and loading indicators.
+        Ensure proper rendering of ProductCard components within the grid.
+      EstimatedEffort: M
+      Files:
+      - src/components/product/ProductGrid/ProductGrid.jsx
+      - src/components/product/ProductGrid/ProductGrid.module.css
+      ID: task-lingerie-website-feat-product-components-2
+      Title: Implement ProductGrid component with responsive layout
+    - AcceptanceCriteria:
+      - Main image displays with proper aspect ratio and sizing
+      - Thumbnail gallery renders below main image with navigation
+      - Clicking thumbnail switches main image with transition
+      - Hover zoom effect works on main image
+      - Component handles missing images gracefully with fallback
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create the ProductImage component with main image display and thumbnail
+        navigation. Implement image switching on thumbnail click with smooth transitions.
+        Add zoom functionality on main image hover. Handle loading states and error
+        fallbacks for missing images.
+      EstimatedEffort: M
+      Files:
+      - src/components/product/ProductImage/ProductImage.jsx
+      - src/components/product/ProductImage/ProductImage.module.css
+      ID: task-lingerie-website-feat-product-components-3
+      Title: Implement ProductImage gallery component
+    - AcceptanceCriteria:
+      - Features render as a list with icons and descriptions
+      - Layout is responsive with single column on mobile, multi-column on desktop
+      - Icons display correctly for each feature type
+      - Component accepts features array via props with validation
+      - Empty state handled when no features provided
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create the ProductFeatures component that displays a formatted
+        list of product features with icons. Implement responsive layout that stacks
+        on mobile and displays in columns on desktop. Use icons from ui-components
+        or create custom feature icons. Ensure proper spacing and typography.
+      EstimatedEffort: S
+      Files:
+      - src/components/product/ProductFeatures/ProductFeatures.jsx
+      - src/components/product/ProductFeatures/ProductFeatures.module.css
+      ID: task-lingerie-website-feat-product-components-4
+      Title: Implement ProductFeatures list component
+    - AcceptanceCriteria:
+      - Specifications render in table format with label and value columns
+      - Alternating row colors enhance readability
+      - Mobile view converts to definition list or stacked layout
+      - Semantic HTML uses proper table elements
+      - Component validates specifications data structure via PropTypes
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create the ProductSpecifications component that displays technical
+        specifications in a table format. Implement alternating row colors for readability.
+        Add responsive behavior that converts to definition list on mobile. Include
+        proper semantic HTML with table headers and data cells.
+      EstimatedEffort: M
+      Files:
+      - src/components/product/ProductSpecifications/ProductSpecifications.jsx
+      - src/components/product/ProductSpecifications/ProductSpecifications.module.css
+      ID: task-lingerie-website-feat-product-components-5
+      Title: Implement ProductSpecifications table component
+    - AcceptanceCriteria:
+      - ProductDetail renders all child components in cohesive layout
+      - 'Responsive layout: two-column on desktop, stacked on mobile'
+      - Breadcrumb navigation displays correctly
+      - Add-to-cart button positioned prominently with price
+      - Component fetches and displays complete product data via props
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-product-components-3
+      - task-lingerie-website-feat-product-components-4
+      - task-lingerie-website-feat-product-components-5
+      Description: Create the ProductDetail component that composes all product components
+        into a complete product page. Integrate ProductImage, ProductFeatures, ProductSpecifications,
+        and additional product information. Implement responsive two-column layout
+        with image on left and details on right on desktop. Add breadcrumb navigation
+        and add-to-cart functionality placeholder.
+      EstimatedEffort: M
+      Files:
+      - src/components/product/ProductDetail/ProductDetail.jsx
+      - src/components/product/ProductDetail/ProductDetail.module.css
+      ID: task-lingerie-website-feat-product-components-6
+      Title: Implement ProductDetail composition component
+    - AcceptanceCriteria:
+      - All five components have test files with 80%+ coverage
+      - Tests cover normal rendering, edge cases, and error states
+      - User interactions tested including clicks and hovers
+      - PropTypes violations tested for invalid data
+      - All tests pass successfully
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-product-components-1
+      - task-lingerie-website-feat-product-components-2
+      - task-lingerie-website-feat-product-components-3
+      - task-lingerie-website-feat-product-components-4
+      - task-lingerie-website-feat-product-components-5
+      Description: Write comprehensive unit tests for ProductCard, ProductGrid, ProductFeatures,
+        ProductSpecifications, and ProductImage components. Test rendering with various
+        props, edge cases like missing data, and user interactions like thumbnail
+        clicks and hover states. Use React Testing Library and Jest.
+      EstimatedEffort: M
+      Files:
+      - src/components/product/ProductCard/ProductCard.test.jsx
+      - src/components/product/ProductGrid/ProductGrid.test.jsx
+      - src/components/product/ProductImage/ProductImage.test.jsx
+      - src/components/product/ProductFeatures/ProductFeatures.test.jsx
+      - src/components/product/ProductSpecifications/ProductSpecifications.test.jsx
+      ID: task-lingerie-website-feat-product-components-7
+      Title: Create unit tests for product components
+    - AcceptanceCriteria:
+      - ProductDetail test file created with full integration tests
+      - Tests verify data flows correctly to all child components
+      - Cross-component interactions tested (e.g., image switching)
+      - Responsive layout verified at different viewport sizes
+      - Router navigation and data fetching mocked appropriately
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-product-components-6
+      Description: Write integration tests for the complete ProductDetail component
+        that verify all child components work together correctly. Test data flow from
+        props to child components, user interactions across components, and responsive
+        layout behavior. Mock router and data layer dependencies.
+      EstimatedEffort: M
+      Files:
+      - src/components/product/ProductDetail/ProductDetail.test.jsx
+      ID: task-lingerie-website-feat-product-components-8
+      Title: Create integration tests for ProductDetail page
+  - FeatureID: lingerie-website-feat-home-page
+    FeatureTitle: Homepage with Featured Products
+    Tasks:
+    - AcceptanceCriteria:
+      - Home.jsx created with functional component structure
+      - State initialized for products array
+      - useSearchParams hook configured to read category parameter
+      - useEffect hook set up with categoryFilter dependency
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create the Home.jsx component file with basic React structure.
+        Implement state management for products using useState. Set up useEffect hook
+        to handle product loading. Implement useSearchParams for category filtering
+        from URL query parameters.
+      EstimatedEffort: S
+      Files:
+      - src/pages/Home/Home.jsx
+      ID: task-lingerie-website-feat-home-page-1
+      Title: Create Home page component structure
+    - AcceptanceCriteria:
+      - getFeaturedProducts called when no category filter present
+      - getProductsByCategory called with correct category when filter exists
+      - Products state updates correctly when category changes
+      - useEffect properly triggers on categoryFilter changes
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-home-page-1
+      Description: Integrate productService functions (getFeaturedProducts, getProductsByCategory)
+        into the Home component. Implement conditional logic to load featured products
+        by default or category-filtered products when query parameter exists. Handle
+        product state updates based on category filter changes.
+      EstimatedEffort: S
+      Files:
+      - src/pages/Home/Home.jsx
+      ID: task-lingerie-website-feat-home-page-2
+      Title: Implement product loading logic
+    - AcceptanceCriteria:
+      - Hero section displays 'Featured Products' when no category filter
+      - Hero section displays '{Category} Collection' when category filter present
+      - Subtitle displays consistent messaging
+      - Container component properly wraps content
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-home-page-2
+      Description: Create the hero section with dynamic title and subtitle. Implement
+        conditional rendering for title based on category filter. Integrate Container
+        component for proper layout. Apply CSS module class names for styling hooks.
+      EstimatedEffort: S
+      Files:
+      - src/pages/Home/Home.jsx
+      ID: task-lingerie-website-feat-home-page-3
+      Title: Build hero section JSX structure
+    - AcceptanceCriteria:
+      - ProductGrid component imported and rendered
+      - Products array passed correctly as props
+      - Products section wrapped with appropriate container structure
+      - ProductGrid displays all products from state
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-home-page-3
+      Description: Add ProductGrid component to products section. Pass filtered products
+        array as props to ProductGrid. Ensure proper section structure with CSS module
+        classes. Verify ProductGrid receives and displays products correctly.
+      EstimatedEffort: S
+      Files:
+      - src/pages/Home/Home.jsx
+      ID: task-lingerie-website-feat-home-page-4
+      Title: Integrate ProductGrid component
+    - AcceptanceCriteria:
+      - Home.module.css created with all required class definitions
+      - Hero section styled with proper spacing and typography
+      - Responsive layout works on mobile, tablet, and desktop
+      - Styles integrate with existing design system
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create Home.module.css with styles for home container, hero section,
+        title, subtitle, and products section. Implement responsive grid layout. Ensure
+        proper spacing and typography. Apply design system colors and font sizes consistent
+        with the application theme.
+      EstimatedEffort: M
+      Files:
+      - src/pages/Home/Home.module.css
+      ID: task-lingerie-website-feat-home-page-5
+      Title: Create Home page CSS module styling
+    - AcceptanceCriteria:
+      - All React hooks imported from 'react'
+      - useSearchParams imported from 'react-router-dom'
+      - Container and ProductGrid components imported with correct paths
+      - Product service functions imported correctly
+      - CSS module imported with proper alias
+      - Home component exported as default
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-home-page-4
+      Description: Add all necessary imports at the top of Home.jsx including React
+        hooks, react-router-dom, Container, ProductGrid, and productService functions.
+        Add proper default export for the Home component. Ensure CSS module import
+        is correctly referenced.
+      EstimatedEffort: S
+      Files:
+      - src/pages/Home/Home.jsx
+      ID: task-lingerie-website-feat-home-page-6
+      Title: Add component imports and exports
+    - AcceptanceCriteria:
+      - Test suite created for Home component
+      - Featured products loading tested and verified
+      - Category filtering from URL params tested
+      - Hero title updates tested for different categories
+      - ProductGrid receives correct props in all scenarios
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-home-page-6
+      Description: Create unit tests for Home component. Test featured products display,
+        category filtering, hero section title changes, and ProductGrid integration.
+        Mock productService functions and useSearchParams hook. Verify component behavior
+        with different URL parameters.
+      EstimatedEffort: M
+      Files:
+      - src/pages/Home/Home.test.jsx
+      ID: task-lingerie-website-feat-home-page-7
+      Title: Test Home page rendering and functionality
+    - AcceptanceCriteria:
+      - Page renders correctly on mobile (320px-767px)
+      - Page renders correctly on tablet (768px-1023px)
+      - Page renders correctly on desktop (1024px+)
+      - Semantic HTML elements used appropriately
+      - Keyboard navigation works for all interactive elements
+      - Screen reader announces content correctly
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-home-page-7
+      Description: Test Home page across different screen sizes (mobile, tablet, desktop).
+        Verify accessibility compliance including semantic HTML, ARIA labels where
+        needed, keyboard navigation, and screen reader compatibility. Ensure hero
+        section and product grid are fully responsive.
+      EstimatedEffort: M
+      Files:
+      - src/pages/Home/Home.jsx
+      - src/pages/Home/Home.module.css
+      ID: task-lingerie-website-feat-home-page-8
+      Title: Verify responsive design and accessibility
+  - FeatureID: lingerie-website-feat-404-page
+    FeatureTitle: 404 Not Found Page
+    Tasks:
+    - AcceptanceCriteria:
+      - NotFound.jsx file created in src/pages/NotFound/ directory
+      - Component imports Link from react-router-dom
+      - Component imports Container and Button UI components
+      - Component has proper function declaration and default export
+      - Basic JSX structure includes container, heading, messages, and navigation
+        button
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create the NotFound.jsx component file with basic React component
+        structure. Import required dependencies including React Router's Link component,
+        Container, and Button components. Set up the component export and basic JSX
+        structure with semantic HTML elements for the 404 page layout.
+      EstimatedEffort: S
+      Files:
+      - src/pages/NotFound/NotFound.jsx
+      ID: task-lingerie-website-feat-404-page-1
+      Title: Create NotFound component structure
+    - AcceptanceCriteria:
+      - 404 title rendered with styles.title class
+      - Primary message 'Page not found' displayed with styles.message class
+      - Descriptive text explaining the error with styles.description class
+      - Link to home route (/) wrapping Button component
+      - Button displays 'Return Home' text
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-404-page-1
+      Description: Implement the complete JSX structure for the 404 page following
+        the LLD specification. Include the 404 heading, user-friendly error message,
+        descriptive text explaining the error, and a Link component with Button to
+        return home. Apply CSS module class names for styling hooks.
+      EstimatedEffort: S
+      Files:
+      - src/pages/NotFound/NotFound.jsx
+      ID: task-lingerie-website-feat-404-page-2
+      Title: Implement NotFound component content
+    - AcceptanceCriteria:
+      - NotFound.module.css file created in src/pages/NotFound/ directory
+      - Styles defined for .notFound container with centered layout
+      - Typography styles for .title make 404 visually prominent
+      - Styles for .message and .description provide clear hierarchy
+      - Layout is responsive and centered on all screen sizes
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-404-page-2
+      Description: Create the NotFound.module.css file and implement styles for the
+        404 page. Design a centered layout with appropriate spacing, typography hierarchy
+        for the 404 heading, and styling for error messages. Ensure the design is
+        consistent with the overall site theme and responsive across different screen
+        sizes.
+      EstimatedEffort: M
+      Files:
+      - src/pages/NotFound/NotFound.module.css
+      ID: task-lingerie-website-feat-404-page-3
+      Title: Create NotFound CSS module
+    - AcceptanceCriteria:
+      - NotFound component imported in App.jsx routing configuration
+      - Catch-all route with path='*' configured for NotFound
+      - Route is positioned as the last route in the configuration
+      - NotFound page wrapped with Layout component
+      - Invalid URLs correctly render the NotFound component
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-404-page-3
+      Description: Add the NotFound component to the application's routing configuration.
+        Configure it as a catch-all route using path='*' to handle all unmatched URLs.
+        Ensure the route is positioned last in the route hierarchy and wrapped with
+        the Layout component for consistent page structure.
+      EstimatedEffort: S
+      Files:
+      - src/App.jsx
+      ID: task-lingerie-website-feat-404-page-4
+      Title: Integrate NotFound route in router configuration
+    - AcceptanceCriteria:
+      - ProductDetailPage checks if product data exists
+      - NotFound component rendered when product slug is invalid
+      - Valid product slugs still render ProductDetail correctly
+      - No console errors when accessing non-existent products
+      - User can navigate back home from product 404 page
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-lingerie-website-feat-404-page-4
+      Description: Update the ProductDetailPage component to detect when a product
+        slug doesn't exist in the data and render the NotFound component. Implement
+        logic to check if useProduct hook returns null or undefined, then conditionally
+        render NotFound instead of ProductDetail. Ensure proper error handling for
+        missing products.
+      EstimatedEffort: M
+      Files:
+      - src/pages/ProductDetailPage/ProductDetailPage.jsx
+      ID: task-lingerie-website-feat-404-page-5
+      Title: Handle non-existent product slugs
+    - AcceptanceCriteria:
+      - Unit tests verify NotFound component renders all elements correctly
+      - Tests confirm Link navigates to home route
+      - Integration tests verify catch-all route triggers for invalid URLs
+      - Tests confirm non-existent product slugs show NotFound
+      - All tests pass with 100% coverage for NotFound component
+      AgentType: qa-engineer
+      Dependencies:
+      - task-lingerie-website-feat-404-page-5
+      Description: Create comprehensive tests for the NotFound component and its integration.
+        Test component rendering, navigation functionality, and routing behavior for
+        invalid URLs. Verify that both invalid routes and non-existent product slugs
+        properly display the 404 page.
+      EstimatedEffort: M
+      Files:
+      - src/pages/NotFound/NotFound.test.jsx
+      - src/pages/ProductDetailPage/ProductDetailPage.test.jsx
+      ID: task-lingerie-website-feat-404-page-6
+      Title: Test NotFound page functionality
+  Sprint: 3
