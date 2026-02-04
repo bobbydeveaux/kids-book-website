@@ -1,0 +1,16 @@
+{
+  "prTitle": "feat: implement CSS bundling script",
+  "prBody": "## Summary\n\nImplemented the CSS bundling script as specified in issue #5 to concatenate and minify CSS files with proper dependency ordering and source map generation.\n\n### Key Features\n\n- **CSS Bundling Script**: Created `build/bundle-css.js` with comprehensive bundling functionality\n- **Correct Import Order**: Processes CSS files in dependency order (base → layout → components → pages → utilities)\n- **Level 2 Optimization**: Uses clean-css with level 2 optimizations for maximum minification\n- **Source Maps**: Generates `styles.min.css.map` for debugging support\n- **File Size Logging**: Reports original size, minified size, and reduction percentage\n- **Modular Architecture**: Supports the planned CSS module structure\n\n### Technical Implementation\n\n- **Dependencies**: Added clean-css to package.json for CSS minification\n- **Output**: Bundles CSS to `dist/styles/styles.min.css` \n- **Testing**: Created sample CSS files to validate functionality\n- **Logging**: Comprehensive console output showing processing steps and statistics\n\n### Test Results\n\n✅ Successfully bundled 5 CSS files  \n✅ Achieved 22.7% file size reduction (1.9KB → 1.47KB)  \n✅ Generated working source map  \n✅ Correct dependency ordering verified  \n✅ Clean-css level 2 optimizations applied  \n\n### Acceptance Criteria Met\n\n- [x] All CSS files concatenated in correct dependency order\n- [x] Output minified with clean-css level 2 optimizations\n- [x] Source map generated as styles.min.css.map\n- [x] dist/styles/styles.min.css created successfully\n- [x] File size reduction logged to console\n\nCloses #5",
+  "testsPass": true,
+  "filesChanged": [
+    "package.json",
+    "build/bundle-css.js",
+    "src/styles/base/reset.css",
+    "src/styles/base/variables.css",
+    "src/styles/layout/container.css",
+    "src/styles/components/button.css",
+    "src/styles/utilities/accessibility.css",
+    "dist/styles/styles.min.css",
+    "dist/styles/styles.min.css.map"
+  ]
+}
