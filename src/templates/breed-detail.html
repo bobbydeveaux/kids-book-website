@@ -1,0 +1,31 @@
+<article class="breed-detail">
+    <h1>{{name}}</h1>
+
+    <div class="breed-info">
+        <div class="breed-image">
+            <picture>
+                <source srcset="{{imageWebP}}" type="image/webp">
+                <img src="{{imageJpeg}}" alt="{{name}}" loading="lazy">
+            </picture>
+        </div>
+
+        <div class="breed-characteristics">
+            <h2>Characteristics</h2>
+            <dl>
+                <dt>Height:</dt>
+                <dd>{{height}}</dd>
+                <dt>Weight:</dt>
+                <dd>{{weight}}</dd>
+                <dt>Origin:</dt>
+                <dd>{{origin}}</dd>
+                <dt>Temperament:</dt>
+                <dd>{{temperament}}</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="breed-description">
+        <h2>About {{name}}</h2>
+        {{description}}
+    </div>
+</article>
