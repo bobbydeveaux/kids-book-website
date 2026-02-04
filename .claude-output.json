@@ -1,0 +1,7 @@
+{
+  "prTitle": "feat: configure Netlify deployment for donkey website",
+  "prBody": "## Summary\n\nConfigured comprehensive Netlify deployment settings for the donkey website project as specified in issue #8.\n\n### Key Features Added\n\n- **Build Configuration**: Set up npm run build command with Node.js 18 LTS\n- **Publish Directory**: Configured dist/ as the deployment target\n- **Clean URLs**: Added redirects to remove .html extensions from URLs\n- **Custom 404**: Configured custom 404 page handling\n- **Performance Optimization**: \n  - Long-term caching for images (1 year)\n  - Medium-term caching for CSS/JS (1 month) \n  - Always-fresh HTML pages\n- **Security Headers**:\n  - X-Frame-Options, X-Content-Type-Options\n  - Content Security Policy\n  - Strict Transport Security (HSTS)\n  - Referrer Policy\n\n### Configuration Details\n\nThe `netlify.toml` file includes:\n- Build command: `npm run build`\n- Publish directory: `dist`\n- Node.js version: 18\n- Clean URL redirects for /about, /care/*, /breeds/* routes\n- Comprehensive caching strategy for optimal performance\n- Security-first header configuration\n\n### Files Changed\n- `netlify.toml` - Complete Netlify deployment configuration\n\nThis configuration enables automatic deployment of the static site with optimal performance, security, and user experience.\n\nCloses #8",
+  "testsPass": true,
+  "filesChanged": ["netlify.toml"],
+  "completedTasks": [1, 2, 3, 4, 5, 6, 7]
+}
