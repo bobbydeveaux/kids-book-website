@@ -1,0 +1,429 @@
+<!-- Homepage content for Donkey Education Website -->
+<!-- This template extends base.html and provides the homepage layout -->
+
+<!-- Hero Section -->
+<section class="hero-section" aria-labelledby="hero-heading">
+    <div class="hero-content">
+        <div class="container">
+            <div class="hero-text">
+                <h1 id="hero-heading" class="hero-title">
+                    Discover the Wonderful World of Donkeys
+                </h1>
+                <p class="hero-subtitle">
+                    Learn about these gentle, intelligent animals through our comprehensive educational resources covering breeds, care, and fascinating facts.
+                </p>
+                <div class="hero-actions">
+                    <a href="/breeds/" class="btn btn-primary" aria-describedby="breeds-description">
+                        Explore Breeds
+                        <span id="breeds-description" class="sr-only">Learn about different donkey breeds including Miniature Mediterranean, Standard, Mammoth, and Poitou donkeys</span>
+                    </a>
+                    <a href="/care/" class="btn btn-secondary" aria-describedby="care-description">
+                        Care Guide
+                        <span id="care-description" class="sr-only">Access comprehensive care information for donkey feeding, grooming, housing, and health</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <picture>
+                    <source srcset="/images/hero/donkey-hero-400w.webp 400w,
+                                    /images/hero/donkey-hero-800w.webp 800w,
+                                    /images/hero/donkey-hero-1200w.webp 1200w"
+                            sizes="(max-width: 640px) 400px,
+                                   (max-width: 1024px) 800px,
+                                   1200px"
+                            type="image/webp">
+                    <source srcset="/images/hero/donkey-hero-400w.jpg 400w,
+                                    /images/hero/donkey-hero-800w.jpg 800w,
+                                    /images/hero/donkey-hero-1200w.jpg 1200w"
+                            sizes="(max-width: 640px) 400px,
+                                   (max-width: 1024px) 800px,
+                                   1200px"
+                            type="image/jpeg">
+                    <img src="/images/hero/donkey-hero-800w.jpg"
+                         alt="A gentle donkey standing in a peaceful meadow with flowers, representing the calm and friendly nature of these intelligent animals"
+                         loading="eager"
+                         class="hero-image-img"
+                         width="800" height="600">
+                </picture>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Breeds Section -->
+<section class="featured-breeds" aria-labelledby="breeds-heading">
+    <div class="container">
+        <header class="section-header">
+            <h2 id="breeds-heading" class="section-title">Discover Donkey Breeds</h2>
+            <p class="section-description">
+                From miniature companions to working giants, explore the diverse world of donkey breeds.
+            </p>
+        </header>
+
+        <ul class="breeds-grid" role="list">
+            <li class="breed-card">
+                <article>
+                    <div class="breed-image">
+                        <picture>
+                            <source srcset="/images/breeds/miniature-mediterranean-400w.webp"
+                                    type="image/webp">
+                            <img src="/images/breeds/miniature-mediterranean-400w.jpg"
+                                 alt="A small, gray Miniature Mediterranean donkey standing in a grassy field"
+                                 loading="lazy"
+                                 width="400" height="300">
+                        </picture>
+                    </div>
+                    <div class="breed-content">
+                        <h3 class="breed-name">
+                            <a href="/breeds/miniature-mediterranean.html">Miniature Mediterranean</a>
+                        </h3>
+                        <p class="breed-description">
+                            Small, gentle donkeys from the Mediterranean islands, perfect for families and therapy work.
+                        </p>
+                        <dl class="breed-specs">
+                            <dt class="sr-only">Height:</dt>
+                            <dd class="breed-spec">32-34 inches</dd>
+                            <dt class="sr-only">Weight:</dt>
+                            <dd class="breed-spec">200-350 lbs</dd>
+                        </dl>
+                        <a href="/breeds/miniature-mediterranean.html" class="breed-link" aria-label="Learn more about Miniature Mediterranean donkeys">
+                            Learn More
+                        </a>
+                    </div>
+                </article>
+            </li>
+
+            <li class="breed-card">
+                <article>
+                    <div class="breed-image">
+                        <picture>
+                            <source srcset="/images/breeds/standard-donkey-400w.webp"
+                                    type="image/webp">
+                            <img src="/images/breeds/standard-donkey-400w.jpg"
+                                 alt="A brown Standard donkey with long ears standing in a barnyard"
+                                 loading="lazy"
+                                 width="400" height="300">
+                        </picture>
+                    </div>
+                    <div class="breed-content">
+                        <h3 class="breed-name">
+                            <a href="/breeds/standard-donkey.html">Standard Donkey</a>
+                        </h3>
+                        <p class="breed-description">
+                            The most common donkey breed, known for their intelligence, loyalty, and versatility.
+                        </p>
+                        <dl class="breed-specs">
+                            <dt class="sr-only">Height:</dt>
+                            <dd class="breed-spec">36-48 inches</dd>
+                            <dt class="sr-only">Weight:</dt>
+                            <dd class="breed-spec">400-500 lbs</dd>
+                        </dl>
+                        <a href="/breeds/standard-donkey.html" class="breed-link" aria-label="Learn more about Standard donkeys">
+                            Learn More
+                        </a>
+                    </div>
+                </article>
+            </li>
+
+            <li class="breed-card">
+                <article>
+                    <div class="breed-image">
+                        <picture>
+                            <source srcset="/images/breeds/mammoth-donkey-400w.webp"
+                                    type="image/webp">
+                            <img src="/images/breeds/mammoth-donkey-400w.jpg"
+                                 alt="A large, dark-colored Mammoth donkey showing their impressive size"
+                                 loading="lazy"
+                                 width="400" height="300">
+                        </picture>
+                    </div>
+                    <div class="breed-content">
+                        <h3 class="breed-name">
+                            <a href="/breeds/mammoth-donkey.html">Mammoth Donkey</a>
+                        </h3>
+                        <p class="breed-description">
+                            The largest donkey breed, originally bred for mule production and heavy work.
+                        </p>
+                        <dl class="breed-specs">
+                            <dt class="sr-only">Height:</dt>
+                            <dd class="breed-spec">52+ inches</dd>
+                            <dt class="sr-only">Weight:</dt>
+                            <dd class="breed-spec">950-1200 lbs</dd>
+                        </dl>
+                        <a href="/breeds/mammoth-donkey.html" class="breed-link" aria-label="Learn more about Mammoth donkeys">
+                            Learn More
+                        </a>
+                    </div>
+                </article>
+            </li>
+
+            <li class="breed-card">
+                <article>
+                    <div class="breed-image">
+                        <picture>
+                            <source srcset="/images/breeds/poitou-donkey-400w.webp"
+                                    type="image/webp">
+                            <img src="/images/breeds/poitou-donkey-400w.jpg"
+                                 alt="A shaggy-coated Poitou donkey with their distinctive long, matted hair"
+                                 loading="lazy"
+                                 width="400" height="300">
+                        </picture>
+                    </div>
+                    <div class="breed-content">
+                        <h3 class="breed-name">
+                            <a href="/breeds/poitou-donkey.html">Poitou Donkey</a>
+                        </h3>
+                        <p class="breed-description">
+                            A rare French breed with distinctive shaggy coat, known for producing high-quality mules.
+                        </p>
+                        <dl class="breed-specs">
+                            <dt class="sr-only">Height:</dt>
+                            <dd class="breed-spec">52-56 inches</dd>
+                            <dt class="sr-only">Weight:</dt>
+                            <dd class="breed-spec">770-950 lbs</dd>
+                        </dl>
+                        <a href="/breeds/poitou-donkey.html" class="breed-link" aria-label="Learn more about Poitou donkeys">
+                            Learn More
+                        </a>
+                    </div>
+                </article>
+            </li>
+        </ul>
+
+        <div class="section-cta">
+            <a href="/breeds/" class="btn btn-outline" aria-label="View all donkey breeds with detailed information">
+                View All Breeds
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Care Guide Preview Section -->
+<section class="care-preview" aria-labelledby="care-heading">
+    <div class="container">
+        <div class="care-content">
+            <header class="section-header">
+                <h2 id="care-heading" class="section-title">Essential Donkey Care</h2>
+                <p class="section-description">
+                    Everything you need to know to provide the best care for donkeys.
+                </p>
+            </header>
+
+            <div class="care-grid">
+                <article class="care-card">
+                    <div class="care-icon" aria-hidden="true">
+                        <img src="/images/icons/feeding-icon.svg" alt="" width="48" height="48">
+                    </div>
+                    <div class="care-content">
+                        <h3 class="care-title">
+                            <a href="/care/feeding.html">Feeding</a>
+                        </h3>
+                        <p class="care-description">
+                            Proper nutrition guidelines, dietary requirements, and feeding schedules for healthy donkeys.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="care-card">
+                    <div class="care-icon" aria-hidden="true">
+                        <img src="/images/icons/grooming-icon.svg" alt="" width="48" height="48">
+                    </div>
+                    <div class="care-content">
+                        <h3 class="care-title">
+                            <a href="/care/grooming.html">Grooming</a>
+                        </h3>
+                        <p class="care-description">
+                            Regular grooming practices, tools needed, and maintaining your donkey's coat and hooves.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="care-card">
+                    <div class="care-icon" aria-hidden="true">
+                        <img src="/images/icons/housing-icon.svg" alt="" width="48" height="48">
+                    </div>
+                    <div class="care-content">
+                        <h3 class="care-title">
+                            <a href="/care/housing.html">Housing</a>
+                        </h3>
+                        <p class="care-description">
+                            Shelter requirements, pasture management, and creating safe living environments.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="care-card">
+                    <div class="care-icon" aria-hidden="true">
+                        <img src="/images/icons/health-icon.svg" alt="" width="48" height="48">
+                    </div>
+                    <div class="care-content">
+                        <h3 class="care-title">
+                            <a href="/care/health.html">Health</a>
+                        </h3>
+                        <p class="care-description">
+                            Health monitoring, common issues, vaccination schedules, and veterinary care guidelines.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="section-cta">
+                <a href="/care/" class="btn btn-primary" aria-label="Access complete donkey care guide with detailed information">
+                    Complete Care Guide
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Facts & Education Section -->
+<section class="facts-preview" aria-labelledby="facts-heading">
+    <div class="container">
+        <div class="facts-content">
+            <div class="facts-text">
+                <header class="section-header">
+                    <h2 id="facts-heading" class="section-title">Amazing Donkey Facts</h2>
+                    <p class="section-description">
+                        Discover fascinating insights about these remarkable animals.
+                    </p>
+                </header>
+
+                <ul class="fact-highlights" role="list">
+                    <li class="fact-item">
+                        <strong>Ancient Companions:</strong> Donkeys have been working alongside humans for over 5,000 years.
+                    </li>
+                    <li class="fact-item">
+                        <strong>Incredible Memory:</strong> They can recognize a person or animal after 25 years of separation.
+                    </li>
+                    <li class="fact-item">
+                        <strong>Desert Adapted:</strong> Originally from arid regions, they're perfectly suited for dry climates.
+                    </li>
+                    <li class="fact-item">
+                        <strong>Intelligent Guards:</strong> They naturally protect livestock from predators like coyotes.
+                    </li>
+                </ul>
+
+                <div class="section-cta">
+                    <a href="/facts.html" class="btn btn-outline" aria-label="Explore more fascinating facts about donkeys">
+                        Explore More Facts
+                    </a>
+                </div>
+            </div>
+
+            <div class="facts-image">
+                <picture>
+                    <source srcset="/images/care/donkey-family-400w.webp"
+                            type="image/webp">
+                    <img src="/images/care/donkey-family-400w.jpg"
+                         alt="A donkey family with adult and young donkey foal in a natural setting"
+                         loading="lazy"
+                         width="400" height="300">
+                </picture>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Educational Mission Section -->
+<section class="mission-section" aria-labelledby="mission-heading">
+    <div class="container">
+        <article class="mission-content">
+            <header class="section-header">
+                <h2 id="mission-heading" class="section-title">Our Educational Mission</h2>
+            </header>
+
+            <div class="mission-text">
+                <p class="mission-description">
+                    We believe in promoting understanding and appreciation of donkeys through education.
+                    These gentle, intelligent animals have been faithful companions to humans throughout history,
+                    deserving our respect and proper care.
+                </p>
+
+                <p class="mission-description">
+                    Our comprehensive resources help you learn about donkey breeds, understand their care requirements,
+                    and discover the remarkable facts that make these animals so special. Whether you're a current
+                    donkey owner, considering adoption, or simply curious about these amazing creatures, our educational
+                    content provides the knowledge you need.
+                </p>
+            </div>
+
+            <div class="mission-actions">
+                <div class="action-grid">
+                    <div class="action-item">
+                        <h3 class="action-title">Start Learning</h3>
+                        <p class="action-description">Explore our breed guides and care information</p>
+                        <a href="/breeds/" class="action-link" aria-label="Begin learning about donkey breeds">
+                            Browse Breeds →
+                        </a>
+                    </div>
+
+                    <div class="action-item">
+                        <h3 class="action-title">Care Knowledge</h3>
+                        <p class="action-description">Access comprehensive care guides and tips</p>
+                        <a href="/care/" class="action-link" aria-label="Access donkey care guides and information">
+                            Care Guides →
+                        </a>
+                    </div>
+
+                    <div class="action-item">
+                        <h3 class="action-title">Fun Facts</h3>
+                        <p class="action-description">Discover amazing donkey history and trivia</p>
+                        <a href="/facts.html" class="action-link" aria-label="Learn fascinating facts about donkeys">
+                            Learn Facts →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- Structured Data for Homepage -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": ["WebPage", "FAQPage"],
+    "name": "Discover the Wonderful World of Donkeys - Donkey Education Website",
+    "description": "Learn about donkeys - their breeds, care, and fascinating facts. A comprehensive educational resource about these gentle, intelligent animals.",
+    "url": "{{site_url}}",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What are the main donkey breeds?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The main donkey breeds include Miniature Mediterranean (32-34 inches), Standard Donkey (36-48 inches), Mammoth Donkey (52+ inches), and Poitou Donkey (52-56 inches). Each breed has unique characteristics and care requirements."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What do donkeys need for proper care?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Donkeys need proper feeding with quality hay and grain, regular grooming including hoof care, appropriate shelter and pasture, and routine health monitoring with veterinary care."
+            }
+        }
+    ],
+    "about": {
+        "@type": "Thing",
+        "name": "Donkey Education",
+        "description": "Educational content about donkey breeds, care, and facts"
+    },
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "{{site_url}}"
+            }
+        ]
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Donkey Education Website",
+        "url": "{{site_url}}"
+    }
+}
+</script>
