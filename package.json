@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "npm run test:unit && npm run test:integration",
-    "test:unit": "jest tests/build tests/scripts",
-    "test:integration": "jest tests/integration",
+    "test:unit": "node --experimental-vm-modules node_modules/.bin/jest tests/build tests/scripts",
+    "test:integration": "node --experimental-vm-modules node_modules/.bin/jest tests/integration --runInBand",
     "test:e2e": "npm run dev & wait-on http://localhost:8080 && jest tests/e2e && kill %1",
     "test:lighthouse": "npm run dev & wait-on http://localhost:8080 && jest tests/e2e/lighthouse.test.js && kill %1",
     "test:accessibility": "npm run dev & wait-on http://localhost:8080 && jest tests/e2e/accessibility.test.js && kill %1",
@@ -26,38 +26,19 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^29.7.0",
-    "@jest/globals": "^29.7.0",
-    "jsdom": "^23.0.1",
-    "puppeteer": "^21.6.1",
-    "lighthouse": "^11.4.0",
     "@axe-core/puppeteer": "^4.8.2",
-    "jest-image-snapshot": "^6.4.0",
+    "@jest/globals": "^29.7.0",
     "chrome-launcher": "^1.1.0",
-    "wait-on": "^7.2.0",
-    "sharp": "^0.32.6",
     "clean-css": "^5.3.2",
     "gray-matter": "^4.0.3",
-    "marked": "^9.1.6"
-  },
-  "jest": {
-    "preset": "default",
-    "testEnvironment": "jsdom",
-    "transform": {},
-    "extensionsToTreatAsEsm": [".js"],
-    "globals": {
-      "jest": {
-        "useESM": true
-      }
-    },
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "build/**/*.js",
-      "!node_modules/**",
-      "!dist/**"
-    ],
-    "testMatch": [
-      "**/tests/**/*.test.js"
-    ]
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-image-snapshot": "^6.4.0",
+    "jsdom": "^23.0.1",
+    "lighthouse": "^11.4.0",
+    "marked": "^9.1.6",
+    "puppeteer": "^21.6.1",
+    "sharp": "^0.32.6",
+    "wait-on": "^7.2.0"
   }
 }

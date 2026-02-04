@@ -16,36 +16,51 @@ describe('Internal Link Validation', () => {
     const testFiles = {
       'dist/index.html': `<!DOCTYPE html>
 <html lang="en">
-<head><title>Home</title></head>
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Donkey Education Website</title>
+  <style>/* Critical CSS */</style>
+</head>
 <body>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/breeds/">Breeds</a>
-    <a href="/care/">Care</a>
-    <a href="/facts.html">Facts</a>
-  </nav>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/breeds/">Breeds</a>
+      <a href="/care/">Care</a>
+      <a href="/facts.html">Facts</a>
+    </nav>
+  </header>
   <main>
     <h1>Welcome</h1>
     <a href="/breeds/miniature-mediterranean.html">Miniature Mediterranean</a>
     <a href="https://example.com">External Link</a>
   </main>
+  <footer>
+    <p>&copy; 2026 Donkey Education Website</p>
+  </footer>
 </body>
 </html>`,
 
       'dist/breeds/index.html': `<!DOCTYPE html>
 <html lang="en">
-<head><title>Breeds</title></head>
+<head>
+  <meta charset="UTF-8">
+  <title>Donkey Breeds - Donkey Education Website</title>
+</head>
 <body>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/breeds/">Breeds</a>
-  </nav>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/breeds/">Breeds</a>
+    </nav>
+  </header>
   <main>
     <h1>Donkey Breeds</h1>
     <a href="/breeds/miniature-mediterranean.html">Miniature Mediterranean</a>
     <a href="/breeds/standard-donkey.html">Standard Donkey</a>
     <a href="../">Back to Home</a>
   </main>
+  <footer></footer>
 </body>
 </html>`,
 
@@ -82,17 +97,23 @@ describe('Internal Link Validation', () => {
 
       'dist/care/index.html': `<!DOCTYPE html>
 <html lang="en">
-<head><title>Care</title></head>
+<head>
+  <meta charset="UTF-8">
+  <title>Donkey Care Guides - Donkey Education Website</title>
+</head>
 <body>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/care/">Care</a>
-  </nav>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/care/">Care</a>
+    </nav>
+  </header>
   <main>
     <h1>Care Guides</h1>
     <a href="/care/feeding.html">Feeding</a>
     <a href="./grooming.html">Grooming</a>
   </main>
+  <footer></footer>
 </body>
 </html>`,
 
@@ -129,30 +150,42 @@ describe('Internal Link Validation', () => {
 
       'dist/facts.html': `<!DOCTYPE html>
 <html lang="en">
-<head><title>Facts</title></head>
+<head>
+  <meta charset="UTF-8">
+  <title>Donkey Facts - Donkey Education Website</title>
+</head>
 <body>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/facts.html">Facts</a>
-  </nav>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/facts.html">Facts</a>
+    </nav>
+  </header>
   <main>
     <h1>Fun Facts</h1>
     <a href="/">Back to Home</a>
   </main>
+  <footer></footer>
 </body>
 </html>`,
 
       'dist/404.html': `<!DOCTYPE html>
 <html lang="en">
-<head><title>Not Found</title></head>
+<head>
+  <meta charset="UTF-8">
+  <title>Page Not Found - Donkey Education Website</title>
+</head>
 <body>
-  <nav>
-    <a href="/">Home</a>
-  </nav>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+    </nav>
+  </header>
   <main>
     <h1>Page Not Found</h1>
     <a href="/">Go Home</a>
   </main>
+  <footer></footer>
 </body>
 </html>`,
 
