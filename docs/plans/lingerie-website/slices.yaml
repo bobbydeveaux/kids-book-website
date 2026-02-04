@@ -1,0 +1,69 @@
+# Sprint Slices (Horizontal Decomposition)
+
+sprints:
+  - number: 1
+    features:
+      - id: lingerie-website-feat-project-setup
+        name: Project Setup and Configuration
+        type: enabler
+        files: [package.json vite.config.js .eslintrc.cjs .prettierrc .gitignore]
+      - id: lingerie-website-feat-data-layer
+        name: Static Data Layer and Product Service
+        type: enabler
+        files: [src/data/products.json src/data/categories.json src/data/featured.json src/services/productService.js]
+      - id: lingerie-website-feat-global-styles
+        name: Global Styles and Design System
+        type: enabler
+        files: [src/styles/global.css src/styles/variables.css src/main.jsx]
+  - number: 2
+    features:
+      - id: lingerie-website-feat-ui-components
+        name: Reusable UI Component Library
+        type: enabler
+        files: [src/components/ui/Button/Button.jsx src/components/ui/Button/Button.module.css src/components/ui/Card/Card.jsx src/components/ui/Card/Card.module.css src/components/ui/Image/Image.jsx src/components/ui/Image/Image.module.css src/components/ui/Grid/Grid.jsx src/components/ui/Grid/Grid.module.css src/components/ui/Container/Container.jsx src/components/ui/Container/Container.module.css src/components/ui/Link/Link.jsx src/components/ui/Link/Link.module.css]
+      - id: lingerie-website-feat-layout-components
+        name: Site Layout and Navigation
+        type: feature
+        files: [src/components/layout/Header/Header.jsx src/components/layout/Header/Header.module.css src/components/layout/Navigation/Navigation.jsx src/components/layout/Navigation/Navigation.module.css src/components/layout/Footer/Footer.jsx src/components/layout/Footer/Footer.module.css src/components/layout/Layout/Layout.jsx src/components/layout/Layout/Layout.module.css]
+      - id: lingerie-website-feat-routing
+        name: Client-Side Routing and Error Handling
+        type: enabler
+        files: [src/App.jsx src/App.module.css src/ErrorBoundary.jsx src/hooks/useProduct.js src/hooks/useScrollToTop.js src/utils/constants.js]
+  - number: 3
+    features:
+      - id: lingerie-website-feat-product-components
+        name: Product Display Components
+        type: feature
+        files: [src/components/product/ProductCard/ProductCard.jsx src/components/product/ProductCard/ProductCard.module.css src/components/product/ProductGrid/ProductGrid.jsx src/components/product/ProductGrid/ProductGrid.module.css src/components/product/ProductImage/ProductImage.jsx src/components/product/ProductImage/ProductImage.module.css src/components/product/ProductFeatures/ProductFeatures.jsx src/components/product/ProductFeatures/ProductFeatures.module.css src/components/product/ProductSpecifications/ProductSpecifications.jsx src/components/product/ProductSpecifications/ProductSpecifications.module.css src/components/product/ProductDetail/ProductDetail.jsx src/components/product/ProductDetail/ProductDetail.module.css]
+      - id: lingerie-website-feat-home-page
+        name: Homepage with Featured Products
+        type: feature
+        files: [src/pages/Home/Home.jsx src/pages/Home/Home.module.css]
+      - id: lingerie-website-feat-404-page
+        name: 404 Not Found Page
+        type: feature
+        files: [src/pages/NotFound/NotFound.jsx src/pages/NotFound/NotFound.module.css]
+  - number: 4
+    features:
+      - id: lingerie-website-feat-product-detail-page
+        name: Product Detail Page
+        type: feature
+        files: [src/pages/ProductDetailPage/ProductDetailPage.jsx src/pages/ProductDetailPage/ProductDetailPage.module.css]
+      - id: lingerie-website-feat-responsive-design
+        name: Mobile-First Responsive Design
+        type: enabler
+        files: [src/components/**/*.module.css src/pages/**/*.module.css]
+  - number: 5
+    features:
+      - id: lingerie-website-feat-performance-optimization
+        name: Performance Optimization and Code Splitting
+        type: enabler
+        files: [vite.config.js src/App.jsx src/components/ui/Image/Image.jsx]
+      - id: lingerie-website-feat-testing
+        name: Automated Testing Suite
+        type: enabler
+        files: [vitest.config.js playwright.config.js src/services/__tests__/productService.test.js src/components/ui/Button/__tests__/Button.test.jsx src/components/product/ProductCard/__tests__/ProductCard.test.jsx src/test/integration/navigation.test.jsx e2e/homepage.spec.js e2e/productDetail.spec.js e2e/navigation.spec.js]
+      - id: lingerie-website-feat-deployment-config
+        name: Deployment Configuration and Documentation
+        type: enabler
+        files: [_redirects README.md public/robots.txt]
