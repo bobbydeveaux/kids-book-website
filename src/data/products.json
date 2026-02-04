@@ -1,0 +1,302 @@
+[
+  {
+    "id": "prod-001",
+    "name": "Classic Lace Bralette",
+    "slug": "classic-lace-bralette",
+    "description": "Elegant and comfortable lace bralette perfect for everyday wear. Features soft stretch lace that moves with your body, adjustable straps for the perfect fit, and wire-free comfort that doesn't compromise on support. The removable padding allows you to customize your look and feel.",
+    "shortDescription": "Elegant lace bralette with adjustable straps and wire-free comfort",
+    "category": ["bralettes", "everyday"],
+    "images": {
+      "thumbnail": "/images/products/prod-001-thumb.jpg",
+      "main": "/images/products/prod-001-main.jpg",
+      "gallery": [
+        "/images/products/prod-001-1.jpg",
+        "/images/products/prod-001-2.jpg",
+        "/images/products/prod-001-3.jpg"
+      ]
+    },
+    "features": [
+      "Soft stretch lace",
+      "Adjustable straps",
+      "Wire-free comfort",
+      "Removable padding",
+      "All-day comfort"
+    ],
+    "specifications": [
+      {"key": "Material", "value": "90% Nylon, 10% Spandex"},
+      {"key": "Care", "value": "Hand wash cold, lay flat to dry"},
+      {"key": "Sizes", "value": "XS, S, M, L, XL"},
+      {"key": "Colors", "value": "Black, Nude, White, Pink"}
+    ],
+    "price": {
+      "display": "$48.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-15",
+      "featured": true,
+      "order": 1
+    }
+  },
+  {
+    "id": "prod-002",
+    "name": "Silk Satin Chemise",
+    "slug": "silk-satin-chemise",
+    "description": "Luxurious silk satin chemise that feels like heaven against your skin. This elegant sleepwear piece features delicate lace trim at the neckline and hem, adjustable spaghetti straps, and a flattering bias cut that drapes beautifully. Perfect for special occasions or treating yourself to everyday luxury.",
+    "shortDescription": "Luxurious silk satin chemise with lace trim",
+    "category": ["sleepwear", "luxury"],
+    "images": {
+      "thumbnail": "/images/products/prod-002-thumb.jpg",
+      "main": "/images/products/prod-002-main.jpg",
+      "gallery": [
+        "/images/products/prod-002-1.jpg",
+        "/images/products/prod-002-2.jpg"
+      ]
+    },
+    "features": [
+      "100% pure silk satin",
+      "Delicate lace trim",
+      "Adjustable spaghetti straps",
+      "Bias cut for flattering drape",
+      "Temperature regulating"
+    ],
+    "specifications": [
+      {"key": "Material", "value": "100% Mulberry Silk"},
+      {"key": "Care", "value": "Dry clean or gentle hand wash"},
+      {"key": "Sizes", "value": "XS, S, M, L, XL"},
+      {"key": "Colors", "value": "Champagne, Midnight Blue, Rose Gold"}
+    ],
+    "price": {
+      "display": "$128.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-16",
+      "featured": true,
+      "order": 2
+    }
+  },
+  {
+    "id": "prod-003",
+    "name": "High-Waisted Lace Panty",
+    "slug": "high-waisted-lace-panty",
+    "description": "Vintage-inspired high-waisted panty crafted from delicate floral lace. The high-waisted design provides comfortable coverage while the stretch lace ensures a smooth, no-show fit under clothing. Cotton-lined gusset for comfort and breathability.",
+    "shortDescription": "Vintage-inspired high-waisted panty in delicate lace",
+    "category": ["panties", "everyday"],
+    "images": {
+      "thumbnail": "/images/products/prod-003-thumb.jpg",
+      "main": "/images/products/prod-003-main.jpg",
+      "gallery": [
+        "/images/products/prod-003-1.jpg",
+        "/images/products/prod-003-2.jpg",
+        "/images/products/prod-003-3.jpg"
+      ]
+    },
+    "features": [
+      "High-waisted coverage",
+      "Delicate floral lace",
+      "Cotton-lined gusset",
+      "No-show design",
+      "Comfortable elastic waistband"
+    ],
+    "specifications": [
+      {"key": "Material", "value": "85% Nylon, 15% Spandex with cotton lining"},
+      {"key": "Care", "value": "Machine wash cold, gentle cycle"},
+      {"key": "Sizes", "value": "XS, S, M, L, XL, XXL"},
+      {"key": "Colors", "value": "Black, Nude, White, Deep Purple"}
+    ],
+    "price": {
+      "display": "$24.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-17",
+      "featured": false,
+      "order": 3
+    }
+  },
+  {
+    "id": "prod-004",
+    "name": "Push-Up Plunge Bra",
+    "slug": "push-up-plunge-bra",
+    "description": "Dramatic plunge bra with push-up padding designed to enhance your natural curves. Features gel-filled push-up pads, underwire support, and a deep V neckline perfect for low-cut tops and dresses. Convertible straps can be worn multiple ways for versatile styling.",
+    "shortDescription": "Dramatic plunge bra with push-up enhancement",
+    "category": ["bras", "special-occasion"],
+    "images": {
+      "thumbnail": "/images/products/prod-004-thumb.jpg",
+      "main": "/images/products/prod-004-main.jpg",
+      "gallery": [
+        "/images/products/prod-004-1.jpg",
+        "/images/products/prod-004-2.jpg"
+      ]
+    },
+    "features": [
+      "Gel-filled push-up pads",
+      "Deep plunge neckline",
+      "Underwire support",
+      "Convertible straps",
+      "Smooth microfiber cups"
+    ],
+    "specifications": [
+      {"key": "Material", "value": "80% Nylon, 20% Spandex"},
+      {"key": "Care", "value": "Hand wash cold, line dry"},
+      {"key": "Sizes", "value": "32A-38DD"},
+      {"key": "Colors", "value": "Black, Nude, Red"}
+    ],
+    "price": {
+      "display": "$68.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-18",
+      "featured": false,
+      "order": 4
+    }
+  },
+  {
+    "id": "prod-005",
+    "name": "Romantic Lace Teddy",
+    "slug": "romantic-lace-teddy",
+    "description": "Seductive and romantic lace teddy with intricate floral patterns. Features a halter neckline, open back design with decorative straps, and snap closure at the crotch for convenience. The stretch lace hugs your curves while providing comfortable all-night wear.",
+    "shortDescription": "Seductive lace teddy with halter neckline and open back",
+    "category": ["lingerie-sets", "special-occasion"],
+    "images": {
+      "thumbnail": "/images/products/prod-005-thumb.jpg",
+      "main": "/images/products/prod-005-main.jpg",
+      "gallery": [
+        "/images/products/prod-005-1.jpg",
+        "/images/products/prod-005-2.jpg",
+        "/images/products/prod-005-3.jpg"
+      ]
+    },
+    "features": [
+      "Intricate floral lace",
+      "Halter neckline",
+      "Open back with straps",
+      "Snap crotch closure",
+      "Stretch fit"
+    ],
+    "specifications": [
+      {"key": "Material", "value": "90% Nylon, 10% Spandex"},
+      {"key": "Care", "value": "Hand wash cold, lay flat to dry"},
+      {"key": "Sizes", "value": "S, M, L, XL"},
+      {"key": "Colors", "value": "Black, Red, Ivory"}
+    ],
+    "price": {
+      "display": "$86.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-19",
+      "featured": false,
+      "order": 5
+    }
+  },
+  {
+    "id": "prod-006",
+    "name": "Cotton Sleep Set",
+    "slug": "cotton-sleep-set",
+    "description": "Comfortable cotton sleep set perfect for lounging and sleeping. The set includes a relaxed-fit camisole with adjustable straps and matching shorts with an elastic waistband. Made from breathable organic cotton that gets softer with every wash.",
+    "shortDescription": "Comfortable cotton camisole and shorts sleep set",
+    "category": ["sleepwear", "everyday"],
+    "images": {
+      "thumbnail": "/images/products/prod-006-thumb.jpg",
+      "main": "/images/products/prod-006-main.jpg",
+      "gallery": [
+        "/images/products/prod-006-1.jpg",
+        "/images/products/prod-006-2.jpg"
+      ]
+    },
+    "features": [
+      "100% organic cotton",
+      "Relaxed comfortable fit",
+      "Adjustable camisole straps",
+      "Elastic waistband shorts",
+      "Gets softer with washing"
+    ],
+    "specifications": [
+      {"key": "Material", "value": "100% Organic Cotton"},
+      {"key": "Care", "value": "Machine wash warm, tumble dry low"},
+      {"key": "Sizes", "value": "XS, S, M, L, XL, XXL"},
+      {"key": "Colors", "value": "Pink, Grey, Navy, Sage Green"}
+    ],
+    "price": {
+      "display": "$52.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-20",
+      "featured": false,
+      "order": 6
+    }
+  },
+  {
+    "id": "prod-007",
+    "name": "Seamless T-Shirt Bra",
+    "slug": "seamless-t-shirt-bra",
+    "description": "The ultimate invisible bra designed to disappear under any top. Features molded seamless cups, convertible straps, and a low-profile design that won't show through even the thinnest fabrics. Memory foam padding provides shape and comfort all day long.",
+    "shortDescription": "Invisible seamless bra perfect for t-shirts",
+    "category": ["bras", "everyday"],
+    "images": {
+      "thumbnail": "/images/products/prod-007-thumb.jpg",
+      "main": "/images/products/prod-007-main.jpg",
+      "gallery": [
+        "/images/products/prod-007-1.jpg",
+        "/images/products/prod-007-2.jpg"
+      ]
+    },
+    "features": [
+      "Molded seamless cups",
+      "Memory foam padding",
+      "Convertible straps",
+      "Low-profile design",
+      "No-show under clothing"
+    ],
+    "specifications": [
+      {"key": "Material", "value": "82% Nylon, 18% Spandex"},
+      {"key": "Care", "value": "Machine wash cold, hang dry"},
+      {"key": "Sizes", "value": "32A-40DD"},
+      {"key": "Colors", "value": "Nude, Black, White"}
+    ],
+    "price": {
+      "display": "$56.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-21",
+      "featured": false,
+      "order": 7
+    }
+  },
+  {
+    "id": "prod-008",
+    "name": "Silk Robe with Lace Trim",
+    "slug": "silk-robe-lace-trim",
+    "description": "Elegant silk robe with delicate lace trim detail. This knee-length robe features a classic wrap style with a coordinating tie belt, three-quarter sleeves with lace cuffs, and a sophisticated silhouette. Perfect for special mornings or as a thoughtful gift.",
+    "shortDescription": "Elegant silk robe with lace trim and wrap style",
+    "category": ["sleepwear", "luxury"],
+    "images": {
+      "thumbnail": "/images/products/prod-008-thumb.jpg",
+      "main": "/images/products/prod-008-main.jpg",
+      "gallery": [
+        "/images/products/prod-008-1.jpg",
+        "/images/products/prod-008-2.jpg",
+        "/images/products/prod-008-3.jpg"
+      ]
+    },
+    "features": [
+      "Pure silk construction",
+      "Delicate lace trim",
+      "Classic wrap style",
+      "Coordinating tie belt",
+      "Three-quarter sleeves"
+    ],
+    "specifications": [
+      {"key": "Material", "value": "100% Mulberry Silk with lace trim"},
+      {"key": "Care", "value": "Dry clean recommended"},
+      {"key": "Sizes", "value": "XS, S, M, L, XL"},
+      {"key": "Colors", "value": "Blush Pink, Ivory, Charcoal"}
+    ],
+    "price": {
+      "display": "$158.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-22",
+      "featured": false,
+      "order": 8
+    }
+  }
+]
