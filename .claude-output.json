@@ -1,0 +1,11 @@
+{
+  "prTitle": "feat: implement Container component with responsive layout",
+  "prBody": "## Summary\n\nImplemented the Container component as specified in task #85, providing responsive layout constraints and horizontal centering for content. The component supports both constrained and full-width layouts via a `fluid` prop.\n\n### Key Features\n\n- **Responsive max-widths**: Uses CSS custom properties for breakpoint-based constraints\n- **Fluid layout support**: Optional `fluid` prop removes max-width constraints\n- **CSS Custom Properties**: Leverages design system variables for spacing and breakpoints\n- **Horizontal centering**: Automatic centering using margin auto\n- **Extensible**: Supports custom className and spreads additional props\n- **Well-tested**: Comprehensive test suite covering all functionality\n\n### Technical Details\n\n- **Component**: `src/components/ui/Container/Container.jsx`\n- **Styles**: `src/components/ui/Container/Container.module.css`\n- **Tests**: `src/components/ui/Container/__tests__/Container.test.jsx`\n- **Export**: `src/components/ui/Container/index.js`\n\n### CSS Variables Used\n\n- `--spacing-*`: For responsive padding values\n- `--breakpoint-*`: For responsive breakpoints\n- `--container-*`: For max-width constraints at different breakpoints\n\n### Responsive Behavior\n\n- **Mobile**: Full width with basic padding\n- **Tablet**: 720px max-width with increased padding\n- **Desktop**: 1200px max-width with larger padding\n- **Large Desktop**: 1240px max-width\n\n### Usage\n\n```jsx\n// Standard constrained container\n<Container>\n  <div>Your content here</div>\n</Container>\n\n// Full-width fluid container\n<Container fluid>\n  <div>Full-width content</div>\n</Container>\n\n// With custom styling\n<Container className=\"custom-spacing\">\n  <div>Custom styled content</div>\n</Container>\n```\n\nCloses #85",
+  "testsPass": true,
+  "filesChanged": [
+    "src/components/ui/Container/Container.jsx",
+    "src/components/ui/Container/Container.module.css",
+    "src/components/ui/Container/__tests__/Container.test.jsx",
+    "src/components/ui/Container/index.js"
+  ]
+}
