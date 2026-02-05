@@ -1,0 +1,65 @@
+/* Container component styles */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-4, 1rem);
+  padding-right: var(--spacing-4, 1rem);
+  position: relative;
+}
+
+/* Responsive max-widths using breakpoint variables */
+.container {
+  /* Mobile: no max-width constraint, just padding */
+  max-width: none;
+}
+
+/* Tablet breakpoint */
+@media (min-width: var(--breakpoint-tablet, 768px)) {
+  .container {
+    max-width: var(--container-tablet, 720px);
+    padding-left: var(--spacing-6, 1.5rem);
+    padding-right: var(--spacing-6, 1.5rem);
+  }
+}
+
+/* Desktop breakpoint */
+@media (min-width: var(--breakpoint-desktop, 1024px)) {
+  .container {
+    max-width: var(--container-desktop, 1200px);
+    padding-left: var(--spacing-8, 2rem);
+    padding-right: var(--spacing-8, 2rem);
+  }
+}
+
+/* Large desktop breakpoint */
+@media (min-width: var(--breakpoint-desktop-lg, 1280px)) {
+  .container {
+    max-width: var(--container-desktop-lg, 1240px);
+  }
+}
+
+/* Fluid container for full-width layouts */
+.containerFluid {
+  width: 100%;
+  padding-left: var(--spacing-4, 1rem);
+  padding-right: var(--spacing-4, 1rem);
+  position: relative;
+  /* No max-width constraints for fluid container */
+  max-width: none;
+}
+
+/* Responsive padding for fluid container */
+@media (min-width: var(--breakpoint-tablet, 768px)) {
+  .containerFluid {
+    padding-left: var(--spacing-6, 1.5rem);
+    padding-right: var(--spacing-6, 1.5rem);
+  }
+}
+
+@media (min-width: var(--breakpoint-desktop, 1024px)) {
+  .containerFluid {
+    padding-left: var(--spacing-8, 2rem);
+    padding-right: var(--spacing-8, 2rem);
+  }
+}
