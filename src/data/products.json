@@ -1,0 +1,65 @@
+[
+  {
+    "id": "prod-001",
+    "name": "Classic Lace Bralette",
+    "slug": "classic-lace-bralette",
+    "description": "Elegant lace bralette with soft cups and delicate lace detailing",
+    "shortDescription": "Elegant lace bralette",
+    "price": 45.99,
+    "currency": "USD",
+    "images": [
+      "classic-lace-bralette-1.jpg",
+      "classic-lace-bralette-2.jpg"
+    ],
+    "categories": ["bralettes", "new-arrivals"],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": ["black", "nude", "white"],
+    "metadata": {
+      "order": 1,
+      "featured": true,
+      "stock": 25
+    }
+  },
+  {
+    "id": "prod-002",
+    "name": "Silk Camisole",
+    "slug": "silk-camisole",
+    "description": "Luxurious silk camisole with adjustable straps",
+    "shortDescription": "Luxurious silk camisole",
+    "price": 68.50,
+    "currency": "USD",
+    "images": [
+      "silk-camisole-1.jpg"
+    ],
+    "categories": "sleepwear",
+    "sizes": ["S", "M", "L"],
+    "colors": ["champagne", "black"],
+    "metadata": {
+      "order": 3,
+      "featured": false,
+      "stock": 12
+    }
+  },
+  {
+    "id": "prod-003",
+    "name": "Lace Teddy",
+    "slug": "lace-teddy",
+    "description": "Romantic lace teddy with snap closure",
+    "shortDescription": "Romantic lace teddy",
+    "price": 89.99,
+    "currency": "USD",
+    "images": [
+      "lace-teddy-1.jpg",
+      "lace-teddy-2.jpg",
+      "lace-teddy-3.jpg"
+    ],
+    "categories": ["bodysuits", "romantic"],
+    "sizes": ["XS", "S", "M", "L"],
+    "colors": ["red", "black"],
+    "metadata": {
+      "order": 2,
+      "featured": true,
+      "stock": 8
+    }
+  }
+]

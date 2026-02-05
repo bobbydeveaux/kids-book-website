@@ -1,0 +1,37 @@
+[
+  {
+    "id": "cat-001",
+    "name": "Bralettes",
+    "slug": "bralettes",
+    "description": "Comfortable and stylish bralettes",
+    "order": 1
+  },
+  {
+    "id": "cat-002",
+    "name": "Sleepwear",
+    "slug": "sleepwear",
+    "description": "Luxurious sleepwear and loungewear",
+    "order": 3
+  },
+  {
+    "id": "cat-003",
+    "name": "Bodysuits",
+    "slug": "bodysuits",
+    "description": "Elegant bodysuits and teddies",
+    "order": 2
+  },
+  {
+    "id": "cat-004",
+    "name": "New Arrivals",
+    "slug": "new-arrivals",
+    "description": "Latest additions to our collection",
+    "order": 4
+  },
+  {
+    "id": "cat-005",
+    "name": "Romantic",
+    "slug": "romantic",
+    "description": "Romantic and intimate pieces",
+    "order": 5
+  }
+]
