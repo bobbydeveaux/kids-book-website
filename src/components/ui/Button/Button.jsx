@@ -41,7 +41,7 @@ function Button({
   }
 
   return (
-    <Component {...buttonProps}>
+    <Component {...buttonProps} aria-busy={loading}>
       {loading && <span className={styles.spinner} aria-hidden="true" />}
       <span className={loading ? styles.content : undefined}>
         {children}
