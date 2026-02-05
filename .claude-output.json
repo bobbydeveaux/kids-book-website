@@ -1,0 +1,18 @@
+{
+  "prTitle": "feat: create Image component with lazy loading",
+  "prBody": "## Summary\n\nImplemented a fully-featured Image component with lazy loading functionality for the lingerie website. This component provides a solid foundation for optimal image loading performance across the application.\n\n### Key Features\n- ✅ Native lazy loading using `loading='lazy'` attribute\n- ✅ Error handling with fallback images and error states\n- ✅ Required alt text prop (enforced via PropTypes)\n- ✅ Aspect ratio support to prevent layout shift\n- ✅ Responsive design with object-fit CSS properties\n- ✅ CSS custom properties for theming\n- ✅ Loading and loaded states with smooth transitions\n- ✅ onLoad and onError callback support\n- ✅ Dark mode and reduced motion accessibility support\n\n### Implementation Details\n- **Image.jsx**: React component with comprehensive prop validation and state management\n- **Image.module.css**: CSS module with responsive styling, accessibility features, and theming support\n- **Comprehensive testing**: 9 test cases covering all functionality\n- **Complete React setup**: Vite configuration, demo app, and build system\n\n### Acceptance Criteria Met\n- [x] Image.jsx implements loading='lazy' attribute\n- [x] Component handles image load errors with fallback or error state\n- [x] Alt text is required prop (enforced via PropTypes)\n- [x] Image.module.css includes object-fit and aspect ratio support\n- [x] Component prevents layout shift during image loading\n\n### Testing\n- All 9 unit tests passing\n- Build successful with no errors\n- Demo app included for visual verification\n\nCloses #88",
+  "testsPass": true,
+  "filesChanged": [
+    "src/components/ui/Image/Image.jsx",
+    "src/components/ui/Image/Image.module.css",
+    "src/components/ui/Image/Image.test.jsx",
+    "src/components/ui/Image/index.js",
+    "package.json",
+    "vite.config.js",
+    "src/App.jsx",
+    "src/main.jsx",
+    "src/index.css",
+    "src/test/setup.js",
+    "index.html"
+  ]
+}

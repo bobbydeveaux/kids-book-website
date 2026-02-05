@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import { vi } from 'vitest';
 import '@testing-library/jest-dom';
 import Image from './Image';
 
@@ -35,7 +36,7 @@ describe('Image Component', () => {
   });
 
   test('handles image load event', () => {
-    const onLoadMock = jest.fn();
+    const onLoadMock = vi.fn();
     render(<Image {...mockProps} onLoad={onLoadMock} />);
     const img = screen.getByRole('img');
 
@@ -66,7 +67,7 @@ describe('Image Component', () => {
   });
 
   test('calls onError callback when image fails to load', () => {
-    const onErrorMock = jest.fn();
+    const onErrorMock = vi.fn();
     render(<Image {...mockProps} onError={onErrorMock} />);
     const img = screen.getByRole('img');
 
