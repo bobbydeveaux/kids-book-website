@@ -1,0 +1,105 @@
+/* Card Component Styles */
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover States */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus state for accessibility */
+.card:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Card variants for different use cases */
+.card.elevated {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card.elevated:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card.minimal {
+  box-shadow: none;
+  border: 1px solid #e0e0e0;
+}
+
+.card.minimal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .card {
+    padding: 12px;
+    border-radius: 6px;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .card {
+    padding: 14px;
+    border-radius: 7px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  .card {
+    padding: 16px;
+    border-radius: 8px;
+  }
+}
+
+/* Animation for smooth entry */
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card.animate-enter {
+  animation: cardEnter 0.3s ease-out;
+}
+
+/* Disabled state */
+.card:disabled,
+.card.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.card:disabled:hover,
+.card.disabled:hover {
+  transform: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
