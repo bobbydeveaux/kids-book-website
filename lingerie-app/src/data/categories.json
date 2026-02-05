@@ -1,0 +1,72 @@
+[
+  {
+    "id": "bralettes",
+    "name": "Bralettes",
+    "slug": "bralettes",
+    "description": "Comfortable and stylish wire-free bras",
+    "order": 1
+  },
+  {
+    "id": "chemises",
+    "name": "Chemises",
+    "slug": "chemises",
+    "description": "Elegant sleepwear and loungewear",
+    "order": 2
+  },
+  {
+    "id": "sets",
+    "name": "Sets",
+    "slug": "sets",
+    "description": "Coordinated bra and panty sets",
+    "order": 3
+  },
+  {
+    "id": "teddies",
+    "name": "Teddies",
+    "slug": "teddies",
+    "description": "One-piece intimate apparel",
+    "order": 4
+  },
+  {
+    "id": "slips",
+    "name": "Slips",
+    "slug": "slips",
+    "description": "Classic slip dresses and undergarments",
+    "order": 5
+  },
+  {
+    "id": "everyday",
+    "name": "Everyday",
+    "slug": "everyday",
+    "description": "Comfortable pieces for daily wear",
+    "order": 6
+  },
+  {
+    "id": "luxury",
+    "name": "Luxury",
+    "slug": "luxury",
+    "description": "Premium materials and craftsmanship",
+    "order": 7
+  },
+  {
+    "id": "cotton",
+    "name": "Cotton",
+    "slug": "cotton",
+    "description": "Natural, breathable cotton pieces",
+    "order": 8
+  },
+  {
+    "id": "lace",
+    "name": "Lace",
+    "slug": "lace",
+    "description": "Delicate lace designs",
+    "order": 9
+  },
+  {
+    "id": "sleepwear",
+    "name": "Sleepwear",
+    "slug": "sleepwear",
+    "description": "Comfortable pieces for sleep and lounging",
+    "order": 10
+  }
+]

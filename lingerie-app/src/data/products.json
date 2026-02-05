@@ -1,0 +1,177 @@
+[
+  {
+    "id": "prod-001",
+    "name": "Classic Lace Bralette",
+    "slug": "classic-lace-bralette",
+    "description": "Elegant and comfortable lace bralette made from premium materials. Features adjustable straps for the perfect fit and removable padding for customizable coverage. The delicate lace pattern adds a touch of femininity while providing all-day comfort.",
+    "shortDescription": "Elegant lace bralette with adjustable straps",
+    "category": ["bralettes", "everyday"],
+    "images": {
+      "thumbnail": "/images/products/prod-001-thumb.jpg",
+      "main": "/images/products/prod-001-main.jpg",
+      "gallery": [
+        "/images/products/prod-001-1.jpg",
+        "/images/products/prod-001-2.jpg"
+      ]
+    },
+    "features": [
+      "Soft stretch lace",
+      "Adjustable straps",
+      "Wire-free comfort",
+      "Removable padding"
+    ],
+    "specifications": [
+      { "key": "Material", "value": "90% Nylon, 10% Spandex" },
+      { "key": "Care", "value": "Hand wash cold" },
+      { "key": "Origin", "value": "Made in Italy" }
+    ],
+    "price": {
+      "display": "$45.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-15",
+      "featured": true,
+      "order": 1
+    }
+  },
+  {
+    "id": "prod-002",
+    "name": "Silk Chemise",
+    "slug": "silk-chemise",
+    "description": "Luxurious silk chemise with delicate trim details. This timeless piece features a flattering silhouette and premium silk fabric that feels incredibly soft against the skin. Perfect for special occasions or everyday luxury.",
+    "shortDescription": "Luxurious silk chemise with delicate trim",
+    "category": ["chemises", "luxury"],
+    "images": {
+      "thumbnail": "/images/products/prod-002-thumb.jpg",
+      "main": "/images/products/prod-002-main.jpg",
+      "gallery": [
+        "/images/products/prod-002-1.jpg",
+        "/images/products/prod-002-2.jpg"
+      ]
+    },
+    "features": [
+      "100% pure silk",
+      "Delicate lace trim",
+      "Adjustable straps",
+      "Bias-cut design"
+    ],
+    "specifications": [
+      { "key": "Material", "value": "100% Mulberry Silk" },
+      { "key": "Care", "value": "Dry clean only" },
+      { "key": "Origin", "value": "Made in France" }
+    ],
+    "price": {
+      "display": "$120.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-16",
+      "featured": true,
+      "order": 2
+    }
+  },
+  {
+    "id": "prod-003",
+    "name": "Cotton Comfort Set",
+    "slug": "cotton-comfort-set",
+    "description": "Comfortable cotton bra and panty set designed for everyday wear. Made from organic cotton with a soft, breathable finish. Features a wireless design for maximum comfort and a classic cut that works well under any outfit.",
+    "shortDescription": "Comfortable organic cotton bra and panty set",
+    "category": ["sets", "everyday", "cotton"],
+    "images": {
+      "thumbnail": "/images/products/prod-003-thumb.jpg",
+      "main": "/images/products/prod-003-main.jpg",
+      "gallery": [
+        "/images/products/prod-003-1.jpg",
+        "/images/products/prod-003-2.jpg"
+      ]
+    },
+    "features": [
+      "Organic cotton",
+      "Wire-free design",
+      "Breathable fabric",
+      "Matching panty included"
+    ],
+    "specifications": [
+      { "key": "Material", "value": "95% Organic Cotton, 5% Elastane" },
+      { "key": "Care", "value": "Machine wash cold" },
+      { "key": "Origin", "value": "Made in Portugal" }
+    ],
+    "price": {
+      "display": "$35.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-17",
+      "featured": false,
+      "order": 3
+    }
+  },
+  {
+    "id": "prod-004",
+    "name": "Mesh & Lace Teddy",
+    "slug": "mesh-lace-teddy",
+    "description": "Stunning mesh and lace teddy with intricate detailing. Features a flattering cut with strategic lace placement and adjustable straps. The combination of mesh and lace creates an elegant and alluring look.",
+    "shortDescription": "Stunning mesh and lace teddy with intricate detailing",
+    "category": ["teddies", "luxury", "lace"],
+    "images": {
+      "thumbnail": "/images/products/prod-004-thumb.jpg",
+      "main": "/images/products/prod-004-main.jpg",
+      "gallery": [
+        "/images/products/prod-004-1.jpg",
+        "/images/products/prod-004-2.jpg"
+      ]
+    },
+    "features": [
+      "Mesh and lace combination",
+      "Adjustable straps",
+      "Snap closure",
+      "Intricate lace detailing"
+    ],
+    "specifications": [
+      { "key": "Material", "value": "85% Nylon, 10% Spandex, 5% Polyester" },
+      { "key": "Care", "value": "Hand wash cold" },
+      { "key": "Origin", "value": "Made in Italy" }
+    ],
+    "price": {
+      "display": "$85.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-18",
+      "featured": true,
+      "order": 4
+    }
+  },
+  {
+    "id": "prod-005",
+    "name": "Satin Slip Dress",
+    "slug": "satin-slip-dress",
+    "description": "Elegant satin slip dress perfect for lounging or as sleepwear. Features a classic bias cut that drapes beautifully and adjustable straps for the perfect fit. The smooth satin fabric has a luxurious feel and elegant drape.",
+    "shortDescription": "Elegant satin slip dress with bias cut",
+    "category": ["slips", "sleepwear", "luxury"],
+    "images": {
+      "thumbnail": "/images/products/prod-005-thumb.jpg",
+      "main": "/images/products/prod-005-main.jpg",
+      "gallery": [
+        "/images/products/prod-005-1.jpg",
+        "/images/products/prod-005-2.jpg"
+      ]
+    },
+    "features": [
+      "Premium satin finish",
+      "Bias-cut design",
+      "Adjustable straps",
+      "Midi length"
+    ],
+    "specifications": [
+      { "key": "Material", "value": "100% Polyester Satin" },
+      { "key": "Care", "value": "Dry clean recommended" },
+      { "key": "Origin", "value": "Made in China" }
+    ],
+    "price": {
+      "display": "$65.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-19",
+      "featured": false,
+      "order": 5
+    }
+  }
+]
