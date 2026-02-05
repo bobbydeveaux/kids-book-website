@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.App-header {
+  margin-bottom: 2rem;
+}
+
+.App-header h1 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+.home {
+  padding: 2rem;
+}
+
+.home h2 {
+  color: #34495e;
+  margin-bottom: 1rem;
+}
+
+.home p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
