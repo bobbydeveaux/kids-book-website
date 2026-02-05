@@ -1,0 +1,72 @@
+/* Basic CSS custom properties for the Link component */
+:root {
+  --color-primary: #0066cc;
+  --color-primary-hover: #0052a3;
+  --color-primary-active: #003d7a;
+  --color-white: #ffffff;
+  --color-text-primary: #333333;
+  --color-text-secondary: #666666;
+  --color-text-disabled: #999999;
+  --color-focus: #0066cc;
+  --color-surface-hover: #f5f5f5;
+  --color-surface-active: #e5e5e5;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+}
+
+.App {
+  text-align: center;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.App-header {
+  margin-bottom: 2rem;
+}
+
+.App-header h1 {
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.link-examples {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.link-group {
+  margin: 2rem 0;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.link-group h3 {
+  margin-top: 0;
+  color: #555;
+  font-size: 1.1em;
+}
+
+.link-group > * {
+  margin: 0.5rem;
+  display: inline-block;
+}
+
+main {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+}
+
+main > div {
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 4px;
+  color: #333;
+}
