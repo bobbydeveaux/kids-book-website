@@ -1,0 +1,161 @@
+[
+  {
+    "id": "prod-001",
+    "name": "Classic Lace Bralette",
+    "slug": "classic-lace-bralette",
+    "description": "Elegant and comfortable lace bralette with delicate floral patterns. Made from premium materials for all-day comfort.",
+    "shortDescription": "Elegant lace bralette with delicate patterns",
+    "category": "bralettes",
+    "images": {
+      "thumbnail": "/images/products/prod-001-thumb.jpg",
+      "main": "/images/products/prod-001-main.jpg",
+      "gallery": [
+        "/images/products/prod-001-main.jpg",
+        "/images/products/prod-001-detail.jpg"
+      ]
+    },
+    "features": [
+      "Premium lace material",
+      "Adjustable straps",
+      "Wire-free design",
+      "Breathable fabric"
+    ],
+    "specifications": [
+      {
+        "key": "Material",
+        "value": "90% Nylon, 10% Elastane"
+      },
+      {
+        "key": "Care Instructions",
+        "value": "Hand wash cold, lay flat to dry"
+      }
+    ],
+    "price": {
+      "display": "$45.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-15T00:00:00Z",
+      "featured": true,
+      "order": 1
+    }
+  },
+  {
+    "id": "prod-002",
+    "name": "Silk Camisole Set",
+    "slug": "silk-camisole-set",
+    "description": "Luxurious silk camisole set perfect for special occasions. Includes matching shorts with satin trim.",
+    "shortDescription": "Luxurious silk camisole with matching shorts",
+    "category": "sets",
+    "images": {
+      "thumbnail": "/images/products/prod-002-thumb.jpg",
+      "main": "/images/products/prod-002-main.jpg",
+      "gallery": [
+        "/images/products/prod-002-main.jpg",
+        "/images/products/prod-002-detail.jpg"
+      ]
+    },
+    "features": [
+      "100% pure silk",
+      "Adjustable spaghetti straps",
+      "Matching shorts included",
+      "Satin trim details"
+    ],
+    "specifications": [
+      {
+        "key": "Material",
+        "value": "100% Silk"
+      },
+      {
+        "key": "Care Instructions",
+        "value": "Dry clean only"
+      }
+    ],
+    "price": {
+      "display": "$120.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-20T00:00:00Z",
+      "featured": false,
+      "order": 2
+    }
+  },
+  {
+    "id": "prod-003",
+    "name": "Cotton Comfort Brief",
+    "slug": "cotton-comfort-brief",
+    "description": "Everyday comfort meets style in this soft cotton brief. Seamless construction for invisible wear under clothes.",
+    "shortDescription": "Soft cotton brief with seamless construction",
+    "category": "briefs",
+    "images": {
+      "thumbnail": "/images/products/prod-003-thumb.jpg",
+      "main": "/images/products/prod-003-main.jpg",
+      "gallery": [
+        "/images/products/prod-003-main.jpg"
+      ]
+    },
+    "features": [
+      "Organic cotton blend",
+      "Seamless construction",
+      "Tagless design",
+      "Available in multiple colors"
+    ],
+    "specifications": [
+      {
+        "key": "Material",
+        "value": "95% Organic Cotton, 5% Elastane"
+      },
+      {
+        "key": "Care Instructions",
+        "value": "Machine wash warm, tumble dry low"
+      }
+    ],
+    "price": {
+      "display": "$18.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-25T00:00:00Z",
+      "featured": true,
+      "order": 3
+    }
+  },
+  {
+    "id": "prod-004",
+    "name": "Mesh Sports Bra",
+    "slug": "mesh-sports-bra",
+    "description": "High-performance sports bra with mesh panels for breathability during workouts. Provides medium support for active lifestyles.",
+    "shortDescription": "High-performance sports bra with mesh panels",
+    "category": "sports",
+    "images": {
+      "thumbnail": "/images/products/prod-004-thumb.jpg",
+      "main": "/images/products/prod-004-main.jpg",
+      "gallery": [
+        "/images/products/prod-004-main.jpg",
+        "/images/products/prod-004-detail.jpg"
+      ]
+    },
+    "features": [
+      "Medium support level",
+      "Mesh ventilation panels",
+      "Moisture-wicking fabric",
+      "Removable padding"
+    ],
+    "specifications": [
+      {
+        "key": "Material",
+        "value": "85% Polyester, 15% Elastane"
+      },
+      {
+        "key": "Care Instructions",
+        "value": "Machine wash cold, hang dry"
+      }
+    ],
+    "price": {
+      "display": "$35.00"
+    },
+    "metadata": {
+      "createdAt": "2026-01-30T00:00:00Z",
+      "featured": false,
+      "order": 4
+    }
+  }
+]
