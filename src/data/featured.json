@@ -7,7 +7,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "lastUpdated": "2026-02-04",
+    "lastUpdated": "2026-02-05",
     "description": "Featured products displayed on homepage",
     "displayOrder": "priority",
     "maxDisplayCount": 4,
