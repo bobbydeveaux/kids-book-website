@@ -1,0 +1,117 @@
+/* Base link styles */
+.link {
+  /* Use CSS custom properties for colors (will be defined in global styles) */
+  color: var(--color-primary, #0066cc);
+  text-decoration: none;
+  border-radius: var(--border-radius-sm, 4px);
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs, 4px);
+  cursor: pointer;
+
+  /* Accessibility: ensure focus states are visible */
+  outline: none;
+}
+
+.link:hover {
+  color: var(--color-primary-hover, #0052a3);
+  text-decoration: underline;
+}
+
+.link:focus {
+  outline: 2px solid var(--color-focus, #0066cc);
+  outline-offset: 2px;
+}
+
+.link:active {
+  color: var(--color-primary-active, #003d7a);
+}
+
+/* Default variant - standard link appearance */
+.link--default {
+  font-weight: 400;
+  padding: var(--spacing-xs, 4px);
+}
+
+.link--default:hover {
+  text-decoration: underline;
+}
+
+/* Button variant - appears like a button */
+.link--button {
+  background-color: var(--color-primary, #0066cc);
+  color: var(--color-white, #ffffff);
+  padding: var(--spacing-sm, 8px) var(--spacing-md, 16px);
+  border-radius: var(--border-radius-md, 8px);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.link--button:hover {
+  background-color: var(--color-primary-hover, #0052a3);
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.link--button:focus {
+  outline: 2px solid var(--color-focus, #0066cc);
+  outline-offset: 2px;
+}
+
+.link--button:active {
+  background-color: var(--color-primary-active, #003d7a);
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation variant - for navigation menus */
+.link--nav {
+  color: var(--color-text-secondary, #666666);
+  font-weight: 500;
+  padding: var(--spacing-sm, 8px) var(--spacing-md, 16px);
+  border-radius: var(--border-radius-sm, 4px);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.link--nav:hover {
+  color: var(--color-text-primary, #333333);
+  background-color: var(--color-surface-hover, #f5f5f5);
+  text-decoration: none;
+}
+
+.link--nav:focus {
+  outline: 2px solid var(--color-focus, #0066cc);
+  outline-offset: 2px;
+}
+
+.link--nav:active {
+  color: var(--color-text-primary, #333333);
+  background-color: var(--color-surface-active, #e5e5e5);
+}
+
+/* Disabled state */
+.link:disabled,
+.link[aria-disabled="true"] {
+  color: var(--color-text-disabled, #999999);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .link:focus {
+    outline: 3px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
+}
