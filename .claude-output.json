@@ -1,0 +1,13 @@
+{
+  "prTitle": "feat: Create Card component with hover states for lingerie website",
+  "prBody": "## Summary\n\nImplemented a reusable Card component for the lingerie website project as specified in task `task-lingerie-website-feat-global-styles-6`.\n\n### Features Implemented\n\n- ✅ **Card Component** (`src/components/ui/Card/Card.jsx`)\n  - Clean, modern design with rounded corners and subtle shadows\n  - PropTypes validation for type safety\n  - Flexible content support via children prop\n  - Proper prop spreading for extensibility\n\n- ✅ **Hover States & Transitions** (`src/components/ui/Card/Card.module.css`)\n  - Smooth `translateY(-4px)` animation on hover\n  - Enhanced shadow effects (from `0 2px 4px` to `0 8px 16px`)\n  - 0.2s ease-in-out transitions for smooth animations\n  - Multiple variants: default, elevated, minimal\n\n- ✅ **Responsive Design**\n  - Mobile-first approach with breakpoints at 640px, 768px, 1024px\n  - Adaptive padding and hover effects across devices\n  - Reduced animations on mobile for better performance\n\n- ✅ **Accessibility**\n  - Focus states with outline for keyboard navigation\n  - Proper semantic HTML structure\n  - Disabled state handling\n\n- ✅ **Documentation & Testing**\n  - Comprehensive README.md with usage examples\n  - Demo component for visual testing\n  - Verification script for component validation\n  - Integration examples with ProductCard\n\n### Technical Implementation\n\n- **CSS Modules**: Scoped styling to prevent style conflicts\n- **BEM-like naming**: Following project conventions\n- **React Best Practices**: Functional component with hooks support\n- **Animation Performance**: Using transform and box-shadow for smooth GPU-accelerated animations\n\n### File Structure Created\n\n```\nsrc/components/ui/Card/\n├── Card.jsx           # Main component\n├── Card.module.css    # Scoped styles with hover effects\n├── index.js          # Export barrel\n├── Card.demo.jsx     # Demo component\n├── verify.js         # Verification script\n└── README.md         # Documentation\n```\n\nThe Card component is ready for integration with ProductCard and other components as specified in the LLD architecture.\n\nCloses #87",
+  "testsPass": true,
+  "filesChanged": [
+    "src/components/ui/Card/Card.jsx",
+    "src/components/ui/Card/Card.module.css",
+    "src/components/ui/Card/index.js",
+    "src/components/ui/Card/Card.demo.jsx",
+    "src/components/ui/Card/verify.js",
+    "src/components/ui/Card/README.md"
+  ]
+}
