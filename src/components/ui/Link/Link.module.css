@@ -1,0 +1,54 @@
+.link {
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Variants */
+.default {
+  color: #000;
+}
+
+.default:hover {
+  color: #666;
+}
+
+.primary {
+  color: #000;
+  font-weight: 500;
+}
+
+.primary:hover {
+  color: #333;
+}
+
+.secondary {
+  color: #666;
+}
+
+.secondary:hover {
+  color: #000;
+}
+
+.muted {
+  color: #999;
+}
+
+.muted:hover {
+  color: #666;
+}
+
+.nav {
+  color: #000;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.nav:hover {
+  color: #666;
+  text-decoration: none;
+}
