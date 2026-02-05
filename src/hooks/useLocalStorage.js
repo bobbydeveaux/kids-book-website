@@ -7,7 +7,7 @@
  * @module useLocalStorage
  */
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react'
 
 /**
  * Custom hook for localStorage state management
@@ -28,82 +28,85 @@ export function useLocalStorage(key, initialValue) {
   // State to store the current value
   const [storedValue, setStoredValue] = useState(() => {
     if (typeof window === 'undefined') {
-      return initialValue;
+      return initialValue
     }
 
     try {
-      const item = window.localStorage.getItem(key);
-      return item ? JSON.parse(item) : initialValue;
+      const item = window.localStorage.getItem(key)
+      return item ? JSON.parse(item) : initialValue
     } catch (error) {
-      console.error(`Error reading localStorage key "${key}":`, error);
-      return initialValue;
+      console.error(`Error reading localStorage key "${key}":`, error)
+      return initialValue
     }
-  });
+  })
 
   /**
    * Return a wrapped version of useState's setter function that persists
    * the new value to localStorage.
    */
-  const setValue = useCallback((value) => {
-    try {
-      // Allow value to be a function so we have the same API as useState
-      const valueToStore = value instanceof Function ? value(storedValue) : value;
+  const setValue = useCallback(
+    value => {
+      try {
+        // Allow value to be a function so we have the same API as useState
+        const valueToStore = value instanceof Function ? value(storedValue) : value
 
-      // Save state
-      setStoredValue(valueToStore);
+        // Save state
+        setStoredValue(valueToStore)
 
-      // Save to localStorage
-      if (typeof window !== 'undefined') {
-        window.localStorage.setItem(key, JSON.stringify(valueToStore));
+        // Save to localStorage
+        if (typeof window !== 'undefined') {
+          window.localStorage.setItem(key, JSON.stringify(valueToStore))
+        }
+      } catch (error) {
+        console.error(`Error setting localStorage key "${key}":`, error)
       }
-    } catch (error) {
-      console.error(`Error setting localStorage key "${key}":`, error);
-    }
-  }, [key, storedValue]);
+    },
+    [key, storedValue]
+  )
 
   /**
    * Remove the value from localStorage and reset to initial value
    */
   const removeValue = useCallback(() => {
     try {
-      setStoredValue(initialValue);
+      setStoredValue(initialValue)
 
       if (typeof window !== 'undefined') {
-        window.localStorage.removeItem(key);
+        window.localStorage.removeItem(key)
       }
     } catch (error) {
-      console.error(`Error removing localStorage key "${key}":`, error);
+      console.error(`Error removing localStorage key "${key}":`, error)
     }
-  }, [key, initialValue]);
+  }, [key, initialValue])
 
   /**
    * Listen for changes to localStorage from other tabs/windows
    */
   useEffect(() => {
     if (typeof window === 'undefined') {
-      return;
+      return
     }
 
-    const handleStorageChange = (e) => {
+    const handleStorageChange = e => {
       if (e.key === key && e.newValue !== null) {
         try {
-          setStoredValue(JSON.parse(e.newValue));
+          setStoredValue(JSON.parse(e.newValue))
         } catch (error) {
-          console.error(`Error parsing localStorage value for key "${key}":`, error);
+          console.error(`Error parsing localStorage value for key "${key}":`, error)
         }
       } else if (e.key === key && e.newValue === null) {
-        setStoredValue(initialValue);
+        setStoredValue(initialValue)
       }
-    };
+    }
 
-    window.addEventListener('storage', handleStorageChange);
+    window.addEventListener('storage', handleStorageChange)
 
     return () => {
-      window.removeEventListener('storage', handleStorageChange);
-    };
-  }, [key, initialValue]);
+      window.removeEventListener('storage', handleStorageChange)
+    }
+  }, [key, initialValue])
 
-  return [storedValue, setValue, removeValue];
+  return [storedValue, setValue, removeValue]
 }
 
 /**
@@ -122,10 +125,10 @@ export function useUserPreferences() {
     currency: 'USD',
     language: 'en',
     notifications: true,
-    autoSave: true
-  };
+    autoSave: true,
+  }
 
-  return useLocalStorage('userPreferences', defaultPreferences);
+  return useLocalStorage('userPreferences', defaultPreferences)
 }
 
 /**
@@ -139,7 +142,7 @@ export function useUserPreferences() {
  * setCart(prev => [...prev, { id: '123', quantity: 1 }]);
  */
 export function useShoppingCart() {
-  return useLocalStorage('shoppingCart', []);
+  return useLocalStorage('shoppingCart', [])
 }
 
 /**
@@ -154,17 +157,20 @@ export function useShoppingCart() {
  * addToRecent('product-123');
  */
 export function useRecentProducts(maxItems = 20) {
-  const [recent, setRecent, clearRecent] = useLocalStorage('recentProducts', []);
+  const [recent, setRecent, clearRecent] = useLocalStorage('recentProducts', [])
 
-  const addToRecent = useCallback((productId) => {
-    setRecent(prev => {
-      const filtered = prev.filter(id => id !== productId);
-      const updated = [productId, ...filtered];
-      return updated.slice(0, maxItems);
-    });
-  }, [setRecent, maxItems]);
+  const addToRecent = useCallback(
+    productId => {
+      setRecent(prev => {
+        const filtered = prev.filter(id => id !== productId)
+        const updated = [productId, ...filtered]
+        return updated.slice(0, maxItems)
+      })
+    },
+    [setRecent, maxItems]
+  )
 
-  return [recent, addToRecent, clearRecent];
+  return [recent, addToRecent, clearRecent]
 }
 
-export default useLocalStorage;
+export default useLocalStorage

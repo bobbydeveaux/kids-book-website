@@ -7,7 +7,7 @@
  * @module useDebounce
  */
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react'
 
 /**
  * Debounce a value with a specified delay
@@ -27,21 +27,21 @@ import { useState, useEffect, useCallback, useRef } from 'react';
  * }, [debouncedSearchTerm]);
  */
 export function useDebounce(value, delay) {
-  const [debouncedValue, setDebouncedValue] = useState(value);
+  const [debouncedValue, setDebouncedValue] = useState(value)
 
   useEffect(() => {
     // Set up a timeout to update the debounced value after the delay
     const timeoutId = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
+      setDebouncedValue(value)
+    }, delay)
 
     // Clean up the timeout if value changes before delay
     return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [value, delay]);
+      clearTimeout(timeoutId)
+    }
+  }, [value, delay])
 
-  return debouncedValue;
+  return debouncedValue
 }
 
 /**
@@ -61,30 +61,34 @@ export function useDebounce(value, delay) {
  * );
  */
 export function useDebouncedCallback(callback, delay, deps = []) {
-  const timeoutRef = useRef(null);
+  const timeoutRef = useRef(null)
 
-  const debouncedCallback = useCallback((...args) => {
-    // Clear the previous timeout
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
+  const debouncedCallback = useCallback(
+    (...args) => {
+      // Clear the previous timeout
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
 
-    // Set up a new timeout
-    timeoutRef.current = setTimeout(() => {
-      callback(...args);
-    }, delay);
-  }, [callback, delay, ...deps]);
+      // Set up a new timeout
+      timeoutRef.current = setTimeout(() => {
+        callback(...args)
+      }, delay)
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [callback, delay, ...deps]
+  )
 
   // Clean up timeout on unmount
   useEffect(() => {
     return () => {
       if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+        clearTimeout(timeoutRef.current)
       }
-    };
-  }, []);
+    }
+  }, [])
 
-  return debouncedCallback;
+  return debouncedCallback
 }
 
 /**
@@ -106,60 +110,63 @@ export function useDebouncedCallback(callback, delay, deps = []) {
  * <input onChange={(e) => search(e.target.value)} />
  */
 export function useDebouncedSearch(searchFn, delay = 300) {
-  const [isSearching, setIsSearching] = useState(false);
-  const [error, setError] = useState(null);
-  const timeoutRef = useRef(null);
-  const abortControllerRef = useRef(null);
+  const [isSearching, setIsSearching] = useState(false)
+  const [error, setError] = useState(null)
+  const timeoutRef = useRef(null)
+  const abortControllerRef = useRef(null)
 
-  const search = useCallback((query) => {
-    // Clear previous timeout and abort previous search
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    if (abortControllerRef.current) {
-      abortControllerRef.current.abort();
-    }
-
-    // Reset error state
-    setError(null);
-
-    // If query is empty, don't search
-    if (!query || query.trim() === '') {
-      setIsSearching(false);
-      return;
-    }
-
-    // Set up new search with debounce
-    timeoutRef.current = setTimeout(async () => {
-      setIsSearching(true);
-      abortControllerRef.current = new AbortController();
-
-      try {
-        await searchFn(query.trim(), abortControllerRef.current.signal);
-      } catch (err) {
-        if (err.name !== 'AbortError') {
-          setError(err);
-          console.error('Search error:', err);
-        }
-      } finally {
-        setIsSearching(false);
+  const search = useCallback(
+    query => {
+      // Clear previous timeout and abort previous search
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
       }
-    }, delay);
-  }, [searchFn, delay]);
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort()
+      }
+
+      // Reset error state
+      setError(null)
+
+      // If query is empty, don't search
+      if (!query || query.trim() === '') {
+        setIsSearching(false)
+        return
+      }
+
+      // Set up new search with debounce
+      timeoutRef.current = setTimeout(async () => {
+        setIsSearching(true)
+        abortControllerRef.current = new AbortController()
+
+        try {
+          await searchFn(query.trim(), abortControllerRef.current.signal)
+        } catch (err) {
+          if (err.name !== 'AbortError') {
+            setError(err)
+            console.error('Search error:', err)
+          }
+        } finally {
+          setIsSearching(false)
+        }
+      }, delay)
+    },
+    [searchFn, delay]
+  )
 
   // Clean up on unmount
   useEffect(() => {
     return () => {
       if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+        clearTimeout(timeoutRef.current)
       }
       if (abortControllerRef.current) {
-        abortControllerRef.current.abort();
+        abortControllerRef.current.abort()
       }
-    };
-  }, []);
+    }
+  }, [])
 
-  return [search, isSearching, error];
+  return [search, isSearching, error]
 }
 
 /**
@@ -173,15 +180,15 @@ export function useDebouncedSearch(searchFn, delay = 300) {
  * }, 200);
  */
 export function useDebouncedResize(callback, delay = 150) {
-  const debouncedCallback = useDebouncedCallback(callback, delay, [callback]);
+  const debouncedCallback = useDebouncedCallback(callback, delay, [callback])
 
   useEffect(() => {
-    window.addEventListener('resize', debouncedCallback);
+    window.addEventListener('resize', debouncedCallback)
 
     return () => {
-      window.removeEventListener('resize', debouncedCallback);
-    };
-  }, [debouncedCallback]);
+      window.removeEventListener('resize', debouncedCallback)
+    }
+  }, [debouncedCallback])
 }
 
 /**
@@ -195,15 +202,15 @@ export function useDebouncedResize(callback, delay = 150) {
  * }, 150);
  */
 export function useDebouncedScroll(callback, delay = 100) {
-  const debouncedCallback = useDebouncedCallback(callback, delay, [callback]);
+  const debouncedCallback = useDebouncedCallback(callback, delay, [callback])
 
   useEffect(() => {
-    window.addEventListener('scroll', debouncedCallback);
+    window.addEventListener('scroll', debouncedCallback)
 
     return () => {
-      window.removeEventListener('scroll', debouncedCallback);
-    };
-  }, [debouncedCallback]);
+      window.removeEventListener('scroll', debouncedCallback)
+    }
+  }, [debouncedCallback])
 }
 
-export default useDebounce;
+export default useDebounce

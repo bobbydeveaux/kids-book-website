@@ -6,15 +6,24 @@ sprints:
       - id: donkey-website-feat-repository-setup
         name: Repository and Build System Setup
         type: enabler
-        files: [package.json .gitignore .nvmrc build/build.js build/compile-markdown.js build/optimize-images.js build/bundle-css.js build/generate-critical-css.js]
+        files:
+          [
+            package.json .gitignore .nvmrc build/build.js build/compile-markdown.js build/optimize-images.js build/bundle-css.js build/generate-critical-css.js,
+          ]
       - id: donkey-website-feat-css-foundation
         name: CSS Foundation and Styling
         type: enabler
-        files: [src/styles/base/reset.css src/styles/base/variables.css src/styles/base/typography.css src/styles/layout/header.css src/styles/layout/footer.css src/styles/layout/grid.css src/styles/layout/container.css src/styles/components/navigation.css src/styles/components/button.css src/styles/components/card.css src/styles/components/hero.css src/styles/components/gallery.css src/styles/components/lightbox.css src/styles/utilities/accessibility.css src/styles/utilities/responsive.css]
+        files:
+          [
+            src/styles/base/reset.css src/styles/base/variables.css src/styles/base/typography.css src/styles/layout/header.css src/styles/layout/footer.css src/styles/layout/grid.css src/styles/layout/container.css src/styles/components/navigation.css src/styles/components/button.css src/styles/components/card.css src/styles/components/hero.css src/styles/components/gallery.css src/styles/components/lightbox.css src/styles/utilities/accessibility.css src/styles/utilities/responsive.css,
+          ]
       - id: donkey-website-feat-html-templates
         name: HTML Templates
         type: enabler
-        files: [src/templates/base.html src/templates/home.html src/templates/breed-list.html src/templates/breed-detail.html src/templates/care-guide.html src/templates/facts.html dist/404.html]
+        files:
+          [
+            src/templates/base.html src/templates/home.html src/templates/breed-list.html src/templates/breed-detail.html src/templates/care-guide.html src/templates/facts.html dist/404.html,
+          ]
   - number: 2
     features:
       - id: donkey-website-feat-navigation
@@ -38,7 +47,10 @@ sprints:
       - id: donkey-website-feat-care-guides
         name: Donkey Care Guides
         type: feature
-        files: [src/content/care/feeding.md src/content/care/grooming.md src/content/care/housing.md src/content/care/health.md dist/care/index.html dist/care/feeding.html dist/care/grooming.html dist/care/housing.html dist/care/health.html src/images/care/]
+        files:
+          [
+            src/content/care/feeding.md src/content/care/grooming.md src/content/care/housing.md src/content/care/health.md dist/care/index.html dist/care/feeding.html dist/care/grooming.html dist/care/housing.html dist/care/health.html src/images/care/,
+          ]
       - id: donkey-website-feat-facts-page
         name: Donkey Facts and About Page
         type: feature
@@ -48,11 +60,17 @@ sprints:
       - id: donkey-website-feat-breed-content
         name: Donkey Breeds Content and Gallery
         type: feature
-        files: [src/content/breeds/miniature-mediterranean.md src/content/breeds/standard-donkey.md src/content/breeds/mammoth-donkey.md src/content/breeds/poitou-donkey.md dist/breeds/index.html dist/breeds/miniature-mediterranean.html dist/breeds/standard-donkey.html dist/breeds/mammoth-donkey.html dist/breeds/poitou-donkey.html src/images/breeds/]
+        files:
+          [
+            src/content/breeds/miniature-mediterranean.md src/content/breeds/standard-donkey.md src/content/breeds/mammoth-donkey.md src/content/breeds/poitou-donkey.md dist/breeds/index.html dist/breeds/miniature-mediterranean.html dist/breeds/standard-donkey.html dist/breeds/mammoth-donkey.html dist/breeds/poitou-donkey.html src/images/breeds/,
+          ]
       - id: donkey-website-feat-testing-suite
         name: Testing and Quality Assurance
         type: enabler
-        files: [tests/build/compile-markdown.test.js tests/build/optimize-images.test.js tests/scripts/navigation.test.js tests/integration/build-pipeline.test.js tests/integration/link-validator.test.js tests/e2e/lighthouse.test.js tests/e2e/accessibility.test.js]
+        files:
+          [
+            tests/build/compile-markdown.test.js tests/build/optimize-images.test.js tests/scripts/navigation.test.js tests/integration/build-pipeline.test.js tests/integration/link-validator.test.js tests/e2e/lighthouse.test.js tests/e2e/accessibility.test.js,
+          ]
       - id: donkey-website-feat-deployment
         name: Production Deployment Setup
         type: enabler

@@ -25,5 +25,5 @@ export default {
   // Data files will be available after task completion
   products: [],
   categories: [],
-  featured: []
-};
+  featured: [],
+}

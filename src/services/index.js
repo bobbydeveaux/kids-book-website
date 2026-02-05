@@ -15,8 +15,8 @@ export {
   fetchCategories,
   fetchFeatured,
   handleAPIError,
-  default as apiService
-} from './api.js';
+  default as apiService,
+} from './api.js'
 
 // Export storage service functions
 export {
@@ -26,13 +26,13 @@ export {
   clearAppStorage,
   getUserPreferences,
   saveUserPreferences,
-  default as storageService
-} from './storage.js';
+  default as storageService,
+} from './storage.js'
 
 /**
  * Combined service interface for convenience
  */
 export default {
   api: require('./api.js').default,
-  storage: require('./storage.js').default
-};
+  storage: require('./storage.js').default,
+}

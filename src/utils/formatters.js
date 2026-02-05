@@ -19,7 +19,7 @@
  */
 export function formatPrice(price, currency = 'USD', locale = 'en-US') {
   if (typeof price !== 'number' || isNaN(price)) {
-    return 'Price not available';
+    return 'Price not available'
   }
 
   try {
@@ -27,11 +27,11 @@ export function formatPrice(price, currency = 'USD', locale = 'en-US') {
       style: 'currency',
       currency: currency,
       minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    }).format(price);
+      maximumFractionDigits: 2,
+    }).format(price)
   } catch (error) {
-    console.error('Error formatting price:', error);
-    return `${currency} ${price.toFixed(2)}`;
+    console.error('Error formatting price:', error)
+    return `${currency} ${price.toFixed(2)}`
   }
 }
 
@@ -45,24 +45,24 @@ export function formatPrice(price, currency = 'USD', locale = 'en-US') {
  * formatDate(new Date()) // Returns "January 5, 2026"
  */
 export function formatDate(date, locale = 'en-US', options = {}) {
-  const dateObj = typeof date === 'string' ? new Date(date) : date;
+  const dateObj = typeof date === 'string' ? new Date(date) : date
 
   if (!dateObj || isNaN(dateObj.getTime())) {
-    return 'Invalid date';
+    return 'Invalid date'
   }
 
   const defaultOptions = {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-    ...options
-  };
+    ...options,
+  }
 
   try {
-    return new Intl.DateTimeFormat(locale, defaultOptions).format(dateObj);
+    return new Intl.DateTimeFormat(locale, defaultOptions).format(dateObj)
   } catch (error) {
-    console.error('Error formatting date:', error);
-    return dateObj.toLocaleDateString();
+    console.error('Error formatting date:', error)
+    return dateObj.toLocaleDateString()
   }
 }
 
@@ -77,14 +77,14 @@ export function formatDate(date, locale = 'en-US', options = {}) {
  */
 export function truncateText(text, maxLength = 100, suffix = '...') {
   if (typeof text !== 'string') {
-    return '';
+    return ''
   }
 
   if (text.length <= maxLength) {
-    return text;
+    return text
   }
 
-  return text.slice(0, maxLength - suffix.length) + suffix;
+  return text.slice(0, maxLength - suffix.length) + suffix
 }
 
 /**
@@ -96,13 +96,13 @@ export function truncateText(text, maxLength = 100, suffix = '...') {
  */
 export function capitalizeWords(text) {
   if (typeof text !== 'string') {
-    return '';
+    return ''
   }
 
   return text
     .split(' ')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join(' ');
+    .join(' ')
 }
 
 /**
@@ -115,19 +115,19 @@ export function capitalizeWords(text) {
  */
 export function formatFileSize(bytes) {
   if (typeof bytes !== 'number' || bytes < 0) {
-    return '0 B';
+    return '0 B'
   }
 
-  const units = ['B', 'KB', 'MB', 'GB', 'TB'];
-  let size = bytes;
-  let unitIndex = 0;
+  const units = ['B', 'KB', 'MB', 'GB', 'TB']
+  let size = bytes
+  let unitIndex = 0
 
   while (size >= 1024 && unitIndex < units.length - 1) {
-    size /= 1024;
-    unitIndex++;
+    size /= 1024
+    unitIndex++
   }
 
-  return `${size.toFixed(1)} ${units[unitIndex]}`;
+  return `${size.toFixed(1)} ${units[unitIndex]}`
 }
 
 /**
@@ -139,11 +139,11 @@ export function formatFileSize(bytes) {
  */
 export function formatSKU(sku) {
   if (typeof sku !== 'string') {
-    return '';
+    return ''
   }
 
   // Add hyphens every 3-4 characters for readability
-  return sku.replace(/(.{3,4})/g, '$1-').replace(/-$/, '');
+  return sku.replace(/(.{3,4})/g, '$1-').replace(/-$/, '')
 }
 
 export default {
@@ -152,5 +152,5 @@ export default {
   truncateText,
   capitalizeWords,
   formatFileSize,
-  formatSKU
-};
+  formatSKU,
+}

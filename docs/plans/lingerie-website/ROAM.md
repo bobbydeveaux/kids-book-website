@@ -66,6 +66,7 @@
 ### Static Data Management Complexity
 
 **Mitigations:**
+
 - Implement JSON schema validation in pre-commit hook using Ajv library to catch malformed product data before commits
 - Create npm script `npm run validate-data` that validates all JSON files against TypeScript interfaces and runs in CI pipeline
 - Document JSON schema in README with examples and required fields for future content editors
@@ -75,6 +76,7 @@
 ### Image Asset Management at Scale
 
 **Mitigations:**
+
 - Implement image validation script that checks all product JSON image references exist in `/public/images/products/` and logs missing files
 - Run validation script in pre-deployment CI check - fail build if any images missing
 - Document image naming convention strictly: `{product-id}-{type}.jpg` (e.g., `prod-001-thumb.jpg`)
@@ -84,6 +86,7 @@
 ### Bundle Size Growth
 
 **Mitigations:**
+
 - Configure Vite bundle analyzer (rollup-plugin-visualizer) to generate size report on every build
 - Set up bundle size monitoring with bundlesize or size-limit packages - fail CI if JavaScript bundle exceeds 200KB gzipped
 - Implement all lazy loading from day one: React.lazy() for routes, native lazy loading for images
@@ -93,6 +96,7 @@
 ### Browser Compatibility Issues
 
 **Mitigations:**
+
 - Set up Playwright E2E tests to run on Chrome, Firefox, and WebKit (Safari) engines in CI pipeline
 - Include mobile Safari and Android Chrome in test matrix using Playwright device emulation
 - Add Browserslist configuration targeting "> 0.5%, last 2 versions, not dead" to ensure appropriate transpilation
@@ -102,6 +106,7 @@
 ### CSS Maintenance and Scalability
 
 **Mitigations:**
+
 - Define all design tokens (colors, spacing, typography, breakpoints) in single `src/styles/variables.css` file as CSS custom properties
 - Document design token usage guidelines in README - all components must use CSS variables, never hardcoded values
 - Set up Stylelint with CSS Modules plugin to enforce consistent naming conventions and catch common mistakes
@@ -111,6 +116,7 @@
 ### Product Data Schema Evolution
 
 **Mitigations:**
+
 - Version the product JSON schema - include `schemaVersion: "1.0"` field in data files
 - Create migration scripts directory `/scripts/migrations/` with numbered migration scripts for schema changes
 - Document schema changes in CHANGELOG.md with migration instructions for data updates
@@ -120,6 +126,7 @@
 ### Testing Coverage Gaps
 
 **Mitigations:**
+
 - Add `data-testid` attributes to all interactive elements and key components during initial implementation (not retroactively)
 - Configure Istanbul/c8 coverage reporting with 70% threshold - CI fails if coverage drops below target
 - Prioritize testing for critical user flows first: product browsing, product detail view, navigation, error handling
@@ -129,6 +136,7 @@
 ### Performance Regression Detection
 
 **Mitigations:**
+
 - Integrate Lighthouse CI into GitHub Actions/deployment pipeline to run on every PR and production deploy
 - Set performance budgets in `lighthouserc.json`: Performance > 85, LCP < 2.5s, TTI < 3s, bundle < 200KB
 - Fail deployment if Lighthouse scores drop below thresholds or bundle size exceeds budget
@@ -138,6 +146,7 @@
 ### Deployment Configuration Errors
 
 **Mitigations:**
+
 - Document deployment configuration for all major hosting platforms (Netlify, Vercel, S3+CloudFront) in README
 - Include both `_redirects` (Netlify) and `vercel.json` (Vercel) in repository with SPA routing rules
 - Add deployment validation E2E test that navigates to deep-linked product URL to verify server-side routing works
@@ -147,6 +156,7 @@
 ### Error Boundary Coverage
 
 **Mitigations:**
+
 - Implement global error boundary with user-friendly error page and refresh button (already planned)
 - Add component-level error boundaries around ProductGrid and ProductImage components for isolated failure handling
 - Log all caught errors to console with detailed stack traces in development for debugging
@@ -158,6 +168,7 @@
 ## Appendix: Plan Documents
 
 ### PRD
+
 # Product Requirements Document: Lingerie Website
 
 I want a website about the best lingerie. Nothing special, usual react/vite. It can be basic, static site, no database etc. Don't worry about deployment either - I'll prob sort out the cicd later.
@@ -214,21 +225,25 @@ I want a website about the best lingerie. Nothing special, usual react/vite. It 
 ## 5. Acceptance Criteria
 
 **Product Browsing:**
+
 - Given I am on the homepage, when the page loads, then I see a collection of lingerie products displayed
 - Given I am viewing the product list, when I click on a product, then I see detailed information about that item
 - Given I am on any page, when I view it on mobile, then all content is properly formatted and readable
 
 **Product Details:**
+
 - Given I am viewing a product, when the detail page loads, then I see product images, description, features, and specifications
 - Given I am viewing product images, when I interact with them, then I can view them clearly at an appropriate size
 - Given I am on a product page, when I want to return to browsing, then I can easily navigate back
 
 **Navigation:**
+
 - Given I am on the website, when I want to navigate between sections, then I have clear navigation options available
 - Given I am on any page, when I use the navigation, then I am taken to the correct destination
 - Given I am browsing, when the page transitions occur, then they happen smoothly without errors
 
 **Performance:**
+
 - Given I visit the website, when the page loads, then the initial content appears within 2 seconds
 - Given I navigate between pages, when transitions occur, then they happen without noticeable lag
 - Given I am viewing images, when they load, then they display progressively without blocking other content
@@ -255,6 +270,7 @@ I want a website about the best lingerie. Nothing special, usual react/vite. It 
 ## 7. Non-Functional Requirements
 
 ### Performance
+
 - Initial page load time shall be under 2 seconds on standard broadband connections
 - Time to Interactive (TTI) shall be under 3 seconds
 - Bundle size shall be optimized through code splitting and lazy loading
@@ -262,6 +278,7 @@ I want a website about the best lingerie. Nothing special, usual react/vite. It 
 - The application shall achieve a Lighthouse performance score of 85+
 
 ### Security
+
 - All external links shall use rel="noopener noreferrer" attributes
 - Content Security Policy headers shall be configured appropriately
 - No sensitive data or API keys shall be hardcoded in the frontend
@@ -269,6 +286,7 @@ I want a website about the best lingerie. Nothing special, usual react/vite. It 
 - HTTPS shall be used when deployed (deployment configuration handled separately)
 
 ### Scalability
+
 - The static site architecture shall support easy addition of new products
 - Component architecture shall be modular and reusable
 - The codebase shall follow React best practices for maintainability
@@ -276,6 +294,7 @@ I want a website about the best lingerie. Nothing special, usual react/vite. It 
 - Assets shall be organized in a logical structure for easy maintenance
 
 ### Reliability
+
 - The application shall function correctly across modern browsers (Chrome, Firefox, Safari, Edge)
 - All interactive elements shall have appropriate error boundaries
 - The application shall handle missing images gracefully with fallbacks
@@ -287,26 +306,32 @@ I want a website about the best lingerie. Nothing special, usual react/vite. It 
 ## 8. Dependencies
 
 **Core Framework:**
+
 - React 18+ (UI framework)
 - Vite (build tool and dev server)
 
 **Routing:**
+
 - React Router (client-side routing)
 
 **Styling:**
+
 - CSS Modules or Styled Components (component styling)
 - CSS Grid/Flexbox (layout)
 
 **Build & Development:**
+
 - Node.js 18+ (development environment)
 - npm or yarn (package management)
 
 **Optional Utilities:**
+
 - ESLint (code linting)
 - Prettier (code formatting)
 - TypeScript (optional type safety)
 
 **Assets:**
+
 - Product images (to be provided or sourced)
 - Icon library (optional: React Icons or similar)
 
@@ -338,6 +363,7 @@ I want a website about the best lingerie. Nothing special, usual react/vite. It 
 ## 10. Success Metrics
 
 **Technical Metrics:**
+
 - Website successfully builds and runs locally with `npm run dev`
 - Production build completes without errors using `npm run build`
 - All pages render correctly on desktop (1920x1080), tablet (768x1024), and mobile (375x667) viewports
@@ -345,6 +371,7 @@ I want a website about the best lingerie. Nothing special, usual react/vite. It 
 - Zero critical accessibility violations detected by axe DevTools
 
 **User Experience Metrics:**
+
 - All product pages are accessible and display complete information
 - Navigation works consistently across all pages without errors
 - Images load and display properly on all product pages
@@ -352,6 +379,7 @@ I want a website about the best lingerie. Nothing special, usual react/vite. It 
 - Website functions correctly in Chrome, Firefox, Safari, and Edge browsers
 
 **Code Quality Metrics:**
+
 - Codebase passes ESLint checks with zero errors
 - All React components follow best practices (proper hooks usage, key props, etc.)
 - No unused dependencies in package.json
@@ -359,6 +387,7 @@ I want a website about the best lingerie. Nothing special, usual react/vite. It 
 - Components are modular and reusable
 
 **Completion Criteria:**
+
 - Minimum of 10 lingerie products with complete information displayed
 - Homepage with product grid/list implemented
 - Individual product detail pages functional
@@ -371,9 +400,10 @@ I want a website about the best lingerie. Nothing special, usual react/vite. It 
 
 ### Clarification Questions & Answers
 
-
 ### HLD
+
 [HLD content omitted for brevity - already included above]
 
 ### LLD
+
 [LLD content omitted for brevity - already included above]

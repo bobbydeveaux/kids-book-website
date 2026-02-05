@@ -10,6 +10,7 @@
 The lingerie website will be implemented as a React 18.3+ Single Page Application using Vite 5+ as the build tool. The implementation follows a component-based architecture with static JSON data storage.
 
 **Implementation Phases:**
+
 1. **Project Setup**: Initialize Vite + React project with routing and basic structure
 2. **Data Layer**: Create product and category JSON files with data service module
 3. **UI Components**: Build reusable components (Button, Card, Image, Grid)
@@ -22,6 +23,7 @@ The lingerie website will be implemented as a React 18.3+ Single Page Applicatio
 10. **Testing**: Unit tests for components and integration tests for routing
 
 **Key Implementation Decisions:**
+
 - Functional components with React hooks (no class components)
 - CSS Modules for scoped styling with BEM naming convention
 - Mobile-first responsive design with breakpoints at 640px, 768px, 1024px, 1280px
@@ -30,6 +32,7 @@ The lingerie website will be implemented as a React 18.3+ Single Page Applicatio
 - ESLint + Prettier for code quality
 
 **Development Workflow:**
+
 1. Local development with Vite dev server (HMR enabled)
 2. Build production bundle with `npm run build`
 3. Preview production build locally with `npm run preview`
@@ -163,6 +166,7 @@ lingerie-website/
 **Modified Files:** None (new project)
 
 **Configuration Files:**
+
 - `vite.config.js`: Build configuration, code splitting, performance budgets
 - `package.json`: Dependencies, scripts, project metadata
 - `.eslintrc.cjs`: Linting rules for React and accessibility
@@ -180,17 +184,18 @@ lingerie-website/
 **Purpose:** Root component that sets up routing and global error handling.
 
 **Implementation:**
+
 ```jsx
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
-import Layout from './components/layout/Layout/Layout';
-import ErrorBoundary from './ErrorBoundary';
-import Home from './pages/Home/Home';
-import styles from './App.module.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { lazy, Suspense } from 'react'
+import Layout from './components/layout/Layout/Layout'
+import ErrorBoundary from './ErrorBoundary'
+import Home from './pages/Home/Home'
+import styles from './App.module.css'
 
 // Lazy load product detail page
-const ProductDetailPage = lazy(() => import('./pages/ProductDetailPage/ProductDetailPage'));
-const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
+const ProductDetailPage = lazy(() => import('./pages/ProductDetailPage/ProductDetailPage'))
+const NotFound = lazy(() => import('./pages/NotFound/NotFound'))
 
 function App() {
   return (
@@ -209,13 +214,14 @@ function App() {
         </div>
       </BrowserRouter>
     </ErrorBoundary>
-  );
+  )
 }
 
-export default App;
+export default App
 ```
 
 **CSS Module (App.module.css):**
+
 ```css
 .app {
   min-height: 100vh;
@@ -242,11 +248,12 @@ export default App;
 **File:** `src/components/layout/Header/Header.jsx`
 
 **Implementation:**
+
 ```jsx
-import { Link } from 'react-router-dom';
-import Navigation from '../Navigation/Navigation';
-import Container from '../../ui/Container/Container';
-import styles from './Header.module.css';
+import { Link } from 'react-router-dom'
+import Navigation from '../Navigation/Navigation'
+import Container from '../../ui/Container/Container'
+import styles from './Header.module.css'
 
 function Header() {
   return (
@@ -261,13 +268,14 @@ function Header() {
         </div>
       </Container>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header
 ```
 
 **CSS Module (Header.module.css):**
+
 ```css
 .header {
   background-color: var(--color-background);
@@ -311,19 +319,22 @@ export default Header;
 **File:** `src/components/layout/Navigation/Navigation.jsx`
 
 **Implementation:**
+
 ```jsx
-import { Link } from 'react-router-dom';
-import { getCategories } from '../../../services/productService';
-import styles from './Navigation.module.css';
+import { Link } from 'react-router-dom'
+import { getCategories } from '../../../services/productService'
+import styles from './Navigation.module.css'
 
 function Navigation() {
-  const categories = getCategories();
+  const categories = getCategories()
 
   return (
     <nav className={styles.nav}>
       <ul className={styles.navList}>
         <li>
-          <Link to="/" className={styles.navLink}>Home</Link>
+          <Link to="/" className={styles.navLink}>
+            Home
+          </Link>
         </li>
         {categories.slice(0, 4).map(category => (
           <li key={category.id}>
@@ -334,10 +345,10 @@ function Navigation() {
         ))}
       </ul>
     </nav>
-  );
+  )
 }
 
-export default Navigation;
+export default Navigation
 ```
 
 #### Footer Component
@@ -345,12 +356,13 @@ export default Navigation;
 **File:** `src/components/layout/Footer/Footer.jsx`
 
 **Implementation:**
+
 ```jsx
-import Container from '../../ui/Container/Container';
-import styles from './Footer.module.css';
+import Container from '../../ui/Container/Container'
+import styles from './Footer.module.css'
 
 function Footer() {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
 
   return (
     <footer className={styles.footer}>
@@ -360,17 +372,23 @@ function Footer() {
             &copy; {currentYear} Lingerie Website. All rights reserved.
           </p>
           <div className={styles.links}>
-            <a href="#" className={styles.link}>Privacy Policy</a>
-            <a href="#" className={styles.link}>Terms of Service</a>
-            <a href="#" className={styles.link}>Contact</a>
+            <a href="#" className={styles.link}>
+              Privacy Policy
+            </a>
+            <a href="#" className={styles.link}>
+              Terms of Service
+            </a>
+            <a href="#" className={styles.link}>
+              Contact
+            </a>
           </div>
         </div>
       </Container>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer
 ```
 
 #### Layout Wrapper
@@ -378,29 +396,28 @@ export default Footer;
 **File:** `src/components/layout/Layout/Layout.jsx`
 
 **Implementation:**
+
 ```jsx
-import PropTypes from 'prop-types';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import styles from './Layout.module.css';
+import PropTypes from 'prop-types'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
+import styles from './Layout.module.css'
 
 function Layout({ children }) {
   return (
     <div className={styles.layout}>
       <Header />
-      <main className={styles.main}>
-        {children}
-      </main>
+      <main className={styles.main}>{children}</main>
       <Footer />
     </div>
-  );
+  )
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-};
+}
 
-export default Layout;
+export default Layout
 ```
 
 ---
@@ -414,12 +431,13 @@ export default Layout;
 **Purpose:** Display product preview in grid/list views
 
 **Implementation:**
+
 ```jsx
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import Image from '../../ui/Image/Image';
-import Card from '../../ui/Card/Card';
-import styles from './ProductCard.module.css';
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import Image from '../../ui/Image/Image'
+import Card from '../../ui/Card/Card'
+import styles from './ProductCard.module.css'
 
 function ProductCard({ product }) {
   return (
@@ -436,13 +454,11 @@ function ProductCard({ product }) {
         <div className={styles.content}>
           <h3 className={styles.name}>{product.name}</h3>
           <p className={styles.description}>{product.shortDescription}</p>
-          {product.price && (
-            <p className={styles.price}>{product.price.display}</p>
-          )}
+          {product.price && <p className={styles.price}>{product.price.display}</p>}
         </div>
       </Link>
     </Card>
-  );
+  )
 }
 
 ProductCard.propTypes = {
@@ -458,16 +474,19 @@ ProductCard.propTypes = {
       display: PropTypes.string,
     }),
   }).isRequired,
-};
+}
 
-export default ProductCard;
+export default ProductCard
 ```
 
 **CSS Module (ProductCard.module.css):**
+
 ```css
 .productCard {
   height: 100%;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .productCard:hover {
@@ -535,11 +554,12 @@ export default ProductCard;
 **File:** `src/components/product/ProductGrid/ProductGrid.jsx`
 
 **Implementation:**
+
 ```jsx
-import PropTypes from 'prop-types';
-import ProductCard from '../ProductCard/ProductCard';
-import Grid from '../../ui/Grid/Grid';
-import styles from './ProductGrid.module.css';
+import PropTypes from 'prop-types'
+import ProductCard from '../ProductCard/ProductCard'
+import Grid from '../../ui/Grid/Grid'
+import styles from './ProductGrid.module.css'
 
 function ProductGrid({ products, columns = { mobile: 1, tablet: 2, desktop: 3 } }) {
   if (!products || products.length === 0) {
@@ -547,7 +567,7 @@ function ProductGrid({ products, columns = { mobile: 1, tablet: 2, desktop: 3 } 
       <div className={styles.empty}>
         <p>No products found.</p>
       </div>
-    );
+    )
   }
 
   return (
@@ -556,7 +576,7 @@ function ProductGrid({ products, columns = { mobile: 1, tablet: 2, desktop: 3 } 
         <ProductCard key={product.id} product={product} />
       ))}
     </Grid>
-  );
+  )
 }
 
 ProductGrid.propTypes = {
@@ -566,9 +586,9 @@ ProductGrid.propTypes = {
     tablet: PropTypes.number,
     desktop: PropTypes.number,
   }),
-};
+}
 
-export default ProductGrid;
+export default ProductGrid
 ```
 
 #### ProductDetail Component
@@ -576,13 +596,14 @@ export default ProductGrid;
 **File:** `src/components/product/ProductDetail/ProductDetail.jsx`
 
 **Implementation:**
+
 ```jsx
-import PropTypes from 'prop-types';
-import ProductImage from '../ProductImage/ProductImage';
-import ProductFeatures from '../ProductFeatures/ProductFeatures';
-import ProductSpecifications from '../ProductSpecifications/ProductSpecifications';
-import Container from '../../ui/Container/Container';
-import styles from './ProductDetail.module.css';
+import PropTypes from 'prop-types'
+import ProductImage from '../ProductImage/ProductImage'
+import ProductFeatures from '../ProductFeatures/ProductFeatures'
+import ProductSpecifications from '../ProductSpecifications/ProductSpecifications'
+import Container from '../../ui/Container/Container'
+import styles from './ProductDetail.module.css'
 
 function ProductDetail({ product }) {
   return (
@@ -591,29 +612,27 @@ function ProductDetail({ product }) {
         <div className={styles.imageSection}>
           <ProductImage images={product.images} alt={product.name} />
         </div>
-        
+
         <div className={styles.infoSection}>
           <h1 className={styles.name}>{product.name}</h1>
-          
-          {product.price && (
-            <p className={styles.price}>{product.price.display}</p>
-          )}
-          
+
+          {product.price && <p className={styles.price}>{product.price.display}</p>}
+
           <div className={styles.description}>
             <p>{product.description}</p>
           </div>
-          
+
           {product.features && product.features.length > 0 && (
             <ProductFeatures features={product.features} />
           )}
-          
+
           {product.specifications && product.specifications.length > 0 && (
             <ProductSpecifications specifications={product.specifications} />
           )}
         </div>
       </div>
     </Container>
-  );
+  )
 }
 
 ProductDetail.propTypes = {
@@ -622,20 +641,23 @@ ProductDetail.propTypes = {
     description: PropTypes.string.isRequired,
     images: PropTypes.object.isRequired,
     features: PropTypes.arrayOf(PropTypes.string),
-    specifications: PropTypes.arrayOf(PropTypes.shape({
-      key: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
-    })),
+    specifications: PropTypes.arrayOf(
+      PropTypes.shape({
+        key: PropTypes.string.isRequired,
+        value: PropTypes.string.isRequired,
+      })
+    ),
     price: PropTypes.shape({
       display: PropTypes.string,
     }),
   }).isRequired,
-};
+}
 
-export default ProductDetail;
+export default ProductDetail
 ```
 
 **CSS Module (ProductDetail.module.css):**
+
 ```css
 .productDetail {
   display: grid;
@@ -692,26 +714,23 @@ export default ProductDetail;
 **File:** `src/components/product/ProductImage/ProductImage.jsx`
 
 **Implementation:**
+
 ```jsx
-import { useState } from 'react';
-import PropTypes from 'prop-types';
-import Image from '../../ui/Image/Image';
-import styles from './ProductImage.module.css';
+import { useState } from 'react'
+import PropTypes from 'prop-types'
+import Image from '../../ui/Image/Image'
+import styles from './ProductImage.module.css'
 
 function ProductImage({ images, alt }) {
-  const [currentImage, setCurrentImage] = useState(images.main);
-  const gallery = [images.main, ...(images.gallery || [])];
+  const [currentImage, setCurrentImage] = useState(images.main)
+  const gallery = [images.main, ...(images.gallery || [])]
 
   return (
     <div className={styles.productImage}>
       <div className={styles.mainImageWrapper}>
-        <Image
-          src={currentImage}
-          alt={alt}
-          className={styles.mainImage}
-        />
+        <Image src={currentImage} alt={alt} className={styles.mainImage} />
       </div>
-      
+
       {gallery.length > 1 && (
         <div className={styles.thumbnails}>
           {gallery.map((image, index) => (
@@ -727,7 +746,7 @@ function ProductImage({ images, alt }) {
         </div>
       )}
     </div>
-  );
+  )
 }
 
 ProductImage.propTypes = {
@@ -736,9 +755,9 @@ ProductImage.propTypes = {
     gallery: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
   alt: PropTypes.string.isRequired,
-};
+}
 
-export default ProductImage;
+export default ProductImage
 ```
 
 #### ProductFeatures Component
@@ -746,9 +765,10 @@ export default ProductImage;
 **File:** `src/components/product/ProductFeatures/ProductFeatures.jsx`
 
 **Implementation:**
+
 ```jsx
-import PropTypes from 'prop-types';
-import styles from './ProductFeatures.module.css';
+import PropTypes from 'prop-types'
+import styles from './ProductFeatures.module.css'
 
 function ProductFeatures({ features }) {
   return (
@@ -762,14 +782,14 @@ function ProductFeatures({ features }) {
         ))}
       </ul>
     </div>
-  );
+  )
 }
 
 ProductFeatures.propTypes = {
   features: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
+}
 
-export default ProductFeatures;
+export default ProductFeatures
 ```
 
 #### ProductSpecifications Component
@@ -777,9 +797,10 @@ export default ProductFeatures;
 **File:** `src/components/product/ProductSpecifications/ProductSpecifications.jsx`
 
 **Implementation:**
+
 ```jsx
-import PropTypes from 'prop-types';
-import styles from './ProductSpecifications.module.css';
+import PropTypes from 'prop-types'
+import styles from './ProductSpecifications.module.css'
 
 function ProductSpecifications({ specifications }) {
   return (
@@ -794,7 +815,7 @@ function ProductSpecifications({ specifications }) {
         ))}
       </dl>
     </div>
-  );
+  )
 }
 
 ProductSpecifications.propTypes = {
@@ -804,9 +825,9 @@ ProductSpecifications.propTypes = {
       value: PropTypes.string.isRequired,
     })
   ).isRequired,
-};
+}
 
-export default ProductSpecifications;
+export default ProductSpecifications
 ```
 
 ---
@@ -818,38 +839,30 @@ export default ProductSpecifications;
 **File:** `src/components/ui/Button/Button.jsx`
 
 **Implementation:**
-```jsx
-import PropTypes from 'prop-types';
-import styles from './Button.module.css';
 
-function Button({ 
-  children, 
-  variant = 'primary', 
+```jsx
+import PropTypes from 'prop-types'
+import styles from './Button.module.css'
+
+function Button({
+  children,
+  variant = 'primary',
   size = 'medium',
   onClick,
   disabled = false,
   type = 'button',
   className = '',
-  ...props 
+  ...props
 }) {
-  const classes = [
-    styles.button,
-    styles[variant],
-    styles[size],
-    className
-  ].filter(Boolean).join(' ');
+  const classes = [styles.button, styles[variant], styles[size], className]
+    .filter(Boolean)
+    .join(' ')
 
   return (
-    <button
-      type={type}
-      className={classes}
-      onClick={onClick}
-      disabled={disabled}
-      {...props}
-    >
+    <button type={type} className={classes} onClick={onClick} disabled={disabled} {...props}>
       {children}
     </button>
-  );
+  )
 }
 
 Button.propTypes = {
@@ -860,9 +873,9 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   className: PropTypes.string,
-};
+}
 
-export default Button;
+export default Button
 ```
 
 #### Card Component
@@ -870,24 +883,25 @@ export default Button;
 **File:** `src/components/ui/Card/Card.jsx`
 
 **Implementation:**
+
 ```jsx
-import PropTypes from 'prop-types';
-import styles from './Card.module.css';
+import PropTypes from 'prop-types'
+import styles from './Card.module.css'
 
 function Card({ children, className = '', ...props }) {
   return (
     <div className={`${styles.card} ${className}`} {...props}>
       {children}
     </div>
-  );
+  )
 }
 
 Card.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-};
+}
 
-export default Card;
+export default Card
 ```
 
 #### Image Component
@@ -895,37 +909,31 @@ export default Card;
 **File:** `src/components/ui/Image/Image.jsx`
 
 **Implementation:**
+
 ```jsx
-import { useState } from 'react';
-import PropTypes from 'prop-types';
-import styles from './Image.module.css';
+import { useState } from 'react'
+import PropTypes from 'prop-types'
+import styles from './Image.module.css'
 
-function Image({ 
-  src, 
-  alt, 
-  className = '', 
-  loading = 'lazy',
-  onError,
-  ...props 
-}) {
-  const [error, setError] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+function Image({ src, alt, className = '', loading = 'lazy', onError, ...props }) {
+  const [error, setError] = useState(false)
+  const [loaded, setLoaded] = useState(false)
 
-  const handleError = (e) => {
-    setError(true);
-    if (onError) onError(e);
-  };
+  const handleError = e => {
+    setError(true)
+    if (onError) onError(e)
+  }
 
   const handleLoad = () => {
-    setLoaded(true);
-  };
+    setLoaded(true)
+  }
 
   if (error) {
     return (
       <div className={`${styles.placeholder} ${className}`}>
         <span className={styles.placeholderText}>Image not available</span>
       </div>
-    );
+    )
   }
 
   return (
@@ -938,7 +946,7 @@ function Image({
       className={`${styles.image} ${loaded ? styles.loaded : ''} ${className}`}
       {...props}
     />
-  );
+  )
 }
 
 Image.propTypes = {
@@ -947,9 +955,9 @@ Image.propTypes = {
   className: PropTypes.string,
   loading: PropTypes.oneOf(['lazy', 'eager']),
   onError: PropTypes.func,
-};
+}
 
-export default Image;
+export default Image
 ```
 
 #### Grid Component
@@ -957,30 +965,28 @@ export default Image;
 **File:** `src/components/ui/Grid/Grid.jsx`
 
 **Implementation:**
-```jsx
-import PropTypes from 'prop-types';
-import styles from './Grid.module.css';
 
-function Grid({ 
-  children, 
+```jsx
+import PropTypes from 'prop-types'
+import styles from './Grid.module.css'
+
+function Grid({
+  children,
   columns = { mobile: 1, tablet: 2, desktop: 3 },
   gap = 'medium',
-  className = '' 
+  className = '',
 }) {
   const gridStyle = {
     '--grid-cols-mobile': columns.mobile,
     '--grid-cols-tablet': columns.tablet,
     '--grid-cols-desktop': columns.desktop,
-  };
+  }
 
   return (
-    <div 
-      className={`${styles.grid} ${styles[`gap-${gap}`]} ${className}`}
-      style={gridStyle}
-    >
+    <div className={`${styles.grid} ${styles[`gap-${gap}`]} ${className}`} style={gridStyle}>
       {children}
     </div>
-  );
+  )
 }
 
 Grid.propTypes = {
@@ -992,12 +998,13 @@ Grid.propTypes = {
   }),
   gap: PropTypes.oneOf(['small', 'medium', 'large']),
   className: PropTypes.string,
-};
+}
 
-export default Grid;
+export default Grid
 ```
 
 **CSS Module (Grid.module.css):**
+
 ```css
 .grid {
   display: grid;
@@ -1034,25 +1041,22 @@ export default Grid;
 **File:** `src/components/ui/Container/Container.jsx`
 
 **Implementation:**
+
 ```jsx
-import PropTypes from 'prop-types';
-import styles from './Container.module.css';
+import PropTypes from 'prop-types'
+import styles from './Container.module.css'
 
 function Container({ children, size = 'default', className = '' }) {
-  return (
-    <div className={`${styles.container} ${styles[size]} ${className}`}>
-      {children}
-    </div>
-  );
+  return <div className={`${styles.container} ${styles[size]} ${className}`}>{children}</div>
 }
 
 Container.propTypes = {
   children: PropTypes.node.isRequired,
   size: PropTypes.oneOf(['default', 'narrow', 'wide']),
   className: PropTypes.string,
-};
+}
 
-export default Container;
+export default Container
 ```
 
 ---
@@ -1064,27 +1068,32 @@ export default Container;
 **File:** `src/pages/Home/Home.jsx`
 
 **Implementation:**
+
 ```jsx
-import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import Container from '../../components/ui/Container/Container';
-import ProductGrid from '../../components/product/ProductGrid/ProductGrid';
-import { getProducts, getProductsByCategory, getFeaturedProducts } from '../../services/productService';
-import styles from './Home.module.css';
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
+import Container from '../../components/ui/Container/Container'
+import ProductGrid from '../../components/product/ProductGrid/ProductGrid'
+import {
+  getProducts,
+  getProductsByCategory,
+  getFeaturedProducts,
+} from '../../services/productService'
+import styles from './Home.module.css'
 
 function Home() {
-  const [searchParams] = useSearchParams();
-  const categoryFilter = searchParams.get('category');
-  
-  const [products, setProducts] = useState([]);
+  const [searchParams] = useSearchParams()
+  const categoryFilter = searchParams.get('category')
+
+  const [products, setProducts] = useState([])
 
   useEffect(() => {
     if (categoryFilter) {
-      setProducts(getProductsByCategory(categoryFilter));
+      setProducts(getProductsByCategory(categoryFilter))
     } else {
-      setProducts(getFeaturedProducts());
+      setProducts(getFeaturedProducts())
     }
-  }, [categoryFilter]);
+  }, [categoryFilter])
 
   return (
     <div className={styles.home}>
@@ -1103,10 +1112,10 @@ function Home() {
         </section>
       </Container>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
 ```
 
 #### Product Detail Page
@@ -1114,31 +1123,32 @@ export default Home;
 **File:** `src/pages/ProductDetailPage/ProductDetailPage.jsx`
 
 **Implementation:**
+
 ```jsx
-import { useParams, Navigate } from 'react-router-dom';
-import ProductDetail from '../../components/product/ProductDetail/ProductDetail';
-import { useProduct } from '../../hooks/useProduct';
-import { useScrollToTop } from '../../hooks/useScrollToTop';
-import styles from './ProductDetailPage.module.css';
+import { useParams, Navigate } from 'react-router-dom'
+import ProductDetail from '../../components/product/ProductDetail/ProductDetail'
+import { useProduct } from '../../hooks/useProduct'
+import { useScrollToTop } from '../../hooks/useScrollToTop'
+import styles from './ProductDetailPage.module.css'
 
 function ProductDetailPage() {
-  const { slug } = useParams();
-  const product = useProduct(slug);
-  
-  useScrollToTop();
+  const { slug } = useParams()
+  const product = useProduct(slug)
+
+  useScrollToTop()
 
   if (!product) {
-    return <Navigate to="/404" replace />;
+    return <Navigate to="/404" replace />
   }
 
   return (
     <div className={styles.productDetailPage}>
       <ProductDetail product={product} />
     </div>
-  );
+  )
 }
 
-export default ProductDetailPage;
+export default ProductDetailPage
 ```
 
 #### Not Found Page
@@ -1146,11 +1156,12 @@ export default ProductDetailPage;
 **File:** `src/pages/NotFound/NotFound.jsx`
 
 **Implementation:**
+
 ```jsx
-import { Link } from 'react-router-dom';
-import Container from '../../components/ui/Container/Container';
-import Button from '../../components/ui/Button/Button';
-import styles from './NotFound.module.css';
+import { Link } from 'react-router-dom'
+import Container from '../../components/ui/Container/Container'
+import Button from '../../components/ui/Button/Button'
+import styles from './NotFound.module.css'
 
 function NotFound() {
   return (
@@ -1166,10 +1177,10 @@ function NotFound() {
         </Link>
       </div>
     </Container>
-  );
+  )
 }
 
-export default NotFound;
+export default NotFound
 ```
 
 ---
@@ -1179,62 +1190,65 @@ export default NotFound;
 **File:** `src/ErrorBoundary.jsx`
 
 **Implementation:**
+
 ```jsx
-import { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class ErrorBoundary extends Component {
   constructor(props) {
-    super(props);
-    this.state = { hasError: false, error: null };
+    super(props)
+    this.state = { hasError: false, error: null }
   }
 
   static getDerivedStateFromError(error) {
-    return { hasError: true, error };
+    return { hasError: true, error }
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('Error caught by boundary:', error, errorInfo);
+    console.error('Error caught by boundary:', error, errorInfo)
   }
 
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{ 
-          padding: '2rem', 
-          textAlign: 'center',
-          minHeight: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
+        <div
+          style={{
+            padding: '2rem',
+            textAlign: 'center',
+            minHeight: '100vh',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           <h1>Something went wrong</h1>
           <p>We're sorry for the inconvenience. Please try refreshing the page.</p>
-          <button 
+          <button
             onClick={() => window.location.reload()}
             style={{
               marginTop: '1rem',
               padding: '0.75rem 1.5rem',
               fontSize: '1rem',
-              cursor: 'pointer'
+              cursor: 'pointer',
             }}
           >
             Refresh Page
           </button>
         </div>
-      );
+      )
     }
 
-    return this.props.children;
+    return this.props.children
   }
 }
 
 ErrorBoundary.propTypes = {
   children: PropTypes.node.isRequired,
-};
+}
 
-export default ErrorBoundary;
+export default ErrorBoundary
 ```
 
 ---
@@ -1262,17 +1276,18 @@ This is a fully client-side application. The "API" layer consists of internal da
 **File:** `src/services/productService.js`
 
 **Implementation:**
+
 ```javascript
-import productsData from '../data/products.json';
-import categoriesData from '../data/categories.json';
-import featuredData from '../data/featured.json';
+import productsData from '../data/products.json'
+import categoriesData from '../data/categories.json'
+import featuredData from '../data/featured.json'
 
 /**
  * Get all products
  * @returns {Array} Array of all product objects
  */
 export function getProducts() {
-  return productsData;
+  return productsData
 }
 
 /**
@@ -1281,7 +1296,7 @@ export function getProducts() {
  * @returns {Object|undefined} Product object or undefined if not found
  */
 export function getProductById(id) {
-  return productsData.find(product => product.id === id);
+  return productsData.find(product => product.id === id)
 }
 
 /**
@@ -1290,7 +1305,7 @@ export function getProductById(id) {
  * @returns {Object|undefined} Product object or undefined if not found
  */
 export function getProductBySlug(slug) {
-  return productsData.find(product => product.slug === slug);
+  return productsData.find(product => product.slug === slug)
 }
 
 /**
@@ -1299,12 +1314,14 @@ export function getProductBySlug(slug) {
  * @returns {Array} Array of products in the category
  */
 export function getProductsByCategory(categorySlug) {
-  return productsData.filter(product => {
-    if (Array.isArray(product.category)) {
-      return product.category.includes(categorySlug);
-    }
-    return product.category === categorySlug;
-  }).sort((a, b) => (a.metadata?.order || 0) - (b.metadata?.order || 0));
+  return productsData
+    .filter(product => {
+      if (Array.isArray(product.category)) {
+        return product.category.includes(categorySlug)
+      }
+      return product.category === categorySlug
+    })
+    .sort((a, b) => (a.metadata?.order || 0) - (b.metadata?.order || 0))
 }
 
 /**
@@ -1312,18 +1329,16 @@ export function getProductsByCategory(categorySlug) {
  * @returns {Array} Array of featured products sorted by order
  */
 export function getFeaturedProducts() {
-  const featuredIds = featuredData.featuredProductIds || [];
-  
+  const featuredIds = featuredData.featuredProductIds || []
+
   if (featuredIds.length > 0) {
-    return featuredIds
-      .map(id => getProductById(id))
-      .filter(Boolean);
+    return featuredIds.map(id => getProductById(id)).filter(Boolean)
   }
-  
+
   // Fallback: get products marked as featured in metadata
   return productsData
     .filter(product => product.metadata?.featured === true)
-    .sort((a, b) => (a.metadata?.order || 0) - (b.metadata?.order || 0));
+    .sort((a, b) => (a.metadata?.order || 0) - (b.metadata?.order || 0))
 }
 
 /**
@@ -1331,7 +1346,7 @@ export function getFeaturedProducts() {
  * @returns {Array} Array of category objects sorted by order
  */
 export function getCategories() {
-  return categoriesData.sort((a, b) => (a.order || 0) - (b.order || 0));
+  return categoriesData.sort((a, b) => (a.order || 0) - (b.order || 0))
 }
 
 /**
@@ -1340,7 +1355,7 @@ export function getCategories() {
  * @returns {Object|undefined} Category object or undefined if not found
  */
 export function getCategoryBySlug(slug) {
-  return categoriesData.find(category => category.slug === slug);
+  return categoriesData.find(category => category.slug === slug)
 }
 
 /**
@@ -1349,27 +1364,29 @@ export function getCategoryBySlug(slug) {
  * @returns {Array} Array of matching products
  */
 export function searchProducts(query) {
-  const lowerQuery = query.toLowerCase().trim();
-  
-  if (!lowerQuery) return [];
-  
+  const lowerQuery = query.toLowerCase().trim()
+
+  if (!lowerQuery) return []
+
   return productsData.filter(product => {
-    const nameMatch = product.name.toLowerCase().includes(lowerQuery);
-    const descMatch = product.description.toLowerCase().includes(lowerQuery);
-    const shortDescMatch = product.shortDescription.toLowerCase().includes(lowerQuery);
-    
-    return nameMatch || descMatch || shortDescMatch;
-  });
+    const nameMatch = product.name.toLowerCase().includes(lowerQuery)
+    const descMatch = product.description.toLowerCase().includes(lowerQuery)
+    const shortDescMatch = product.shortDescription.toLowerCase().includes(lowerQuery)
+
+    return nameMatch || descMatch || shortDescMatch
+  })
 }
 ```
 
 **Validation Logic:**
+
 - All functions return safe values (empty arrays instead of null)
 - ID/slug lookups return `undefined` if not found (components handle gracefully)
 - Category filtering handles both string and array category values
 - Search sanitizes input with lowercase and trim
 
 **Error Handling:**
+
 - JSON parse errors caught at module import level
 - Invalid IDs/slugs return undefined (components show 404)
 - Missing data files would cause app initialization failure (intentional - data is required)
@@ -1628,6 +1645,7 @@ generateSlug(text: string): string
 **Approach:** Minimal state management using React built-in hooks (useState, useEffect) and component-level state. No global state management library required.
 
 **Rationale:**
+
 - Application is primarily read-only with static data
 - No complex state interactions between distant components
 - No user authentication or session state
@@ -1639,40 +1657,46 @@ generateSlug(text: string): string
 #### 1. Component-Level State (useState)
 
 **ProductImage Component:**
+
 ```javascript
-const [currentImage, setCurrentImage] = useState(images.main);
+const [currentImage, setCurrentImage] = useState(images.main)
 // Manages currently displayed image in gallery
 ```
 
 **Image Component:**
+
 ```javascript
-const [error, setError] = useState(false);
-const [loaded, setLoaded] = useState(false);
+const [error, setError] = useState(false)
+const [loaded, setLoaded] = useState(false)
 // Manages image loading and error states
 ```
 
 **Home Page:**
+
 ```javascript
-const [products, setProducts] = useState([]);
+const [products, setProducts] = useState([])
 // Manages currently displayed products based on filters
 ```
 
 #### 2. URL State (React Router)
 
 **Product Detail Page:**
+
 ```javascript
-const { slug } = useParams();
+const { slug } = useParams()
 // Product slug from URL drives which product is displayed
 ```
 
 **Home Page (Category Filter):**
+
 ```javascript
-const [searchParams] = useSearchParams();
-const categoryFilter = searchParams.get('category');
+const [searchParams] = useSearchParams()
+const categoryFilter = searchParams.get('category')
 // Category filter from URL query parameter
 ```
 
 **Navigation State:**
+
 - Managed by React Router's BrowserRouter
 - Browser history API handles back/forward navigation
 - URL is single source of truth for current page
@@ -1680,48 +1704,54 @@ const categoryFilter = searchParams.get('category');
 #### 3. Static Data (Imported Modules)
 
 **Product Data:**
+
 ```javascript
-import productsData from '../data/products.json';
+import productsData from '../data/products.json'
 // Loaded once at app initialization, never mutates
 ```
 
 **Category Data:**
+
 ```javascript
-import categoriesData from '../data/categories.json';
+import categoriesData from '../data/categories.json'
 // Loaded once at app initialization, never mutates
 ```
 
 **Featured Products:**
+
 ```javascript
-import featuredData from '../data/featured.json';
+import featuredData from '../data/featured.json'
 // Loaded once at app initialization, never mutates
 ```
 
 #### 4. Derived State (Computed Values)
 
 **Filtered Products:**
+
 ```javascript
 // In Home component
 useEffect(() => {
   if (categoryFilter) {
-    setProducts(getProductsByCategory(categoryFilter));
+    setProducts(getProductsByCategory(categoryFilter))
   } else {
-    setProducts(getFeaturedProducts());
+    setProducts(getFeaturedProducts())
   }
-}, [categoryFilter]);
+}, [categoryFilter])
 // Products computed from category filter, not stored globally
 ```
 
 **Current Product:**
+
 ```javascript
 // In useProduct hook
-const product = getProductBySlug(slug);
+const product = getProductBySlug(slug)
 // Product computed from slug parameter, not stored globally
 ```
 
 ### Data Flow
 
 **1. App Initialization:**
+
 ```
 main.jsx (entry point)
   → App.jsx (router setup)
@@ -1730,6 +1760,7 @@ main.jsx (entry point)
 ```
 
 **2. Navigation Flow:**
+
 ```
 User clicks link
   → React Router updates URL
@@ -1741,6 +1772,7 @@ User clicks link
 ```
 
 **3. User Interaction Flow (Product Image Gallery):**
+
 ```
 User clicks thumbnail
   → onClick handler calls setCurrentImage(image)
@@ -1751,12 +1783,14 @@ User clicks thumbnail
 ### State Persistence
 
 **No Persistence Required:**
+
 - All data is static and bundled with app
 - No user preferences or settings to persist
 - No shopping cart or user session
 - Each page visit starts fresh
 
 **Future Enhancements (Optional):**
+
 ```javascript
 // Could add Local Storage for:
 // - Recently viewed products
@@ -1765,18 +1799,19 @@ User clicks thumbnail
 
 // Example implementation:
 const [favorites, setFavorites] = useState(() => {
-  const saved = localStorage.getItem('favorites');
-  return saved ? JSON.parse(saved) : [];
-});
+  const saved = localStorage.getItem('favorites')
+  return saved ? JSON.parse(saved) : []
+})
 
 useEffect(() => {
-  localStorage.setItem('favorites', JSON.stringify(favorites));
-}, [favorites]);
+  localStorage.setItem('favorites', JSON.stringify(favorites))
+}, [favorites])
 ```
 
 ### No Global State Library Needed
 
 **Redux/Zustand/MobX:** Not required because:
+
 - No complex state shared across many components
 - Parent-child prop passing is sufficient
 - URL state handles navigation-related state
@@ -1784,6 +1819,7 @@ useEffect(() => {
 - No asynchronous state mutations
 
 **React Context:** Not required because:
+
 - No theme switching (could be added later)
 - No user authentication
 - No deeply nested component trees needing shared state
@@ -1792,24 +1828,26 @@ useEffect(() => {
 ### Custom Hooks for Reusable Logic
 
 **useProduct Hook:**
+
 ```javascript
 // src/hooks/useProduct.js
-import { getProductBySlug } from '../services/productService';
+import { getProductBySlug } from '../services/productService'
 
 export function useProduct(slug) {
-  return getProductBySlug(slug);
+  return getProductBySlug(slug)
 }
 ```
 
 **useScrollToTop Hook:**
+
 ```javascript
 // src/hooks/useScrollToTop.js
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
 export function useScrollToTop() {
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo(0, 0)
+  }, [])
 }
 ```
 
@@ -1832,17 +1870,18 @@ export function useScrollToTop() {
 #### 1. Application Initialization Errors
 
 **JSON Data Loading Errors:**
+
 ```javascript
 // If data files are missing or malformed, app will fail to start
 // This is intentional - data is required for app to function
 
 // Error caught at module import level
 try {
-  import productsData from '../data/products.json';
+  import productsData from '../data/products.json'
 } catch (error) {
   // Build will fail if JSON is invalid
   // Runtime error if file is missing
-  console.error('Failed to load product data:', error);
+  console.error('Failed to load product data:', error)
 }
 ```
 
@@ -1851,21 +1890,23 @@ try {
 #### 2. Routing Errors
 
 **Product Not Found:**
+
 ```javascript
 // ProductDetailPage.jsx
 function ProductDetailPage() {
-  const { slug } = useParams();
-  const product = useProduct(slug);
-  
+  const { slug } = useParams()
+  const product = useProduct(slug)
+
   if (!product) {
-    return <Navigate to="/404" replace />;
+    return <Navigate to="/404" replace />
   }
-  
-  return <ProductDetail product={product} />;
+
+  return <ProductDetail product={product} />
 }
 ```
 
 **Invalid Route:**
+
 ```javascript
 // App.jsx - catch-all route
 <Route path="*" element={<NotFound />} />
@@ -1876,21 +1917,22 @@ function ProductDetailPage() {
 #### 3. Image Loading Errors
 
 **Image Component Error Handling:**
+
 ```javascript
 // Image.jsx
-const [error, setError] = useState(false);
+const [error, setError] = useState(false)
 
-const handleError = (e) => {
-  setError(true);
-  console.error('Image failed to load:', e.target.src);
-};
+const handleError = e => {
+  setError(true)
+  console.error('Image failed to load:', e.target.src)
+}
 
 if (error) {
   return (
     <div className={styles.placeholder}>
       <span>Image not available</span>
     </div>
-  );
+  )
 }
 ```
 
@@ -1899,26 +1941,27 @@ if (error) {
 #### 4. React Rendering Errors
 
 **Error Boundary:**
+
 ```javascript
 // ErrorBoundary.jsx
 class ErrorBoundary extends Component {
   static getDerivedStateFromError(error) {
-    return { hasError: true, error };
+    return { hasError: true, error }
   }
 
   componentDidCatch(error, errorInfo) {
     // Log error details for debugging
-    console.error('React error caught:', error, errorInfo);
-    
+    console.error('React error caught:', error, errorInfo)
+
     // Could send to error tracking service (Sentry, etc.)
     // sendToErrorService(error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
-      return <ErrorFallbackUI />;
+      return <ErrorFallbackUI />
     }
-    return this.props.children;
+    return this.props.children
   }
 }
 ```
@@ -1928,32 +1971,34 @@ class ErrorBoundary extends Component {
 #### 5. Network Errors (Future - if external images/CDN used)
 
 **Retry Logic for Images:**
+
 ```javascript
 // Future enhancement if using external CDN
-const [retryCount, setRetryCount] = useState(0);
+const [retryCount, setRetryCount] = useState(0)
 
 const handleError = () => {
   if (retryCount < 3) {
-    setRetryCount(prev => prev + 1);
+    setRetryCount(prev => prev + 1)
     // Force re-render to retry image load
   } else {
-    setError(true);
+    setError(true)
   }
-};
+}
 ```
 
 #### 6. Browser Compatibility Errors
 
 **Modern Feature Detection:**
+
 ```javascript
 // Check for required browser features at app initialization
 if (!window.IntersectionObserver) {
-  console.warn('IntersectionObserver not supported - lazy loading disabled');
+  console.warn('IntersectionObserver not supported - lazy loading disabled')
   // Fallback: load images eagerly
 }
 
 if (!window.fetch) {
-  console.error('Fetch API not supported - app may not work correctly');
+  console.error('Fetch API not supported - app may not work correctly')
   // Could show browser upgrade message
 }
 ```
@@ -1963,17 +2008,19 @@ if (!window.fetch) {
 ### Error Logging Strategy
 
 **Development Environment:**
+
 ```javascript
 // Verbose console logging
-console.error('Detailed error information:', error);
-console.warn('Warning messages:', warning);
-console.log('Debug information:', data);
+console.error('Detailed error information:', error)
+console.warn('Warning messages:', warning)
+console.log('Debug information:', data)
 ```
 
 **Production Environment:**
+
 ```javascript
 // Minimal console logging (errors only)
-console.error('Error:', error.message);
+console.error('Error:', error.message)
 
 // Optional: Send to error tracking service
 if (import.meta.env.PROD) {
@@ -1982,19 +2029,21 @@ if (import.meta.env.PROD) {
 ```
 
 **Build Configuration:**
+
 ```javascript
 // vite.config.js
 export default defineConfig({
   define: {
     'console.log': import.meta.env.PROD ? '() => {}' : 'console.log',
     // Remove console.log in production, keep console.error
-  }
-});
+  },
+})
 ```
 
 ### Error Messages and User Communication
 
 **Error Message Guidelines:**
+
 1. **User-friendly:** Avoid technical jargon
 2. **Actionable:** Tell user what they can do (refresh, go home, etc.)
 3. **Consistent:** Same tone and style across app
@@ -2002,28 +2051,29 @@ export default defineConfig({
 
 **Example Error Messages:**
 
-| Error Type | User Message | Action |
-|------------|--------------|--------|
-| Page not found | "Page not found. The page you're looking for doesn't exist or has been moved." | Link to home page |
-| Image failed | "Image not available" | Show placeholder |
-| App crash | "Something went wrong. We're sorry for the inconvenience." | Refresh button |
-| No products | "No products found." | Clear filters or return home |
-| Invalid category | Redirect to home | Show all products |
+| Error Type       | User Message                                                                   | Action                       |
+| ---------------- | ------------------------------------------------------------------------------ | ---------------------------- |
+| Page not found   | "Page not found. The page you're looking for doesn't exist or has been moved." | Link to home page            |
+| Image failed     | "Image not available"                                                          | Show placeholder             |
+| App crash        | "Something went wrong. We're sorry for the inconvenience."                     | Refresh button               |
+| No products      | "No products found."                                                           | Clear filters or return home |
+| Invalid category | Redirect to home                                                               | Show all products            |
 
 ### Global Error Handler
 
 **Window Error Events:**
+
 ```javascript
 // main.jsx
-window.addEventListener('error', (event) => {
-  console.error('Global error:', event.error);
+window.addEventListener('error', event => {
+  console.error('Global error:', event.error)
   // Could show toast notification or error banner
-});
+})
 
-window.addEventListener('unhandledrejection', (event) => {
-  console.error('Unhandled promise rejection:', event.reason);
+window.addEventListener('unhandledrejection', event => {
+  console.error('Unhandled promise rejection:', event.reason)
   // Could show toast notification
-});
+})
 ```
 
 ### Validation and Input Sanitization
@@ -2034,27 +2084,29 @@ window.addEventListener('unhandledrejection', (event) => {
 // Example: Search input validation
 function validateSearchQuery(query) {
   if (typeof query !== 'string') {
-    throw new Error('Search query must be a string');
+    throw new Error('Search query must be a string')
   }
-  
+
   if (query.length > 100) {
-    throw new Error('Search query too long');
+    throw new Error('Search query too long')
   }
-  
+
   // Sanitize for XSS prevention (React handles automatically)
-  return query.trim();
+  return query.trim()
 }
 ```
 
 ### Error Recovery Strategies
 
 **Graceful Degradation:**
+
 - Image fails → Show placeholder
 - Product not found → Redirect to 404 page
 - Invalid category → Show all products
 - Component error → Error boundary catches, show fallback UI
 
 **No Automatic Retries:**
+
 - Static assets should load first time (cached by CDN)
 - Only implement retries if using external APIs (future)
 
@@ -2064,14 +2116,13 @@ function validateSearchQuery(query) {
 // App.jsx - Global error boundary
 <ErrorBoundary>
   <BrowserRouter>
-    <Layout>
-      {/* All routes protected */}
-    </Layout>
+    <Layout>{/* All routes protected */}</Layout>
   </BrowserRouter>
 </ErrorBoundary>
 ```
 
 **Future Enhancement:** Component-level error boundaries for isolated failures
+
 ```javascript
 // Example: Product grid with isolated error handling
 <ErrorBoundary fallback={<p>Unable to load products</p>}>
@@ -2088,10 +2139,11 @@ function validateSearchQuery(query) {
 **Testing Framework:** Vitest (Vite-native test runner) + React Testing Library
 
 **Setup:**
+
 ```javascript
 // vitest.config.js
-import { defineConfig } from 'vitest/config';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vitest/config'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
@@ -2100,7 +2152,7 @@ export default defineConfig({
     globals: true,
     setupFiles: './src/test/setup.js',
   },
-});
+})
 ```
 
 #### Product Service Tests
@@ -2108,7 +2160,7 @@ export default defineConfig({
 **File:** `src/services/__tests__/productService.test.js`
 
 ```javascript
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect } from 'vitest'
 import {
   getProducts,
   getProductById,
@@ -2116,90 +2168,88 @@ import {
   getProductsByCategory,
   getFeaturedProducts,
   getCategories,
-  searchProducts
-} from '../productService';
+  searchProducts,
+} from '../productService'
 
 describe('productService', () => {
   describe('getProducts', () => {
     it('should return an array of products', () => {
-      const products = getProducts();
-      expect(Array.isArray(products)).toBe(true);
-      expect(products.length).toBeGreaterThan(0);
-    });
-  });
+      const products = getProducts()
+      expect(Array.isArray(products)).toBe(true)
+      expect(products.length).toBeGreaterThan(0)
+    })
+  })
 
   describe('getProductById', () => {
     it('should return a product with matching ID', () => {
-      const product = getProductById('prod-001');
-      expect(product).toBeDefined();
-      expect(product.id).toBe('prod-001');
-    });
+      const product = getProductById('prod-001')
+      expect(product).toBeDefined()
+      expect(product.id).toBe('prod-001')
+    })
 
     it('should return undefined for non-existent ID', () => {
-      const product = getProductById('invalid-id');
-      expect(product).toBeUndefined();
-    });
-  });
+      const product = getProductById('invalid-id')
+      expect(product).toBeUndefined()
+    })
+  })
 
   describe('getProductBySlug', () => {
     it('should return a product with matching slug', () => {
-      const product = getProductBySlug('classic-lace-bralette');
-      expect(product).toBeDefined();
-      expect(product.slug).toBe('classic-lace-bralette');
-    });
+      const product = getProductBySlug('classic-lace-bralette')
+      expect(product).toBeDefined()
+      expect(product.slug).toBe('classic-lace-bralette')
+    })
 
     it('should return undefined for non-existent slug', () => {
-      const product = getProductBySlug('invalid-slug');
-      expect(product).toBeUndefined();
-    });
-  });
+      const product = getProductBySlug('invalid-slug')
+      expect(product).toBeUndefined()
+    })
+  })
 
   describe('getProductsByCategory', () => {
     it('should return products in specified category', () => {
-      const products = getProductsByCategory('bralettes');
-      expect(Array.isArray(products)).toBe(true);
+      const products = getProductsByCategory('bralettes')
+      expect(Array.isArray(products)).toBe(true)
       products.forEach(product => {
-        const categories = Array.isArray(product.category) 
-          ? product.category 
-          : [product.category];
-        expect(categories).toContain('bralettes');
-      });
-    });
+        const categories = Array.isArray(product.category) ? product.category : [product.category]
+        expect(categories).toContain('bralettes')
+      })
+    })
 
     it('should return empty array for non-existent category', () => {
-      const products = getProductsByCategory('invalid-category');
-      expect(products).toEqual([]);
-    });
-  });
+      const products = getProductsByCategory('invalid-category')
+      expect(products).toEqual([])
+    })
+  })
 
   describe('getFeaturedProducts', () => {
     it('should return array of featured products', () => {
-      const products = getFeaturedProducts();
-      expect(Array.isArray(products)).toBe(true);
+      const products = getFeaturedProducts()
+      expect(Array.isArray(products)).toBe(true)
       products.forEach(product => {
-        expect(product.metadata?.featured).toBe(true);
-      });
-    });
-  });
+        expect(product.metadata?.featured).toBe(true)
+      })
+    })
+  })
 
   describe('searchProducts', () => {
     it('should find products matching search query', () => {
-      const results = searchProducts('lace');
-      expect(Array.isArray(results)).toBe(true);
+      const results = searchProducts('lace')
+      expect(Array.isArray(results)).toBe(true)
       results.forEach(product => {
-        const matchFound = 
+        const matchFound =
           product.name.toLowerCase().includes('lace') ||
-          product.description.toLowerCase().includes('lace');
-        expect(matchFound).toBe(true);
-      });
-    });
+          product.description.toLowerCase().includes('lace')
+        expect(matchFound).toBe(true)
+      })
+    })
 
     it('should return empty array for empty query', () => {
-      const results = searchProducts('');
-      expect(results).toEqual([]);
-    });
-  });
-});
+      const results = searchProducts('')
+      expect(results).toEqual([])
+    })
+  })
+})
 ```
 
 #### Component Tests
@@ -2207,44 +2257,48 @@ describe('productService', () => {
 **File:** `src/components/ui/Button/__tests__/Button.test.jsx`
 
 ```javascript
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
-import Button from '../Button';
+import { describe, it, expect, vi } from 'vitest'
+import { render, screen, fireEvent } from '@testing-library/react'
+import Button from '../Button'
 
 describe('Button', () => {
   it('should render with children', () => {
-    render(<Button>Click me</Button>);
-    expect(screen.getByText('Click me')).toBeInTheDocument();
-  });
+    render(<Button>Click me</Button>)
+    expect(screen.getByText('Click me')).toBeInTheDocument()
+  })
 
   it('should call onClick when clicked', () => {
-    const handleClick = vi.fn();
-    render(<Button onClick={handleClick}>Click me</Button>);
-    fireEvent.click(screen.getByText('Click me'));
-    expect(handleClick).toHaveBeenCalledTimes(1);
-  });
+    const handleClick = vi.fn()
+    render(<Button onClick={handleClick}>Click me</Button>)
+    fireEvent.click(screen.getByText('Click me'))
+    expect(handleClick).toHaveBeenCalledTimes(1)
+  })
 
   it('should not call onClick when disabled', () => {
-    const handleClick = vi.fn();
-    render(<Button onClick={handleClick} disabled>Click me</Button>);
-    fireEvent.click(screen.getByText('Click me'));
-    expect(handleClick).not.toHaveBeenCalled();
-  });
+    const handleClick = vi.fn()
+    render(
+      <Button onClick={handleClick} disabled>
+        Click me
+      </Button>
+    )
+    fireEvent.click(screen.getByText('Click me'))
+    expect(handleClick).not.toHaveBeenCalled()
+  })
 
   it('should apply variant classes', () => {
-    const { container } = render(<Button variant="secondary">Button</Button>);
-    expect(container.firstChild).toHaveClass('secondary');
-  });
-});
+    const { container } = render(<Button variant="secondary">Button</Button>)
+    expect(container.firstChild).toHaveClass('secondary')
+  })
+})
 ```
 
 **File:** `src/components/product/ProductCard/__tests__/ProductCard.test.jsx`
 
 ```javascript
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
-import ProductCard from '../ProductCard';
+import { describe, it, expect } from 'vitest'
+import { render, screen } from '@testing-library/react'
+import { BrowserRouter } from 'react-router-dom'
+import ProductCard from '../ProductCard'
 
 const mockProduct = {
   id: 'prod-001',
@@ -2252,12 +2306,12 @@ const mockProduct = {
   slug: 'test-product',
   shortDescription: 'Test description',
   images: {
-    thumbnail: '/images/test.jpg'
+    thumbnail: '/images/test.jpg',
   },
   price: {
-    display: '$29.99'
-  }
-};
+    display: '$29.99',
+  },
+}
 
 describe('ProductCard', () => {
   it('should render product information', () => {
@@ -2265,73 +2319,73 @@ describe('ProductCard', () => {
       <BrowserRouter>
         <ProductCard product={mockProduct} />
       </BrowserRouter>
-    );
-    
-    expect(screen.getByText('Test Product')).toBeInTheDocument();
-    expect(screen.getByText('Test description')).toBeInTheDocument();
-    expect(screen.getByText('$29.99')).toBeInTheDocument();
-  });
+    )
+
+    expect(screen.getByText('Test Product')).toBeInTheDocument()
+    expect(screen.getByText('Test description')).toBeInTheDocument()
+    expect(screen.getByText('$29.99')).toBeInTheDocument()
+  })
 
   it('should link to product detail page', () => {
     render(
       <BrowserRouter>
         <ProductCard product={mockProduct} />
       </BrowserRouter>
-    );
-    
-    const link = screen.getByRole('link');
-    expect(link).toHaveAttribute('href', '/products/test-product');
-  });
+    )
+
+    const link = screen.getByRole('link')
+    expect(link).toHaveAttribute('href', '/products/test-product')
+  })
 
   it('should render without price if not provided', () => {
-    const productWithoutPrice = { ...mockProduct, price: undefined };
+    const productWithoutPrice = { ...mockProduct, price: undefined }
     render(
       <BrowserRouter>
         <ProductCard product={productWithoutPrice} />
       </BrowserRouter>
-    );
-    
-    expect(screen.queryByText('$29.99')).not.toBeInTheDocument();
-  });
-});
+    )
+
+    expect(screen.queryByText('$29.99')).not.toBeInTheDocument()
+  })
+})
 ```
 
 **File:** `src/components/ui/Image/__tests__/Image.test.jsx`
 
 ```javascript
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen, waitFor } from '@testing-library/react';
-import Image from '../Image';
+import { describe, it, expect, vi } from 'vitest'
+import { render, screen, waitFor } from '@testing-library/react'
+import Image from '../Image'
 
 describe('Image', () => {
   it('should render image with correct attributes', () => {
-    render(<Image src="/test.jpg" alt="Test image" />);
-    const img = screen.getByAltText('Test image');
-    expect(img).toHaveAttribute('src', '/test.jpg');
-    expect(img).toHaveAttribute('loading', 'lazy');
-  });
+    render(<Image src="/test.jpg" alt="Test image" />)
+    const img = screen.getByAltText('Test image')
+    expect(img).toHaveAttribute('src', '/test.jpg')
+    expect(img).toHaveAttribute('loading', 'lazy')
+  })
 
   it('should show placeholder on error', async () => {
-    render(<Image src="/invalid.jpg" alt="Test" />);
-    const img = screen.getByAltText('Test');
-    
-    fireEvent.error(img);
-    
+    render(<Image src="/invalid.jpg" alt="Test" />)
+    const img = screen.getByAltText('Test')
+
+    fireEvent.error(img)
+
     await waitFor(() => {
-      expect(screen.getByText('Image not available')).toBeInTheDocument();
-    });
-  });
+      expect(screen.getByText('Image not available')).toBeInTheDocument()
+    })
+  })
 
   it('should call onError callback', () => {
-    const onError = vi.fn();
-    render(<Image src="/invalid.jpg" alt="Test" onError={onError} />);
-    const img = screen.getByAltText('Test');
-    
-    fireEvent.error(img);
-    
-    expect(onError).toHaveBeenCalled();
-  });
-});
+    const onError = vi.fn()
+    render(<Image src="/invalid.jpg" alt="Test" onError={onError} />)
+    const img = screen.getByAltText('Test')
+
+    fireEvent.error(img)
+
+    expect(onError).toHaveBeenCalled()
+  })
+})
 ```
 
 **Coverage Target:** 80%+ for utility functions and services, 70%+ for components
@@ -2345,84 +2399,84 @@ describe('Image', () => {
 **File:** `src/test/integration/navigation.test.jsx`
 
 ```javascript
-import { describe, it, expect } from 'vitest';
-import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { BrowserRouter } from 'react-router-dom';
-import App from '../../App';
+import { describe, it, expect } from 'vitest'
+import { render, screen, waitFor } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { BrowserRouter } from 'react-router-dom'
+import App from '../../App'
 
 describe('Navigation Integration', () => {
   it('should navigate from home to product detail', async () => {
-    const user = userEvent.setup();
-    render(<App />);
-    
+    const user = userEvent.setup()
+    render(<App />)
+
     // Wait for home page to load
     await waitFor(() => {
-      expect(screen.getByText(/Featured Products/i)).toBeInTheDocument();
-    });
-    
+      expect(screen.getByText(/Featured Products/i)).toBeInTheDocument()
+    })
+
     // Click on first product
-    const productLinks = screen.getAllByRole('link');
-    const firstProductLink = productLinks.find(link => 
+    const productLinks = screen.getAllByRole('link')
+    const firstProductLink = productLinks.find(link =>
       link.getAttribute('href')?.startsWith('/products/')
-    );
-    
-    await user.click(firstProductLink);
-    
+    )
+
+    await user.click(firstProductLink)
+
     // Should navigate to product detail page
     await waitFor(() => {
-      expect(window.location.pathname).toMatch(/\/products\/.+/);
-    });
-  });
+      expect(window.location.pathname).toMatch(/\/products\/.+/)
+    })
+  })
 
   it('should show 404 page for invalid route', async () => {
     render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    );
-    
+    )
+
     // Navigate to invalid route
-    window.history.pushState({}, '', '/invalid-route');
-    
+    window.history.pushState({}, '', '/invalid-route')
+
     await waitFor(() => {
-      expect(screen.getByText(/404/i)).toBeInTheDocument();
-      expect(screen.getByText(/Page not found/i)).toBeInTheDocument();
-    });
-  });
+      expect(screen.getByText(/404/i)).toBeInTheDocument()
+      expect(screen.getByText(/Page not found/i)).toBeInTheDocument()
+    })
+  })
 
   it('should filter products by category', async () => {
-    const user = userEvent.setup();
-    render(<App />);
-    
+    const user = userEvent.setup()
+    render(<App />)
+
     // Click category link in navigation
-    const categoryLink = screen.getByText(/Bralettes/i);
-    await user.click(categoryLink);
-    
+    const categoryLink = screen.getByText(/Bralettes/i)
+    await user.click(categoryLink)
+
     // URL should contain category parameter
     await waitFor(() => {
-      expect(window.location.search).toContain('category=bralettes');
-    });
-  });
-});
+      expect(window.location.search).toContain('category=bralettes')
+    })
+  })
+})
 ```
 
 **File:** `src/test/integration/productFlow.test.jsx`
 
 ```javascript
-import { describe, it, expect } from 'vitest';
-import { render, screen, waitFor } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
-import ProductDetailPage from '../../pages/ProductDetailPage/ProductDetailPage';
+import { describe, it, expect } from 'vitest'
+import { render, screen, waitFor } from '@testing-library/react'
+import { BrowserRouter } from 'react-router-dom'
+import ProductDetailPage from '../../pages/ProductDetailPage/ProductDetailPage'
 
 // Mock useParams
 vi.mock('react-router-dom', async () => {
-  const actual = await vi.importActual('react-router-dom');
+  const actual = await vi.importActual('react-router-dom')
   return {
     ...actual,
-    useParams: () => ({ slug: 'classic-lace-bralette' })
-  };
-});
+    useParams: () => ({ slug: 'classic-lace-bralette' }),
+  }
+})
 
 describe('Product Detail Flow', () => {
   it('should display full product information', async () => {
@@ -2430,28 +2484,28 @@ describe('Product Detail Flow', () => {
       <BrowserRouter>
         <ProductDetailPage />
       </BrowserRouter>
-    );
-    
+    )
+
     await waitFor(() => {
-      expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
-      expect(screen.getByText(/Features/i)).toBeInTheDocument();
-      expect(screen.getByText(/Specifications/i)).toBeInTheDocument();
-    });
-  });
+      expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument()
+      expect(screen.getByText(/Features/i)).toBeInTheDocument()
+      expect(screen.getByText(/Specifications/i)).toBeInTheDocument()
+    })
+  })
 
   it('should display product images', async () => {
     render(
       <BrowserRouter>
         <ProductDetailPage />
       </BrowserRouter>
-    );
-    
+    )
+
     await waitFor(() => {
-      const images = screen.getAllByRole('img');
-      expect(images.length).toBeGreaterThan(0);
-    });
-  });
-});
+      const images = screen.getAllByRole('img')
+      expect(images.length).toBeGreaterThan(0)
+    })
+  })
+})
 ```
 
 ---
@@ -2461,9 +2515,10 @@ describe('Product Detail Flow', () => {
 **Testing Framework:** Playwright
 
 **Setup:**
+
 ```javascript
 // playwright.config.js
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test'
 
 export default defineConfig({
   testDir: './e2e',
@@ -2491,162 +2546,162 @@ export default defineConfig({
     url: 'http://localhost:5173',
     reuseExistingServer: !process.env.CI,
   },
-});
+})
 ```
 
 **File:** `e2e/homepage.spec.js`
 
 ```javascript
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test'
 
 test.describe('Homepage', () => {
   test('should display featured products', async ({ page }) => {
-    await page.goto('/');
-    
-    await expect(page.locator('h1')).toContainText('Featured Products');
-    
-    const productCards = page.locator('[data-testid="product-card"]');
-    await expect(productCards).toHaveCount({ min: 1 });
-  });
+    await page.goto('/')
+
+    await expect(page.locator('h1')).toContainText('Featured Products')
+
+    const productCards = page.locator('[data-testid="product-card"]')
+    await expect(productCards).toHaveCount({ min: 1 })
+  })
 
   test('should navigate to product detail on click', async ({ page }) => {
-    await page.goto('/');
-    
-    const firstProduct = page.locator('[data-testid="product-card"]').first();
-    await firstProduct.click();
-    
-    await expect(page).toHaveURL(/\/products\/.+/);
-    await expect(page.locator('h1')).toBeVisible();
-  });
+    await page.goto('/')
+
+    const firstProduct = page.locator('[data-testid="product-card"]').first()
+    await firstProduct.click()
+
+    await expect(page).toHaveURL(/\/products\/.+/)
+    await expect(page.locator('h1')).toBeVisible()
+  })
 
   test('should be responsive on mobile', async ({ page }) => {
-    await page.setViewportSize({ width: 375, height: 667 });
-    await page.goto('/');
-    
-    const productGrid = page.locator('[data-testid="product-grid"]');
-    await expect(productGrid).toBeVisible();
-  });
-});
+    await page.setViewportSize({ width: 375, height: 667 })
+    await page.goto('/')
+
+    const productGrid = page.locator('[data-testid="product-grid"]')
+    await expect(productGrid).toBeVisible()
+  })
+})
 ```
 
 **File:** `e2e/productDetail.spec.js`
 
 ```javascript
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test'
 
 test.describe('Product Detail Page', () => {
   test('should display product information', async ({ page }) => {
-    await page.goto('/products/classic-lace-bralette');
-    
-    await expect(page.locator('h1')).toBeVisible();
-    await expect(page.locator('img').first()).toBeVisible();
-    await expect(page.getByText('Features')).toBeVisible();
-    await expect(page.getByText('Specifications')).toBeVisible();
-  });
+    await page.goto('/products/classic-lace-bralette')
+
+    await expect(page.locator('h1')).toBeVisible()
+    await expect(page.locator('img').first()).toBeVisible()
+    await expect(page.getByText('Features')).toBeVisible()
+    await expect(page.getByText('Specifications')).toBeVisible()
+  })
 
   test('should switch product images on thumbnail click', async ({ page }) => {
-    await page.goto('/products/classic-lace-bralette');
-    
-    const thumbnails = page.locator('[data-testid="thumbnail"]');
-    const count = await thumbnails.count();
-    
+    await page.goto('/products/classic-lace-bralette')
+
+    const thumbnails = page.locator('[data-testid="thumbnail"]')
+    const count = await thumbnails.count()
+
     if (count > 1) {
-      await thumbnails.nth(1).click();
+      await thumbnails.nth(1).click()
       // Verify image changed (check src attribute)
-      const mainImage = page.locator('[data-testid="main-image"]');
-      await expect(mainImage).toBeVisible();
+      const mainImage = page.locator('[data-testid="main-image"]')
+      await expect(mainImage).toBeVisible()
     }
-  });
+  })
 
   test('should show 404 for non-existent product', async ({ page }) => {
-    await page.goto('/products/non-existent-product');
-    
-    await expect(page.locator('h1')).toContainText('404');
-  });
-});
+    await page.goto('/products/non-existent-product')
+
+    await expect(page.locator('h1')).toContainText('404')
+  })
+})
 ```
 
 **File:** `e2e/navigation.spec.js`
 
 ```javascript
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test'
 
 test.describe('Navigation', () => {
   test('should navigate through category links', async ({ page }) => {
-    await page.goto('/');
-    
-    const categoryLink = page.getByRole('link', { name: /Bralettes/i });
-    await categoryLink.click();
-    
-    await expect(page).toHaveURL(/\?category=bralettes/);
-  });
+    await page.goto('/')
+
+    const categoryLink = page.getByRole('link', { name: /Bralettes/i })
+    await categoryLink.click()
+
+    await expect(page).toHaveURL(/\?category=bralettes/)
+  })
 
   test('should navigate back to home from 404', async ({ page }) => {
-    await page.goto('/invalid-route');
-    
-    await expect(page.getByText('404')).toBeVisible();
-    
-    const homeButton = page.getByRole('button', { name: /Return Home/i });
-    await homeButton.click();
-    
-    await expect(page).toHaveURL('/');
-  });
+    await page.goto('/invalid-route')
+
+    await expect(page.getByText('404')).toBeVisible()
+
+    const homeButton = page.getByRole('button', { name: /Return Home/i })
+    await homeButton.click()
+
+    await expect(page).toHaveURL('/')
+  })
 
   test('should maintain scroll position on back navigation', async ({ page }) => {
-    await page.goto('/');
-    
-    await page.evaluate(() => window.scrollTo(0, 500));
-    
-    const firstProduct = page.locator('[data-testid="product-card"]').first();
-    await firstProduct.click();
-    
-    await page.goBack();
-    
+    await page.goto('/')
+
+    await page.evaluate(() => window.scrollTo(0, 500))
+
+    const firstProduct = page.locator('[data-testid="product-card"]').first()
+    await firstProduct.click()
+
+    await page.goBack()
+
     // Browser should restore scroll position automatically
-    const scrollY = await page.evaluate(() => window.scrollY);
-    expect(scrollY).toBeGreaterThan(0);
-  });
-});
+    const scrollY = await page.evaluate(() => window.scrollY)
+    expect(scrollY).toBeGreaterThan(0)
+  })
+})
 ```
 
 **File:** `e2e/performance.spec.js`
 
 ```javascript
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test'
 
 test.describe('Performance', () => {
   test('should load homepage within performance budget', async ({ page }) => {
-    const startTime = Date.now();
-    await page.goto('/');
-    const loadTime = Date.now() - startTime;
-    
-    expect(loadTime).toBeLessThan(3000); // 3 second budget
-  });
+    const startTime = Date.now()
+    await page.goto('/')
+    const loadTime = Date.now() - startTime
+
+    expect(loadTime).toBeLessThan(3000) // 3 second budget
+  })
 
   test('should lazy load images below fold', async ({ page }) => {
-    await page.goto('/');
-    
-    const belowFoldImage = page.locator('img[loading="lazy"]').first();
-    
+    await page.goto('/')
+
+    const belowFoldImage = page.locator('img[loading="lazy"]').first()
+
     // Image should not load until scrolled into view
-    const isLoaded = await belowFoldImage.evaluate((img) => img.complete);
-    
+    const isLoaded = await belowFoldImage.evaluate(img => img.complete)
+
     // Scroll image into view
-    await belowFoldImage.scrollIntoViewIfNeeded();
-    
+    await belowFoldImage.scrollIntoViewIfNeeded()
+
     // Wait for image to load
-    await expect(belowFoldImage).toBeVisible();
-  });
+    await expect(belowFoldImage).toBeVisible()
+  })
 
   test('should meet Lighthouse performance threshold', async ({ page }) => {
     // This would integrate with Lighthouse CI
     // Placeholder for actual implementation
-    await page.goto('/');
-    
+    await page.goto('/')
+
     // In real implementation, would run Lighthouse programmatically
     // and assert performance score > 85
-  });
-});
+  })
+})
 ```
 
 ---
@@ -2662,6 +2717,7 @@ test.describe('Performance', () => {
 ### Phase 1: Project Setup and Configuration
 
 **Step 1.1: Initialize Vite + React Project**
+
 ```bash
 npm create vite@latest lingerie-website -- --template react
 cd lingerie-website
@@ -2669,6 +2725,7 @@ npm install
 ```
 
 **Step 1.2: Install Dependencies**
+
 ```bash
 # Core dependencies
 npm install react-router-dom
@@ -2680,12 +2737,14 @@ npm install --save-dev eslint eslint-plugin-react eslint-plugin-react-hooks \
 ```
 
 **Step 1.3: Configure ESLint and Prettier**
+
 ```bash
 # Create configuration files
 touch .eslintrc.cjs .prettierrc .gitignore
 ```
 
 **Step 1.4: Setup Project Structure**
+
 ```bash
 # Create directory structure
 mkdir -p src/{components/{ui,layout,product},pages,data,services,utils,hooks,styles}
@@ -2705,6 +2764,7 @@ mkdir -p public/images/products
 **Step 2.1: Create Sample Product Data**
 
 Create `src/data/products.json`:
+
 ```json
 [
   {
@@ -2726,9 +2786,9 @@ Create `src/data/products.json`:
       "Removable padding"
     ],
     "specifications": [
-      {"key": "Material", "value": "90% Nylon, 10% Spandex"},
-      {"key": "Care", "value": "Hand wash cold"},
-      {"key": "Origin", "value": "Made in USA"}
+      { "key": "Material", "value": "90% Nylon, 10% Spandex" },
+      { "key": "Care", "value": "Hand wash cold" },
+      { "key": "Origin", "value": "Made in USA" }
     ],
     "price": {
       "display": "$29.99"
@@ -2745,6 +2805,7 @@ Create `src/data/products.json`:
 **Step 2.2: Create Categories Data**
 
 Create `src/data/categories.json`:
+
 ```json
 [
   {
@@ -2767,6 +2828,7 @@ Create `src/data/categories.json`:
 **Step 2.3: Create Featured Products Data**
 
 Create `src/data/featured.json`:
+
 ```json
 {
   "featuredProductIds": ["prod-001"]
@@ -2791,34 +2853,41 @@ Create `src/services/productService.js` (see section 5 for full implementation).
 ### Phase 3: UI Foundation (Reusable Components)
 
 **Step 3.1: Implement Container Component**
+
 - Create `src/components/ui/Container/Container.jsx`
 - Create `src/components/ui/Container/Container.module.css`
 - Test with basic layout
 
 **Step 3.2: Implement Grid Component**
+
 - Create `src/components/ui/Grid/Grid.jsx`
 - Create `src/components/ui/Grid/Grid.module.css`
 - Test responsive behavior at different breakpoints
 
 **Step 3.3: Implement Card Component**
+
 - Create `src/components/ui/Card/Card.jsx`
 - Create `src/components/ui/Card/Card.module.css`
 
 **Step 3.4: Implement Image Component**
+
 - Create `src/components/ui/Image/Image.jsx`
 - Create `src/components/ui/Image/Image.module.css`
 - Implement lazy loading and error handling
 
 **Step 3.5: Implement Button Component**
+
 - Create `src/components/ui/Button/Button.jsx`
 - Create `src/components/ui/Button/Button.module.css`
 - Create variants (primary, secondary, outline)
 
 **Step 3.6: Implement Link Component**
+
 - Create `src/components/ui/Link/Link.jsx`
 - Create `src/components/ui/Link/Link.module.css`
 
 **Step 3.7: Create Global Styles**
+
 - Create `src/styles/global.css` with CSS reset
 - Create `src/styles/variables.css` with CSS custom properties
 - Import in `src/main.jsx`
@@ -2830,20 +2899,24 @@ Create `src/services/productService.js` (see section 5 for full implementation).
 ### Phase 4: Layout Components
 
 **Step 4.1: Implement Header Component**
+
 - Create `src/components/layout/Header/Header.jsx`
 - Create `src/components/layout/Header/Header.module.css`
 - Add logo and branding
 
 **Step 4.2: Implement Navigation Component**
+
 - Create `src/components/layout/Navigation/Navigation.jsx`
 - Create `src/components/layout/Navigation/Navigation.module.css`
 - Integrate with category data
 
 **Step 4.3: Implement Footer Component**
+
 - Create `src/components/layout/Footer/Footer.jsx`
 - Create `src/components/layout/Footer/Footer.module.css`
 
 **Step 4.4: Implement Layout Wrapper**
+
 - Create `src/components/layout/Layout/Layout.jsx`
 - Create `src/components/layout/Layout/Layout.module.css`
 - Compose Header + children + Footer
@@ -2855,29 +2928,35 @@ Create `src/services/productService.js` (see section 5 for full implementation).
 ### Phase 5: Product Components
 
 **Step 5.1: Implement ProductCard Component**
+
 - Create `src/components/product/ProductCard/ProductCard.jsx`
 - Create `src/components/product/ProductCard/ProductCard.module.css`
 - Add hover effects and transitions
 
 **Step 5.2: Implement ProductGrid Component**
+
 - Create `src/components/product/ProductGrid/ProductGrid.jsx`
 - Create `src/components/product/ProductGrid/ProductGrid.module.css`
 - Integrate with Grid component
 
 **Step 5.3: Implement ProductImage Component**
+
 - Create `src/components/product/ProductImage/ProductImage.jsx`
 - Create `src/components/product/ProductImage/ProductImage.module.css`
 - Add thumbnail gallery with image switching
 
 **Step 5.4: Implement ProductFeatures Component**
+
 - Create `src/components/product/ProductFeatures/ProductFeatures.jsx`
 - Create `src/components/product/ProductFeatures/ProductFeatures.module.css`
 
 **Step 5.5: Implement ProductSpecifications Component**
+
 - Create `src/components/product/ProductSpecifications/ProductSpecifications.jsx`
 - Create `src/components/product/ProductSpecifications/ProductSpecifications.module.css`
 
 **Step 5.6: Implement ProductDetail Component**
+
 - Create `src/components/product/ProductDetail/ProductDetail.jsx`
 - Create `src/components/product/ProductDetail/ProductDetail.module.css`
 - Compose all product sub-components
@@ -2889,28 +2968,34 @@ Create `src/services/productService.js` (see section 5 for full implementation).
 ### Phase 6: Pages and Routing
 
 **Step 6.1: Implement Home Page**
+
 - Create `src/pages/Home/Home.jsx`
 - Create `src/pages/Home/Home.module.css`
 - Integrate with ProductGrid
 - Add category filtering from URL params
 
 **Step 6.2: Implement Product Detail Page**
+
 - Create `src/pages/ProductDetailPage/ProductDetailPage.jsx`
 - Create `src/pages/ProductDetailPage/ProductDetailPage.module.css`
 - Integrate with ProductDetail component
 
 **Step 6.3: Implement 404 Page**
+
 - Create `src/pages/NotFound/NotFound.jsx`
 - Create `src/pages/NotFound/NotFound.module.css`
 
 **Step 6.4: Implement Custom Hooks**
+
 - Create `src/hooks/useProduct.js`
 - Create `src/hooks/useScrollToTop.js`
 
 **Step 6.5: Implement Error Boundary**
+
 - Create `src/ErrorBoundary.jsx`
 
 **Step 6.6: Configure Router in App Component**
+
 - Update `src/App.jsx` with routing configuration
 - Add lazy loading for routes
 - Wrap with Layout and ErrorBoundary
@@ -2922,18 +3007,22 @@ Create `src/services/productService.js` (see section 5 for full implementation).
 ### Phase 7: Styling and Responsiveness
 
 **Step 7.1: Implement Mobile Styles (375px)**
+
 - Test all components at mobile viewport
 - Adjust spacing, typography, and layout
 
 **Step 7.2: Implement Tablet Styles (768px)**
+
 - Add tablet breakpoint styles
 - Test navigation and grid layouts
 
 **Step 7.3: Implement Desktop Styles (1920px)**
+
 - Add desktop breakpoint styles
 - Optimize for large screens
 
 **Step 7.4: Cross-Browser Testing**
+
 - Test in Chrome, Firefox, Safari, Edge
 - Fix any browser-specific issues
 
@@ -2944,20 +3033,24 @@ Create `src/services/productService.js` (see section 5 for full implementation).
 ### Phase 8: Optimization
 
 **Step 8.1: Configure Code Splitting**
+
 - Update `vite.config.js` with chunking strategy
 - Test lazy-loaded routes
 
 **Step 8.2: Optimize Images**
+
 - Compress product images
 - Test lazy loading behavior
 - Add proper alt text
 
 **Step 8.3: Performance Tuning**
+
 - Run Lighthouse audit
 - Fix performance issues
 - Optimize bundle size
 
 **Step 8.4: Accessibility Audit**
+
 - Test keyboard navigation
 - Test screen reader compatibility
 - Fix ARIA issues
@@ -2969,21 +3062,25 @@ Create `src/services/productService.js` (see section 5 for full implementation).
 ### Phase 9: Testing
 
 **Step 9.1: Write Unit Tests**
+
 - Test productService functions
 - Test UI components (Button, Card, Image)
 - Test product components
 
 **Step 9.2: Write Integration Tests**
+
 - Test navigation flows
 - Test product detail flow
 
 **Step 9.3: Write E2E Tests**
+
 - Test homepage
 - Test product detail page
 - Test navigation
 - Test performance
 
 **Step 9.4: Run Test Suite**
+
 ```bash
 npm run test        # Unit tests
 npm run test:e2e    # E2E tests
@@ -2996,6 +3093,7 @@ npm run test:e2e    # E2E tests
 ### Phase 10: Documentation and Deployment Prep
 
 **Step 10.1: Write README**
+
 - Project overview
 - Setup instructions
 - Development workflow
@@ -3003,17 +3101,20 @@ npm run test:e2e    # E2E tests
 - Deployment notes
 
 **Step 10.2: Create Deployment Configuration**
+
 - Add `_redirects` for Netlify
 - Add `vercel.json` for Vercel (optional)
 - Document deployment process
 
 **Step 10.3: Build Production Bundle**
+
 ```bash
 npm run build
 npm run preview  # Test production build locally
 ```
 
 **Step 10.4: Final QA**
+
 - Test production build
 - Verify all images load
 - Test all navigation flows
@@ -3028,6 +3129,7 @@ npm run preview  # Test production build locally
 **Estimated Total:** 35-50 hours of development time
 
 **Breakdown:**
+
 - Phase 1: 1-2 hours (Setup)
 - Phase 2: 2-3 hours (Data)
 - Phase 3: 4-6 hours (UI Components)
@@ -3040,6 +3142,7 @@ npm run preview  # Test production build locally
 - Phase 10: 2-3 hours (Documentation)
 
 **Recommended Approach:**
+
 - Work in phases sequentially
 - Commit after each completed component
 - Test incrementally (don't wait until end)
@@ -3060,6 +3163,7 @@ Since this is a static site deployment, rollback is straightforward and handled 
 ### Netlify Rollback
 
 **Automatic Version History:**
+
 - Netlify keeps history of all deployments
 - Each deployment has a unique URL and ID
 - Previous versions remain accessible
@@ -3067,6 +3171,7 @@ Since this is a static site deployment, rollback is straightforward and handled 
 **Rollback Process:**
 
 **Option 1: Via Netlify UI (Recommended)**
+
 1. Log into Netlify dashboard
 2. Navigate to site > Deploys
 3. Find the last known good deployment
@@ -3074,6 +3179,7 @@ Since this is a static site deployment, rollback is straightforward and handled 
 5. Site reverts to previous version immediately (< 30 seconds)
 
 **Option 2: Via Netlify CLI**
+
 ```bash
 # Install Netlify CLI
 npm install -g netlify-cli
@@ -3095,6 +3201,7 @@ netlify deploy:restore --deploy-id <deploy-id>
 ### Vercel Rollback
 
 **Automatic Version History:**
+
 - Vercel keeps all deployment history
 - Instant rollback to any previous deployment
 - Immutable deployments (previous versions never deleted)
@@ -3102,6 +3209,7 @@ netlify deploy:restore --deploy-id <deploy-id>
 **Rollback Process:**
 
 **Via Vercel UI:**
+
 1. Log into Vercel dashboard
 2. Navigate to project > Deployments
 3. Find the last known good deployment
@@ -3109,6 +3217,7 @@ netlify deploy:restore --deploy-id <deploy-id>
 5. Instant rollback (global CDN updated within seconds)
 
 **Via Vercel CLI:**
+
 ```bash
 # Install Vercel CLI
 npm install -g vercel
@@ -3154,6 +3263,7 @@ git push origin gh-pages --force
 ### AWS S3 + CloudFront Rollback
 
 **Version Control Strategy:**
+
 - Use S3 versioning to keep previous file versions
 - CloudFront invalidation to clear cache
 
@@ -3181,6 +3291,7 @@ aws cloudfront create-invalidation --distribution-id <dist-id> --paths "/*"
 **Before Deploying:**
 
 1. **Test Production Build Locally:**
+
 ```bash
 npm run build
 npm run preview
@@ -3188,12 +3299,14 @@ npm run preview
 ```
 
 2. **Run Automated Tests:**
+
 ```bash
 npm run test
 npm run test:e2e
 ```
 
 3. **Run Lighthouse Audit:**
+
 ```bash
 npm run build
 npx lighthouse http://localhost:4173 --view
@@ -3201,6 +3314,7 @@ npx lighthouse http://localhost:4173 --view
 ```
 
 4. **Check Bundle Size:**
+
 ```bash
 npm run build
 # Review dist/ folder sizes
@@ -3208,6 +3322,7 @@ npm run build
 ```
 
 5. **Verify Critical Assets:**
+
 ```bash
 # Check that all product images exist
 ls -la public/images/products/
@@ -3221,20 +3336,24 @@ node -e "require('./src/data/categories.json')"
 ### Deployment Best Practices to Minimize Rollback Need
 
 **1. Use Preview Deployments:**
+
 - Netlify/Vercel automatically create preview URLs for branches/PRs
 - Test preview URL before merging to production
 - Share preview with stakeholders for approval
 
 **2. Gradual Rollout (if supported):**
+
 - Some platforms support percentage-based rollouts
 - Deploy to 10% of users first, monitor, then 100%
 
 **3. Monitoring After Deployment:**
+
 - Check error tracking service (if configured)
 - Monitor analytics for traffic drop
 - Test critical user flows manually after deploy
 
 **4. Keep Build Artifacts:**
+
 ```bash
 # Archive production builds
 mkdir -p build-archives
@@ -3278,6 +3397,7 @@ ls -t build-archives | tail -n +11 | xargs -I {} rm -rf build-archives/{}
 ### Rollback Testing
 
 **Quarterly Rollback Drill:**
+
 1. Deploy a test change to production
 2. Practice rollback procedure
 3. Time the rollback process
@@ -3295,12 +3415,14 @@ ls -t build-archives | tail -n +11 | xargs -I {} rm -rf build-archives/{}
 ### Performance Targets
 
 **Lighthouse Scores:**
+
 - Performance: > 85
 - Accessibility: > 95
 - Best Practices: > 90
 - SEO: > 80
 
 **Core Web Vitals:**
+
 - LCP (Largest Contentful Paint): < 2.5s
 - FID (First Input Delay): < 100ms
 - CLS (Cumulative Layout Shift): < 0.1
@@ -3315,8 +3437,8 @@ ls -t build-archives | tail -n +11 | xargs -I {} rm -rf build-archives/{}
 
 ```javascript
 // vite.config.js
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
@@ -3345,23 +3467,24 @@ export default defineConfig({
     // Performance budgets
     chunkSizeWarningLimit: 500, // Warn if chunk > 500KB
   },
-});
+})
 ```
 
 **Route-Based Code Splitting:**
 
 ```javascript
 // App.jsx - Lazy load page components
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react'
 
-const ProductDetailPage = lazy(() => import('./pages/ProductDetailPage/ProductDetailPage'));
-const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
+const ProductDetailPage = lazy(() => import('./pages/ProductDetailPage/ProductDetailPage'))
+const NotFound = lazy(() => import('./pages/NotFound/NotFound'))
 
 // Home page loaded eagerly (main entry point)
-import Home from './pages/Home/Home';
+import Home from './pages/Home/Home'
 ```
 
 **Benefits:**
+
 - Smaller initial bundle size
 - Faster time to interactive
 - On-demand loading of product detail page
@@ -3372,55 +3495,57 @@ import Home from './pages/Home/Home';
 ### Image Optimization
 
 **Image Formats:**
+
 - Use WebP format with JPEG fallback
 - Implement responsive images with `srcset`
 
 ```javascript
 // Image component enhancement
 <picture>
-  <source 
-    srcSet={`${src}.webp 1x, ${src}@2x.webp 2x`}
-    type="image/webp" 
-  />
-  <source 
-    srcSet={`${src}.jpg 1x, ${src}@2x.jpg 2x`}
-    type="image/jpeg" 
-  />
+  <source srcSet={`${src}.webp 1x, ${src}@2x.webp 2x`} type="image/webp" />
+  <source srcSet={`${src}.jpg 1x, ${src}@2x.jpg 2x`} type="image/jpeg" />
   <img src={`${src}.jpg`} alt={alt} loading="lazy" />
 </picture>
 ```
 
 **Image Sizing:**
+
 - Thumbnail images: 400x533px (3:4 ratio)
 - Main product images: 800x1066px
 - Gallery images: 800x1066px
 - Optimize and compress all images (target: < 100KB per image)
 
 **Lazy Loading:**
+
 ```javascript
 // Implemented in Image component
 <img loading="lazy" src={src} alt={alt} />
 ```
 
 **Intersection Observer (Advanced):**
+
 ```javascript
 // Custom lazy loading with more control
 useEffect(() => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        observer.unobserve(img);
-      }
-    });
-  }, { rootMargin: '50px' });
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target
+          img.src = img.dataset.src
+          observer.unobserve(img)
+        }
+      })
+    },
+    { rootMargin: '50px' }
+  )
 
-  observer.observe(imageRef.current);
-}, []);
+  observer.observe(imageRef.current)
+}, [])
 ```
 
 **Image CDN (Future Enhancement):**
+
 - Migrate to Cloudinary or ImageKit
 - Automatic format optimization
 - On-demand resizing
@@ -3431,15 +3556,17 @@ useEffect(() => {
 ### CSS Optimization
 
 **CSS Modules Benefits:**
+
 - Scoped styles prevent bloat
 - Tree-shaking removes unused styles
 - Minified and bundled in production
 
 **Critical CSS Inlining:**
+
 ```javascript
 // vite.config.js
-import { defineConfig } from 'vite';
-import { VitePWA } from 'vite-plugin-pwa';
+import { defineConfig } from 'vite'
+import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
   plugins: [
@@ -3450,10 +3577,11 @@ export default defineConfig({
       },
     }),
   ],
-});
+})
 ```
 
 **CSS Custom Properties (Variables):**
+
 ```css
 /* src/styles/variables.css - loaded once */
 :root {
@@ -3464,6 +3592,7 @@ export default defineConfig({
 ```
 
 **Benefits:**
+
 - Single source of truth for design tokens
 - Easy theme changes
 - Better browser caching
@@ -3475,6 +3604,7 @@ export default defineConfig({
 **Static Asset Caching:**
 
 **Netlify Headers:**
+
 ```
 # _headers file in public/
 /assets/*
@@ -3488,15 +3618,17 @@ export default defineConfig({
 ```
 
 **Vite Build Output:**
+
 - JavaScript/CSS files: Content hash in filename (e.g., `main.a1b2c3.js`)
 - Browser caches aggressively (1 year)
 - New deployment = new hash = cache busted automatically
 - `index.html` not cached (always fetches latest)
 
 **Service Worker (Future Enhancement):**
+
 ```javascript
 // Enable offline caching with Workbox
-import { registerSW } from 'virtual:pwa-register';
+import { registerSW } from 'virtual:pwa-register'
 
 registerSW({
   onNeedRefresh() {
@@ -3505,7 +3637,7 @@ registerSW({
   onOfflineReady() {
     // Show "Ready to work offline" message
   },
-});
+})
 ```
 
 ---
@@ -3513,32 +3645,35 @@ registerSW({
 ### Data Loading Optimization
 
 **Current Approach:**
+
 - All product data loaded at app initialization
 - Data bundled with JavaScript
 
 **Future Optimizations (if catalog grows):**
 
 **1. Split Product Data by Category:**
+
 ```javascript
 // Instead of single products.json
-const bralettes = await import('../data/products/bralettes.json');
-const everyday = await import('../data/products/everyday.json');
+const bralettes = await import('../data/products/bralettes.json')
+const everyday = await import('../data/products/everyday.json')
 ```
 
 **2. Pagination:**
+
 ```javascript
 // Load products in batches
-const [page, setPage] = useState(1);
-const productsPerPage = 20;
-const visibleProducts = products.slice(0, page * productsPerPage);
+const [page, setPage] = useState(1)
+const productsPerPage = 20
+const visibleProducts = products.slice(0, page * productsPerPage)
 ```
 
 **3. Virtual Scrolling (for large lists):**
+
 ```javascript
 // Use react-window for efficient rendering
-import { FixedSizeGrid } from 'react-window';
-
-<FixedSizeGrid
+import { FixedSizeGrid } from 'react-window'
+;<FixedSizeGrid
   columnCount={3}
   rowCount={Math.ceil(products.length / 3)}
   columnWidth={300}
@@ -3557,41 +3692,42 @@ import { FixedSizeGrid } from 'react-window';
 **React Performance Best Practices:**
 
 **1. Memoization:**
+
 ```javascript
 // Memoize expensive product filtering
 const filteredProducts = useMemo(() => {
-  return products.filter(p => p.category === category);
-}, [products, category]);
+  return products.filter(p => p.category === category)
+}, [products, category])
 
 // Memoize product cards to prevent re-renders
 const ProductCard = memo(({ product }) => {
   // ... component code
-});
+})
 ```
 
 **2. Avoid Inline Functions in Render:**
+
 ```javascript
 // Bad: Creates new function on every render
-<button onClick={() => handleClick(id)}>Click</button>
+;<button onClick={() => handleClick(id)}>Click</button>
 
 // Good: Memoized callback
 const handleClick = useCallback(() => {
-  doSomething(id);
-}, [id]);
+  doSomething(id)
+}, [id])
 
-<button onClick={handleClick}>Click</button>
+;<button onClick={handleClick}>Click</button>
 ```
 
 **3. Lazy Load Images:**
+
 - Already implemented in Image component
 - Reduces initial render time
 
 **4. Debounce Search Input (if added):**
+
 ```javascript
-const debouncedSearch = useMemo(
-  () => debounce((query) => setSearchQuery(query), 300),
-  []
-);
+const debouncedSearch = useMemo(() => debounce(query => setSearchQuery(query), 300), [])
 ```
 
 ---
@@ -3599,12 +3735,14 @@ const debouncedSearch = useMemo(
 ### Network Performance
 
 **HTTP/2 Benefits:**
+
 - Multiplexing: Multiple requests over single connection
 - Header compression
 - Server push (if supported by host)
 - All modern static hosts support HTTP/2 by default
 
 **Preconnect to External Domains:**
+
 ```html
 <!-- index.html - if using external CDN -->
 <link rel="preconnect" href="https://cdn.example.com" />
@@ -3612,6 +3750,7 @@ const debouncedSearch = useMemo(
 ```
 
 **Resource Hints:**
+
 ```html
 <!-- Preload critical assets -->
 <link rel="preload" as="image" href="/images/logo.svg" />
@@ -3625,6 +3764,7 @@ const debouncedSearch = useMemo(
 ### Build Performance
 
 **Vite Build Optimization:**
+
 ```javascript
 // vite.config.js
 export default defineConfig({
@@ -3642,10 +3782,11 @@ export default defineConfig({
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
   },
-});
+})
 ```
 
 **Build Size Analysis:**
+
 ```bash
 # Install rollup-plugin-visualizer
 npm install --save-dev rollup-plugin-visualizer
@@ -3669,6 +3810,7 @@ npm run build
 ### Performance Budgets
 
 **Enforce in Build Process:**
+
 ```javascript
 // vite.config.js
 export default defineConfig({
@@ -3676,19 +3818,20 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // Warn if chunk exceeds budget
-        manualChunks: (id) => {
+        manualChunks: id => {
           if (id.includes('node_modules')) {
-            return 'vendor';
+            return 'vendor'
           }
         },
       },
     },
     chunkSizeWarningLimit: 200, // 200KB warning threshold
   },
-});
+})
 ```
 
 **Bundle Size Budgets:**
+
 - Main JavaScript bundle: < 100KB gzipped
 - Vendor chunk (React, Router): < 80KB gzipped
 - UI components chunk: < 40KB gzipped
@@ -3696,6 +3839,7 @@ export default defineConfig({
 - Total CSS: < 30KB gzipped
 
 **Fail Build if Budget Exceeded:**
+
 ```javascript
 // package.json script
 "scripts": {
@@ -3725,33 +3869,35 @@ jsFiles.forEach(file => {
 ### Runtime Performance Monitoring
 
 **Web Vitals Integration:**
+
 ```javascript
 // src/main.jsx
-import { getCLS, getFID, getFCP, getLCP, getTTFB } from 'web-vitals';
+import { getCLS, getFID, getFCP, getLCP, getTTFB } from 'web-vitals'
 
 function sendToAnalytics({ name, delta, value, id }) {
-  console.log('Web Vitals:', { name, delta, value, id });
+  console.log('Web Vitals:', { name, delta, value, id })
   // Send to analytics service in production
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getFCP(sendToAnalytics);
-getLCP(sendToAnalytics);
-getTTFB(sendToAnalytics);
+getCLS(sendToAnalytics)
+getFID(sendToAnalytics)
+getFCP(sendToAnalytics)
+getLCP(sendToAnalytics)
+getTTFB(sendToAnalytics)
 ```
 
 **Performance Observer:**
+
 ```javascript
 // Monitor long tasks
-const observer = new PerformanceObserver((list) => {
+const observer = new PerformanceObserver(list => {
   for (const entry of list.getEntries()) {
     if (entry.duration > 50) {
-      console.warn('Long task detected:', entry);
+      console.warn('Long task detected:', entry)
     }
   }
-});
-observer.observe({ entryTypes: ['longtask'] });
+})
+observer.observe({ entryTypes: ['longtask'] })
 ```
 
 ---
@@ -3759,18 +3905,20 @@ observer.observe({ entryTypes: ['longtask'] });
 ### Accessibility Performance
 
 **Fast Focus Management:**
+
 ```javascript
 // useScrollToTop hook also manages focus
 export function useScrollToTop() {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
     // Focus management for screen readers
-    document.querySelector('h1')?.focus();
-  }, []);
+    document.querySelector('h1')?.focus()
+  }, [])
 }
 ```
 
 **Skip Links:**
+
 ```javascript
 // Header component
 <a href="#main-content" className={styles.skipLink}>
@@ -3788,6 +3936,7 @@ export function useScrollToTop() {
 ### Performance Checklist
 
 **Pre-Launch:**
+
 - [ ] Run Lighthouse audit (all pages score > 85)
 - [ ] Test on slow 3G network (Chrome DevTools)
 - [ ] Verify lazy loading works correctly
@@ -3800,6 +3949,7 @@ export function useScrollToTop() {
 - [ ] Verify Service Worker (if implemented)
 
 **Post-Launch:**
+
 - [ ] Monitor Core Web Vitals in field
 - [ ] Track bundle size growth over time
 - [ ] Monitor CDN cache hit rates

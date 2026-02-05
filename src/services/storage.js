@@ -16,8 +16,8 @@ const STORAGE_KEYS = {
   SHOPPING_CART: 'lingerie_cart',
   RECENT_PRODUCTS: 'lingerie_recent',
   FILTERS: 'lingerie_filters',
-  THEME: 'lingerie_theme'
-};
+  THEME: 'lingerie_theme',
+}
 
 /**
  * Check if localStorage is available
@@ -25,12 +25,12 @@ const STORAGE_KEYS = {
  */
 function isStorageAvailable() {
   try {
-    const test = 'test';
-    localStorage.setItem(test, test);
-    localStorage.removeItem(test);
-    return true;
+    const test = 'test'
+    localStorage.setItem(test, test)
+    localStorage.removeItem(test)
+    return true
   } catch (e) {
-    return false;
+    return false
   }
 }
 
@@ -42,16 +42,16 @@ function isStorageAvailable() {
  */
 export function getStorageItem(key, defaultValue = null) {
   if (!isStorageAvailable()) {
-    console.warn('localStorage not available');
-    return defaultValue;
+    console.warn('localStorage not available')
+    return defaultValue
   }
 
   try {
-    const item = localStorage.getItem(key);
-    return item ? JSON.parse(item) : defaultValue;
+    const item = localStorage.getItem(key)
+    return item ? JSON.parse(item) : defaultValue
   } catch (error) {
-    console.error('Error reading from localStorage:', error);
-    return defaultValue;
+    console.error('Error reading from localStorage:', error)
+    return defaultValue
   }
 }
 
@@ -63,16 +63,16 @@ export function getStorageItem(key, defaultValue = null) {
  */
 export function setStorageItem(key, value) {
   if (!isStorageAvailable()) {
-    console.warn('localStorage not available');
-    return false;
+    console.warn('localStorage not available')
+    return false
   }
 
   try {
-    localStorage.setItem(key, JSON.stringify(value));
-    return true;
+    localStorage.setItem(key, JSON.stringify(value))
+    return true
   } catch (error) {
-    console.error('Error writing to localStorage:', error);
-    return false;
+    console.error('Error writing to localStorage:', error)
+    return false
   }
 }
 
@@ -83,15 +83,15 @@ export function setStorageItem(key, value) {
  */
 export function removeStorageItem(key) {
   if (!isStorageAvailable()) {
-    return false;
+    return false
   }
 
   try {
-    localStorage.removeItem(key);
-    return true;
+    localStorage.removeItem(key)
+    return true
   } catch (error) {
-    console.error('Error removing from localStorage:', error);
-    return false;
+    console.error('Error removing from localStorage:', error)
+    return false
   }
 }
 
@@ -101,17 +101,17 @@ export function removeStorageItem(key) {
  */
 export function clearAppStorage() {
   if (!isStorageAvailable()) {
-    return false;
+    return false
   }
 
   try {
     Object.values(STORAGE_KEYS).forEach(key => {
-      localStorage.removeItem(key);
-    });
-    return true;
+      localStorage.removeItem(key)
+    })
+    return true
   } catch (error) {
-    console.error('Error clearing localStorage:', error);
-    return false;
+    console.error('Error clearing localStorage:', error)
+    return false
   }
 }
 
@@ -123,8 +123,8 @@ export function getUserPreferences() {
   return getStorageItem(STORAGE_KEYS.USER_PREFERENCES, {
     theme: 'light',
     currency: 'USD',
-    language: 'en'
-  });
+    language: 'en',
+  })
 }
 
 /**
@@ -133,7 +133,7 @@ export function getUserPreferences() {
  * @returns {boolean} True if successful
  */
 export function saveUserPreferences(preferences) {
-  return setStorageItem(STORAGE_KEYS.USER_PREFERENCES, preferences);
+  return setStorageItem(STORAGE_KEYS.USER_PREFERENCES, preferences)
 }
 
 export default {
@@ -143,5 +143,5 @@ export default {
   clearAppStorage,
   getUserPreferences,
   saveUserPreferences,
-  keys: STORAGE_KEYS
-};
+  keys: STORAGE_KEYS,
+}

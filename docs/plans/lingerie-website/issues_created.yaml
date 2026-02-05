@@ -1,162 +1,162 @@
-GeneratedAt: "2026-02-04T22:31:41Z"
+GeneratedAt: '2026-02-04T22:31:41Z'
 Issues:
-- IssueNumber: 64
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/64
-  TaskID: task-lingerie-website-feat-project-setup-1
-- IssueNumber: 65
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/65
-  TaskID: task-lingerie-website-feat-project-setup-2
-- IssueNumber: 66
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/66
-  TaskID: task-lingerie-website-feat-project-setup-3
-- IssueNumber: 67
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/67
-  TaskID: task-lingerie-website-feat-project-setup-4
-- IssueNumber: 68
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/68
-  TaskID: task-lingerie-website-feat-project-setup-5
-- IssueNumber: 69
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/69
-  TaskID: task-lingerie-website-feat-project-setup-6
-- IssueNumber: 70
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/70
-  TaskID: task-lingerie-website-feat-project-setup-7
-- IssueNumber: 71
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/71
-  TaskID: task-lingerie-website-feat-project-setup-8
-- IssueNumber: 72
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/72
-  TaskID: task-lingerie-website-feat-project-setup-9
-- IssueNumber: 73
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/73
-  TaskID: task-lingerie-website-feat-project-setup-10
-- IssueNumber: 74
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/74
-  TaskID: task-lingerie-website-feat-data-layer-1
-- IssueNumber: 75
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/75
-  TaskID: task-lingerie-website-feat-data-layer-2
-- IssueNumber: 76
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/76
-  TaskID: task-lingerie-website-feat-data-layer-3
-- IssueNumber: 77
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/77
-  TaskID: task-lingerie-website-feat-data-layer-4
-- IssueNumber: 78
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/78
-  TaskID: task-lingerie-website-feat-data-layer-5
-- IssueNumber: 79
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/79
-  TaskID: task-lingerie-website-feat-data-layer-6
-- IssueNumber: 80
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/80
-  TaskID: task-lingerie-website-feat-data-layer-7
-- IssueNumber: 81
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/81
-  TaskID: task-lingerie-website-feat-data-layer-8
-- IssueNumber: 82
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/82
-  TaskID: task-lingerie-website-feat-global-styles-1
-- IssueNumber: 83
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/83
-  TaskID: task-lingerie-website-feat-global-styles-2
-- IssueNumber: 84
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/84
-  TaskID: task-lingerie-website-feat-global-styles-3
-- IssueNumber: 85
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/85
-  TaskID: task-lingerie-website-feat-global-styles-4
-- IssueNumber: 86
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/86
-  TaskID: task-lingerie-website-feat-global-styles-5
-- IssueNumber: 87
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/87
-  TaskID: task-lingerie-website-feat-global-styles-6
-- IssueNumber: 88
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/88
-  TaskID: task-lingerie-website-feat-global-styles-7
-- IssueNumber: 89
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/89
-  TaskID: task-lingerie-website-feat-global-styles-8
-- IssueNumber: 90
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/90
-  TaskID: task-lingerie-website-feat-global-styles-9
-- IssueNumber: 91
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/91
-  TaskID: task-lingerie-website-feat-global-styles-10
-- IssueNumber: 92
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/92
-  TaskID: task-lingerie-website-feat-ui-components-1
-- IssueNumber: 93
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/93
-  TaskID: task-lingerie-website-feat-ui-components-2
-- IssueNumber: 94
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/94
-  TaskID: task-lingerie-website-feat-ui-components-3
-- IssueNumber: 95
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/95
-  TaskID: task-lingerie-website-feat-ui-components-4
-- IssueNumber: 96
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/96
-  TaskID: task-lingerie-website-feat-ui-components-5
-- IssueNumber: 97
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/97
-  TaskID: task-lingerie-website-feat-ui-components-6
-- IssueNumber: 98
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/98
-  TaskID: task-lingerie-website-feat-ui-components-7
-- IssueNumber: 99
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/99
-  TaskID: task-lingerie-website-feat-ui-components-8
-- IssueNumber: 100
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/100
-  TaskID: task-lingerie-website-feat-layout-components-1
-- IssueNumber: 101
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/101
-  TaskID: task-lingerie-website-feat-layout-components-2
-- IssueNumber: 102
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/102
-  TaskID: task-lingerie-website-feat-layout-components-3
-- IssueNumber: 103
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/103
-  TaskID: task-lingerie-website-feat-layout-components-4
-- IssueNumber: 104
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/104
-  TaskID: task-lingerie-website-feat-layout-components-5
-- IssueNumber: 105
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/105
-  TaskID: task-lingerie-website-feat-layout-components-6
-- IssueNumber: 106
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/106
-  TaskID: task-lingerie-website-feat-layout-components-7
-- IssueNumber: 107
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/107
-  TaskID: task-lingerie-website-feat-layout-components-8
-- IssueNumber: 108
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/108
-  TaskID: task-lingerie-website-feat-routing-1
-- IssueNumber: 109
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/109
-  TaskID: task-lingerie-website-feat-routing-2
-- IssueNumber: 110
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/110
-  TaskID: task-lingerie-website-feat-routing-3
-- IssueNumber: 111
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/111
-  TaskID: task-lingerie-website-feat-routing-4
-- IssueNumber: 112
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/112
-  TaskID: task-lingerie-website-feat-routing-5
-- IssueNumber: 113
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/113
-  TaskID: task-lingerie-website-feat-routing-6
-- IssueNumber: 114
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/114
-  TaskID: task-lingerie-website-feat-routing-7
-- IssueNumber: 115
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/115
-  TaskID: task-lingerie-website-feat-routing-8
-- IssueNumber: 116
-  IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/116
-  TaskID: task-lingerie-website-feat-routing-9
+  - IssueNumber: 64
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/64
+    TaskID: task-lingerie-website-feat-project-setup-1
+  - IssueNumber: 65
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/65
+    TaskID: task-lingerie-website-feat-project-setup-2
+  - IssueNumber: 66
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/66
+    TaskID: task-lingerie-website-feat-project-setup-3
+  - IssueNumber: 67
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/67
+    TaskID: task-lingerie-website-feat-project-setup-4
+  - IssueNumber: 68
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/68
+    TaskID: task-lingerie-website-feat-project-setup-5
+  - IssueNumber: 69
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/69
+    TaskID: task-lingerie-website-feat-project-setup-6
+  - IssueNumber: 70
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/70
+    TaskID: task-lingerie-website-feat-project-setup-7
+  - IssueNumber: 71
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/71
+    TaskID: task-lingerie-website-feat-project-setup-8
+  - IssueNumber: 72
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/72
+    TaskID: task-lingerie-website-feat-project-setup-9
+  - IssueNumber: 73
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/73
+    TaskID: task-lingerie-website-feat-project-setup-10
+  - IssueNumber: 74
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/74
+    TaskID: task-lingerie-website-feat-data-layer-1
+  - IssueNumber: 75
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/75
+    TaskID: task-lingerie-website-feat-data-layer-2
+  - IssueNumber: 76
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/76
+    TaskID: task-lingerie-website-feat-data-layer-3
+  - IssueNumber: 77
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/77
+    TaskID: task-lingerie-website-feat-data-layer-4
+  - IssueNumber: 78
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/78
+    TaskID: task-lingerie-website-feat-data-layer-5
+  - IssueNumber: 79
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/79
+    TaskID: task-lingerie-website-feat-data-layer-6
+  - IssueNumber: 80
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/80
+    TaskID: task-lingerie-website-feat-data-layer-7
+  - IssueNumber: 81
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/81
+    TaskID: task-lingerie-website-feat-data-layer-8
+  - IssueNumber: 82
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/82
+    TaskID: task-lingerie-website-feat-global-styles-1
+  - IssueNumber: 83
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/83
+    TaskID: task-lingerie-website-feat-global-styles-2
+  - IssueNumber: 84
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/84
+    TaskID: task-lingerie-website-feat-global-styles-3
+  - IssueNumber: 85
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/85
+    TaskID: task-lingerie-website-feat-global-styles-4
+  - IssueNumber: 86
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/86
+    TaskID: task-lingerie-website-feat-global-styles-5
+  - IssueNumber: 87
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/87
+    TaskID: task-lingerie-website-feat-global-styles-6
+  - IssueNumber: 88
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/88
+    TaskID: task-lingerie-website-feat-global-styles-7
+  - IssueNumber: 89
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/89
+    TaskID: task-lingerie-website-feat-global-styles-8
+  - IssueNumber: 90
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/90
+    TaskID: task-lingerie-website-feat-global-styles-9
+  - IssueNumber: 91
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/91
+    TaskID: task-lingerie-website-feat-global-styles-10
+  - IssueNumber: 92
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/92
+    TaskID: task-lingerie-website-feat-ui-components-1
+  - IssueNumber: 93
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/93
+    TaskID: task-lingerie-website-feat-ui-components-2
+  - IssueNumber: 94
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/94
+    TaskID: task-lingerie-website-feat-ui-components-3
+  - IssueNumber: 95
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/95
+    TaskID: task-lingerie-website-feat-ui-components-4
+  - IssueNumber: 96
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/96
+    TaskID: task-lingerie-website-feat-ui-components-5
+  - IssueNumber: 97
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/97
+    TaskID: task-lingerie-website-feat-ui-components-6
+  - IssueNumber: 98
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/98
+    TaskID: task-lingerie-website-feat-ui-components-7
+  - IssueNumber: 99
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/99
+    TaskID: task-lingerie-website-feat-ui-components-8
+  - IssueNumber: 100
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/100
+    TaskID: task-lingerie-website-feat-layout-components-1
+  - IssueNumber: 101
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/101
+    TaskID: task-lingerie-website-feat-layout-components-2
+  - IssueNumber: 102
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/102
+    TaskID: task-lingerie-website-feat-layout-components-3
+  - IssueNumber: 103
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/103
+    TaskID: task-lingerie-website-feat-layout-components-4
+  - IssueNumber: 104
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/104
+    TaskID: task-lingerie-website-feat-layout-components-5
+  - IssueNumber: 105
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/105
+    TaskID: task-lingerie-website-feat-layout-components-6
+  - IssueNumber: 106
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/106
+    TaskID: task-lingerie-website-feat-layout-components-7
+  - IssueNumber: 107
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/107
+    TaskID: task-lingerie-website-feat-layout-components-8
+  - IssueNumber: 108
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/108
+    TaskID: task-lingerie-website-feat-routing-1
+  - IssueNumber: 109
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/109
+    TaskID: task-lingerie-website-feat-routing-2
+  - IssueNumber: 110
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/110
+    TaskID: task-lingerie-website-feat-routing-3
+  - IssueNumber: 111
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/111
+    TaskID: task-lingerie-website-feat-routing-4
+  - IssueNumber: 112
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/112
+    TaskID: task-lingerie-website-feat-routing-5
+  - IssueNumber: 113
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/113
+    TaskID: task-lingerie-website-feat-routing-6
+  - IssueNumber: 114
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/114
+    TaskID: task-lingerie-website-feat-routing-7
+  - IssueNumber: 115
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/115
+    TaskID: task-lingerie-website-feat-routing-8
+  - IssueNumber: 116
+    IssueURL: https://github.com/bobbydeveaux/kids-book-website/issues/116
+    TaskID: task-lingerie-website-feat-routing-9
 Plan: lingerie-website-plan

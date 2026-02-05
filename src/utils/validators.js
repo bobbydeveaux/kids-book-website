@@ -11,20 +11,21 @@
  * Email validation regex pattern
  * @type {RegExp}
  */
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 /**
  * Phone number validation regex pattern (US format)
  * @type {RegExp}
  */
-const PHONE_REGEX = /^\+?1?[-.\s]?\(?[0-9]{3}\)?[-.\s]?[0-9]{3}[-.\s]?[0-9]{4}$/;
+const PHONE_REGEX = /^\+?1?[-.\s]?\(?[0-9]{3}\)?[-.\s]?[0-9]{3}[-.\s]?[0-9]{4}$/
 
 /**
  * Strong password regex pattern
  * At least 8 characters, 1 uppercase, 1 lowercase, 1 number, 1 special character
  * @type {RegExp}
  */
-const STRONG_PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+// eslint-disable-next-line no-unused-vars
+const STRONG_PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
 
 /**
  * Validate email address
@@ -36,9 +37,9 @@ const STRONG_PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-
  */
 export function isValidEmail(email) {
   if (typeof email !== 'string') {
-    return false;
+    return false
   }
-  return EMAIL_REGEX.test(email.trim());
+  return EMAIL_REGEX.test(email.trim())
 }
 
 /**
@@ -52,9 +53,9 @@ export function isValidEmail(email) {
  */
 export function isValidPhone(phone) {
   if (typeof phone !== 'string') {
-    return false;
+    return false
   }
-  return PHONE_REGEX.test(phone.trim());
+  return PHONE_REGEX.test(phone.trim())
 }
 
 /**
@@ -67,35 +68,35 @@ export function isValidPhone(phone) {
  */
 export function validatePassword(password) {
   if (typeof password !== 'string') {
-    return { isValid: false, feedback: ['Password must be a string'] };
+    return { isValid: false, feedback: ['Password must be a string'] }
   }
 
-  const feedback = [];
+  const feedback = []
 
   if (password.length < 8) {
-    feedback.push('Password must be at least 8 characters long');
+    feedback.push('Password must be at least 8 characters long')
   }
 
   if (!/[a-z]/.test(password)) {
-    feedback.push('Password must contain at least one lowercase letter');
+    feedback.push('Password must contain at least one lowercase letter')
   }
 
   if (!/[A-Z]/.test(password)) {
-    feedback.push('Password must contain at least one uppercase letter');
+    feedback.push('Password must contain at least one uppercase letter')
   }
 
   if (!/\d/.test(password)) {
-    feedback.push('Password must contain at least one number');
+    feedback.push('Password must contain at least one number')
   }
 
   if (!/[@$!%*?&]/.test(password)) {
-    feedback.push('Password must contain at least one special character (@$!%*?&)');
+    feedback.push('Password must contain at least one special character (@$!%*?&)')
   }
 
   return {
     isValid: feedback.length === 0,
-    feedback: feedback
-  };
+    feedback: feedback,
+  }
 }
 
 /**
@@ -109,14 +110,14 @@ export function validatePassword(password) {
  */
 export function isRequired(value) {
   if (value === null || value === undefined) {
-    return false;
+    return false
   }
 
   if (typeof value === 'string') {
-    return value.trim().length > 0;
+    return value.trim().length > 0
   }
 
-  return true;
+  return true
 }
 
 /**
@@ -130,9 +131,9 @@ export function isRequired(value) {
  */
 export function hasMinLength(value, minLength) {
   if (typeof value !== 'string' || typeof minLength !== 'number') {
-    return false;
+    return false
   }
-  return value.length >= minLength;
+  return value.length >= minLength
 }
 
 /**
@@ -146,9 +147,9 @@ export function hasMinLength(value, minLength) {
  */
 export function hasMaxLength(value, maxLength) {
   if (typeof value !== 'string' || typeof maxLength !== 'number') {
-    return false;
+    return false
   }
-  return value.length <= maxLength;
+  return value.length <= maxLength
 }
 
 /**
@@ -162,14 +163,14 @@ export function hasMaxLength(value, maxLength) {
  */
 export function isNumeric(value) {
   if (typeof value === 'number') {
-    return !isNaN(value) && isFinite(value);
+    return !isNaN(value) && isFinite(value)
   }
 
   if (typeof value === 'string') {
-    return !isNaN(parseFloat(value)) && isFinite(parseFloat(value));
+    return !isNaN(parseFloat(value)) && isFinite(parseFloat(value))
   }
 
-  return false;
+  return false
 }
 
 /**
@@ -182,14 +183,14 @@ export function isNumeric(value) {
  */
 export function isValidURL(url) {
   if (typeof url !== 'string') {
-    return false;
+    return false
   }
 
   try {
-    new URL(url);
-    return true;
+    new URL(url)
+    return true
   } catch {
-    return false;
+    return false
   }
 }
 
@@ -202,14 +203,14 @@ export function isValidURL(url) {
  */
 export function sanitizeHTML(html) {
   if (typeof html !== 'string') {
-    return '';
+    return ''
   }
 
   // Basic sanitization - remove script tags and on* attributes
   return html
     .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
     .replace(/\son\w+\s*=\s*["'][^"']*["']/gi, '')
-    .replace(/javascript:/gi, '');
+    .replace(/javascript:/gi, '')
 }
 
 export default {
@@ -221,5 +222,5 @@ export default {
   hasMaxLength,
   isNumeric,
   isValidURL,
-  sanitizeHTML
-};
+  sanitizeHTML,
+}

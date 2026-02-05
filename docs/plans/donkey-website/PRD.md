@@ -63,31 +63,37 @@ I want a website about donkeys
 <!-- AI: For each major user story, define acceptance criteria in Given/When/Then format -->
 
 **Learning About Donkey Breeds:**
+
 - Given I am on the website homepage
 - When I navigate to the breeds section
 - Then I see a list of at least 5 different donkey breeds with descriptions, images, and key characteristics
 
 **Accessing Care Information:**
+
 - Given I am a donkey owner seeking care guidance
 - When I visit the care section
 - Then I find information on feeding, grooming, housing, and health care organized in clear sections
 
 **Responsive Mobile Experience:**
+
 - Given I access the website from a mobile device
 - When the page loads
 - Then all content is readable without horizontal scrolling and navigation adapts to mobile layout
 
 **Visual Content Presentation:**
+
 - Given I am browsing the website
 - When I view any content page
 - Then I see high-quality donkey images that are properly optimized and load within 2 seconds
 
 **Easy Navigation:**
+
 - Given I am a first-time visitor
 - When I land on any page
 - Then I see a clear navigation menu that allows me to reach any major section within 3 clicks
 
 **Accessibility Compliance:**
+
 - Given I use assistive technology
 - When I navigate the website
 - Then all images have alt text, headings are properly structured, and content is keyboard navigable

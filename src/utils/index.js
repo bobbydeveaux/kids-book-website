@@ -17,8 +17,8 @@ export {
   capitalizeWords,
   formatFileSize,
   formatSKU,
-  default as formatters
-} from './formatters.js';
+  default as formatters,
+} from './formatters.js'
 
 // Export validator functions
 export {
@@ -31,8 +31,8 @@ export {
   isNumeric,
   isValidURL,
   sanitizeHTML,
-  default as validators
-} from './validators.js';
+  default as validators,
+} from './validators.js'
 
 /**
  * Common constants used throughout the application
@@ -68,9 +68,9 @@ export const CONSTANTS = {
     mobile: 375,
     tablet: 768,
     desktop: 1024,
-    wide: 1440
-  }
-};
+    wide: 1440,
+  },
+}
 
 /**
  * Combined utilities interface
@@ -78,5 +78,5 @@ export const CONSTANTS = {
 export default {
   formatters: require('./formatters.js').default,
   validators: require('./validators.js').default,
-  constants: CONSTANTS
-};
+  constants: CONSTANTS,
+}

@@ -1,260 +1,260 @@
 Epic: lingerie-website
 Features:
-- Sprint: 1
-  dependencies: []
-  description: Initialize Vite + React project with dependencies (react-router-dom,
-    eslint, prettier, vitest, playwright), configure build tools, and set up directory
-    structure for components, pages, data, services, utils, and hooks
-  estimatedComplexity: low
-  files:
-  - package.json
-  - vite.config.js
-  - .eslintrc.cjs
-  - .prettierrc
-  - .gitignore
-  id: lingerie-website-feat-project-setup
-  name: Project Setup and Configuration
-  project: lingerie-website
-  type: enabler
-- Sprint: 1
-  dependencies:
-  - lingerie-website-feat-project-setup
-  description: Create JSON data files for products, categories, and featured items.
-    Implement product service module with functions to retrieve, filter, and search
-    products by ID, slug, category, and featured status
-  estimatedComplexity: low
-  files:
-  - src/data/products.json
-  - src/data/categories.json
-  - src/data/featured.json
-  - src/services/productService.js
-  id: lingerie-website-feat-data-layer
-  name: Static Data Layer and Product Service
-  project: lingerie-website
-  type: enabler
-- Sprint: 1
-  dependencies:
-  - lingerie-website-feat-project-setup
-  description: Create CSS reset, global styles, and CSS custom properties (variables)
-    for colors, spacing, typography, and breakpoints. Establish design tokens for
-    consistent theming across components
-  estimatedComplexity: low
-  files:
-  - src/styles/global.css
-  - src/styles/variables.css
-  - src/main.jsx
-  id: lingerie-website-feat-global-styles
-  name: Global Styles and Design System
-  project: lingerie-website
-  type: enabler
-- Sprint: 2
-  dependencies:
-  - lingerie-website-feat-global-styles
-  description: 'Build foundational UI components: Button (with variants), Card, Image
-    (with lazy loading and error handling), Grid (responsive with breakpoints), Container
-    (max-width wrapper), and Link. All components use CSS Modules for scoped styling'
-  estimatedComplexity: medium
-  files:
-  - src/components/ui/Button/Button.jsx
-  - src/components/ui/Button/Button.module.css
-  - src/components/ui/Card/Card.jsx
-  - src/components/ui/Card/Card.module.css
-  - src/components/ui/Image/Image.jsx
-  - src/components/ui/Image/Image.module.css
-  - src/components/ui/Grid/Grid.jsx
-  - src/components/ui/Grid/Grid.module.css
-  - src/components/ui/Container/Container.jsx
-  - src/components/ui/Container/Container.module.css
-  - src/components/ui/Link/Link.jsx
-  - src/components/ui/Link/Link.module.css
-  id: lingerie-website-feat-ui-components
-  name: Reusable UI Component Library
-  project: lingerie-website
-  type: enabler
-- Sprint: 2
-  dependencies:
-  - lingerie-website-feat-ui-components
-  - lingerie-website-feat-data-layer
-  description: Implement Header with logo and site branding, Navigation component
-    with category links, Footer with site information and links, and Layout wrapper
-    that composes header, main content, and footer. Includes sticky header and responsive
-    navigation
-  estimatedComplexity: medium
-  files:
-  - src/components/layout/Header/Header.jsx
-  - src/components/layout/Header/Header.module.css
-  - src/components/layout/Navigation/Navigation.jsx
-  - src/components/layout/Navigation/Navigation.module.css
-  - src/components/layout/Footer/Footer.jsx
-  - src/components/layout/Footer/Footer.module.css
-  - src/components/layout/Layout/Layout.jsx
-  - src/components/layout/Layout/Layout.module.css
-  id: lingerie-website-feat-layout-components
-  name: Site Layout and Navigation
-  project: lingerie-website
-  type: feature
-- Sprint: 2
-  dependencies:
-  - lingerie-website-feat-project-setup
-  description: Configure React Router with routes for home, product detail pages,
-    and 404. Implement lazy loading for route-based code splitting, error boundary
-    for React error handling, and custom hooks (useProduct, useScrollToTop) for common
-    functionality
-  estimatedComplexity: medium
-  files:
-  - src/App.jsx
-  - src/App.module.css
-  - src/ErrorBoundary.jsx
-  - src/hooks/useProduct.js
-  - src/hooks/useScrollToTop.js
-  - src/utils/constants.js
-  id: lingerie-website-feat-routing
-  name: Client-Side Routing and Error Handling
-  project: lingerie-website
-  type: enabler
-- Sprint: 3
-  dependencies:
-  - lingerie-website-feat-ui-components
-  - lingerie-website-feat-data-layer
-  description: 'Create product-specific components: ProductCard (preview with image,
-    name, description, price), ProductGrid (responsive grid layout), ProductImage
-    (gallery with thumbnail switching), ProductFeatures (feature list), ProductSpecifications
-    (spec table), and ProductDetail (full product page composition)'
-  estimatedComplexity: high
-  files:
-  - src/components/product/ProductCard/ProductCard.jsx
-  - src/components/product/ProductCard/ProductCard.module.css
-  - src/components/product/ProductGrid/ProductGrid.jsx
-  - src/components/product/ProductGrid/ProductGrid.module.css
-  - src/components/product/ProductImage/ProductImage.jsx
-  - src/components/product/ProductImage/ProductImage.module.css
-  - src/components/product/ProductFeatures/ProductFeatures.jsx
-  - src/components/product/ProductFeatures/ProductFeatures.module.css
-  - src/components/product/ProductSpecifications/ProductSpecifications.jsx
-  - src/components/product/ProductSpecifications/ProductSpecifications.module.css
-  - src/components/product/ProductDetail/ProductDetail.jsx
-  - src/components/product/ProductDetail/ProductDetail.module.css
-  id: lingerie-website-feat-product-components
-  name: Product Display Components
-  project: lingerie-website
-  type: feature
-- Sprint: 3
-  dependencies:
-  - lingerie-website-feat-product-components
-  - lingerie-website-feat-routing
-  - lingerie-website-feat-layout-components
-  description: Build homepage displaying featured products in a responsive grid. Support
-    category filtering via URL query parameters. Show hero section with title and
-    subtitle, and integrate ProductGrid component for product display
-  estimatedComplexity: medium
-  files:
-  - src/pages/Home/Home.jsx
-  - src/pages/Home/Home.module.css
-  id: lingerie-website-feat-home-page
-  name: Homepage with Featured Products
-  project: lingerie-website
-  type: feature
-- Sprint: 3
-  dependencies:
-  - lingerie-website-feat-routing
-  - lingerie-website-feat-layout-components
-  - lingerie-website-feat-ui-components
-  description: Implement 404 error page for invalid routes and non-existent products.
-    Display user-friendly message with button to return home. Handle both invalid
-    URLs and missing product slugs
-  estimatedComplexity: low
-  files:
-  - src/pages/NotFound/NotFound.jsx
-  - src/pages/NotFound/NotFound.module.css
-  id: lingerie-website-feat-404-page
-  name: 404 Not Found Page
-  project: lingerie-website
-  type: feature
-- Sprint: 4
-  dependencies:
-  - lingerie-website-feat-product-components
-  - lingerie-website-feat-routing
-  - lingerie-website-feat-layout-components
-  description: Create dynamic product detail page that loads product data by slug
-    from URL params. Display full product information including image gallery, description,
-    features, specifications, and price. Handle product not found with redirect to
-    404
-  estimatedComplexity: medium
-  files:
-  - src/pages/ProductDetailPage/ProductDetailPage.jsx
-  - src/pages/ProductDetailPage/ProductDetailPage.module.css
-  id: lingerie-website-feat-product-detail-page
-  name: Product Detail Page
-  project: lingerie-website
-  type: feature
-- Sprint: 4
-  dependencies:
-  - lingerie-website-feat-home-page
-  - lingerie-website-feat-product-detail-page
-  - lingerie-website-feat-404-page
-  description: Implement responsive styles for mobile (375px), tablet (768px), and
-    desktop (1920px+) viewports across all components. Use CSS Grid and Flexbox for
-    flexible layouts with breakpoints at 640px, 768px, 1024px, 1280px
-  estimatedComplexity: medium
-  files:
-  - src/components/**/*.module.css
-  - src/pages/**/*.module.css
-  id: lingerie-website-feat-responsive-design
-  name: Mobile-First Responsive Design
-  project: lingerie-website
-  type: enabler
-- Sprint: 5
-  dependencies:
-  - lingerie-website-feat-responsive-design
-  description: Configure Vite for optimal production builds with manual chunk splitting
-    (vendor, UI components, product components). Implement image lazy loading, route-based
-    code splitting with React.lazy(), and enforce performance budgets (<200KB JS,
-    <50KB CSS gzipped)
-  estimatedComplexity: medium
-  files:
-  - vite.config.js
-  - src/App.jsx
-  - src/components/ui/Image/Image.jsx
-  id: lingerie-website-feat-performance-optimization
-  name: Performance Optimization and Code Splitting
-  project: lingerie-website
-  type: enabler
-- Sprint: 5
-  dependencies:
-  - lingerie-website-feat-performance-optimization
-  description: Implement unit tests for product service and UI components using Vitest
-    and React Testing Library. Create integration tests for navigation and product
-    flows. Add E2E tests with Playwright for homepage, product detail, navigation,
-    and performance validation
-  estimatedComplexity: high
-  files:
-  - vitest.config.js
-  - playwright.config.js
-  - src/services/__tests__/productService.test.js
-  - src/components/ui/Button/__tests__/Button.test.jsx
-  - src/components/product/ProductCard/__tests__/ProductCard.test.jsx
-  - src/test/integration/navigation.test.jsx
-  - e2e/homepage.spec.js
-  - e2e/productDetail.spec.js
-  - e2e/navigation.spec.js
-  id: lingerie-website-feat-testing
-  name: Automated Testing Suite
-  project: lingerie-website
-  type: enabler
-- Sprint: 5
-  dependencies:
-  - lingerie-website-feat-testing
-  description: Create deployment configuration files for static hosting (Netlify redirects,
-    Vercel config). Write comprehensive README with setup instructions, development
-    workflow, and deployment notes. Generate production build and verify all assets
-    load correctly
-  estimatedComplexity: low
-  files:
-  - _redirects
-  - README.md
-  - public/robots.txt
-  id: lingerie-website-feat-deployment-config
-  name: Deployment Configuration and Documentation
-  project: lingerie-website
-  type: enabler
+  - Sprint: 1
+    dependencies: []
+    description: Initialize Vite + React project with dependencies (react-router-dom,
+      eslint, prettier, vitest, playwright), configure build tools, and set up directory
+      structure for components, pages, data, services, utils, and hooks
+    estimatedComplexity: low
+    files:
+      - package.json
+      - vite.config.js
+      - .eslintrc.cjs
+      - .prettierrc
+      - .gitignore
+    id: lingerie-website-feat-project-setup
+    name: Project Setup and Configuration
+    project: lingerie-website
+    type: enabler
+  - Sprint: 1
+    dependencies:
+      - lingerie-website-feat-project-setup
+    description: Create JSON data files for products, categories, and featured items.
+      Implement product service module with functions to retrieve, filter, and search
+      products by ID, slug, category, and featured status
+    estimatedComplexity: low
+    files:
+      - src/data/products.json
+      - src/data/categories.json
+      - src/data/featured.json
+      - src/services/productService.js
+    id: lingerie-website-feat-data-layer
+    name: Static Data Layer and Product Service
+    project: lingerie-website
+    type: enabler
+  - Sprint: 1
+    dependencies:
+      - lingerie-website-feat-project-setup
+    description: Create CSS reset, global styles, and CSS custom properties (variables)
+      for colors, spacing, typography, and breakpoints. Establish design tokens for
+      consistent theming across components
+    estimatedComplexity: low
+    files:
+      - src/styles/global.css
+      - src/styles/variables.css
+      - src/main.jsx
+    id: lingerie-website-feat-global-styles
+    name: Global Styles and Design System
+    project: lingerie-website
+    type: enabler
+  - Sprint: 2
+    dependencies:
+      - lingerie-website-feat-global-styles
+    description: 'Build foundational UI components: Button (with variants), Card, Image
+      (with lazy loading and error handling), Grid (responsive with breakpoints), Container
+      (max-width wrapper), and Link. All components use CSS Modules for scoped styling'
+    estimatedComplexity: medium
+    files:
+      - src/components/ui/Button/Button.jsx
+      - src/components/ui/Button/Button.module.css
+      - src/components/ui/Card/Card.jsx
+      - src/components/ui/Card/Card.module.css
+      - src/components/ui/Image/Image.jsx
+      - src/components/ui/Image/Image.module.css
+      - src/components/ui/Grid/Grid.jsx
+      - src/components/ui/Grid/Grid.module.css
+      - src/components/ui/Container/Container.jsx
+      - src/components/ui/Container/Container.module.css
+      - src/components/ui/Link/Link.jsx
+      - src/components/ui/Link/Link.module.css
+    id: lingerie-website-feat-ui-components
+    name: Reusable UI Component Library
+    project: lingerie-website
+    type: enabler
+  - Sprint: 2
+    dependencies:
+      - lingerie-website-feat-ui-components
+      - lingerie-website-feat-data-layer
+    description: Implement Header with logo and site branding, Navigation component
+      with category links, Footer with site information and links, and Layout wrapper
+      that composes header, main content, and footer. Includes sticky header and responsive
+      navigation
+    estimatedComplexity: medium
+    files:
+      - src/components/layout/Header/Header.jsx
+      - src/components/layout/Header/Header.module.css
+      - src/components/layout/Navigation/Navigation.jsx
+      - src/components/layout/Navigation/Navigation.module.css
+      - src/components/layout/Footer/Footer.jsx
+      - src/components/layout/Footer/Footer.module.css
+      - src/components/layout/Layout/Layout.jsx
+      - src/components/layout/Layout/Layout.module.css
+    id: lingerie-website-feat-layout-components
+    name: Site Layout and Navigation
+    project: lingerie-website
+    type: feature
+  - Sprint: 2
+    dependencies:
+      - lingerie-website-feat-project-setup
+    description: Configure React Router with routes for home, product detail pages,
+      and 404. Implement lazy loading for route-based code splitting, error boundary
+      for React error handling, and custom hooks (useProduct, useScrollToTop) for common
+      functionality
+    estimatedComplexity: medium
+    files:
+      - src/App.jsx
+      - src/App.module.css
+      - src/ErrorBoundary.jsx
+      - src/hooks/useProduct.js
+      - src/hooks/useScrollToTop.js
+      - src/utils/constants.js
+    id: lingerie-website-feat-routing
+    name: Client-Side Routing and Error Handling
+    project: lingerie-website
+    type: enabler
+  - Sprint: 3
+    dependencies:
+      - lingerie-website-feat-ui-components
+      - lingerie-website-feat-data-layer
+    description: 'Create product-specific components: ProductCard (preview with image,
+      name, description, price), ProductGrid (responsive grid layout), ProductImage
+      (gallery with thumbnail switching), ProductFeatures (feature list), ProductSpecifications
+      (spec table), and ProductDetail (full product page composition)'
+    estimatedComplexity: high
+    files:
+      - src/components/product/ProductCard/ProductCard.jsx
+      - src/components/product/ProductCard/ProductCard.module.css
+      - src/components/product/ProductGrid/ProductGrid.jsx
+      - src/components/product/ProductGrid/ProductGrid.module.css
+      - src/components/product/ProductImage/ProductImage.jsx
+      - src/components/product/ProductImage/ProductImage.module.css
+      - src/components/product/ProductFeatures/ProductFeatures.jsx
+      - src/components/product/ProductFeatures/ProductFeatures.module.css
+      - src/components/product/ProductSpecifications/ProductSpecifications.jsx
+      - src/components/product/ProductSpecifications/ProductSpecifications.module.css
+      - src/components/product/ProductDetail/ProductDetail.jsx
+      - src/components/product/ProductDetail/ProductDetail.module.css
+    id: lingerie-website-feat-product-components
+    name: Product Display Components
+    project: lingerie-website
+    type: feature
+  - Sprint: 3
+    dependencies:
+      - lingerie-website-feat-product-components
+      - lingerie-website-feat-routing
+      - lingerie-website-feat-layout-components
+    description: Build homepage displaying featured products in a responsive grid. Support
+      category filtering via URL query parameters. Show hero section with title and
+      subtitle, and integrate ProductGrid component for product display
+    estimatedComplexity: medium
+    files:
+      - src/pages/Home/Home.jsx
+      - src/pages/Home/Home.module.css
+    id: lingerie-website-feat-home-page
+    name: Homepage with Featured Products
+    project: lingerie-website
+    type: feature
+  - Sprint: 3
+    dependencies:
+      - lingerie-website-feat-routing
+      - lingerie-website-feat-layout-components
+      - lingerie-website-feat-ui-components
+    description: Implement 404 error page for invalid routes and non-existent products.
+      Display user-friendly message with button to return home. Handle both invalid
+      URLs and missing product slugs
+    estimatedComplexity: low
+    files:
+      - src/pages/NotFound/NotFound.jsx
+      - src/pages/NotFound/NotFound.module.css
+    id: lingerie-website-feat-404-page
+    name: 404 Not Found Page
+    project: lingerie-website
+    type: feature
+  - Sprint: 4
+    dependencies:
+      - lingerie-website-feat-product-components
+      - lingerie-website-feat-routing
+      - lingerie-website-feat-layout-components
+    description: Create dynamic product detail page that loads product data by slug
+      from URL params. Display full product information including image gallery, description,
+      features, specifications, and price. Handle product not found with redirect to
+      404
+    estimatedComplexity: medium
+    files:
+      - src/pages/ProductDetailPage/ProductDetailPage.jsx
+      - src/pages/ProductDetailPage/ProductDetailPage.module.css
+    id: lingerie-website-feat-product-detail-page
+    name: Product Detail Page
+    project: lingerie-website
+    type: feature
+  - Sprint: 4
+    dependencies:
+      - lingerie-website-feat-home-page
+      - lingerie-website-feat-product-detail-page
+      - lingerie-website-feat-404-page
+    description: Implement responsive styles for mobile (375px), tablet (768px), and
+      desktop (1920px+) viewports across all components. Use CSS Grid and Flexbox for
+      flexible layouts with breakpoints at 640px, 768px, 1024px, 1280px
+    estimatedComplexity: medium
+    files:
+      - src/components/**/*.module.css
+      - src/pages/**/*.module.css
+    id: lingerie-website-feat-responsive-design
+    name: Mobile-First Responsive Design
+    project: lingerie-website
+    type: enabler
+  - Sprint: 5
+    dependencies:
+      - lingerie-website-feat-responsive-design
+    description: Configure Vite for optimal production builds with manual chunk splitting
+      (vendor, UI components, product components). Implement image lazy loading, route-based
+      code splitting with React.lazy(), and enforce performance budgets (<200KB JS,
+      <50KB CSS gzipped)
+    estimatedComplexity: medium
+    files:
+      - vite.config.js
+      - src/App.jsx
+      - src/components/ui/Image/Image.jsx
+    id: lingerie-website-feat-performance-optimization
+    name: Performance Optimization and Code Splitting
+    project: lingerie-website
+    type: enabler
+  - Sprint: 5
+    dependencies:
+      - lingerie-website-feat-performance-optimization
+    description: Implement unit tests for product service and UI components using Vitest
+      and React Testing Library. Create integration tests for navigation and product
+      flows. Add E2E tests with Playwright for homepage, product detail, navigation,
+      and performance validation
+    estimatedComplexity: high
+    files:
+      - vitest.config.js
+      - playwright.config.js
+      - src/services/__tests__/productService.test.js
+      - src/components/ui/Button/__tests__/Button.test.jsx
+      - src/components/product/ProductCard/__tests__/ProductCard.test.jsx
+      - src/test/integration/navigation.test.jsx
+      - e2e/homepage.spec.js
+      - e2e/productDetail.spec.js
+      - e2e/navigation.spec.js
+    id: lingerie-website-feat-testing
+    name: Automated Testing Suite
+    project: lingerie-website
+    type: enabler
+  - Sprint: 5
+    dependencies:
+      - lingerie-website-feat-testing
+    description: Create deployment configuration files for static hosting (Netlify redirects,
+      Vercel config). Write comprehensive README with setup instructions, development
+      workflow, and deployment notes. Generate production build and verify all assets
+      load correctly
+    estimatedComplexity: low
+    files:
+      - _redirects
+      - README.md
+      - public/robots.txt
+    id: lingerie-website-feat-deployment-config
+    name: Deployment Configuration and Documentation
+    project: lingerie-website
+    type: enabler
 Version: v1alpha1
