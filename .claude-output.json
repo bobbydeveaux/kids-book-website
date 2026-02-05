@@ -1,0 +1,12 @@
+{
+  "prTitle": "feat: implement core product retrieval functions for data layer",
+  "prBody": "## Summary\n\nImplemented the core product retrieval functions for the lingerie website data layer as specified in task-lingerie-website-feat-data-layer-4.\n\n### Features Implemented\n\n- **getProductsByCategory(categorySlug)**: Filters products by category slug with support for both string and array category formats in product data. Returns products sorted by metadata.order.\n- **getCategories()**: Returns all categories sorted by their order field for consistent navigation display.\n- **getCategoryBySlug(slug)**: Enables category lookup by slug for routing and filtering functionality.\n\n### Technical Details\n\n- All functions include comprehensive JSDoc documentation\n- Handles edge cases like invalid category slugs (returns empty arrays)\n- Supports both single category (string) and multiple categories (array) in product data\n- Implements proper sorting by metadata.order for products and order field for categories\n- Uses modern ES6 import syntax with JSON import assertions\n\n### Testing\n\n- Validated all functions with comprehensive test scenarios\n- Confirmed proper handling of both string and array category formats\n- Verified correct sorting behavior for both products and categories\n- Tested edge cases including invalid slugs and empty results\n\n### Files Modified\n\n- Created `src/data/products.json` - Sample product data with mixed category formats\n- Created `src/data/categories.json` - Category definitions with order fields\n- Created `src/data/featured.json` - Featured product configuration\n- Created `src/services/productService.js` - Core data access functions\n- Created `package.json` - Basic project configuration\n\n**All acceptance criteria met:**\n- ✅ getProductsByCategory handles both string and array category fields\n- ✅ Products sorted by metadata.order when returned\n- ✅ getCategories returns all categories sorted by order field\n- ✅ getCategoryBySlug correctly finds categories by slug\n- ✅ All functions have proper JSDoc documentation\n\nCloses #77",
+  "testsPass": true,
+  "filesChanged": [
+    "src/data/products.json",
+    "src/data/categories.json",
+    "src/data/featured.json",
+    "src/services/productService.js",
+    "package.json"
+  ]
+}
