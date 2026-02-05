@@ -1,0 +1,21 @@
+{
+  "prTitle": "feat: create Link component with React Router integration",
+  "prBody": "## Summary\n\nImplemented Link component (task-lingerie-website-feat-global-styles-9) with React Router integration and comprehensive variant support.\n\n### Features Implemented\n\n✅ **Link.jsx wraps React Router Link for internal navigation**\n- Automatically detects internal vs external links\n- Uses React Router's Link component for internal navigation\n- Renders as anchor tag for external links\n\n✅ **External links automatically get target='_blank' and rel='noopener noreferrer'**\n- Detects external URLs (http/https)\n- Handles mailto: and tel: links\n- Adds security attributes automatically\n\n✅ **Link.module.css implements variant styles using color variables**\n- `default` variant: Standard link appearance\n- `button` variant: Button-like styling with hover effects\n- `nav` variant: Navigation menu styling\n- Uses CSS custom properties for theming\n\n✅ **Focus and hover states clearly visible**\n- Accessible focus outlines\n- Smooth transitions\n- Support for prefers-reduced-motion\n- High contrast mode support\n\n✅ **Component maintains proper accessibility attributes**\n- Proper PropTypes validation\n- ARIA attributes support\n- Keyboard navigation\n- Screen reader compatible\n\n### Project Setup\n\n- React + Vite project configuration\n- CSS Modules support\n- Comprehensive test suite with Jest + Testing Library\n- Demo application showcasing all variants\n- PropTypes validation\n\n### Testing\n\n- 9/9 tests passing\n- All acceptance criteria verified\n- External link detection\n- Variant class application\n- Accessibility attributes\n- Custom className support\n\n### Usage Examples\n\n```jsx\nimport Link from './components/ui/Link';\n\n// Internal navigation\n<Link to=\"/about\">About Us</Link>\n\n// External link (automatic security attributes)\n<Link href=\"https://example.com\">External Site</Link>\n\n// Button variant\n<Link to=\"/signup\" variant=\"button\">Sign Up</Link>\n\n// Navigation variant\n<Link to=\"/products\" variant=\"nav\">Products</Link>\n```\n\nCloses #90",
+  "testsPass": true,
+  "filesChanged": [
+    "package.json",
+    "vite.config.js",
+    "src/components/ui/Link/Link.jsx",
+    "src/components/ui/Link/Link.module.css",
+    "src/components/ui/Link/index.js",
+    "src/components/ui/Link/__tests__/Link.test.jsx",
+    "src/App.jsx",
+    "src/App.css",
+    "src/main.jsx",
+    "index.html",
+    "jest.config.js",
+    "src/setupTests.js",
+    "babel.config.js",
+    ".gitignore"
+  ]
+}
