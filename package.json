@@ -1,0 +1,12 @@
+{
+  "name": "lingerie-website",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Lingerie e-commerce website",
+  "scripts": {
+    "test": "node test-productService.js"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.0"
+  }
+}
