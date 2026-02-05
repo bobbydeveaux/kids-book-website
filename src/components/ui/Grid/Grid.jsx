@@ -7,10 +7,17 @@ function Grid({
   gap = 'medium',
   className = ''
 }) {
+  // Ensure column values are within the 1-4 range
+  const safeColumns = {
+    mobile: Math.min(Math.max(columns.mobile || 1, 1), 4),
+    tablet: Math.min(Math.max(columns.tablet || 2, 1), 4),
+    desktop: Math.min(Math.max(columns.desktop || 3, 1), 4),
+  };
+
   const gridStyle = {
-    '--grid-cols-mobile': columns.mobile,
-    '--grid-cols-tablet': columns.tablet,
-    '--grid-cols-desktop': columns.desktop,
+    '--grid-cols-mobile': safeColumns.mobile,
+    '--grid-cols-tablet': safeColumns.tablet,
+    '--grid-cols-desktop': safeColumns.desktop,
   };
 
   return (
@@ -26,9 +33,9 @@ function Grid({
 Grid.propTypes = {
   children: PropTypes.node.isRequired,
   columns: PropTypes.shape({
-    mobile: PropTypes.number,
-    tablet: PropTypes.number,
-    desktop: PropTypes.number,
+    mobile: PropTypes.oneOf([1, 2, 3, 4]),
+    tablet: PropTypes.oneOf([1, 2, 3, 4]),
+    desktop: PropTypes.oneOf([1, 2, 3, 4]),
   }),
   gap: PropTypes.oneOf(['small', 'medium', 'large']),
   className: PropTypes.string,

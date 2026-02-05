@@ -1,3 +1,5 @@
+@import '../../styles/variables.css';
+
 .grid {
   display: grid;
   grid-template-columns: repeat(var(--grid-cols-mobile, 1), 1fr);
@@ -15,14 +17,15 @@
   }
 }
 
+/* Gap spacing using CSS custom properties */
 .gap-small {
-  gap: 1rem;
+  gap: var(--gap-small);
 }
 
 .gap-medium {
-  gap: 1.5rem;
+  gap: var(--gap-medium);
 }
 
 .gap-large {
-  gap: 2rem;
+  gap: var(--gap-large);
 }
