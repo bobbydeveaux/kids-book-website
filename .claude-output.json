@@ -1,0 +1,17 @@
+{
+  "prTitle": "feat: install and configure core dependencies",
+  "prBody": "## Summary\n\nImplemented the core project setup for the lingerie website:\n\n### ✅ Completed Tasks\n- ✅ Initialized Vite + React project with proper structure\n- ✅ Installed react-router-dom and added to package.json dependencies  \n- ✅ Configured vite.config.js with comprehensive path aliases:\n  - `@/` → `./src`\n  - `@/components` → `./src/components`\n  - `@/pages` → `./src/pages`\n  - `@/data` → `./src/data`\n  - `@/services` → `./src/services`\n  - `@/utils` → `./src/utils`\n  - `@/hooks` → `./src/hooks`\n  - `@/styles` → `./src/styles`\n- ✅ Set up vendor chunking for React dependencies in build configuration\n- ✅ Created HTML entry point with proper meta tags and basic structure\n- ✅ Verified build process works successfully with `npm run build`\n- ✅ Tested path alias resolution with sample components and routing\n- ✅ Set up basic React Router implementation to demonstrate functionality\n\n### 🧪 Testing Results\n- ✅ Build process completes successfully\n- ✅ Path aliases resolve correctly in imports\n- ✅ Development server starts without errors\n- ✅ Vendor chunking works as expected (react-vendor chunk created)\n- ✅ Basic routing functionality operational\n\n### 📁 Files Created/Modified\n- `package.json` - Added dependencies and build scripts\n- `vite.config.js` - Path aliases and build optimization\n- `index.html` - HTML entry point with meta tags\n- `src/main.jsx` - React application entry point\n- `src/App.jsx` - Main app component with routing\n- `src/App.css` & `src/index.css` - Basic styling\n- `public/vite.svg` - Default favicon\n- Basic project structure created\n\nThe project is now ready for feature development with a solid foundation.\n\nCloses #65",
+  "testsPass": true,
+  "filesChanged": [
+    "package.json",
+    "vite.config.js",
+    "index.html",
+    "src/main.jsx",
+    "src/App.jsx",
+    "src/App.css",
+    "src/index.css",
+    "src/pages/Home.jsx",
+    "src/components/TestComponent.jsx",
+    "public/vite.svg"
+  ]
+}
