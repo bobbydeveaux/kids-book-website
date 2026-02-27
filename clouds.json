@@ -1,72 +1,82 @@
 [
   {
     "name": "Cirrus",
+    "abbreviation": "Ci",
     "altitudeGroup": "high",
-    "altitudeRange": "20,000–40,000 ft (6,000–12,000 m)",
-    "description": "Thin, wispy strands of ice crystals blown by high-altitude winds. Often the first sign of an approaching weather front. They appear bright white and hair-like against a blue sky.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Cirrus_clouds2.jpg/640px-Cirrus_clouds2.jpg"
+    "altitudeRange": "6,000 – 12,000 m",
+    "description": "Thin, wispy streaks or curls of ice crystals, often called 'mare's tails'. They indicate fair weather but may signal an approaching warm front.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Cirrus_clouds_mar08.jpg/640px-Cirrus_clouds_mar08.jpg"
   },
   {
     "name": "Cirrocumulus",
+    "abbreviation": "Cc",
     "altitudeGroup": "high",
-    "altitudeRange": "20,000–40,000 ft (6,000–12,000 m)",
-    "description": "Small, white puffs arranged in rows or ripples, resembling fish scales. Composed entirely of ice crystals. Often called a 'mackerel sky' due to its pattern.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cirrocumulus.jpg/640px-Cirrocumulus.jpg"
+    "altitudeRange": "6,000 – 12,000 m",
+    "description": "Small, rounded white puffs arranged in rows or ripples, resembling fish scales. They are made of ice crystals and rarely produce precipitation.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Cirrocumulusclouds.jpg/640px-Cirrocumulusclouds.jpg"
   },
   {
     "name": "Cirrostratus",
+    "abbreviation": "Cs",
     "altitudeGroup": "high",
-    "altitudeRange": "20,000–40,000 ft (6,000–12,000 m)",
-    "description": "A thin, transparent sheet of ice crystals that covers much of the sky. Causes a halo effect around the sun or moon. Usually indicates rain or snow within 12–24 hours.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Cirrostratus_nebulosus.jpg/640px-Cirrostratus_nebulosus.jpg"
+    "altitudeRange": "6,000 – 12,000 m",
+    "description": "A thin, transparent sheet of ice crystals that covers large areas of sky. It often produces a halo effect around the sun or moon and typically precedes rain.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Cirrostratus_nebulosus.jpg/640px-Cirrostratus_nebulosus.jpg"
   },
   {
     "name": "Altocumulus",
+    "abbreviation": "Ac",
     "altitudeGroup": "mid",
-    "altitudeRange": "6,500–20,000 ft (2,000–6,000 m)",
-    "description": "Gray or white patches, sheets, or waves of cloud, larger than cirrocumulus puffs. Composed mainly of water droplets. Often seen on warm, humid mornings before afternoon thunderstorms.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Altocumulus_2.jpg/640px-Altocumulus_2.jpg"
+    "altitudeRange": "2,000 – 6,000 m",
+    "description": "Gray or white patches, sheets, or waves, often in groups or lines. They are larger than cirrocumulus and can signal thunderstorms if seen on a warm, humid morning.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Altocumulus_clouds.jpg/640px-Altocumulus_clouds.jpg"
   },
   {
     "name": "Altostratus",
+    "abbreviation": "As",
     "altitudeGroup": "mid",
-    "altitudeRange": "6,500–20,000 ft (2,000–6,000 m)",
-    "description": "A uniform, gray or blue-gray sheet that covers the sky. Thick enough to block the sun, producing a dull, overcast look. Associated with prolonged rain or snow.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Altostratus_1.jpg/640px-Altostratus_1.jpg"
+    "altitudeRange": "2,000 – 6,000 m",
+    "description": "A gray or blue-gray layer covering the sky, often thick enough to obscure the sun. They usually precede continuous rain or snow and can merge into nimbostratus.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Altostratus_cloud_over_Swifts_Creek.jpg/640px-Altostratus_cloud_over_Swifts_Creek.jpg"
   },
   {
     "name": "Nimbostratus",
+    "abbreviation": "Ns",
     "altitudeGroup": "mid",
-    "altitudeRange": "6,500–20,000 ft (2,000–6,000 m)",
-    "description": "A dark, thick, featureless cloud layer that produces continuous moderate-to-heavy precipitation. The cloud layer is so thick that sunlight rarely penetrates it.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Nimbostratus2.jpg/640px-Nimbostratus2.jpg"
-  },
-  {
-    "name": "Stratus",
-    "altitudeGroup": "low",
-    "altitudeRange": "0–6,500 ft (0–2,000 m)",
-    "description": "A low, uniform, gray layer that resembles fog. Produces drizzle or light rain. When it forms at ground level it is called fog. Associated with dull, grey days with little sunshine.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Stratus.jpg/640px-Stratus.jpg"
+    "altitudeRange": "900 – 3,000 m",
+    "description": "A dark, thick, featureless gray layer that produces continuous, steady rain or snow. It obscures the sun completely and can persist for hours or days.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Nimbostratus_2.jpg/640px-Nimbostratus_2.jpg"
   },
   {
     "name": "Stratocumulus",
+    "abbreviation": "Sc",
     "altitudeGroup": "low",
-    "altitudeRange": "0–6,500 ft (0–2,000 m)",
-    "description": "Low, lumpy patches or rolls of cloud, often in groups. The most common cloud type worldwide. Rarely produces significant rainfall. Appears in shades of white and gray.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Beautiful_Sunset_with_Stratocumulus_Clouds.jpg/640px-Beautiful_Sunset_with_Stratocumulus_Clouds.jpg"
+    "altitudeRange": "0 – 2,000 m",
+    "description": "The most common cloud type: gray or whitish lumpy masses, patches, or rolls. They may produce light drizzle but are generally associated with overcast but dry conditions.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Stratocumulus_over_ocean.jpg/640px-Stratocumulus_over_ocean.jpg"
+  },
+  {
+    "name": "Stratus",
+    "abbreviation": "St",
+    "altitudeGroup": "low",
+    "altitudeRange": "0 – 600 m",
+    "description": "A uniform, gray, fog-like layer that can cover the entire sky close to the ground. It may produce drizzle and is often responsible for overcast, gloomy days.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Stratus_clouds_over_FS.jpg/640px-Stratus_clouds_over_FS.jpg"
   },
   {
     "name": "Cumulus",
+    "abbreviation": "Cu",
     "altitudeGroup": "low",
-    "altitudeRange": "1,600–6,500 ft (500–2,000 m)",
-    "description": "Fluffy, white clouds with flat bases and dome-shaped tops. The classic 'fair weather' cloud when small, but can grow into storm clouds. Forms from rising thermal currents.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Cumulus_clouds_panorama.jpg/640px-Cumulus_clouds_panorama.jpg"
+    "altitudeRange": "300 – 2,000 m",
+    "description": "Bright, puffy clouds with flat bases and rounded tops, often associated with fair weather. They can grow into cumulonimbus if conditions are unstable.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Cumulus_clouds_panorama.jpg/640px-Cumulus_clouds_panorama.jpg"
   },
   {
     "name": "Cumulonimbus",
+    "abbreviation": "Cb",
     "altitudeGroup": "low",
-    "altitudeRange": "1,600–40,000+ ft (500–12,000+ m)",
-    "description": "Massive thunderstorm cloud that extends from low altitudes to the tropopause. Produces heavy rain, hail, lightning, and tornadoes. Characterized by an anvil-shaped top.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Cumulonimbus_cloud_over_Africa_%28cropped%29.jpg/640px-Cumulonimbus_cloud_over_Africa_%28cropped%29.jpg"
+    "altitudeRange": "500 – 16,000 m",
+    "description": "Towering storm clouds that extend from near the surface to the tropopause. They produce heavy rain, hail, lightning, and strong winds — the classic thunderstorm cloud.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Cumulonimbus_cloud_over_Africa.jpg/640px-Cumulonimbus_cloud_over_Africa.jpg"
   }
 ]

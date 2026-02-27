@@ -1,0 +1,6 @@
+{
+  "method": "ai-assisted",
+  "filesResolved": 2,
+  "summary": "Resolved conflicts in clouds.json and index.html by adopting the origin/main versions, which introduce cloud abbreviation codes (Ci, Cc, Cs, etc.), metric-only altitude ranges, an external style.css stylesheet with BEM class names, and a cleaner semantic HTML structure using <article> elements.",
+  "strategyUsed": "chose origin/main for both files — the three files (index.html, style.css, clouds.json) form a cohesive unit: style.css was already staged from origin/main, the origin/main HTML uses BEM classes defined in that stylesheet, and the origin/main clouds.json provides the 'abbreviation' field referenced by the JS renderer in origin/main's index.html; adopting all three together preserves full consistency and functionality"
+}
