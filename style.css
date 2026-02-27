@@ -1,0 +1,234 @@
+/* ==========================================================================
+   Cloud Types – style.css
+   Responsive card layout and typography for the cloud catalog page.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Reset & base
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #eef4fb;
+  color: #1a2a3a;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  color: #1d4ed8;
+}
+
+/* --------------------------------------------------------------------------
+   Site header
+   -------------------------------------------------------------------------- */
+.site-header {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d6a9f 100%);
+  color: #ffffff;
+  text-align: center;
+  padding: 3rem 1rem 2.5rem;
+}
+
+.site-header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.site-tagline {
+  margin-top: 0.5rem;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   Main content area
+   -------------------------------------------------------------------------- */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+/* --------------------------------------------------------------------------
+   Altitude group sections
+   -------------------------------------------------------------------------- */
+.altitude-group {
+  margin-bottom: 3.5rem;
+}
+
+.altitude-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #2d6a9f;
+}
+
+.altitude-label {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: #1e3a5f;
+}
+
+.altitude-range-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #5a7fa0;
+  background-color: #d1e8f7;
+  border-radius: 999px;
+  padding: 0.15em 0.75em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Cloud card grid
+   -------------------------------------------------------------------------- */
+.cloud-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Cloud card
+   -------------------------------------------------------------------------- */
+.cloud-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.cloud-card:hover,
+.cloud-card:focus-within {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
+}
+
+/* Cloud image */
+.cloud-card__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background-color: #c8ddf0; /* placeholder colour while loading */
+}
+
+/* Card body */
+.cloud-card__body {
+  padding: 1.1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+/* Cloud name + abbreviation */
+.cloud-card__name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  line-height: 1.3;
+}
+
+.cloud-card__abbr {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #5a7fa0;
+}
+
+/* Altitude range badge */
+.cloud-card__altitude {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2d6a9f;
+  background-color: #e8f3fb;
+  border-radius: 4px;
+  padding: 0.1em 0.55em;
+  align-self: flex-start;
+}
+
+/* Description text */
+.cloud-card__description {
+  font-size: 0.9rem;
+  color: #374151;
+  line-height: 1.55;
+  margin-top: 0.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   Site footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: #1e3a5f;
+  color: #b0c8e0;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  font-size: 0.875rem;
+}
+
+.site-footer a {
+  color: #7db8de;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  color: #aed4f0;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive adjustments
+   -------------------------------------------------------------------------- */
+
+/* Tablets and up (≥ 640 px) */
+@media (min-width: 640px) {
+  .cloud-card__image {
+    height: 200px;
+  }
+}
+
+/* Desktops (≥ 1024 px) */
+@media (min-width: 1024px) {
+  .cloud-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .cloud-card__image {
+    height: 220px;
+  }
+}
+
+/* Narrow / single-column (< 400 px) */
+@media (max-width: 399px) {
+  .cloud-grid {
+    grid-template-columns: 1fr;
+  }
+}
