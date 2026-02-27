@@ -1,0 +1,46 @@
+GeneratedAt: "2026-02-27T17:23:29Z"
+Plan: website-about-clouds-plan
+Sprints:
+- Features:
+  - FeatureID: website-about-clouds-feat-main
+    FeatureTitle: Static Cloud Catalog Page
+    Tasks:
+    - AcceptanceCriteria:
+      - index.html displays all 10 cloud types grouped by altitude (high, mid, low)
+        with name, altitude range, and description visible
+      - clouds.json contains valid entries for all 10 cloud types with required fields
+      - Page renders correctly with inline HTML even if clouds.json fails to load
+      AgentType: frontend-engineer
+      Dependencies: []
+      Description: Create index.html with all 10 cloud types organized into high,
+        mid, and low altitude sections. Create clouds.json with name, altitudeGroup,
+        altitudeRange, description, and imageUrl for each cloud type. Add optional
+        JS to fetch clouds.json and render groups, falling back to inline HTML if
+        the fetch fails.
+      EstimatedEffort: M
+      Files:
+      - index.html
+      - clouds.json
+      ID: task-website-about-clouds-feat-main-1
+      Title: Build HTML structure and cloud data
+    - AcceptanceCriteria:
+      - Cards are visually distinct and display image, name, altitude range, and description
+        in a readable layout
+      - Altitude group sections (high, mid, low) have clear headings that separate
+        the cards
+      - Images use loading=lazy attribute and the layout is readable on both desktop
+        and mobile widths
+      AgentType: frontend-engineer
+      Dependencies:
+      - task-website-about-clouds-feat-main-1
+      Description: Create style.css with a responsive card layout for cloud entries
+        and section headings for each altitude group. Style cards to display the cloud
+        image, name, altitude range, and description clearly. Add lazy-loading attribute
+        to card images.
+      EstimatedEffort: S
+      Files:
+      - style.css
+      - index.html
+      ID: task-website-about-clouds-feat-main-2
+      Title: Implement CSS card layout and typography
+  Sprint: 1
