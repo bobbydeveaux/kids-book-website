@@ -1,6 +1,7 @@
 Epics:
-- features:
-  - dependencies: []
+- Features:
+  - Sprint: 1
+    dependencies: null
     description: Build a single-page static website displaying all 10 cloud types
       organized by altitude group (high, mid, low), each with name, altitude range,
       description, and image. Includes HTML structure, CSS card layout, and optional
@@ -14,6 +15,6 @@ Epics:
     name: Static Cloud Catalog Page
     project: website-about-clouds
     type: feature
-  id: website-about-clouds-epic-main
-  name: Cloud Catalog Website
+  ID: website-about-clouds-epic-main
+  Name: Cloud Catalog Website
 Version: v1alpha1

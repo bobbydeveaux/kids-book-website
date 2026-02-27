@@ -1,0 +1,9 @@
+# Sprint Slices (Horizontal Decomposition)
+
+sprints:
+  - number: 1
+    features:
+      - id: website-about-clouds-feat-main
+        name: Static Cloud Catalog Page
+        type: feature
+        files: [index.html style.css clouds.json]
