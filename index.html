@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud Catalog — All Types of Clouds</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(160deg, #e8f4fd 0%, #cce8f9 50%, #ddeeff 100%);
+      min-height: 100vh;
+      color: #1a2a3a;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: linear-gradient(180deg, rgba(135,206,235,0.6) 0%, transparent 100%);
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: #1565c0;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      margin-top: 0.75rem;
+      font-size: 1.1rem;
+      color: #455a64;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .altitude-group {
+      margin-bottom: 3.5rem;
+    }
+
+    .altitude-group h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+
+    .group-high h2   { background: #e3f2fd; color: #0d47a1; border-left: 5px solid #0d47a1; }
+    .group-mid h2    { background: #e8f5e9; color: #1b5e20; border-left: 5px solid #2e7d32; }
+    .group-low h2    { background: #fff3e0; color: #bf360c; border-left: 5px solid #e64a19; }
+
+    .group-label {
+      font-size: 0.85rem;
+      font-weight: 400;
+      opacity: 0.75;
+      margin-left: 0.5rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cloud-card {
+      background: rgba(255, 255, 255, 0.88);
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(0, 80, 180, 0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cloud-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 80, 180, 0.18);
+    }
+
+    .cloud-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      background: #b3d4f0;
+    }
+
+    .cloud-card img.img-error {
+      display: none;
+    }
+
+    .img-placeholder {
+      width: 100%;
+      height: 200px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #b3d4f0, #dceeff);
+      font-size: 3rem;
+    }
+
+    .cloud-card-body {
+      padding: 1.2rem 1.4rem 1.4rem;
+    }
+
+    .cloud-card-body h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0d2b4e;
+      margin-bottom: 0.3rem;
+    }
+
+    .altitude-range {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #546e7a;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .cloud-card-body p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #37474f;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #607d8b;
+    }
+
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>&#x2601; Cloud Catalog</h1>
+  <p>Explore all 10 major cloud types, organized by altitude. Learn to identify what's happening in the sky above you.</p>
+</header>
+
+<main id="main-content">
+
+  <!-- HIGH ALTITUDE CLOUDS -->
+  <section class="altitude-group group-high" id="group-high">
+    <h2>High Altitude Clouds <span class="group-label">above 20,000 ft (6,000 m)</span></h2>
+    <div class="cards" id="cards-high">
+
+      <div class="cloud-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Cirrus_clouds2.jpg/640px-Cirrus_clouds2.jpg"
+             alt="Cirrus clouds"
+             onerror="this.classList.add('img-error'); this.nextElementSibling.style.display='flex';"
+             loading="lazy" />
+        <div class="img-placeholder">&#x2601;</div>
+        <div class="cloud-card-body">
+          <h3>Cirrus</h3>
+          <div class="altitude-range">20,000–40,000 ft (6,000–12,000 m)</div>
+          <p>Thin, wispy strands of ice crystals blown by high-altitude winds. Often the first sign of an approaching weather front. They appear bright white and hair-like against a blue sky.</p>
+        </div>
+      </div>
+
+      <div class="cloud-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cirrocumulus.jpg/640px-Cirrocumulus.jpg"
+             alt="Cirrocumulus clouds"
+             onerror="this.classList.add('img-error'); this.nextElementSibling.style.display='flex';"
+             loading="lazy" />
+        <div class="img-placeholder">&#x2601;</div>
+        <div class="cloud-card-body">
+          <h3>Cirrocumulus</h3>
+          <div class="altitude-range">20,000–40,000 ft (6,000–12,000 m)</div>
+          <p>Small, white puffs arranged in rows or ripples, resembling fish scales. Composed entirely of ice crystals. Often called a 'mackerel sky' due to its pattern.</p>
+        </div>
+      </div>
+
+      <div class="cloud-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Cirrostratus_nebulosus.jpg/640px-Cirrostratus_nebulosus.jpg"
+             alt="Cirrostratus clouds"
+             onerror="this.classList.add('img-error'); this.nextElementSibling.style.display='flex';"
+             loading="lazy" />
+        <div class="img-placeholder">&#x2601;</div>
+        <div class="cloud-card-body">
+          <h3>Cirrostratus</h3>
+          <div class="altitude-range">20,000–40,000 ft (6,000–12,000 m)</div>
+          <p>A thin, transparent sheet of ice crystals that covers much of the sky. Causes a halo effect around the sun or moon. Usually indicates rain or snow within 12–24 hours.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MID ALTITUDE CLOUDS -->
+  <section class="altitude-group group-mid" id="group-mid">
+    <h2>Mid Altitude Clouds <span class="group-label">6,500–20,000 ft (2,000–6,000 m)</span></h2>
+    <div class="cards" id="cards-mid">
+
+      <div class="cloud-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Altocumulus_2.jpg/640px-Altocumulus_2.jpg"
+             alt="Altocumulus clouds"
+             onerror="this.classList.add('img-error'); this.nextElementSibling.style.display='flex';"
+             loading="lazy" />
+        <div class="img-placeholder">&#x2601;</div>
+        <div class="cloud-card-body">
+          <h3>Altocumulus</h3>
+          <div class="altitude-range">6,500–20,000 ft (2,000–6,000 m)</div>
+          <p>Gray or white patches, sheets, or waves of cloud, larger than cirrocumulus puffs. Composed mainly of water droplets. Often seen on warm, humid mornings before afternoon thunderstorms.</p>
+        </div>
+      </div>
+
+      <div class="cloud-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Altostratus_1.jpg/640px-Altostratus_1.jpg"
+             alt="Altostratus clouds"
+             onerror="this.classList.add('img-error'); this.nextElementSibling.style.display='flex';"
+             loading="lazy" />
+        <div class="img-placeholder">&#x2601;</div>
+        <div class="cloud-card-body">
+          <h3>Altostratus</h3>
+          <div class="altitude-range">6,500–20,000 ft (2,000–6,000 m)</div>
+          <p>A uniform, gray or blue-gray sheet that covers the sky. Thick enough to block the sun, producing a dull, overcast look. Associated with prolonged rain or snow.</p>
+        </div>
+      </div>
+
+      <div class="cloud-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Nimbostratus2.jpg/640px-Nimbostratus2.jpg"
+             alt="Nimbostratus clouds"
+             onerror="this.classList.add('img-error'); this.nextElementSibling.style.display='flex';"
+             loading="lazy" />
+        <div class="img-placeholder">&#x2601;</div>
+        <div class="cloud-card-body">
+          <h3>Nimbostratus</h3>
+          <div class="altitude-range">6,500–20,000 ft (2,000–6,000 m)</div>
+          <p>A dark, thick, featureless cloud layer that produces continuous moderate-to-heavy precipitation. The cloud layer is so thick that sunlight rarely penetrates it.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LOW ALTITUDE CLOUDS -->
+  <section class="altitude-group group-low" id="group-low">
+    <h2>Low Altitude Clouds <span class="group-label">0–6,500 ft (0–2,000 m)</span></h2>
+    <div class="cards" id="cards-low">
+
+      <div class="cloud-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Stratus.jpg/640px-Stratus.jpg"
+             alt="Stratus clouds"
+             onerror="this.classList.add('img-error'); this.nextElementSibling.style.display='flex';"
+             loading="lazy" />
+        <div class="img-placeholder">&#x2601;</div>
+        <div class="cloud-card-body">
+          <h3>Stratus</h3>
+          <div class="altitude-range">0–6,500 ft (0–2,000 m)</div>
+          <p>A low, uniform, gray layer that resembles fog. Produces drizzle or light rain. When it forms at ground level it is called fog. Associated with dull, grey days with little sunshine.</p>
+        </div>
+      </div>
+
+      <div class="cloud-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Beautiful_Sunset_with_Stratocumulus_Clouds.jpg/640px-Beautiful_Sunset_with_Stratocumulus_Clouds.jpg"
+             alt="Stratocumulus clouds"
+             onerror="this.classList.add('img-error'); this.nextElementSibling.style.display='flex';"
+             loading="lazy" />
+        <div class="img-placeholder">&#x2601;</div>
+        <div class="cloud-card-body">
+          <h3>Stratocumulus</h3>
+          <div class="altitude-range">0–6,500 ft (0–2,000 m)</div>
+          <p>Low, lumpy patches or rolls of cloud, often in groups. The most common cloud type worldwide. Rarely produces significant rainfall. Appears in shades of white and gray.</p>
+        </div>
+      </div>
+
+      <div class="cloud-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Cumulus_clouds_panorama.jpg/640px-Cumulus_clouds_panorama.jpg"
+             alt="Cumulus clouds"
+             onerror="this.classList.add('img-error'); this.nextElementSibling.style.display='flex';"
+             loading="lazy" />
+        <div class="img-placeholder">&#x2601;</div>
+        <div class="cloud-card-body">
+          <h3>Cumulus</h3>
+          <div class="altitude-range">1,600–6,500 ft (500–2,000 m)</div>
+          <p>Fluffy, white clouds with flat bases and dome-shaped tops. The classic 'fair weather' cloud when small, but can grow into storm clouds. Forms from rising thermal currents.</p>
+        </div>
+      </div>
+
+      <div class="cloud-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Cumulonimbus_cloud_over_Africa_%28cropped%29.jpg/640px-Cumulonimbus_cloud_over_Africa_%28cropped%29.jpg"
+             alt="Cumulonimbus clouds"
+             onerror="this.classList.add('img-error'); this.nextElementSibling.style.display='flex';"
+             loading="lazy" />
+        <div class="img-placeholder">&#x2601;</div>
+        <div class="cloud-card-body">
+          <h3>Cumulonimbus</h3>
+          <div class="altitude-range">1,600–40,000+ ft (500–12,000+ m)</div>
+          <p>Massive thunderstorm cloud that extends from low altitudes to the tropopause. Produces heavy rain, hail, lightning, and tornadoes. Characterized by an anvil-shaped top.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Cloud classifications based on the World Meteorological Organization (WMO) International Cloud Atlas.</p>
+</footer>
+
+<script>
+  // Optional: fetch clouds.json and re-render groups.
+  // Falls back to the inline HTML above if the fetch fails or JSON is unavailable.
+  (function () {
+    'use strict';
+
+    var GROUPS = {
+      high: { el: document.getElementById('cards-high'), label: 'High Altitude Clouds' },
+      mid:  { el: document.getElementById('cards-mid'),  label: 'Mid Altitude Clouds'  },
+      low:  { el: document.getElementById('cards-low'),  label: 'Low Altitude Clouds'  }
+    };
+
+    function createCard(cloud) {
+      var card = document.createElement('div');
+      card.className = 'cloud-card';
+
+      var img = document.createElement('img');
+      img.src = cloud.imageUrl || '';
+      img.alt = cloud.name + ' clouds';
+      img.loading = 'lazy';
+
+      var placeholder = document.createElement('div');
+      placeholder.className = 'img-placeholder';
+      placeholder.textContent = '\u2601';
+
+      img.onerror = function () {
+        img.classList.add('img-error');
+        placeholder.style.display = 'flex';
+      };
+
+      var body = document.createElement('div');
+      body.className = 'cloud-card-body';
+
+      var h3 = document.createElement('h3');
+      h3.textContent = cloud.name;
+
+      var range = document.createElement('div');
+      range.className = 'altitude-range';
+      range.textContent = cloud.altitudeRange;
+
+      var desc = document.createElement('p');
+      desc.textContent = cloud.description;
+
+      body.appendChild(h3);
+      body.appendChild(range);
+      body.appendChild(desc);
+
+      card.appendChild(img);
+      card.appendChild(placeholder);
+      card.appendChild(body);
+
+      return card;
+    }
+
+    function renderGroups(clouds) {
+      // Clear existing inline cards
+      Object.values(GROUPS).forEach(function (g) {
+        if (g.el) g.el.innerHTML = '';
+      });
+
+      // Render fetched data
+      clouds.forEach(function (cloud) {
+        var group = GROUPS[cloud.altitudeGroup];
+        if (group && group.el) {
+          group.el.appendChild(createCard(cloud));
+        }
+      });
+    }
+
+    fetch('clouds.json')
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        if (Array.isArray(data) && data.length > 0) {
+          renderGroups(data);
+        }
+      })
+      .catch(function () {
+        // Silently fall back to the inline HTML already in the page.
+      });
+  }());
+</script>
+
+</body>
+</html>
