@@ -1,0 +1,10 @@
+{
+  "prNumber": 122,
+  "baseBranch": "main",
+  "headBranch": "feature/119-website-about-clouds-sprint-1-issue-119",
+  "conflictedFiles": [
+    "clouds.json",
+    "index.html"
+  ],
+  "conflictCount": 2
+}
