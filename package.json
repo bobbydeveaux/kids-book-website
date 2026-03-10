@@ -1,0 +1,86 @@
+{
+  "name": "donkey-website",
+  "version": "1.0.0",
+  "description": "A comprehensive educational website about donkeys with breeds, care guides, and facts",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "npm run build:css && npm run watch",
+    "build": "npm run build:css && npm run build:html",
+    "build:css": "node build/bundle-css.js",
+    "build:html": "node build/compile-html.js",
+    "build:images": "node build/optimize-images.js",
+    "watch": "npm run watch:css & npm run watch:html",
+    "watch:css": "chokidar 'src/styles/**/*.css' -c 'npm run build:css'",
+    "watch:html": "chokidar 'src/**/*.html' -c 'npm run build:html'",
+    "serve": "http-server dist -p 3000 -o",
+    "start": "npm run build && npm run serve",
+    "clean": "rimraf dist/*",
+    "lint": "stylelint 'src/styles/**/*.css'",
+    "lint:fix": "stylelint 'src/styles/**/*.css' --fix",
+    "test": "npm run lint",
+    "deploy": "npm run build && npm run deploy:netlify"
+  },
+  "keywords": [
+    "donkey",
+    "education",
+    "animals",
+    "care-guide",
+    "breeds",
+    "static-site",
+    "website"
+  ],
+  "author": "Donkey Website Team",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css": "^5.3.2",
+    "chokidar-cli": "^3.0.0",
+    "concat": "^1.0.3",
+    "http-server": "^14.1.1",
+    "mkdirp": "^3.0.1",
+    "rimraf": "^5.0.1",
+    "sharp": "^0.32.1",
+    "stylelint": "^15.6.1",
+    "stylelint-config-standard": "^33.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "not dead",
+    "> 0.5%",
+    "last 2 versions"
+  ],
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "custom-property-pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+      "selector-class-pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
+      "declaration-empty-line-before": null,
+      "rule-empty-line-before": [
+        "always",
+        {
+          "except": ["first-nested"],
+          "ignore": ["after-comment"]
+        }
+      ],
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": ["supports"]
+        }
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobbydeveaux/donkey-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bobbydeveaux/donkey-website/issues"
+  },
+  "homepage": "https://donkey-website.netlify.app"
+}

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about donkeys - their breeds, care, and fascinating facts. Your complete guide to donkey knowledge.">
+    <title>Donkey Website - Learn About Donkeys</title>
+
+    <!-- CSS will be injected here by build process -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Favicon and icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate icon" href="/favicon.ico">
+
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:title" content="Donkey Website - Learn About Donkeys">
+    <meta property="og:description" content="Learn about donkeys - their breeds, care, and fascinating facts.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://donkey-website.netlify.app">
+
+    <!-- Preload critical assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-to-content sr-only-focusable">Skip to main content</a>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <!-- Logo/Brand -->
+            <a href="#" class="site-logo">
+                <span class="donkey-brand">🐴 Donkey World</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active" aria-current="page">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#breeds" class="nav-link">Breeds</a>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#care" class="nav-link nav-dropdown-toggle">Care Guides</a>
+                        <div class="nav-dropdown">
+                            <ul class="nav-dropdown-list">
+                                <li class="nav-dropdown-item">
+                                    <a href="#feeding" class="nav-dropdown-link">Feeding</a>
+                                </li>
+                                <li class="nav-dropdown-item">
+                                    <a href="#grooming" class="nav-dropdown-link">Grooming</a>
+                                </li>
+                                <li class="nav-dropdown-item">
+                                    <a href="#housing" class="nav-dropdown-link">Housing</a>
+                                </li>
+                                <li class="nav-dropdown-item">
+                                    <a href="#health" class="nav-dropdown-link">Health</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#facts" class="nav-link">Facts</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile menu toggle -->
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
+                <span class="hamburger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </span>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+            <div class="mobile-nav-header">
+                <span class="mobile-nav-logo donkey-brand">🐴 Donkey World</span>
+                <button class="mobile-nav-close" aria-label="Close navigation menu">✕</button>
+            </div>
+            <div class="mobile-nav-content">
+                <ul class="mobile-nav-menu">
+                    <li class="mobile-nav-item">
+                        <a href="#" class="mobile-nav-link active">Home</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="#breeds" class="mobile-nav-link">Breeds</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <button class="mobile-nav-dropdown-toggle">Care Guides</button>
+                        <div class="mobile-nav-dropdown">
+                            <ul class="mobile-nav-dropdown-list">
+                                <li><a href="#feeding" class="mobile-nav-dropdown-link">Feeding</a></li>
+                                <li><a href="#grooming" class="mobile-nav-dropdown-link">Grooming</a></li>
+                                <li><a href="#housing" class="mobile-nav-dropdown-link">Housing</a></li>
+                                <li><a href="#health" class="mobile-nav-dropdown-link">Health</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="#facts" class="mobile-nav-link">Facts</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="hero hero-lg hero-primary" role="banner">
+            <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="hero-overlay hero-overlay-gradient"></div>
+
+            <div class="hero-content hero-animated">
+                <h1 class="hero-title">Welcome to the World of Donkeys</h1>
+                <p class="hero-subtitle">Discover the fascinating world of donkeys - from gentle companions to working animals, learn about their breeds, care, and amazing characteristics.</p>
+                <div class="hero-actions">
+                    <a href="#breeds" class="btn btn-primary btn-lg">Explore Breeds</a>
+                    <a href="#care" class="btn btn-outline btn-lg">Care Guides</a>
+                </div>
+            </div>
+
+            <a href="#overview" class="hero-scroll" aria-label="Scroll to content">
+                <span class="hero-scroll-text">Scroll</span>
+                <span class="hero-scroll-icon"></span>
+            </a>
+        </section>
+
+        <!-- Overview Section -->
+        <section id="overview" class="section">
+            <div class="container">
+                <h2 class="text-center mb-12">What You'll Learn</h2>
+
+                <div class="card-grid">
+                    <div class="card card-feature">
+                        <div class="card-body">
+                            <h3 class="card-title">🐴 Donkey Breeds</h3>
+                            <p class="card-description">Explore different donkey breeds from around the world, each with unique characteristics and histories.</p>
+                            <div class="card-actions">
+                                <a href="#breeds" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-feature">
+                        <div class="card-body">
+                            <h3 class="card-title">🥕 Care & Feeding</h3>
+                            <p class="card-description">Comprehensive guides on how to properly care for donkeys, including feeding, housing, and health management.</p>
+                            <div class="card-actions">
+                                <a href="#care" class="btn btn-primary">Care Guides</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-feature">
+                        <div class="card-body">
+                            <h3 class="card-title">🧠 Amazing Facts</h3>
+                            <p class="card-description">Discover surprising facts about donkeys' intelligence, behavior, and their important role in human history.</p>
+                            <div class="card-actions">
+                                <a href="#facts" class="btn btn-primary">Read Facts</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Breeds Section -->
+        <section id="breeds" class="section section-lg">
+            <div class="container">
+                <h2 class="text-center mb-8">Popular Donkey Breeds</h2>
+                <p class="text-lead text-center mb-12">From miniature companions to working donkeys, explore the diversity of donkey breeds.</p>
+
+                <div class="gallery breed-gallery">
+                    <div class="gallery-item" tabindex="0" role="button" aria-label="View Miniature Mediterranean Donkey">
+                        <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Miniature Mediterranean Donkey" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h4 class="gallery-caption-title">Miniature Mediterranean</h4>
+                                <p class="gallery-caption-description">Small, gentle, and perfect as pets</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" tabindex="0" role="button" aria-label="View Standard Donkey">
+                        <img src="https://images.unsplash.com/photo-1570476579080-775bb2f78906?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Standard Donkey" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h4 class="gallery-caption-title">Standard Donkey</h4>
+                                <p class="gallery-caption-description">Classic working donkey breed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" tabindex="0" role="button" aria-label="View Spotted Donkey">
+                        <img src="https://images.unsplash.com/photo-1580997265090-a96cfede9204?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Spotted Donkey" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h4 class="gallery-caption-title">Spotted Donkey</h4>
+                                <p class="gallery-caption-description">Unique coloring and markings</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" tabindex="0" role="button" aria-label="View Mammoth Donkey">
+                        <img src="https://images.unsplash.com/photo-1570476579079-aa47b1c87652?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mammoth Donkey" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h4 class="gallery-caption-title">Mammoth Donkey</h4>
+                                <p class="gallery-caption-description">Largest donkey breed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <a href="#" class="btn btn-secondary btn-lg">View All Breeds</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="card card-stat">
+                        <div class="card-body">
+                            <h3 class="card-title">40+</h3>
+                            <p class="card-description">Donkey Breeds Worldwide</p>
+                        </div>
+                    </div>
+
+                    <div class="card card-stat">
+                        <div class="card-body">
+                            <h3 class="card-title">5000</h3>
+                            <p class="card-description">Years of Human Partnership</p>
+                        </div>
+                    </div>
+
+                    <div class="card card-stat">
+                        <div class="card-body">
+                            <h3 class="card-title">50M</h3>
+                            <p class="card-description">Donkeys Globally</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Care Guide Preview -->
+        <section id="care" class="section section-lg">
+            <div class="container">
+                <div class="hero-split">
+                    <div class="hero-content">
+                        <h2 class="hero-title">Donkey Care Essentials</h2>
+                        <p class="hero-description">Proper care is crucial for donkey health and happiness. Learn from our comprehensive guides covering nutrition, housing, health care, and daily maintenance.</p>
+                        <div class="hero-actions">
+                            <a href="#" class="btn btn-primary btn-lg">Read Care Guides</a>
+                            <a href="#" class="btn btn-ghost">Download Guide</a>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1560114928-40f1f1eb26a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Person caring for a donkey" class="hero-image">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <span class="donkey-brand">🐴 Donkey World</span>
+                    </a>
+                    <p class="footer-description">
+                        Your complete resource for learning about donkeys - breeds, care, and fascinating facts about these amazing animals.
+                    </p>
+                    <div class="footer-social">
+                        <h4 class="footer-social-title">Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Learn</h3>
+                    <ul class="footer-nav">
+                        <li class="footer-nav-item">
+                            <a href="#breeds" class="footer-nav-link">Donkey Breeds</a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a href="#care" class="footer-nav-link">Care Guides</a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a href="#facts" class="footer-nav-link">Facts & Trivia</a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a href="#" class="footer-nav-link">Resources</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Care Guides -->
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Care Guides</h3>
+                    <ul class="footer-nav">
+                        <li class="footer-nav-item">
+                            <a href="#feeding" class="footer-nav-link">Feeding & Nutrition</a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a href="#grooming" class="footer-nav-link">Grooming</a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a href="#housing" class="footer-nav-link">Housing & Shelter</a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a href="#health" class="footer-nav-link">Health & Wellness</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-newsletter">
+                    <h3 class="newsletter-title">Stay Updated</h3>
+                    <p class="newsletter-description">Get the latest donkey care tips and fascinating facts delivered to your inbox.</p>
+                    <form class="newsletter-form" role="form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email" required aria-label="Email address">
+                        <button type="submit" class="newsletter-button">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 Donkey World. All rights reserved.</p>
+                <ul class="footer-legal">
+                    <li><a href="#" class="footer-legal-link">Privacy Policy</a></li>
+                    <li><a href="#" class="footer-legal-link">Terms of Service</a></li>
+                    <li><a href="#" class="footer-legal-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Back to top button -->
+        <button class="back-to-top" aria-label="Back to top" title="Back to top">
+            ↑
+        </button>
+    </footer>
+
+    <!-- Scripts for interactivity -->
+    <script>
+        // Basic mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileNav = document.querySelector('.mobile-nav');
+            const mobileClose = document.querySelector('.mobile-nav-close');
+
+            function toggleMobileNav() {
+                const isActive = mobileNav.classList.contains('active');
+                mobileNav.classList.toggle('active');
+                mobileToggle.setAttribute('aria-expanded', !isActive);
+                document.body.style.overflow = isActive ? 'auto' : 'hidden';
+            }
+
+            mobileToggle?.addEventListener('click', toggleMobileNav);
+            mobileClose?.addEventListener('click', toggleMobileNav);
+
+            // Back to top button
+            const backToTop = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop?.classList.add('visible');
+                } else {
+                    backToTop?.classList.remove('visible');
+                }
+            });
+
+            backToTop?.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
