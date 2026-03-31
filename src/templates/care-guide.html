@@ -1,0 +1,309 @@
+{% extends "base.html" %}
+
+{% block title %}{{ guide.title }}{% endblock %}
+
+{% block meta_description %}{{ guide.description }}{% endblock %}
+
+{% block body_class %}care-guide-page{% endblock %}
+
+{% block schema_type %}Article{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="/css/components/table-of-contents.css">
+<link rel="stylesheet" href="/css/components/info-boxes.css">
+<link rel="stylesheet" href="/css/components/definition-lists.css">
+{% endblock %}
+
+{% block content %}
+<div class="care-guide-container">
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb navigation">
+        <ol class="breadcrumb-list">
+            <li><a href="/" rel="home">Home</a></li>
+            <li><a href="/care/">Care Guide</a></li>
+            <li aria-current="page">{{ guide.title }}</li>
+        </ol>
+    </nav>
+
+    <!-- Two-column layout -->
+    <div class="care-guide-layout">
+        <!-- Sidebar with Table of Contents -->
+        <aside class="care-guide-sidebar" aria-label="Page contents">
+            <nav class="table-of-contents" aria-labelledby="toc-heading">
+                <h2 id="toc-heading" class="toc-title">On This Page</h2>
+                <ul class="toc-list">
+                    {% for section in guide.sections %}
+                    <li>
+                        <a href="#{{ section.id }}" class="toc-link">{{ section.title }}</a>
+                        {% if section.subsections %}
+                        <ul class="toc-subsections">
+                            {% for subsection in section.subsections %}
+                            <li><a href="#{{ subsection.id }}" class="toc-sublink">{{ subsection.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+
+            <!-- Quick Tips Box -->
+            {% if guide.quick_tips %}
+            <aside class="quick-tips" aria-labelledby="quick-tips-heading">
+                <h3 id="quick-tips-heading">Quick Tips</h3>
+                <ul>
+                    {% for tip in guide.quick_tips %}
+                    <li>{{ tip }}</li>
+                    {% endfor %}
+                </ul>
+            </aside>
+            {% endif %}
+        </aside>
+
+        <!-- Main Content -->
+        <article class="care-guide-content" id="care-guide-article">
+            <!-- Article Header -->
+            <header class="care-guide-header">
+                <h1 class="care-guide-title">{{ guide.title }}</h1>
+                {% if guide.lead_paragraph %}
+                <p class="care-guide-lead">{{ guide.lead_paragraph }}</p>
+                {% endif %}
+
+                {% if guide.last_updated %}
+                <div class="article-meta">
+                    <p class="last-updated">
+                        <time datetime="{{ guide.last_updated }}">
+                            Last updated: {{ guide.last_updated | date_format }}
+                        </time>
+                    </p>
+                </div>
+                {% endif %}
+            </header>
+
+            <!-- Important Warning (if present) -->
+            {% if guide.important_warning %}
+            <aside class="info-box warning-box" role="alert" aria-labelledby="warning-heading">
+                <div class="info-box-icon" aria-hidden="true">⚠️</div>
+                <div class="info-box-content">
+                    <h3 id="warning-heading" class="info-box-title">Important Warning</h3>
+                    <p>{{ guide.important_warning }}</p>
+                </div>
+            </aside>
+            {% endif %}
+
+            <!-- Main Content Sections -->
+            {% for section in guide.sections %}
+            <section id="{{ section.id }}" class="care-section" aria-labelledby="{{ section.id }}-heading">
+                <h2 id="{{ section.id }}-heading" class="section-heading">{{ section.title }}</h2>
+
+                {% if section.introduction %}
+                <div class="section-introduction">
+                    {{ section.introduction | markdown }}
+                </div>
+                {% endif %}
+
+                <!-- Section Content -->
+                <div class="section-content">
+                    {{ section.content | markdown }}
+                </div>
+
+                <!-- Care Items (using definition lists) -->
+                {% if section.care_items %}
+                <div class="care-items">
+                    <h3>Key Information</h3>
+                    <dl class="care-definition-list">
+                        {% for item in section.care_items %}
+                        <dt class="care-term">{{ item.term }}</dt>
+                        <dd class="care-definition">{{ item.definition }}</dd>
+                        {% endfor %}
+                    </dl>
+                </div>
+                {% endif %}
+
+                <!-- Subsections -->
+                {% for subsection in section.subsections %}
+                <section id="{{ subsection.id }}" class="care-subsection" aria-labelledby="{{ subsection.id }}-heading">
+                    <h3 id="{{ subsection.id }}-heading" class="subsection-heading">{{ subsection.title }}</h3>
+
+                    <div class="subsection-content">
+                        {{ subsection.content | markdown }}
+                    </div>
+
+                    <!-- Subsection Care Items -->
+                    {% if subsection.care_items %}
+                    <dl class="care-definition-list">
+                        {% for item in subsection.care_items %}
+                        <dt class="care-term">{{ item.term }}</dt>
+                        <dd class="care-definition">{{ item.definition }}</dd>
+                        {% endfor %}
+                    </dl>
+                    {% endif %}
+
+                    <!-- Images with proper figures -->
+                    {% if subsection.images %}
+                    <div class="subsection-images">
+                        {% for image in subsection.images %}
+                        <figure class="care-image">
+                            <picture>
+                                <source srcset="{{ image.webp_srcset }}" type="image/webp">
+                                <img
+                                    src="{{ image.src }}"
+                                    srcset="{{ image.srcset }}"
+                                    alt="{{ image.alt }}"
+                                    loading="lazy"
+                                    width="{{ image.width }}"
+                                    height="{{ image.height }}"
+                                >
+                            </picture>
+                            {% if image.caption %}
+                            <figcaption>{{ image.caption }}</figcaption>
+                            {% endif %}
+                        </figure>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </section>
+                {% endfor %}
+
+                <!-- Section Tips -->
+                {% if section.tips %}
+                <aside class="info-box tip-box" aria-labelledby="{{ section.id }}-tips-heading">
+                    <div class="info-box-icon" aria-hidden="true">💡</div>
+                    <div class="info-box-content">
+                        <h3 id="{{ section.id }}-tips-heading" class="info-box-title">Pro Tips</h3>
+                        <ul class="tips-list">
+                            {% for tip in section.tips %}
+                            <li>{{ tip }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </aside>
+                {% endif %}
+
+                <!-- Section Warnings -->
+                {% if section.warnings %}
+                {% for warning in section.warnings %}
+                <aside class="info-box warning-box" role="alert" aria-labelledby="{{ section.id }}-warning-{{ loop.index }}-heading">
+                    <div class="info-box-icon" aria-hidden="true">⚠️</div>
+                    <div class="info-box-content">
+                        <h3 id="{{ section.id }}-warning-{{ loop.index }}-heading" class="info-box-title">
+                            {% if warning.title %}{{ warning.title }}{% else %}Warning{% endif %}
+                        </h3>
+                        <p>{{ warning.content }}</p>
+                    </div>
+                </aside>
+                {% endfor %}
+                {% endif %}
+            </section>
+            {% endfor %}
+
+            <!-- Additional Resources Section -->
+            {% if guide.additional_resources %}
+            <section id="additional-resources" class="care-section" aria-labelledby="resources-heading">
+                <h2 id="resources-heading" class="section-heading">Additional Resources</h2>
+                <ul class="resources-list">
+                    {% for resource in guide.additional_resources %}
+                    <li>
+                        <a href="{{ resource.url }}"
+                           {% if resource.external %}target="_blank" rel="noopener noreferrer"{% endif %}
+                           aria-describedby="external-link-description">
+                            {{ resource.title }}
+                        </a>
+                        {% if resource.description %}
+                        <p class="resource-description">{{ resource.description }}</p>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                <p id="external-link-description" class="sr-only">External links open in a new window</p>
+            </section>
+            {% endif %}
+
+            <!-- Related Care Topics -->
+            {% if guide.related_topics %}
+            <section id="related-topics" class="care-section" aria-labelledby="related-heading">
+                <h2 id="related-heading" class="section-heading">Related Care Topics</h2>
+                <div class="related-topics-grid">
+                    {% for topic in guide.related_topics %}
+                    <a href="{{ topic.url }}" class="related-topic-card">
+                        <h3 class="related-topic-title">{{ topic.title }}</h3>
+                        <p class="related-topic-description">{{ topic.description }}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+        </article>
+    </div>
+
+    <!-- Previous/Next Navigation -->
+    <nav class="care-guide-navigation" aria-labelledby="guide-nav-heading">
+        <h2 id="guide-nav-heading" class="sr-only">Navigate between care guides</h2>
+        <div class="nav-links">
+            {% if guide.previous %}
+            <a href="{{ guide.previous.url }}" class="nav-link prev-link" rel="prev">
+                <span class="nav-direction" aria-hidden="true">← Previous</span>
+                <span class="nav-title">{{ guide.previous.title }}</span>
+            </a>
+            {% endif %}
+
+            <a href="/care/" class="nav-link overview-link">
+                <span class="nav-direction" aria-hidden="true">↑ Overview</span>
+                <span class="nav-title">All Care Guides</span>
+            </a>
+
+            {% if guide.next %}
+            <a href="{{ guide.next.url }}" class="nav-link next-link" rel="next">
+                <span class="nav-direction" aria-hidden="true">Next →</span>
+                <span class="nav-title">{{ guide.next.title }}</span>
+            </a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- Article Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{ guide.title }}",
+        "description": "{{ guide.description }}",
+        "author": {
+            "@type": "Organization",
+            "name": "Donkey Care Guide"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Donkey Care Guide",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://donkey-care.example.com/images/donkey-logo.svg"
+            }
+        },
+        "datePublished": "{{ guide.date_published }}",
+        "dateModified": "{{ guide.last_updated }}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://donkey-care.example.com{{ guide.url }}"
+        },
+        "articleSection": "Care Guide",
+        "keywords": [{{ guide.keywords | join(", ") }}],
+        "about": [
+            {
+                "@type": "Thing",
+                "name": "Donkey Care"
+            },
+            {
+                "@type": "Thing",
+                "name": "{{ guide.care_category }}"
+            }
+        ]
+    }
+    </script>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/js/components/table-of-contents.js"></script>
+<script src="/js/components/care-guide.js"></script>
+{% endblock %}

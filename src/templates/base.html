@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block meta_description %}Educational resource for donkey care, breeds, and information{% endblock %}">
+    <title>{% block title %}Donkey Care Guide{% endblock %} | Donkey Information Website</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/components/navigation.css">
+    <link rel="stylesheet" href="/css/components/care-guide.css">
+    {% block extra_css %}{% endblock %}
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate icon" href="/favicon.ico">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% block og_title %}{{ self.title() }}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ self.meta_description() }}{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}/images/donkey-social-card.jpg{% endblock %}">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "{% block schema_type %}WebPage{% endblock %}",
+        "name": "{{ self.title() }}",
+        "description": "{{ self.meta_description() }}",
+        "url": "{% block canonical_url %}https://donkey-care.example.com{% endblock %}"
+    }
+    </script>
+</head>
+<body class="{% block body_class %}{% endblock %}">
+    <!-- Skip Links for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#navigation" class="skip-link">Skip to navigation</a>
+
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="container">
+            <div class="site-branding">
+                <a href="/" class="logo-link" aria-label="Go to homepage">
+                    <img src="/images/donkey-logo.svg" alt="Donkey Care Guide Logo" width="60" height="60">
+                    <span class="site-title">Donkey Care Guide</span>
+                </a>
+            </div>
+
+            <nav class="main-navigation" id="navigation" role="navigation" aria-label="Main navigation">
+                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/" {% if page_id == 'home' %}aria-current="page"{% endif %}>Home</a></li>
+                    <li><a href="/care/" {% if page_id == 'care' %}aria-current="page"{% endif %}>Care Guide</a></li>
+                    <li><a href="/breeds/" {% if page_id == 'breeds' %}aria-current="page"{% endif %}>Breeds</a></li>
+                    <li><a href="/facts/" {% if page_id == 'facts' %}aria-current="page"{% endif %}>Fun Facts</a></li>
+                    <li><a href="/about/" {% if page_id == 'about' %}aria-current="page"{% endif %}>About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" tabindex="-1">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/care/">Care Guide</a></li>
+                        <li><a href="/breeds/">Donkey Breeds</a></li>
+                        <li><a href="/facts/">Fun Facts</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Care Topics</h3>
+                    <ul>
+                        <li><a href="/care/feeding.html">Feeding</a></li>
+                        <li><a href="/care/grooming.html">Grooming</a></li>
+                        <li><a href="/care/housing.html">Housing</a></li>
+                        <li><a href="/care/health.html">Health</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/about/">About This Site</a></li>
+                        <li><a href="/resources/">External Resources</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Donkey Care Guide. Educational content for donkey enthusiasts.</p>
+                <p>This website is for educational purposes. Always consult a veterinarian for professional advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
