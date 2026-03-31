@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn fascinating facts about donkey behavior, history, and characteristics. Discover the remarkable intelligence, loyalty, and unique traits that make donkeys such extraordinary animals.">
+    <meta name="keywords" content="donkey facts, donkey history, donkey behavior, donkey characteristics, domestication">
+    <meta name="author" content="Donkey Website">
+
+    <!-- SEO Meta Tags -->
+    <title>Facts & About Donkeys | Donkey Website</title>
+    <meta property="og:title" content="Facts & About Donkeys | Donkey Website">
+    <meta property="og:description" content="Learn fascinating facts about donkey behavior, history, and characteristics. Discover the remarkable intelligence, loyalty, and unique traits that make donkeys such extraordinary animals.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="/facts.html">
+    <meta property="og:image" content="/images/facts/donkey-portrait.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- Critical CSS - inline for performance -->
+    <style>
+        /* Reset and base styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        /* Header and navigation */
+        .site-header {
+            background: #2c5530;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .main-nav a:hover,
+        .main-nav a:focus {
+            border-bottom-color: #7db87e;
+        }
+
+        .main-nav a.active {
+            border-bottom-color: #7db87e;
+            font-weight: 600;
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .main-nav {
+                display: none;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .main-nav.active {
+                display: block;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .main-nav li {
+                border-top: 1px solid #4a7c4e;
+            }
+
+            .main-nav a {
+                display: block;
+                padding: 1rem 0;
+            }
+        }
+
+        /* Page header */
+        .page-header {
+            background: linear-gradient(135deg, #7db87e 0%, #5a9e5d 100%);
+            color: white;
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .page-header .lead {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header .lead {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Main content area */
+        .facts-main {
+            padding: 2rem 0 3rem;
+        }
+
+        .facts-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .facts-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Table of contents */
+        .toc {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            height: fit-content;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .toc h2 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #2c5530;
+            border-bottom: 2px solid #7db87e;
+            padding-bottom: 0.5rem;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc ul ul {
+            margin-left: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .toc a {
+            color: #495057;
+            text-decoration: none;
+            display: block;
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            transition: color 0.2s ease;
+        }
+
+        .toc a:hover,
+        .toc a:focus {
+            color: #2c5530;
+        }
+
+        @media (max-width: 1024px) {
+            .toc {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+
+        /* Article content */
+        .facts-article {
+            max-width: none;
+        }
+
+        .facts-article h2 {
+            font-size: 1.75rem;
+            color: #2c5530;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #7db87e;
+        }
+
+        .facts-article h2:first-child {
+            margin-top: 0;
+        }
+
+        .facts-article h3 {
+            font-size: 1.35rem;
+            color: #2c5530;
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .facts-article h4 {
+            font-size: 1.1rem;
+            color: #495057;
+            margin: 1rem 0 0.5rem;
+            font-weight: 600;
+        }
+
+        .facts-article p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .facts-article ul,
+        .facts-article ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+
+        .facts-article li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .facts-article strong {
+            color: #2c5530;
+            font-weight: 600;
+        }
+
+        /* Image styles */
+        .facts-article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 1.5rem 0;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #2c5530;
+            color: white;
+            padding: 2rem 0 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            color: #7db87e;
+            text-decoration: none;
+        }
+
+        .footer-nav a:hover,
+        .footer-nav a:focus {
+            color: white;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .footer-nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+
+    <!-- Preload full stylesheet for async loading -->
+    <link rel="preload" href="/styles/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/styles/main.css"></noscript>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Site header with navigation -->
+    <header class="site-header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">🐴 Donkey Website</a>
+
+                <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    ☰
+                </button>
+
+                <nav class="main-nav" id="main-navigation" role="navigation" aria-label="Main navigation">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/breeds/">Breeds</a></li>
+                        <li><a href="/care/">Care Guide</a></li>
+                        <li><a href="/facts.html" class="active" aria-current="page">Facts</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Facts & About Donkeys</h1>
+            <p class="lead">Learn fascinating facts about donkey behavior, history, and characteristics. Discover the remarkable intelligence, loyalty, and unique traits that make donkeys such extraordinary animals.</p>
+        </div>
+    </section>
+
+    <!-- Main content -->
+    <main id="main-content" class="facts-main" role="main">
+        <div class="facts-container">
+            <!-- Table of contents sidebar -->
+            <aside class="toc" role="complementary" aria-labelledby="toc-heading">
+                <nav aria-labelledby="toc-heading">
+                    <h2 id="toc-heading">On This Page</h2>
+                    <ul>
+                        <li><a href="#history-and-domestication">History and Domestication</a>
+                            <ul>
+                                <li><a href="#ancient-origins">Ancient Origins</a></li>
+                                <li><a href="#spread-across-civilizations">Spread Across Civilizations</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#physical-characteristics-and-biology">Physical Characteristics</a>
+                            <ul>
+                                <li><a href="#unique-physical-traits">Physical Traits</a></li>
+                                <li><a href="#sensory-capabilities">Sensory Capabilities</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#behavior-and-intelligence">Behavior and Intelligence</a>
+                            <ul>
+                                <li><a href="#cognitive-abilities">Cognitive Abilities</a></li>
+                                <li><a href="#social-behavior">Social Behavior</a></li>
+                                <li><a href="#the-stubborn-myth">The "Stubborn" Myth</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#donkeys-in-modern-times">Donkeys in Modern Times</a>
+                            <ul>
+                                <li><a href="#current-roles-and-uses">Current Roles</a></li>
+                                <li><a href="#global-population-and-challenges">Global Population</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#fascinating-donkey-facts">Fascinating Facts</a></li>
+                        <li><a href="#conservation-and-future">Conservation and Future</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main article content -->
+            <article class="facts-article" role="article">
+                <p>Donkeys are remarkable animals that have been humanity's companions for thousands of years. Often misunderstood and underappreciated, these intelligent creatures possess unique characteristics that set them apart from their horse cousins. From their ancient origins to their modern-day roles, donkeys continue to captivate and serve people around the world.</p>
+
+                <h2 id="history-and-domestication">History and Domestication</h2>
+
+                <h3 id="ancient-origins">Ancient Origins</h3>
+
+                <p>The donkey (Equus africanus asinus) was first domesticated around 5,000 years ago in ancient Egypt and the surrounding regions of northeast Africa. Archaeological evidence suggests that wild African asses were the primary ancestors of modern domestic donkeys. These early domestications occurred during the emergence of agricultural civilizations along the Nile River valley.</p>
+
+                <p>Ancient Egyptians recognized the donkey's value for transportation and labor, using them to carry goods, transport people, and work in agricultural settings. Hieroglyphs and tomb paintings frequently depict donkeys as essential parts of daily life, showing their importance in ancient society.</p>
+
+                <h3 id="spread-across-civilizations">Spread Across Civilizations</h3>
+
+                <p>From Egypt, donkeys spread throughout the ancient world:</p>
+
+                <ul>
+                    <li><strong>Mediterranean civilizations</strong> used donkeys for trade routes and mountain transportation</li>
+                    <li><strong>Biblical times</strong> featured donkeys prominently, with references throughout religious texts</li>
+                    <li><strong>Greek and Roman empires</strong> employed donkeys for military supply lines and civilian transportation</li>
+                    <li><strong>Medieval Europe</strong> relied on donkeys for agricultural work and as pack animals</li>
+                </ul>
+
+                <p>The donkey's ability to thrive in harsh climates and carry heavy loads made them invaluable for early trade networks, including the famous Silk Road routes that connected East and West.</p>
+
+                <h2 id="physical-characteristics-and-biology">Physical Characteristics and Biology</h2>
+
+                <h3 id="unique-physical-traits">Unique Physical Traits</h3>
+
+                <p>Donkeys possess several distinctive physical characteristics that distinguish them from horses:</p>
+
+                <p><strong>Size and Build:</strong></p>
+                <ul>
+                    <li>Height typically ranges from 36 to 56 inches at the withers</li>
+                    <li>Weight varies from 400 to 1,000 pounds depending on breed</li>
+                    <li>More compact and sturdy build compared to horses</li>
+                    <li>Proportionally larger head and ears relative to body size</li>
+                </ul>
+
+                <p><strong>Distinctive Features:</strong></p>
+                <ul>
+                    <li>Long, upright ears that provide excellent hearing</li>
+                    <li>Dark stripe running down the back (dorsal stripe)</li>
+                    <li>Dark cross pattern across shoulders in many individuals</li>
+                    <li>Shorter, upright mane compared to horses</li>
+                    <li>Tail with hair primarily at the tip (like a cow's tail)</li>
+                    <li>Small, hard hooves well-suited for rocky terrain</li>
+                </ul>
+
+                <h3 id="sensory-capabilities">Sensory Capabilities</h3>
+
+                <p>Donkeys have remarkable sensory abilities:</p>
+
+                <p><strong>Hearing:</strong> Their large ears can rotate independently, allowing them to detect sounds from multiple directions simultaneously. They can hear frequencies beyond human range.</p>
+
+                <p><strong>Vision:</strong> Donkeys have excellent night vision and a wide field of view, with eyes positioned on the sides of their heads for nearly 360-degree awareness.</p>
+
+                <p><strong>Smell:</strong> Their keen sense of smell helps them identify other donkeys, detect danger, and locate food sources.</p>
+
+                <h2 id="behavior-and-intelligence">Behavior and Intelligence</h2>
+
+                <h3 id="cognitive-abilities">Cognitive Abilities</h3>
+
+                <p>Contrary to popular stereotypes, donkeys are highly intelligent animals with remarkable problem-solving abilities:</p>
+
+                <ul>
+                    <li><strong>Memory:</strong> Donkeys have excellent long-term memory and can remember locations, people, and experiences for decades</li>
+                    <li><strong>Learning:</strong> They learn quickly and retain information well, often requiring fewer repetitions than horses to master new tasks</li>
+                    <li><strong>Decision-making:</strong> Donkeys think before acting, carefully assessing situations for potential risks</li>
+                </ul>
+
+                <h3 id="social-behavior">Social Behavior</h3>
+
+                <p>Donkeys are naturally social animals with complex herd dynamics:</p>
+
+                <p><strong>Herd Structure:</strong></p>
+                <ul>
+                    <li>Live in small, stable groups in the wild</li>
+                    <li>Develop strong bonds with other donkeys and can form friendships that last for years</li>
+                    <li>Establish hierarchies based on age, size, and personality rather than just dominance</li>
+                </ul>
+
+                <p><strong>Communication:</strong></p>
+                <ul>
+                    <li>Use a variety of vocalizations including brays, grunts, and squeals</li>
+                    <li>Body language includes ear position, tail movement, and posture changes</li>
+                    <li>Mutual grooming strengthens social bonds</li>
+                </ul>
+
+                <h3 id="the-stubborn-myth">The "Stubborn" Myth</h3>
+
+                <p>The perception of donkeys as stubborn is largely misunderstood. What appears as stubbornness is actually:</p>
+
+                <ul>
+                    <li><strong>Self-preservation instinct:</strong> Donkeys naturally assess dangerous situations before proceeding</li>
+                    <li><strong>Independent thinking:</strong> They prefer to evaluate commands rather than blindly follow orders</li>
+                    <li><strong>Stress response:</strong> When frightened or overwhelmed, donkeys may freeze rather than flee like horses</li>
+                </ul>
+
+                <h2 id="donkeys-in-modern-times">Donkeys in Modern Times</h2>
+
+                <h3 id="current-roles-and-uses">Current Roles and Uses</h3>
+
+                <p>Today, donkeys serve various purposes around the world:</p>
+
+                <p><strong>Working Animals:</strong></p>
+                <ul>
+                    <li>Pack animals in mountainous and remote regions</li>
+                    <li>Agricultural work in developing countries</li>
+                    <li>Cart pulling in urban areas</li>
+                    <li>Guard animals for livestock protection</li>
+                </ul>
+
+                <p><strong>Therapy and Companionship:</strong></p>
+                <ul>
+                    <li>Emotional support animals</li>
+                    <li>Therapy programs for children and adults with special needs</li>
+                    <li>Companion animals for horses and other livestock</li>
+                </ul>
+
+                <p><strong>Conservation and Breeding:</strong></p>
+                <ul>
+                    <li>Breeding programs to preserve rare breeds</li>
+                    <li>Mule production (donkey-horse hybrids)</li>
+                    <li>Educational programs and petting zoos</li>
+                </ul>
+
+                <h3 id="global-population-and-challenges">Global Population and Challenges</h3>
+
+                <p>The worldwide donkey population is estimated at around 50 million animals, with the largest populations in:</p>
+                <ul>
+                    <li>China (approximately 11 million)</li>
+                    <li>Pakistan (5.2 million)</li>
+                    <li>Ethiopia (4.2 million)</li>
+                    <li>Mexico (3.2 million)</li>
+                </ul>
+
+                <p>Unfortunately, donkey populations face several challenges:</p>
+                <ul>
+                    <li>Mechanization reducing their traditional roles</li>
+                    <li>Illegal trafficking for hide trade</li>
+                    <li>Habitat loss and climate change</li>
+                    <li>Lack of proper veterinary care in some regions</li>
+                </ul>
+
+                <h2 id="fascinating-donkey-facts">Fascinating Donkey Facts</h2>
+
+                <h3>Remarkable Abilities</h3>
+
+                <ul>
+                    <li><strong>Longevity:</strong> Donkeys can live 25-35 years with proper care, often outliving horses</li>
+                    <li><strong>Desert adaptation:</strong> They can survive on minimal water and poor-quality food</li>
+                    <li><strong>Mountain navigation:</strong> Sure-footed on steep, rocky terrain where horses struggle</li>
+                    <li><strong>Weather resistance:</strong> Their coats adapt to extreme temperatures from desert heat to mountain cold</li>
+                </ul>
+
+                <h3>Cultural Significance</h3>
+
+                <ul>
+                    <li><strong>Religious symbolism:</strong> Featured in Christianity, Judaism, and Islam as symbols of humility and peace</li>
+                    <li><strong>Literature and folklore:</strong> Appear in stories worldwide, from Aesop's fables to modern children's books</li>
+                    <li><strong>Art and expression:</strong> Depicted in cave paintings, sculptures, and contemporary art across cultures</li>
+                </ul>
+
+                <h3>Breeding and Genetics</h3>
+
+                <ul>
+                    <li><strong>Hybrid vigor:</strong> Mules (donkey father, horse mother) combine the best traits of both species</li>
+                    <li><strong>Genetic diversity:</strong> Donkeys have maintained greater genetic diversity than many horse breeds</li>
+                    <li><strong>Chromosome difference:</strong> Donkeys have 62 chromosomes compared to horses' 64</li>
+                </ul>
+
+                <h2 id="conservation-and-future">Conservation and Future</h2>
+
+                <h3>Preservation Efforts</h3>
+
+                <p>Organizations worldwide work to protect donkey welfare and preserve breeds:</p>
+                <ul>
+                    <li><strong>The Donkey Sanctuary:</strong> International welfare organization</li>
+                    <li><strong>American Mammoth Jackstock Registry:</strong> Preserving heritage breeds</li>
+                    <li><strong>Local breed associations:</strong> Maintaining regional donkey varieties</li>
+                </ul>
+
+                <h3>The Path Forward</h3>
+
+                <p>As we look to the future, donkeys continue to prove their worth:</p>
+                <ul>
+                    <li><strong>Sustainable transportation:</strong> Eco-friendly alternative in remote areas</li>
+                    <li><strong>Therapeutic applications:</strong> Growing recognition in animal-assisted therapy</li>
+                    <li><strong>Cultural heritage:</strong> Preserving traditional skills and knowledge</li>
+                    <li><strong>Conservation grazing:</strong> Natural land management in protected areas</li>
+                </ul>
+
+                <p>Donkeys represent a living connection to our agricultural past while offering sustainable solutions for the future. Their intelligence, loyalty, and resilience make them not just working animals, but true companions deserving of our respect and protection.</p>
+
+                <p>Understanding and appreciating donkeys helps us recognize the remarkable diversity of the equine family and the important role these animals have played throughout human civilization. Whether working in fields, carrying supplies through mountains, or providing companionship, donkeys continue to enrich our world with their gentle strength and enduring spirit.</p>
+            </article>
+        </div>
+    </main>
+
+    <!-- Site footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <nav class="footer-nav" role="navigation" aria-label="Footer navigation">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/breeds/">Breeds</a></li>
+                        <li><a href="/care/">Care Guide</a></li>
+                        <li><a href="/facts.html">Facts</a></li>
+                    </ul>
+                </nav>
+                <p class="copyright">
+                    &copy; 2026 Donkey Website. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+                mainNav.classList.toggle('active');
+            });
+        }
+
+        // Smooth scrolling for table of contents links
+        const tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // Focus the target heading for accessibility
+                    target.setAttribute('tabindex', '-1');
+                    target.focus();
+                }
+            });
+        });
+
+        // Lazy loading for images (if not natively supported)
+        if ('loading' in HTMLImageElement.prototype) {
+            // Native lazy loading is supported
+            const images = document.querySelectorAll('img[data-src]');
+            images.forEach(img => {
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+            });
+        } else {
+            // Fallback for browsers without native lazy loading
+            const lazyImages = document.querySelectorAll('img[data-src]');
+
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(img => imageObserver.observe(img));
+            } else {
+                // Fallback for very old browsers
+                lazyImages.forEach(img => {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                });
+            }
+        }
+
+        // Add focus styles for keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('user-is-tabbing');
+            }
+        });
+
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('user-is-tabbing');
+        });
+    </script>
+
+    <!-- Screen reader only styles -->
+    <style>
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles for keyboard navigation */
+        .user-is-tabbing *:focus {
+            outline: 3px solid #7db87e;
+            outline-offset: 2px;
+        }
+    </style>
+</body>
+</html>
