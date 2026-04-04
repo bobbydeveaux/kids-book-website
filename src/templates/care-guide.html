@@ -1,0 +1,288 @@
+<!-- Care guide template -->
+
+<!-- Breadcrumb navigation -->
+<nav aria-label="Breadcrumb">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li><a href="/care/">Care Guide</a></li>
+      <li aria-current="page">{{ guide.title }}</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- Care guide header -->
+<header class="care-header">
+  <div class="container">
+    <div class="care-header-content">
+      <div class="care-header-text">
+        <h1>{{ guide.title }}</h1>
+        <p class="care-subtitle">{{ guide.subtitle }}</p>
+        <div class="care-meta">
+          <span class="reading-time" aria-label="Estimated reading time">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM7 2v6.5l4 2 .5-1-3.5-2V2H7z" fill="currentColor"/>
+            </svg>
+            {{ guide.reading_time }} min read
+          </span>
+          <span class="difficulty-level" aria-label="Difficulty level">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16">
+              <path d="M8 1.5L6.5 6H2l3.5 2.5-1.5 5L8 10l3.5 3.5-1.5-5L14 6H9.5L8 1.5z" fill="currentColor"/>
+            </svg>
+            {{ guide.difficulty }}
+          </span>
+        </div>
+      </div>
+      <div class="care-header-image">
+        <img src="{{ guide.hero_image }}"
+             alt="{{ guide.hero_alt }}"
+             width="400"
+             height="300"
+             loading="eager">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main care guide content -->
+<article class="care-content">
+  <div class="container">
+    <div class="content-layout">
+
+      <!-- Table of contents (sticky sidebar on desktop) -->
+      <aside class="toc" role="navigation">
+        <nav aria-labelledby="toc-heading">
+          <h2 id="toc-heading">On This Page</h2>
+          <ol class="toc-list">
+            {% for section in guide.sections %}
+            <li>
+              <a href="#{{ section.id }}" class="toc-link">{{ section.title }}</a>
+              {% if section.subsections %}
+              <ol class="toc-sublist">
+                {% for subsection in section.subsections %}
+                <li><a href="#{{ subsection.id }}" class="toc-sublink">{{ subsection.title }}</a></li>
+                {% endfor %}
+              </ol>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ol>
+        </nav>
+      </aside>
+
+      <!-- Main content -->
+      <div class="main-content">
+
+        <!-- Introduction -->
+        <section class="care-intro" aria-labelledby="intro-heading">
+          <h2 id="intro-heading" class="sr-only">Introduction</h2>
+          <p class="intro-text">{{ guide.introduction }}</p>
+
+          {% if guide.key_points %}
+          <div class="key-points">
+            <h3>Key Points to Remember</h3>
+            <ul class="key-points-list" aria-label="Important care guidelines">
+              {% for point in guide.key_points %}
+              <li class="key-point">{{ point }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+        </section>
+
+        <!-- Content sections -->
+        {% for section in guide.sections %}
+        <section aria-labelledby="{{ section.id }}-heading">
+          <h2 id="{{ section.id }}-heading">{{ section.title }}</h2>
+
+          <div class="section-content">
+            {{ section.content | safe }}
+
+            {% if section.tips %}
+            <div class="tips-box" role="complementary" aria-labelledby="{{ section.id }}-tips-heading">
+              <h3 id="{{ section.id }}-tips-heading">💡 Pro Tips</h3>
+              <ul class="tips-list" aria-label="Professional tips for {{ section.title | lower }}">
+                {% for tip in section.tips %}
+                <li class="tip-item">{{ tip }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+
+            {% if section.warning %}
+            <div class="warning-box" role="alert" aria-labelledby="{{ section.id }}-warning-heading">
+              <h3 id="{{ section.id }}-warning-heading">⚠️ Important Warning</h3>
+              <p class="warning-text">{{ section.warning }}</p>
+            </div>
+            {% endif %}
+
+            {% if section.supplies %}
+            <div class="supplies-needed">
+              <h3>Supplies Needed</h3>
+              <ul class="supplies-list" aria-label="Required supplies for {{ section.title | lower }}">
+                {% for supply in section.supplies %}
+                <li class="supply-item">
+                  <strong>{{ supply.name }}</strong>
+                  {% if supply.description %} - {{ supply.description }}{% endif %}
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+
+            {% if section.steps %}
+            <div class="step-by-step">
+              <h3>Step-by-Step Instructions</h3>
+              <ol class="steps-list" aria-label="Instructions for {{ section.title | lower }}">
+                {% for step in section.steps %}
+                <li class="step-item">
+                  <div class="step-number" aria-hidden="true">{{ loop.index }}</div>
+                  <div class="step-content">
+                    <h4 class="step-title">{{ step.title }}</h4>
+                    <p class="step-description">{{ step.description }}</p>
+                    {% if step.note %}
+                    <p class="step-note"><strong>Note:</strong> {{ step.note }}</p>
+                    {% endif %}
+                  </div>
+                </li>
+                {% endfor %}
+              </ol>
+            </div>
+            {% endif %}
+
+            {% if section.image %}
+            <figure class="section-image">
+              <img src="{{ section.image.url }}"
+                   alt="{{ section.image.alt }}"
+                   width="{{ section.image.width }}"
+                   height="{{ section.image.height }}"
+                   loading="lazy">
+              {% if section.image.caption %}
+              <figcaption>{{ section.image.caption }}</figcaption>
+              {% endif %}
+            </figure>
+            {% endif %}
+
+          </div>
+
+          <!-- Subsections -->
+          {% for subsection in section.subsections %}
+          <div class="subsection" aria-labelledby="{{ subsection.id }}-heading">
+            <h3 id="{{ subsection.id }}-heading">{{ subsection.title }}</h3>
+            <div class="subsection-content">
+              {{ subsection.content | safe }}
+            </div>
+          </div>
+          {% endfor %}
+
+        </section>
+        {% endfor %}
+
+        <!-- Common problems and solutions -->
+        {% if guide.common_problems %}
+        <section class="troubleshooting" aria-labelledby="troubleshooting-heading">
+          <h2 id="troubleshooting-heading">Common Problems & Solutions</h2>
+
+          <div class="problems-list">
+            {% for problem in guide.common_problems %}
+            <details class="problem-item">
+              <summary class="problem-summary">{{ problem.question }}</summary>
+              <div class="problem-solution">
+                <p>{{ problem.answer }}</p>
+                {% if problem.tips %}
+                <ul class="solution-tips" aria-label="Additional tips">
+                  {% for tip in problem.tips %}
+                  <li>{{ tip }}</li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </div>
+            </details>
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+
+        <!-- Emergency situations -->
+        {% if guide.emergency_info %}
+        <section class="emergency-info" aria-labelledby="emergency-heading">
+          <h2 id="emergency-heading">Emergency Situations</h2>
+          <div class="emergency-content" role="alert">
+            <p class="emergency-intro">{{ guide.emergency_info.introduction }}</p>
+
+            <div class="emergency-signs">
+              <h3>Signs Requiring Immediate Veterinary Attention</h3>
+              <ul class="emergency-signs-list" aria-label="Emergency warning signs">
+                {% for sign in guide.emergency_info.warning_signs %}
+                <li class="emergency-sign">{{ sign }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="emergency-contact">
+              <h3>Emergency Contact Information</h3>
+              <p>{{ guide.emergency_info.contact_advice }}</p>
+            </div>
+          </div>
+        </section>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- Related care guides -->
+<section class="related-guides" aria-labelledby="related-heading">
+  <div class="container">
+    <h2 id="related-heading">Related Care Guides</h2>
+    <div class="guides-grid">
+      {% for related in guide.related_guides %}
+      <article class="guide-card">
+        <div class="guide-image">
+          <img src="{{ related.image }}"
+               alt="{{ related.image_alt }}"
+               width="200"
+               height="150"
+               loading="lazy">
+        </div>
+        <div class="guide-info">
+          <h3>{{ related.title }}</h3>
+          <p class="guide-description">{{ related.description }}</p>
+          <a href="{{ related.url }}" class="btn btn-outline" aria-describedby="{{ related.id }}-desc">
+            Read Guide
+            <span class="sr-only"> about {{ related.title | lower }}</span>
+          </a>
+          <span id="{{ related.id }}-desc" class="sr-only">{{ related.full_description }}</span>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Navigation to other sections -->
+<nav class="care-nav" aria-label="Navigate to other care sections">
+  <div class="container">
+    <div class="nav-grid">
+      {% if guide.prev_guide %}
+      <a href="{{ guide.prev_guide.url }}" class="nav-link nav-prev" rel="prev">
+        <span class="nav-label">Previous Guide</span>
+        <span class="nav-title">{{ guide.prev_guide.title }}</span>
+      </a>
+      {% endif %}
+
+      <a href="/care/" class="nav-link nav-overview">
+        <span class="nav-label">All Guides</span>
+        <span class="nav-title">Care Guide Overview</span>
+      </a>
+
+      {% if guide.next_guide %}
+      <a href="{{ guide.next_guide.url }}" class="nav-link nav-next" rel="next">
+        <span class="nav-label">Next Guide</span>
+        <span class="nav-title">{{ guide.next_guide.title }}</span>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</nav>

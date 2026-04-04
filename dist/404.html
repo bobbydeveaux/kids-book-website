@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Page not found - 404 Error | Donkey Website">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Page Not Found - 404 Error | Donkey Website</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Critical CSS inline for performance -->
+  <style>
+    .error-page {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .error-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .error-code {
+      font-size: 8rem;
+      font-weight: bold;
+      color: #8B4513;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .error-message {
+      font-size: 1.5rem;
+      margin: 1rem 0 2rem 0;
+      color: #333;
+    }
+
+    .error-description {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .error-image {
+      margin: 2rem 0;
+    }
+
+    .error-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .error-nav {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+
+    .error-nav h2 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .nav-links li {
+      margin: 0.5rem 0;
+    }
+
+    .nav-links a {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #8B4513;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      background: #A0522D;
+      text-decoration: none;
+    }
+
+    .home-link {
+      background: #2c5aa0 !important;
+    }
+
+    .home-link:hover,
+    .home-link:focus {
+      background: #1e3d72 !important;
+    }
+
+    @media (max-width: 768px) {
+      .error-code {
+        font-size: 6rem;
+      }
+
+      .error-message {
+        font-size: 1.25rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links a {
+        min-width: 200px;
+        text-align: center;
+      }
+    }
+
+    /* Skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: #000;
+      color: #fff;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      top: 6px;
+    }
+
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip link for keyboard navigation accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Simplified header for error page -->
+  <header class="site-header">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 1rem;">
+      <div style="display: flex; align-items: center;">
+        <a href="/" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+          <img src="/images/icons/donkey-logo.svg" alt="Donkey Website" width="32" height="32" style="margin-right: 0.5rem;">
+          <span style="font-weight: bold;">Donkey Website</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main error content -->
+  <main id="main-content" class="error-page">
+    <div class="error-container">
+      <!-- Error code and message -->
+      <h1 class="error-code" aria-label="Error code 404">404</h1>
+      <h2 class="error-message">Oops! Page Not Found</h2>
+      <p class="error-description">
+        The page you're looking for seems to have wandered off like a curious donkey.
+        Don't worry – we can help you find your way back to the herd!
+      </p>
+
+      <!-- Decorative image -->
+      <div class="error-image">
+        <img src="/images/404/confused-donkey.jpg"
+             alt="A cute donkey with a puzzled expression, tilting its head as if confused about where the page went"
+             width="400"
+             height="300"
+             loading="eager">
+      </div>
+
+      <!-- Helpful navigation -->
+      <nav class="error-nav" aria-label="Helpful links">
+        <h2>Let's Get You Back On Track</h2>
+        <p>Here are some popular pages you might be looking for:</p>
+
+        <ul class="nav-links">
+          <li>
+            <a href="/" class="home-link">
+              <span aria-hidden="true">🏠</span> Return to Homepage
+            </a>
+          </li>
+          <li>
+            <a href="/breeds/">
+              <span aria-hidden="true">🐴</span> Browse Donkey Breeds
+            </a>
+          </li>
+          <li>
+            <a href="/care/">
+              <span aria-hidden="true">🌱</span> Read Care Guides
+            </a>
+          </li>
+          <li>
+            <a href="/facts.html">
+              <span aria-hidden="true">📚</span> Learn Fascinating Facts
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Search suggestion -->
+      <div style="margin-top: 2rem; padding: 1.5rem; background: #fff3cd; border-radius: 8px; color: #856404;">
+        <p style="margin: 0;">
+          <strong>Still can't find what you're looking for?</strong><br>
+          Try checking the URL for typos, or visit our homepage to explore all our donkey content.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Simplified footer -->
+  <footer style="background: #f8f9fa; padding: 2rem 1rem; margin-top: 3rem; text-align: center; color: #666;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
+      <p style="margin: 0;">&copy; 2026 Donkey Website. Educational resource about donkeys.</p>
+      <p style="margin: 0.5rem 0 0 0;">
+        <a href="/breeds/" style="color: #8B4513;">Breeds</a> •
+        <a href="/care/" style="color: #8B4513;">Care Guide</a> •
+        <a href="/facts.html" style="color: #8B4513;">Facts</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Add structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "404 Error - Page Not Found",
+    "description": "The requested page could not be found on the Donkey Website.",
+    "url": "https://donkey-website.com/404.html",
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "Donkey Website",
+      "url": "https://donkey-website.com"
+    }
+  }
+  </script>
+</body>
+</html>

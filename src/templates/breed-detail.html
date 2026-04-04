@@ -1,0 +1,249 @@
+<!-- Breed detail page template -->
+
+<!-- Breadcrumb navigation -->
+<nav aria-label="Breadcrumb">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li><a href="/breeds/">Breeds</a></li>
+      <li aria-current="page">{{ breed.name }}</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- Breed header -->
+<header class="breed-header">
+  <div class="container">
+    <div class="breed-header-content">
+      <div class="breed-header-text">
+        <h1>{{ breed.name }}</h1>
+        <p class="breed-tagline">{{ breed.tagline }}</p>
+        <div class="breed-quick-facts">
+          <span class="fact-item" aria-label="Origin">
+            <strong>Origin:</strong> {{ breed.origin }}
+          </span>
+          <span class="fact-item" aria-label="Height range">
+            <strong>Height:</strong> {{ breed.height }}
+          </span>
+          <span class="fact-item" aria-label="Primary use">
+            <strong>Use:</strong> {{ breed.primary_use }}
+          </span>
+        </div>
+      </div>
+      <div class="breed-header-image">
+        <img src="{{ breed.hero_image }}"
+             alt="{{ breed.hero_alt }}"
+             width="400"
+             height="300"
+             loading="eager">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main breed content -->
+<article class="breed-content">
+  <div class="container">
+    <div class="content-layout">
+
+      <!-- Main content -->
+      <div class="main-content">
+
+        <!-- Overview section -->
+        <section aria-labelledby="overview-heading">
+          <h2 id="overview-heading">Overview</h2>
+          <p>{{ breed.overview }}</p>
+        </section>
+
+        <!-- Physical characteristics -->
+        <section aria-labelledby="characteristics-heading">
+          <h2 id="characteristics-heading">Physical Characteristics</h2>
+
+          <div class="characteristics-grid">
+            <div class="char-item">
+              <h3>Size & Build</h3>
+              <p><strong>Height:</strong> {{ breed.height }}</p>
+              <p><strong>Weight:</strong> {{ breed.weight }}</p>
+              <p><strong>Build:</strong> {{ breed.build }}</p>
+            </div>
+
+            <div class="char-item">
+              <h3>Coat & Color</h3>
+              <p><strong>Colors:</strong> {{ breed.colors }}</p>
+              <p><strong>Coat Type:</strong> {{ breed.coat_type }}</p>
+              <p><strong>Markings:</strong> {{ breed.markings }}</p>
+            </div>
+
+            <div class="char-item">
+              <h3>Distinctive Features</h3>
+              <ul aria-label="Notable physical features">
+                {% for feature in breed.distinctive_features %}
+                <li>{{ feature }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- History section -->
+        <section aria-labelledby="history-heading">
+          <h2 id="history-heading">History & Origin</h2>
+          <p>{{ breed.history }}</p>
+
+          <div class="timeline" role="img" aria-labelledby="timeline-heading">
+            <h3 id="timeline-heading">Historical Timeline</h3>
+            <ul class="timeline-list" aria-label="Historical events for this breed">
+              {% for event in breed.timeline %}
+              <li class="timeline-item">
+                <time class="timeline-date">{{ event.year }}</time>
+                <p class="timeline-event">{{ event.description }}</p>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </section>
+
+        <!-- Temperament section -->
+        <section aria-labelledby="temperament-heading">
+          <h2 id="temperament-heading">Temperament & Behavior</h2>
+          <p>{{ breed.temperament_description }}</p>
+
+          <div class="temperament-traits">
+            <h3>Key Personality Traits</h3>
+            <ul class="traits-list" aria-label="Personality characteristics">
+              {% for trait in breed.personality_traits %}
+              <li class="trait-item">
+                <span class="trait-name">{{ trait.name }}</span>
+                <div class="trait-meter" role="img" aria-label="{{ trait.name }} level: {{ trait.level }} out of 5">
+                  <div class="trait-fill" style="width: {{ trait.level * 20 }}%"></div>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </section>
+
+        <!-- Care requirements -->
+        <section aria-labelledby="care-heading">
+          <h2 id="care-heading">Care Requirements</h2>
+          <p>{{ breed.care_overview }}</p>
+
+          <div class="care-sections">
+            <div class="care-section">
+              <h3>Housing Needs</h3>
+              <ul aria-label="Housing requirements">
+                {% for requirement in breed.housing_needs %}
+                <li>{{ requirement }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="care-section">
+              <h3>Feeding Guidelines</h3>
+              <ul aria-label="Feeding requirements">
+                {% for guideline in breed.feeding_guidelines %}
+                <li>{{ guideline }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="care-section">
+              <h3>Exercise & Activity</h3>
+              <ul aria-label="Exercise requirements">
+                {% for activity in breed.exercise_needs %}
+                <li>{{ activity }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+
+          <div class="care-cta">
+            <p><strong>Want to learn more about donkey care?</strong></p>
+            <a href="/care/" class="btn btn-primary">Read Our Complete Care Guide</a>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Sidebar with additional info -->
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <h3>Quick Facts</h3>
+          <dl class="fact-list">
+            <dt>Lifespan:</dt>
+            <dd>{{ breed.lifespan }}</dd>
+
+            <dt>Registration:</dt>
+            <dd>{{ breed.registration_info }}</dd>
+
+            <dt>Population Status:</dt>
+            <dd>{{ breed.population_status }}</dd>
+
+            <dt>Best Suited For:</dt>
+            <dd>{{ breed.best_suited_for }}</dd>
+          </dl>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Image Gallery</h3>
+          <div class="gallery-thumbs" role="group" aria-label="{{ breed.name }} photo gallery">
+            {% for image in breed.gallery_images %}
+            <button class="gallery-thumb" data-lightbox="{{ image.full_url }}" aria-label="View larger image: {{ image.alt }}">
+              <img src="{{ image.thumb_url }}"
+                   alt="{{ image.alt }}"
+                   width="80"
+                   height="60"
+                   loading="lazy">
+            </button>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Related Breeds</h3>
+          <ul class="related-breeds" aria-label="Similar donkey breeds">
+            {% for related in breed.related_breeds %}
+            <li>
+              <a href="/breeds/{{ related.slug }}.html" class="related-breed-link">
+                <img src="{{ related.thumb_image }}"
+                     alt="{{ related.name }}"
+                     width="40"
+                     height="30"
+                     loading="lazy">
+                <span>{{ related.name }}</span>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</article>
+
+<!-- Call to action section -->
+<section class="breed-cta" aria-labelledby="cta-heading">
+  <div class="container">
+    <h2 id="cta-heading">Explore More About Donkeys</h2>
+    <div class="cta-grid">
+      <div class="cta-item">
+        <h3>Other Breeds</h3>
+        <p>Discover more donkey breeds from around the world.</p>
+        <a href="/breeds/" class="btn btn-outline">Browse All Breeds</a>
+      </div>
+
+      <div class="cta-item">
+        <h3>Care Guides</h3>
+        <p>Learn how to provide the best care for your donkey.</p>
+        <a href="/care/" class="btn btn-outline">Read Care Guides</a>
+      </div>
+
+      <div class="cta-item">
+        <h3>Interesting Facts</h3>
+        <p>Discover fascinating facts about donkey history and behavior.</p>
+        <a href="/facts.html" class="btn btn-outline">Learn More Facts</a>
+      </div>
+    </div>
+  </div>
+</section>
